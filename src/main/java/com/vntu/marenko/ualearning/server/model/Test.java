@@ -10,8 +10,9 @@ import java.util.List;
 public class Test {
 
     @Id
+    @GeneratedValue
     @Column(name = "idtest")
-    private int id;
+    private Integer id;
 
     @Column(name = "name_test")
     private String nameTest;

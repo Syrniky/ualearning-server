@@ -10,8 +10,9 @@ import java.util.List;
 public class Question {
 
     @Id
+    @GeneratedValue
     @Column(name = "idquestion")
-    private int id;
+    private Integer id;
 
     @OneToMany
     @JoinColumn(name = "question")

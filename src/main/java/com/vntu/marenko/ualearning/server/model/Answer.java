@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Data
@@ -11,8 +12,9 @@ import javax.persistence.Id;
 public class Answer {
 
     @Id
+    @GeneratedValue
     @Column(name = "idanswer")
-    private int id;
+    private Integer id;
 
     private String text;
 
