@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "f4e35ff6-18bc-49c0-841b-e1398c7ba267",
+		"name": "UAlearning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13925617"
+	},
+	"item": [
+		{
+			"name": "Get all tests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}test",
+					"host": [
+						"{{host}}test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get test",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"login\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}login",
+					"host": [
+						"{{host}}login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}result/{{resultId}}",
+					"host": [
+						"{{host}}result"
+					],
+					"path": [
+						"{{resultId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userLogin\": \"cool@mail.com\",\r\n    \"testId\": 1,\r\n    \"answers\": [1]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}result",
+					"host": [
+						"{{host}}result"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get results for user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}result/user/{{userId}}",
+					"host": [
+						"{{host}}result"
+					],
+					"path": [
+						"user",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
