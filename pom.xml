@@ -12,12 +12,14 @@
 	<groupId>com.vntu.marenko</groupId>
 	<artifactId>ualearning-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<name>ualearning-server</name>
 	<description>Anime</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<jacoco.output.directory>target/site/jacoco</jacoco.output.directory>
 	</properties>
 
 	<dependencies>
@@ -51,10 +53,74 @@
 			<artifactId>orika-core</artifactId>
 			<version>1.5.4</version>
 		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>ua.edu.vntu</groupId>
+				<artifactId>gentest-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<strategy>SIMPLE_CONFIG</strategy>
+					<junitPackageName>com.vntu.marenko.ualearning.server</junitPackageName>
+					<testPackage>
+						<testPackage>com.vntu.marenko.ualearning.server.component.impl</testPackage>
+						<testPackage>com.vntu.marenko.ualearning.server.controller</testPackage>
+						<testPackage>com.vntu.marenko.ualearning.server.dto</testPackage>
+						<testPackage>com.vntu.marenko.ualearning.server.mapper</testPackage>
+						<testPackage>com.vntu.marenko.ualearning.server.model</testPackage>
+						<testPackage>com.vntu.marenko.ualearning.server.service.impl</testPackage>
+					</testPackage>
+					<junitOutputDir>${project.build.testSourceDirectory}</junitOutputDir>
+					<timeLimit>120</timeLimit>
+					<randomseed>220</randomseed>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>junit</groupId>
+						<artifactId>junit</artifactId>
+						<version>4.12</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.8</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${jacoco.output.directory}</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
