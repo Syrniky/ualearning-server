@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "f4e35ff6-18bc-49c0-841b-e1398c7ba267",
 		"name": "UAlearning",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "13925617"
 	},
 	"item": [
@@ -11,12 +11,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}test",
-					"host": [
-						"{{host}}test"
-					]
-				}
+				"url": "{{host}}test"
 			},
 			"response": []
 		},
@@ -24,7 +19,8 @@
 			"name": "Get test",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": "{{host}}test/{{testId}}"
 			},
 			"response": []
 		},
@@ -35,27 +31,32 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"login\": \"login\",\r\n    \"password\": \"password\"\r\n}",
+					"raw": "{\r\n    \"login\": \"login\",\r\n    \"password\": \"password1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "{{host}}login",
-					"host": [
-						"{{host}}login"
-					]
-				}
+				"url": "{{host}}login"
 			},
 			"response": []
 		},
 		{
 			"name": "Register",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"cool4@mail.com\",\r\n\r\n    \"password\": \"unbreakable\",\r\n    \r\n    \"name\": \"Cool\",\r\n\r\n    \"surname\": \"Man\",\r\n\r\n    \"age\": 21,\r\n\r\n    \"institution\": \"Sharaga\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}register"
 			},
 			"response": []
 		},
@@ -64,15 +65,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}result/{{resultId}}",
-					"host": [
-						"{{host}}result"
-					],
-					"path": [
-						"{{resultId}}"
-					]
-				}
+				"url": "{{host}}result/{{resultId}}"
 			},
 			"response": []
 		},
@@ -83,19 +76,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userLogin\": \"cool@mail.com\",\r\n    \"testId\": 1,\r\n    \"answers\": [1]\r\n}",
+					"raw": "{\r\n    \"userLogin\": \"cool4@mail.com\",\r\n    \"testId\": 1,\r\n    \"answers\": [1]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "{{host}}result",
-					"host": [
-						"{{host}}result"
-					]
-				}
+				"url": "{{host}}result"
 			},
 			"response": []
 		},
@@ -103,7 +91,8 @@
 			"name": "Get User",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": "{{host}}user/{{userId}}"
 			},
 			"response": []
 		},
@@ -112,16 +101,61 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": {
-					"raw": "{{host}}result/user/{{userId}}",
-					"host": [
-						"{{host}}result"
-					],
-					"path": [
-						"user",
-						"{{userId}}"
-					]
-				}
+				"url": "{{host}}result/user/{{userId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get tests with tag",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}test/tag/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Sho po rusni?\",\r\n\r\n    \"username\": \"{{userId}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{host}}post"
+			},
+			"response": []
+		},
+		{
+			"name": "Get post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}post/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get posts by user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}post/user/{{userId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Top 10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{host}}user/rating"
 			},
 			"response": []
 		}
