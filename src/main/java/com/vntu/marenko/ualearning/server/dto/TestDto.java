@@ -1,5 +1,6 @@
 package com.vntu.marenko.ualearning.server.dto;
 
+import com.vntu.marenko.ualearning.server.model.Tag;
 import lombok.Data;
 
 import java.util.List;
@@ -11,5 +12,7 @@ public class TestDto {
 
     private String nameTest;
 
-    List<QuestionDto> questions;
+    private List<QuestionDto> questions;
+
+    private List<TagDto> tags;
 }

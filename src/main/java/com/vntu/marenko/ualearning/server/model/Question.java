@@ -14,7 +14,10 @@ public class Question {
     @Column(name = "idquestion")
     private Integer id;
 
+    @Column(name = "text_que")
+    private String text;
+
     @OneToMany
-    @JoinColumn(name = "question")
+    @JoinColumn(name = "question_idquestion")
     private List<Answer> answers;
 }

@@ -24,6 +24,7 @@ public class MapperConfig {
         mapperFactory.classMap(Answer.class, AnswerDto.class);
         mapperFactory.classMap(Question.class, QuestionDto.class);
         mapperFactory.classMap(Test.class, TestDto.class);
+        mapperFactory.classMap(Tag.class, TagDto.class);
 
         mapperFactory.classMap(Result.class, ResultDto.class)
                      .byDefault()

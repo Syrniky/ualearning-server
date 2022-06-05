@@ -30,6 +30,11 @@ public class TestController {
         return  mapper.mapAsList(testService.getAllTests(), TestDescription.class);
     }
 
+    @GetMapping("/tag/{tagId}")
+    public List<TestDescription> getTestDescriptionsForTag(@PathVariable int tagId) {
+        return  mapper.mapAsList(testService.getTestsWithTag(tagId), TestDescription.class);
+    }
+
     @GetMapping("/{id}")
     public TestDto getTest(@PathVariable int id) {
         return mapper.map(testService.getTest(id), TestDto.class);

@@ -1,6 +1,5 @@
 package com.vntu.marenko.ualearning.server.dto;
 
-import com.vntu.marenko.ualearning.server.model.Answer;
 import lombok.Data;
 
 import java.util.List;
@@ -9,6 +8,8 @@ import java.util.List;
 public class QuestionDto {
 
     private int id;
+
+    private String text;
 
     private List<AnswerDto> answers;
 }

@@ -19,5 +19,12 @@ public class Test {
 
     @OneToMany
     @JoinColumn(name = "test_idtest")
-    List<Question> questions;
+    private List<Question> questions;
+
+    @ManyToMany
+    @JoinTable(
+            name = "test_has_tag",
+            joinColumns = @JoinColumn(name = "test_idtest"),
+            inverseJoinColumns = @JoinColumn(name = "tag_idtag"))
+    private List<Tag> tags;
 }

@@ -8,5 +8,7 @@ public interface TestService {
 
     List<Test> getAllTests();
 
+    List<Test> getTestsWithTag(int tagId);
+
     Test getTest(int id);
 }
