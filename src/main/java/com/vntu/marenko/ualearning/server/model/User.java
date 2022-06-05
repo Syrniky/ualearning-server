@@ -21,4 +21,8 @@ public class User {
     private int age;
 
     private String institution;
+
+    private String email;
+
+    private long rating;
 }

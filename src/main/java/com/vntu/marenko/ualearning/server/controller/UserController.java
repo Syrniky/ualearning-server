@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("user")
 public class UserController {
@@ -24,6 +26,10 @@ public class UserController {
     @GetMapping("/{id}")
     public UserDto getUser(@PathVariable String id) {
         return mapper.map(userService.getUser(id), UserDto.class);
-//        return userService.getUser(id);
+    }
+
+    @GetMapping("/rating")
+    public List<UserDto> rating() {
+        return mapper.mapAsList(userService.top10(), UserDto.class);
     }
 }

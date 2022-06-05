@@ -29,8 +29,8 @@ public class SubmitResultRequestToDomainMapper extends CustomMapper<SubmitResult
     @Override
     public void mapAtoB(SubmitResultRequest submitResultRequest, Result result, MappingContext context) {
         super.mapAtoB(submitResultRequest, result, context);
-        result.setUser(userRepository.getById(submitResultRequest.getUserLogin()));
-        result.setTest(testRepository.getById(submitResultRequest.getTestId()));
+        result.setUser(userRepository.getReferenceById(submitResultRequest.getUserLogin()));
+        result.setTest(testRepository.getReferenceById(submitResultRequest.getTestId()));
         result.setAnswers(answerRepository.findAllById(submitResultRequest.getAnswers()));
     }
 }

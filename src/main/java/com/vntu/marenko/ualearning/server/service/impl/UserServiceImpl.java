@@ -5,7 +5,13 @@ import com.vntu.marenko.ualearning.server.exception.ValidationException;
 import com.vntu.marenko.ualearning.server.model.User;
 import com.vntu.marenko.ualearning.server.repository.UserRepository;
 import com.vntu.marenko.ualearning.server.service.UserService;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -18,8 +24,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String login(String login, String password) {
-        User user = userRepository.getById(login);
-        if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
+        Optional<User> user = userRepository.findById(login);
+        if (user.isPresent() &&
+                user.get().getLogin().equals(login) &&
+                user.get().getPassword().equals(password)) {
             return login.concat("_").concat(password);
         }
         throw new UnauthorisedException();
@@ -36,6 +44,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String id) {
-        return userRepository.getById(id);
+        return userRepository.getReferenceById(id);
+    }
+
+    @Override
+    public List<User> top10() {
+        Pageable pageable = PageRequest.of(0, 10, Sort.by(Sort.Direction.DESC, "rating"));
+        return userRepository.findAll(pageable).getContent();
     }
 }

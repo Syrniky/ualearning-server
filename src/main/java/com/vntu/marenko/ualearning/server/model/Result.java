@@ -19,7 +19,7 @@ public class Result {
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "test_idtest")
+    @JoinColumn(name = "test_id")
     private Test test;
 
     private boolean submitted;
