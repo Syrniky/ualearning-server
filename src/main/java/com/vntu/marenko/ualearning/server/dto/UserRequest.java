@@ -16,4 +16,6 @@ public class UserRequest {
     private int age;
 
     private String institution;
+
+    private String email;
 }

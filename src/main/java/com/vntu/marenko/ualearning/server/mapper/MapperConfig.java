@@ -14,7 +14,9 @@ public class MapperConfig {
     @Bean
     public MapperFacade createMapper(MarkComputer markComputer,
                                      SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper,
-                                     ResultToDescriptionMapper resultToDescriptionMapper) {
+                                     ResultToDescriptionMapper resultToDescriptionMapper,
+                                     CreatePostRequestToPostMapper createPostRequestToPostMapper,
+                                     PostToDtoMapper postToDtoMapper) {
         MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
         mapperFactory.classMap(UserRequest.class, User.class);
         mapperFactory.classMap(User.class, UserDto.class);
@@ -36,6 +38,14 @@ public class MapperConfig {
         mapperFactory.classMap(Result.class, ResultDescription.class)
                      .customize(resultToDescriptionMapper)
                      .register();
+
+        mapperFactory.classMap(CreatePostRequest.class, Post.class)
+                .customize(createPostRequestToPostMapper)
+                .register();
+
+        mapperFactory.classMap(Post.class, PostDto.class)
+                .customize(postToDtoMapper)
+                .register();
 
         return mapperFactory.getMapperFacade();
     }
