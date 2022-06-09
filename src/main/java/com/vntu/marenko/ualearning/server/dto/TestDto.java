@@ -12,6 +12,10 @@ public class TestDto {
 
     private String nameTest;
 
+    private String descriptionTest;
+
+    private Integer completedCounter;
+
     private List<QuestionDto> questions;
 
     private List<TagDto> tags;

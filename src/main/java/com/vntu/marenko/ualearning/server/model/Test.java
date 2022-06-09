@@ -17,6 +17,12 @@ public class Test {
     @Column(name = "name_test")
     private String nameTest;
 
+    @Column(name = "description_test")
+    private String descriptionTest;
+
+    @Column(name = "completed_counter_test")
+    private Integer completedCounter;
+
     @OneToMany
     @JoinColumn(name = "test_idtest")
     private List<Question> questions;
