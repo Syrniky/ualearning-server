@@ -16,6 +16,8 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
+    private static final String CORRECT_PASSWORD = ".*";
+
     private final UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository) {
@@ -36,13 +38,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public String register(User user) {
         if (userRepository.existsById(user.getLogin())) {
-            throw new ValidationException();
+            throw new ValidationException("Помилка! Такий користувач уже існує");
         }
-        if (user.getAge() > 12) {
-            userRepository.save(user);
-            return login(user.getLogin(), user.getPassword());
-        } else {
-            throw new ValidationException();
+        if (user.getPassword().matches(CORRECT_PASSWORD)){
+            if (user.getAge() > 12) {
+                userRepository.save(user);
+                return login(user.getLogin(), user.getPassword());
+            } else {
+                throw new ValidationException("Помилка! Ваш вік замалий для реєстрації");
+            }
+        }
+        else{
+            throw new ValidationException("Помилка! Введено некоректний пароль");
         }
     }
 
