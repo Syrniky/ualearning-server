@@ -13,4 +13,6 @@ public interface UserService {
     User getUser(String id);
 
     List<User> top10();
+
+    User updateUser(String login, User user);
 }

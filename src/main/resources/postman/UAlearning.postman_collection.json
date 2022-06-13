@@ -27,23 +27,6 @@
 			"response": []
 		},
 		{
-			"name": "Get test",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{host}}test/{{testId}}",
-					"host": [
-						"{{host}}test"
-					],
-					"path": [
-						"{{testId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Login",
 			"request": {
 				"method": "POST",
@@ -84,6 +67,23 @@
 					"raw": "{{host}}register",
 					"host": [
 						"{{host}}register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}test/{{testId}}",
+					"host": [
+						"{{host}}test"
+					],
+					"path": [
+						"{{testId}}"
 					]
 				}
 			},
@@ -275,6 +275,32 @@
 					"raw": "{{host}}test",
 					"host": [
 						"{{host}}test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"name\": \"Cooler\",\r\n\r\n    \"password\": \"VeryStronk\",\r\n\r\n    \"surname\": \"Manner\",\r\n\r\n    \"age\": 22,\r\n\r\n    \"institution\": \"CollerSharaga\",\r\n\r\n    \"email\": \"notlox@mail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}user/{{userId}}",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"{{userId}}"
 					]
 				}
 			},

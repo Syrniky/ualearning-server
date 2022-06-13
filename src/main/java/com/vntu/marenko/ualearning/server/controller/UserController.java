@@ -1,12 +1,11 @@
 package com.vntu.marenko.ualearning.server.controller;
 
 import com.vntu.marenko.ualearning.server.dto.UserDto;
+import com.vntu.marenko.ualearning.server.dto.UserRequest;
+import com.vntu.marenko.ualearning.server.model.User;
 import com.vntu.marenko.ualearning.server.service.UserService;
 import ma.glasnost.orika.MapperFacade;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +30,13 @@ public class UserController {
     @GetMapping("/rating")
     public List<UserDto> rating() {
         return mapper.mapAsList(userService.top10(), UserDto.class);
+    }
+
+    @PutMapping("/{userId}")
+    public UserDto updateUser(@PathVariable String userId, @RequestBody UserRequest request) {
+        return mapper.map(userService.updateUser(userId,
+                                                 mapper.map(request,
+                                                            User.class)),
+                          UserDto.class);
     }
 }

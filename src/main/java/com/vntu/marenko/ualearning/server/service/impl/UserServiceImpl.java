@@ -56,4 +56,35 @@ public class UserServiceImpl implements UserService {
         Pageable pageable = PageRequest.of(0, 10, Sort.by(Sort.Direction.DESC, "rating"));
         return userRepository.findAll(pageable).getContent();
     }
+
+    @Override
+    public User updateUser(String login, User userToSave) {
+        User fromDb = userRepository.getReferenceById(login);
+        if (userToSave.getLogin() != null) {
+            fromDb.setLogin(userToSave.getLogin());
+        }
+        if (userToSave.getPassword() != null) {
+            fromDb.setPassword(userToSave.getPassword());
+        }
+        if (userToSave.getName() != null) {
+            fromDb.setName(userToSave.getName());
+        }
+        if (userToSave.getSurname() != null) {
+            fromDb.setSurname(userToSave.getSurname());
+        }
+        if (userToSave.getAge() != 0) {
+            if (userToSave.getAge() > 12) {
+                fromDb.setAge(userToSave.getAge());
+            } else {
+                throw new ValidationException();
+            }
+        }
+        if (userToSave.getInstitution() != null) {
+            fromDb.setInstitution(userToSave.getInstitution());
+        }
+        if (userToSave.getEmail() != null) {
+            fromDb.setEmail(userToSave.getEmail());
+        }
+        return userRepository.save(fromDb);
+    }
 }
