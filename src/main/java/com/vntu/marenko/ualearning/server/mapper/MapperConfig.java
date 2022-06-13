@@ -62,6 +62,7 @@ public class MapperConfig {
         public void mapAtoB(Result result, ResultDto resultDto, MappingContext context) {
             super.mapAtoB(result, resultDto, context);
             resultDto.setMark(markComputer.compute(result));
+            resultDto.setNumberOfRightAnswers(result.getAnswers().stream().filter(Answer::isCorrect).count());
         }
     }
 }

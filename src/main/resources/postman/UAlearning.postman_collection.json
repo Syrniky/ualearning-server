@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "f4e35ff6-18bc-49c0-841b-e1398c7ba267",
 		"name": "UAlearning",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "13925617"
 	},
 	"item": [
@@ -10,8 +10,19 @@
 			"name": "Get all tests",
 			"request": {
 				"method": "GET",
-				"header": [],
-				"url": "{{host}}test"
+				"header": [
+					{
+						"key": "Access-Control-Request-Method",
+						"value": "GET",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}test",
+					"host": [
+						"{{host}}test"
+					]
+				}
 			},
 			"response": []
 		},
@@ -20,7 +31,15 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{host}}test/{{testId}}"
+				"url": {
+					"raw": "{{host}}test/{{testId}}",
+					"host": [
+						"{{host}}test"
+					],
+					"path": [
+						"{{testId}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -38,7 +57,12 @@
 						}
 					}
 				},
-				"url": "{{host}}login"
+				"url": {
+					"raw": "{{host}}login",
+					"host": [
+						"{{host}}login"
+					]
+				}
 			},
 			"response": []
 		},
@@ -56,7 +80,12 @@
 						}
 					}
 				},
-				"url": "{{host}}register"
+				"url": {
+					"raw": "{{host}}register",
+					"host": [
+						"{{host}}register"
+					]
+				}
 			},
 			"response": []
 		},
@@ -65,7 +94,15 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{host}}result/{{resultId}}"
+				"url": {
+					"raw": "{{host}}result/{{resultId}}",
+					"host": [
+						"{{host}}result"
+					],
+					"path": [
+						"{{resultId}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -83,7 +120,12 @@
 						}
 					}
 				},
-				"url": "{{host}}result"
+				"url": {
+					"raw": "{{host}}result",
+					"host": [
+						"{{host}}result"
+					]
+				}
 			},
 			"response": []
 		},
@@ -92,7 +134,15 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{host}}user/{{userId}}"
+				"url": {
+					"raw": "{{host}}user/{{userId}}",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"{{userId}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -101,7 +151,16 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{host}}result/user/{{userId}}"
+				"url": {
+					"raw": "{{host}}result/user/{{userId}}",
+					"host": [
+						"{{host}}result"
+					],
+					"path": [
+						"user",
+						"{{userId}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -110,7 +169,16 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{host}}test/tag/2"
+				"url": {
+					"raw": "{{host}}test/tag/2",
+					"host": [
+						"{{host}}test"
+					],
+					"path": [
+						"tag",
+						"2"
+					]
+				}
 			},
 			"response": []
 		},
@@ -128,7 +196,12 @@
 						}
 					}
 				},
-				"url": "{{host}}post"
+				"url": {
+					"raw": "{{host}}post",
+					"host": [
+						"{{host}}post"
+					]
+				}
 			},
 			"response": []
 		},
@@ -137,7 +210,15 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{host}}post/1"
+				"url": {
+					"raw": "{{host}}post/1",
+					"host": [
+						"{{host}}post"
+					],
+					"path": [
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
@@ -146,7 +227,16 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{host}}post/user/{{userId}}"
+				"url": {
+					"raw": "{{host}}post/user/{{userId}}",
+					"host": [
+						"{{host}}post"
+					],
+					"path": [
+						"user",
+						"{{userId}}"
+					]
+				}
 			},
 			"response": []
 		},
@@ -155,7 +245,38 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{host}}user/rating"
+				"url": {
+					"raw": "{{host}}user/rating",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"rating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameTest\": \"Schweinokarausche\",\r\n    \"descriptionTest\": \"lets have a description\",\r\n    \"questions\":[\r\n        {\r\n            \"text\": \"are you schwein?\", \r\n            \"answers\": [\r\n                {\r\n                    \"text\": \"Yes\",\r\n                    \"correct\": true\r\n                },\r\n                {\r\n                    \"text\": \"No\",\r\n                    \"correct\": false\r\n                }\r\n            ]\r\n        }, \r\n        {\r\n            \"text\": \"are you karausche?\", \r\n            \"answers\": [\r\n                {\r\n                    \"text\": \"Yes\",\r\n                    \"correct\": true\r\n                },\r\n                {\r\n                    \"text\": \"No\",\r\n                    \"correct\": false\r\n                }\r\n            ]\r\n        }],\r\n    \"tags\":[1, 2]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}test",
+					"host": [
+						"{{host}}test"
+					]
+				}
 			},
 			"response": []
 		}

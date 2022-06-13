@@ -17,7 +17,7 @@ public class Question {
     @Column(name = "text_que")
     private String text;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "question_idquestion")
     private List<Answer> answers;
 }

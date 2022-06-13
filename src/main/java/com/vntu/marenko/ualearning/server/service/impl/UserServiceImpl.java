@@ -38,8 +38,12 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsById(user.getLogin())) {
             throw new ValidationException();
         }
-        userRepository.save(user);
-        return login(user.getLogin(), user.getPassword());
+        if (user.getAge() > 12) {
+            userRepository.save(user);
+            return login(user.getLogin(), user.getPassword());
+        } else {
+            throw new ValidationException();
+        }
     }
 
     @Override

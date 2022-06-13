@@ -1,14 +1,11 @@
 package com.vntu.marenko.ualearning.server.controller;
 
+import com.vntu.marenko.ualearning.server.dto.CreateTestRequest;
 import com.vntu.marenko.ualearning.server.dto.TestDescription;
 import com.vntu.marenko.ualearning.server.dto.TestDto;
-import com.vntu.marenko.ualearning.server.model.Test;
 import com.vntu.marenko.ualearning.server.service.TestService;
 import ma.glasnost.orika.MapperFacade;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,5 +35,10 @@ public class TestController {
     @GetMapping("/{id}")
     public TestDto getTest(@PathVariable int id) {
         return mapper.map(testService.getTest(id), TestDto.class);
+    }
+
+    @PostMapping
+    public TestDto createTest(@RequestBody CreateTestRequest request) {
+        return mapper.map(testService.createTest(request), TestDto.class);
     }
 }

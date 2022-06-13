@@ -18,4 +18,6 @@ public class ResultDto {
     private List<AnswerDto> answers;
 
     private long mark;
+
+    private long numberOfRightAnswers;
 }

@@ -23,11 +23,11 @@ public class Test {
     @Column(name = "completed_counter_test")
     private Integer completedCounter;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "test_idtest")
     private List<Question> questions;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "test_has_tag",
             joinColumns = @JoinColumn(name = "test_idtest"),
