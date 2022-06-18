@@ -13,6 +13,2759 @@ public class RegressionTest3 {
     public void test1501() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest3.test1501");
+        com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
+        java.lang.String str1 = answer0.toString();
+        answer0.setText("LoginRequest(login=null, password=null)");
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest4 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str5 = userRequest4.getInstitution();
+        java.lang.String str6 = userRequest4.getPassword();
+        boolean boolean7 = answer0.equals((java.lang.Object) userRequest4);
+        java.lang.Integer int8 = answer0.getId();
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "Answer(id=null, text=null, correct=false)" + "'", str1, "Answer(id=null, text=null, correct=false)");
+        org.junit.Assert.assertNull(str5);
+        org.junit.Assert.assertNull(str6);
+        org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + false + "'", boolean7 == false);
+        org.junit.Assert.assertNull(int8);
+    }
+
+    @Test
+    public void test1502() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1502");
+        com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
+        result0.setId((java.lang.Integer) 100);
+        result0.setSubmitted(false);
+        com.vntu.marenko.ualearning.server.model.Question question5 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.Integer int6 = question5.getId();
+        java.lang.Integer int7 = question5.getId();
+        question5.setId((java.lang.Integer) 1);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository10 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository11 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository12 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper13 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository10, testRepository11, answerRepository12);
+        ma.glasnost.orika.MapperFacade mapperFacade14 = null;
+        submitResultRequestToDomainMapper13.setMapperFacade(mapperFacade14);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType16 = submitResultRequestToDomainMapper13.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade17 = null;
+        submitResultRequestToDomainMapper13.setMapperFacade(mapperFacade17);
+        com.vntu.marenko.ualearning.server.model.User user19 = new com.vntu.marenko.ualearning.server.model.User();
+        user19.setSurname("");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository22 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository23 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository24 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper25 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository22, testRepository23, answerRepository24);
+        ma.glasnost.orika.MapperFacade mapperFacade26 = null;
+        submitResultRequestToDomainMapper25.setMapperFacade(mapperFacade26);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType28 = submitResultRequestToDomainMapper25.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade29 = null;
+        submitResultRequestToDomainMapper25.setMapperFacade(mapperFacade29);
+        boolean boolean31 = user19.equals((java.lang.Object) submitResultRequestToDomainMapper25);
+        com.vntu.marenko.ualearning.server.model.Result result32 = new com.vntu.marenko.ualearning.server.model.Result();
+        result32.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user35 = new com.vntu.marenko.ualearning.server.model.User();
+        user35.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test38 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean39 = user35.equals((java.lang.Object) test38);
+        user35.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result32.setUser(user35);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest43 = null;
+        ma.glasnost.orika.MappingContext mappingContext44 = null;
+        submitResultRequestToDomainMapper25.mapBtoA(result32, submitResultRequest43, mappingContext44);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest46 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
+        submitResultRequest46.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
+        int int49 = submitResultRequest46.getTestId();
+        ma.glasnost.orika.MappingContext mappingContext50 = null;
+        submitResultRequestToDomainMapper13.mapBtoA(result32, submitResultRequest46, mappingContext50);
+        com.vntu.marenko.ualearning.server.model.Question question52 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.String str53 = question52.getText();
+        java.lang.Integer int54 = question52.getId();
+        com.vntu.marenko.ualearning.server.service.TestService testService55 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade56 = null;
+        com.vntu.marenko.ualearning.server.controller.TestController testController57 = new com.vntu.marenko.ualearning.server.controller.TestController(testService55, mapperFacade56);
+        boolean boolean58 = question52.equals((java.lang.Object) testController57);
+        com.vntu.marenko.ualearning.server.model.Result result59 = new com.vntu.marenko.ualearning.server.model.Result();
+        java.lang.Integer int60 = result59.getId();
+        com.vntu.marenko.ualearning.server.model.Test test61 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int62 = test61.getId();
+        java.lang.Integer int63 = test61.getId();
+        result59.setTest(test61);
+        java.lang.Integer int65 = result59.getId();
+        com.vntu.marenko.ualearning.server.model.Result result66 = new com.vntu.marenko.ualearning.server.model.Result();
+        result66.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user69 = new com.vntu.marenko.ualearning.server.model.User();
+        user69.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test72 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean73 = user69.equals((java.lang.Object) test72);
+        user69.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result66.setUser(user69);
+        com.vntu.marenko.ualearning.server.model.Question question77 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.Integer int78 = question77.getId();
+        java.lang.Integer int79 = question77.getId();
+        com.vntu.marenko.ualearning.server.model.Answer answer80 = new com.vntu.marenko.ualearning.server.model.Answer();
+        com.vntu.marenko.ualearning.server.model.Answer answer81 = new com.vntu.marenko.ualearning.server.model.Answer();
+        answer81.setCorrect(false);
+        com.vntu.marenko.ualearning.server.model.Answer[] answerArray84 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer80, answer81 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList85 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
+        boolean boolean86 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList85, answerArray84);
+        question77.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList85);
+        result66.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList85);
+        result59.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList85);
+        question52.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList85);
+        result32.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList85);
+        question5.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList85);
+        result0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList85);
+        org.junit.Assert.assertNull(int6);
+        org.junit.Assert.assertNull(int7);
+        org.junit.Assert.assertNotNull(submitResultRequestType16);
+        org.junit.Assert.assertNotNull(submitResultRequestType28);
+        org.junit.Assert.assertTrue("'" + boolean31 + "' != '" + false + "'", boolean31 == false);
+        org.junit.Assert.assertTrue("'" + boolean39 + "' != '" + false + "'", boolean39 == false);
+        org.junit.Assert.assertTrue("'" + int49 + "' != '" + 0 + "'", int49 == 0);
+        org.junit.Assert.assertNull(str53);
+        org.junit.Assert.assertNull(int54);
+        org.junit.Assert.assertTrue("'" + boolean58 + "' != '" + false + "'", boolean58 == false);
+        org.junit.Assert.assertNull(int60);
+        org.junit.Assert.assertNull(int62);
+        org.junit.Assert.assertNull(int63);
+        org.junit.Assert.assertNull(int65);
+        org.junit.Assert.assertTrue("'" + boolean73 + "' != '" + false + "'", boolean73 == false);
+        org.junit.Assert.assertNull(int78);
+        org.junit.Assert.assertNull(int79);
+        org.junit.Assert.assertNotNull(answerArray84);
+        org.junit.Assert.assertTrue("'" + boolean86 + "' != '" + true + "'", boolean86 == true);
+    }
+
+    @Test
+    public void test1503() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1503");
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
+        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
+        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
+        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
+        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType9 = submitResultRequestToDomainMapper6.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
+        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade10);
+        com.vntu.marenko.ualearning.server.model.User user12 = new com.vntu.marenko.ualearning.server.model.User();
+        user12.setSurname("");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository15 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository16 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository17 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper18 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository15, testRepository16, answerRepository17);
+        ma.glasnost.orika.MapperFacade mapperFacade19 = null;
+        submitResultRequestToDomainMapper18.setMapperFacade(mapperFacade19);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType21 = submitResultRequestToDomainMapper18.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade22 = null;
+        submitResultRequestToDomainMapper18.setMapperFacade(mapperFacade22);
+        boolean boolean24 = user12.equals((java.lang.Object) submitResultRequestToDomainMapper18);
+        com.vntu.marenko.ualearning.server.model.Result result25 = new com.vntu.marenko.ualearning.server.model.Result();
+        result25.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user28 = new com.vntu.marenko.ualearning.server.model.User();
+        user28.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test31 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean32 = user28.equals((java.lang.Object) test31);
+        user28.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result25.setUser(user28);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest36 = null;
+        ma.glasnost.orika.MappingContext mappingContext37 = null;
+        submitResultRequestToDomainMapper18.mapBtoA(result25, submitResultRequest36, mappingContext37);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest39 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
+        submitResultRequest39.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
+        int int42 = submitResultRequest39.getTestId();
+        ma.glasnost.orika.MappingContext mappingContext43 = null;
+        submitResultRequestToDomainMapper6.mapBtoA(result25, submitResultRequest39, mappingContext43);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository45 = null;
+        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl46 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository45);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper47 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig48 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl49 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository50 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository51 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository52 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper53 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository50, testRepository51, answerRepository52);
+        ma.glasnost.orika.MapperFacade mapperFacade54 = null;
+        submitResultRequestToDomainMapper53.setMapperFacade(mapperFacade54);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType56 = submitResultRequestToDomainMapper53.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper57 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper58 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean59 = createPostRequestToPostMapper58.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper60 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade61 = mapperConfig48.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl49, submitResultRequestToDomainMapper53, resultToDescriptionMapper57, createPostRequestToPostMapper58, postToDtoMapper60);
+        postToDtoMapper47.setMapperFacade(mapperFacade61);
+        com.vntu.marenko.ualearning.server.controller.UserController userController63 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl46, mapperFacade61);
+        boolean boolean64 = submitResultRequest39.equals((java.lang.Object) mapperFacade61);
+        com.vntu.marenko.ualearning.server.controller.TestController testController65 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade61);
+        // The following exception was thrown during execution in test generation
+        try {
+            java.util.List<com.vntu.marenko.ualearning.server.model.Test> testList67 = testServiceImpl2.getTestsWithTag(35);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(submitResultRequestType9);
+        org.junit.Assert.assertNotNull(submitResultRequestType21);
+        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + false + "'", boolean24 == false);
+        org.junit.Assert.assertTrue("'" + boolean32 + "' != '" + false + "'", boolean32 == false);
+        org.junit.Assert.assertTrue("'" + int42 + "' != '" + 0 + "'", int42 == 0);
+        org.junit.Assert.assertNotNull(resultType56);
+        org.junit.Assert.assertEquals("'" + boolean59 + "' != '" + false + "'", boolean59, false);
+        org.junit.Assert.assertNotNull(mapperFacade61);
+        org.junit.Assert.assertTrue("'" + boolean64 + "' != '" + false + "'", boolean64 == false);
+    }
+
+    @Test
+    public void test1504() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1504");
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str1 = userRequest0.getName();
+        java.lang.String str2 = userRequest0.getName();
+        java.lang.String str3 = userRequest0.toString();
+        userRequest0.setLogin("Result(id=null, user=null, test=null, submitted=false, answers=null)");
+        userRequest0.setSurname("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertNull(str2);
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null)" + "'", str3, "UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null)");
+    }
+
+    @Test
+    public void test1505() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1505");
+        com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
+        java.lang.String str1 = answer0.getText();
+        answer0.setId((java.lang.Integer) (-1));
+        answer0.setId((java.lang.Integer) 0);
+        answer0.setCorrect(true);
+        org.junit.Assert.assertNull(str1);
+    }
+
+    @Test
+    public void test1506() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1506");
+        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
+        user0.setInstitution("hi!");
+        java.lang.String str3 = user0.toString();
+        user0.setSurname("QuestionDto(id=35, text=null, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!)])");
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str3, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+    }
+
+    @Test
+    public void test1507() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1507");
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        java.lang.String str1 = userDto0.toString();
+        java.lang.String str2 = userDto0.getLogin();
+        int int3 = userDto0.getRating();
+        java.lang.String str4 = userDto0.getName();
+        java.lang.String str5 = userDto0.getInstitution();
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)" + "'", str1, "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
+        org.junit.Assert.assertNull(str2);
+        org.junit.Assert.assertTrue("'" + int3 + "' != '" + 0 + "'", int3 == 0);
+        org.junit.Assert.assertNull(str4);
+        org.junit.Assert.assertNull(str5);
+    }
+
+    @Test
+    public void test1508() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1508");
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
+        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
+        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType9 = submitResultRequestToDomainMapper6.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper10 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper11 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean12 = createPostRequestToPostMapper11.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper13 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade14 = mapperConfig1.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2, submitResultRequestToDomainMapper6, resultToDescriptionMapper10, createPostRequestToPostMapper11, postToDtoMapper13);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository15 = null;
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository16 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade17 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository18 = null;
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto19 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl20 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean21 = answerDto19.equals((java.lang.Object) markComputerImpl20);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl22 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository16, mapperFacade17, userRepository18, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl20);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl23 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository0, mapperFacade14, userRepository15, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl20);
+        ma.glasnost.orika.MapperFacade mapperFacade24 = null;
+        com.vntu.marenko.ualearning.server.controller.ResultController resultController25 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl23, mapperFacade24);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository26 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository27 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository28 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper29 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository26, testRepository27, answerRepository28);
+        ma.glasnost.orika.MapperFacade mapperFacade30 = null;
+        submitResultRequestToDomainMapper29.setMapperFacade(mapperFacade30);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType32 = submitResultRequestToDomainMapper29.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade33 = null;
+        submitResultRequestToDomainMapper29.setMapperFacade(mapperFacade33);
+        com.vntu.marenko.ualearning.server.model.User user35 = new com.vntu.marenko.ualearning.server.model.User();
+        user35.setSurname("");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository38 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository39 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository40 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper41 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository38, testRepository39, answerRepository40);
+        ma.glasnost.orika.MapperFacade mapperFacade42 = null;
+        submitResultRequestToDomainMapper41.setMapperFacade(mapperFacade42);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType44 = submitResultRequestToDomainMapper41.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade45 = null;
+        submitResultRequestToDomainMapper41.setMapperFacade(mapperFacade45);
+        boolean boolean47 = user35.equals((java.lang.Object) submitResultRequestToDomainMapper41);
+        com.vntu.marenko.ualearning.server.model.Result result48 = new com.vntu.marenko.ualearning.server.model.Result();
+        result48.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user51 = new com.vntu.marenko.ualearning.server.model.User();
+        user51.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test54 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean55 = user51.equals((java.lang.Object) test54);
+        user51.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result48.setUser(user51);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest59 = null;
+        ma.glasnost.orika.MappingContext mappingContext60 = null;
+        submitResultRequestToDomainMapper41.mapBtoA(result48, submitResultRequest59, mappingContext60);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest62 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
+        submitResultRequest62.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
+        int int65 = submitResultRequest62.getTestId();
+        ma.glasnost.orika.MappingContext mappingContext66 = null;
+        submitResultRequestToDomainMapper29.mapBtoA(result48, submitResultRequest62, mappingContext66);
+        submitResultRequest62.setTestId((-1));
+        submitResultRequest62.setUserLogin("QuestionDto(id=10, text=ResultDto(id=0, user=null, test=null, submitted=false, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null)], mark=0), answers=null)");
+        com.vntu.marenko.ualearning.server.model.Post post72 = new com.vntu.marenko.ualearning.server.model.Post();
+        post72.setText("");
+        java.util.Date date75 = null;
+        post72.setTimestamp(date75);
+        boolean boolean77 = submitResultRequest62.equals((java.lang.Object) post72);
+        // The following exception was thrown during execution in test generation
+        try {
+            com.vntu.marenko.ualearning.server.dto.ResultDto resultDto78 = resultController25.submitTest(submitResultRequest62);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(resultType9);
+        org.junit.Assert.assertEquals("'" + boolean12 + "' != '" + false + "'", boolean12, false);
+        org.junit.Assert.assertNotNull(mapperFacade14);
+        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + false + "'", boolean21 == false);
+        org.junit.Assert.assertNotNull(submitResultRequestType32);
+        org.junit.Assert.assertNotNull(submitResultRequestType44);
+        org.junit.Assert.assertTrue("'" + boolean47 + "' != '" + false + "'", boolean47 == false);
+        org.junit.Assert.assertTrue("'" + boolean55 + "' != '" + false + "'", boolean55 == false);
+        org.junit.Assert.assertTrue("'" + int65 + "' != '" + 0 + "'", int65 == 0);
+        org.junit.Assert.assertTrue("'" + boolean77 + "' != '" + false + "'", boolean77 == false);
+    }
+
+    @Test
+    public void test1509() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1509");
+        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
+        resultDto0.setTest(testDto1);
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto3 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl4 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean5 = answerDto3.equals((java.lang.Object) markComputerImpl4);
+        int int6 = answerDto3.getId();
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto7 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        answerDto7.setText("hi!");
+        java.lang.String str10 = answerDto7.getText();
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto11 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl12 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean13 = answerDto11.equals((java.lang.Object) markComputerImpl12);
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto14 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl15 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean16 = answerDto14.equals((java.lang.Object) markComputerImpl15);
+        com.vntu.marenko.ualearning.server.dto.AnswerDto[] answerDtoArray17 = new com.vntu.marenko.ualearning.server.dto.AnswerDto[] { answerDto3, answerDto7, answerDto11, answerDto14 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList18 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto>();
+        boolean boolean19 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList18, answerDtoArray17);
+        resultDto0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList18);
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto21 = resultDto0.getTest();
+        int int22 = resultDto0.getId();
+        int int23 = resultDto0.getId();
+        boolean boolean24 = resultDto0.isSubmitted();
+        resultDto0.setMark((long) 52);
+        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
+        org.junit.Assert.assertTrue("'" + int6 + "' != '" + 0 + "'", int6 == 0);
+        org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
+        org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + false + "'", boolean13 == false);
+        org.junit.Assert.assertTrue("'" + boolean16 + "' != '" + false + "'", boolean16 == false);
+        org.junit.Assert.assertNotNull(answerDtoArray17);
+        org.junit.Assert.assertTrue("'" + boolean19 + "' != '" + true + "'", boolean19 == true);
+        org.junit.Assert.assertNull(testDto21);
+        org.junit.Assert.assertTrue("'" + int22 + "' != '" + 0 + "'", int22 == 0);
+        org.junit.Assert.assertTrue("'" + int23 + "' != '" + 0 + "'", int23 == 0);
+        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + false + "'", boolean24 == false);
+    }
+
+    @Test
+    public void test1510() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1510");
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
+        java.lang.String str1 = testDto0.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str3 = tagDto2.toString();
+        java.lang.String str4 = tagDto2.getName();
+        com.vntu.marenko.ualearning.server.model.User user5 = new com.vntu.marenko.ualearning.server.model.User();
+        long long6 = user5.getRating();
+        user5.setLogin("hi!");
+        boolean boolean9 = tagDto2.equals((java.lang.Object) user5);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto10 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str11 = tagDto10.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto12 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto12.setId(1);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto15 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str16 = tagDto15.toString();
+        java.lang.String str17 = tagDto15.getName();
+        com.vntu.marenko.ualearning.server.model.Test test18 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int19 = test18.getId();
+        java.lang.Integer int20 = test18.getId();
+        test18.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList23 = test18.getTags();
+        boolean boolean24 = tagDto15.equals((java.lang.Object) tagList23);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto25 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto25.setId(1);
+        boolean boolean29 = tagDto25.equals((java.lang.Object) (-1L));
+        int int30 = tagDto25.getId();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto31 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto31.setId(1);
+        java.lang.String str34 = tagDto31.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto35 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str36 = tagDto35.toString();
+        java.lang.String str37 = tagDto35.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto38 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str39 = tagDto38.toString();
+        java.lang.String str40 = tagDto38.getName();
+        com.vntu.marenko.ualearning.server.model.Test test41 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int42 = test41.getId();
+        java.lang.Integer int43 = test41.getId();
+        test41.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList46 = test41.getTags();
+        boolean boolean47 = tagDto38.equals((java.lang.Object) tagList46);
+        com.vntu.marenko.ualearning.server.dto.TagDto[] tagDtoArray48 = new com.vntu.marenko.ualearning.server.dto.TagDto[] { tagDto2, tagDto10, tagDto12, tagDto15, tagDto25, tagDto31, tagDto35, tagDto38 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList49 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto>();
+        boolean boolean50 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList49, tagDtoArray48);
+        testDto0.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList49);
+        int int52 = testDto0.getId();
+        testDto0.setId((int) (byte) 1);
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)" + "'", str1, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "TagDto(id=0, name=null)" + "'", str3, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str4);
+        org.junit.Assert.assertTrue("'" + long6 + "' != '" + 0L + "'", long6 == 0L);
+        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
+        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "TagDto(id=0, name=null)" + "'", str11, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertEquals("'" + str16 + "' != '" + "TagDto(id=0, name=null)" + "'", str16, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str17);
+        org.junit.Assert.assertNull(int19);
+        org.junit.Assert.assertNull(int20);
+        org.junit.Assert.assertNull(tagList23);
+        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + false + "'", boolean24 == false);
+        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
+        org.junit.Assert.assertTrue("'" + int30 + "' != '" + 1 + "'", int30 == 1);
+        org.junit.Assert.assertNull(str34);
+        org.junit.Assert.assertEquals("'" + str36 + "' != '" + "TagDto(id=0, name=null)" + "'", str36, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str37);
+        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "TagDto(id=0, name=null)" + "'", str39, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str40);
+        org.junit.Assert.assertNull(int42);
+        org.junit.Assert.assertNull(int43);
+        org.junit.Assert.assertNull(tagList46);
+        org.junit.Assert.assertTrue("'" + boolean47 + "' != '" + false + "'", boolean47 == false);
+        org.junit.Assert.assertNotNull(tagDtoArray48);
+        org.junit.Assert.assertTrue("'" + boolean50 + "' != '" + true + "'", boolean50 == true);
+        org.junit.Assert.assertTrue("'" + int52 + "' != '" + 0 + "'", int52 == 0);
+    }
+
+    @Test
+    public void test1511() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1511");
+        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
+        resultDto0.setTest(testDto1);
+        int int3 = resultDto0.getId();
+        long long4 = resultDto0.getMark();
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto5 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        java.lang.String str6 = userDto5.toString();
+        java.lang.String str7 = userDto5.getLogin();
+        userDto5.setLogin("hi!");
+        resultDto0.setUser(userDto5);
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto11 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto11.setInstitution("");
+        java.lang.String str14 = userDto11.getInstitution();
+        userDto11.setEmail("TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        resultDto0.setUser(userDto11);
+        resultDto0.setSubmitted(false);
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto20 = resultDto0.getUser();
+        org.junit.Assert.assertTrue("'" + int3 + "' != '" + 0 + "'", int3 == 0);
+        org.junit.Assert.assertTrue("'" + long4 + "' != '" + 0L + "'", long4 == 0L);
+        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)" + "'", str6, "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
+        org.junit.Assert.assertNull(str7);
+        org.junit.Assert.assertEquals("'" + str14 + "' != '" + "" + "'", str14, "");
+        org.junit.Assert.assertNotNull(userDto20);
+    }
+
+    @Test
+    public void test1512() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1512");
+        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
+        java.lang.String str1 = loginRequest0.getPassword();
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade3 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository4 = null;
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto5 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl6 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean7 = answerDto5.equals((java.lang.Object) markComputerImpl6);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl8 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository2, mapperFacade3, userRepository4, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl6);
+        boolean boolean9 = loginRequest0.equals((java.lang.Object) resultServiceImpl8);
+        loginRequest0.setPassword("TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=100, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)])");
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto12 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        questionDto12.setId((int) '#');
+        boolean boolean15 = loginRequest0.equals((java.lang.Object) questionDto12);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository16 = null;
+        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl17 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository16);
+        boolean boolean18 = questionDto12.equals((java.lang.Object) userServiceImpl17);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper19 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean20 = createPostRequestToPostMapper19.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig21 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl22 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository23 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository24 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository25 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper26 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository23, testRepository24, answerRepository25);
+        ma.glasnost.orika.MapperFacade mapperFacade27 = null;
+        submitResultRequestToDomainMapper26.setMapperFacade(mapperFacade27);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType29 = submitResultRequestToDomainMapper26.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper30 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper31 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean32 = createPostRequestToPostMapper31.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper33 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade34 = mapperConfig21.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl22, submitResultRequestToDomainMapper26, resultToDescriptionMapper30, createPostRequestToPostMapper31, postToDtoMapper33);
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl35 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository36 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository37 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository38 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper39 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository36, testRepository37, answerRepository38);
+        ma.glasnost.orika.MapperFacade mapperFacade40 = null;
+        submitResultRequestToDomainMapper39.setMapperFacade(mapperFacade40);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType42 = submitResultRequestToDomainMapper39.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper43 = null;
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig44 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl45 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository46 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository47 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository48 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper49 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository46, testRepository47, answerRepository48);
+        ma.glasnost.orika.MapperFacade mapperFacade50 = null;
+        submitResultRequestToDomainMapper49.setMapperFacade(mapperFacade50);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType52 = submitResultRequestToDomainMapper49.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper53 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper54 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean55 = createPostRequestToPostMapper54.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper56 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade57 = mapperConfig44.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl45, submitResultRequestToDomainMapper49, resultToDescriptionMapper53, createPostRequestToPostMapper54, postToDtoMapper56);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper58 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        ma.glasnost.orika.MapperFacade mapperFacade59 = mapperConfig21.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl35, submitResultRequestToDomainMapper39, resultToDescriptionMapper43, createPostRequestToPostMapper54, postToDtoMapper58);
+        createPostRequestToPostMapper19.setMapperFacade(mapperFacade59);
+        com.vntu.marenko.ualearning.server.controller.UserController userController61 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl17, mapperFacade59);
+        // The following exception was thrown during execution in test generation
+        try {
+            java.util.List<com.vntu.marenko.ualearning.server.dto.UserDto> userDtoList62 = userController61.rating();
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + false + "'", boolean7 == false);
+        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
+        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
+        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + false + "'", boolean18 == false);
+        org.junit.Assert.assertEquals("'" + boolean20 + "' != '" + false + "'", boolean20, false);
+        org.junit.Assert.assertNotNull(resultType29);
+        org.junit.Assert.assertEquals("'" + boolean32 + "' != '" + false + "'", boolean32, false);
+        org.junit.Assert.assertNotNull(mapperFacade34);
+        org.junit.Assert.assertNotNull(resultType42);
+        org.junit.Assert.assertNotNull(resultType52);
+        org.junit.Assert.assertEquals("'" + boolean55 + "' != '" + false + "'", boolean55, false);
+        org.junit.Assert.assertNotNull(mapperFacade57);
+        org.junit.Assert.assertNotNull(mapperFacade59);
+    }
+
+    @Test
+    public void test1513() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1513");
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str1 = userRequest0.getInstitution();
+        userRequest0.setEmail("AnswerDto(id=0, text=null)");
+        userRequest0.setInstitution("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        java.lang.String str6 = userRequest0.getInstitution();
+        userRequest0.setInstitution("Result(id=null, user=User(login=null, password=null, name=null, surname=, age=0, institution=null, email=Post(id=null, text=, timestamp=null, user=null, likes=null), rating=0), test=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), submitted=false, answers=null)");
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str6, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+    }
+
+    @Test
+    public void test1514() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1514");
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType3 = resultToDescriptionMapper1.getAType();
+        java.lang.Boolean boolean4 = resultToDescriptionMapper1.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig5 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl6 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository7 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository8 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository9 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper10 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository7, testRepository8, answerRepository9);
+        ma.glasnost.orika.MapperFacade mapperFacade11 = null;
+        submitResultRequestToDomainMapper10.setMapperFacade(mapperFacade11);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType13 = submitResultRequestToDomainMapper10.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper14 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper15 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean16 = createPostRequestToPostMapper15.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper17 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade18 = mapperConfig5.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl6, submitResultRequestToDomainMapper10, resultToDescriptionMapper14, createPostRequestToPostMapper15, postToDtoMapper17);
+        resultToDescriptionMapper1.setMapperFacade(mapperFacade18);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.ResultDescription> resultDescriptionType20 = resultToDescriptionMapper1.getBType();
+        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription21 = null;
+        com.vntu.marenko.ualearning.server.model.Result result22 = new com.vntu.marenko.ualearning.server.model.Result();
+        java.lang.Integer int23 = result22.getId();
+        com.vntu.marenko.ualearning.server.model.Test test24 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int25 = test24.getId();
+        java.lang.Integer int26 = test24.getId();
+        result22.setTest(test24);
+        java.lang.Integer int28 = result22.getId();
+        java.util.List<com.vntu.marenko.ualearning.server.model.Answer> answerList29 = result22.getAnswers();
+        ma.glasnost.orika.MappingContext mappingContext30 = null;
+        resultToDescriptionMapper1.mapBtoA(resultDescription21, result22, mappingContext30);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.ResultDescription> resultDescriptionType32 = resultToDescriptionMapper1.getBType();
+        org.junit.Assert.assertNotNull(resultType2);
+        org.junit.Assert.assertNotNull(resultType3);
+        org.junit.Assert.assertEquals("'" + boolean4 + "' != '" + false + "'", boolean4, false);
+        org.junit.Assert.assertNotNull(resultType13);
+        org.junit.Assert.assertEquals("'" + boolean16 + "' != '" + false + "'", boolean16, false);
+        org.junit.Assert.assertNotNull(mapperFacade18);
+        org.junit.Assert.assertNotNull(resultDescriptionType20);
+        org.junit.Assert.assertNull(int23);
+        org.junit.Assert.assertNull(int25);
+        org.junit.Assert.assertNull(int26);
+        org.junit.Assert.assertNull(int28);
+        org.junit.Assert.assertNull(answerList29);
+        org.junit.Assert.assertNotNull(resultDescriptionType32);
+    }
+
+    @Test
+    public void test1515() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1515");
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto0.setInstitution("");
+        java.lang.String str3 = userDto0.getInstitution();
+        userDto0.setName("SubmitResultRequest(userLogin=QuestionDto(id=10, text=null, answers=null), testId=0, answers=null)");
+        userDto0.setAge((int) ' ');
+        userDto0.setSurname("TagDto(id=1, name=null)");
+        userDto0.setLogin("Tag(id=null, name=null)");
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "" + "'", str3, "");
+    }
+
+    @Test
+    public void test1516() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1516");
+        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
+        resultDto0.setTest(testDto1);
+        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList3 = resultDto0.getAnswers();
+        resultDto0.setMark((long) (short) 0);
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto6 = new com.vntu.marenko.ualearning.server.dto.TestDto();
+        int int7 = testDto6.getId();
+        int int8 = testDto6.getId();
+        testDto6.setCompletedCounter((java.lang.Integer) 0);
+        testDto6.setId((int) (short) 10);
+        resultDto0.setTest(testDto6);
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto14 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto14.setInstitution("");
+        java.lang.String str17 = userDto14.getEmail();
+        java.lang.String str18 = userDto14.getLogin();
+        resultDto0.setUser(userDto14);
+        org.junit.Assert.assertNull(answerDtoList3);
+        org.junit.Assert.assertTrue("'" + int7 + "' != '" + 0 + "'", int7 == 0);
+        org.junit.Assert.assertTrue("'" + int8 + "' != '" + 0 + "'", int8 == 0);
+        org.junit.Assert.assertNull(str17);
+        org.junit.Assert.assertNull(str18);
+    }
+
+    @Test
+    public void test1517() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1517");
+        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
+        java.lang.String str1 = tag0.getName();
+        java.lang.Integer int2 = tag0.getId();
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertNull(int2);
+    }
+
+    @Test
+    public void test1518() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1518");
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        java.lang.String str1 = questionDto0.getText();
+        int int2 = questionDto0.getId();
+        questionDto0.setId(10);
+        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList5 = questionDto0.getAnswers();
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertTrue("'" + int2 + "' != '" + 0 + "'", int2 == 0);
+        org.junit.Assert.assertNull(answerDtoList5);
+    }
+
+    @Test
+    public void test1519() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1519");
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository3 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository4 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper5 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository2, testRepository3, answerRepository4);
+        ma.glasnost.orika.MapperFacade mapperFacade6 = null;
+        submitResultRequestToDomainMapper5.setMapperFacade(mapperFacade6);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType8 = submitResultRequestToDomainMapper5.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper9 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper10 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean11 = createPostRequestToPostMapper10.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper12 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade13 = mapperConfig0.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl1, submitResultRequestToDomainMapper5, resultToDescriptionMapper9, createPostRequestToPostMapper10, postToDtoMapper12);
+        com.vntu.marenko.ualearning.server.model.Post post14 = new com.vntu.marenko.ualearning.server.model.Post();
+        post14.setText("");
+        java.lang.Integer int17 = post14.getId();
+        java.util.Date date18 = post14.getTimestamp();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest19 = null;
+        ma.glasnost.orika.MappingContext mappingContext20 = null;
+        createPostRequestToPostMapper10.mapBtoA(post14, createPostRequest19, mappingContext20);
+        java.lang.String[] strArray34 = new java.lang.String[] { "LoginRequest(login=null, password=null)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "TagDto(id=0, name=null)", "LoginRequest(login=null, password=null)", "Answer(id=null, text=null, correct=false)", "CreatePostRequest(text=null, username=null)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "CreatePostRequest(text=null, username=null)", "ResultDescription(id=0, testId=null, testName=null, mark=1)", "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "Post(id=null, text=, timestamp=null, user=null, likes=null)" };
+        java.util.ArrayList<java.lang.String> strList35 = new java.util.ArrayList<java.lang.String>();
+        boolean boolean36 = java.util.Collections.addAll((java.util.Collection<java.lang.String>) strList35, strArray34);
+        post14.setLikes((java.util.List<java.lang.String>) strList35);
+        java.util.List<java.lang.String> strList38 = post14.getLikes();
+        post14.setId((java.lang.Integer) (-1));
+        org.junit.Assert.assertNotNull(resultType8);
+        org.junit.Assert.assertEquals("'" + boolean11 + "' != '" + false + "'", boolean11, false);
+        org.junit.Assert.assertNotNull(mapperFacade13);
+        org.junit.Assert.assertNull(int17);
+        org.junit.Assert.assertNull(date18);
+        org.junit.Assert.assertNotNull(strArray34);
+        org.junit.Assert.assertTrue("'" + boolean36 + "' != '" + true + "'", boolean36 == true);
+        org.junit.Assert.assertNotNull(strList38);
+    }
+
+    @Test
+    public void test1520() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1520");
+        com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
+        answer0.setCorrect(false);
+        answer0.setCorrect(false);
+    }
+
+    @Test
+    public void test1521() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1521");
+        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
+        resultDescription0.setId((java.lang.Integer) 0);
+        resultDescription0.setTestName("hi!");
+        java.lang.String str5 = resultDescription0.getTestName();
+        java.lang.Integer int6 = resultDescription0.getTestId();
+        long long7 = resultDescription0.getMark();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig8 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl9 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository10 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository11 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository12 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper13 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository10, testRepository11, answerRepository12);
+        ma.glasnost.orika.MapperFacade mapperFacade14 = null;
+        submitResultRequestToDomainMapper13.setMapperFacade(mapperFacade14);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType16 = submitResultRequestToDomainMapper13.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper17 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper18 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean19 = createPostRequestToPostMapper18.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper20 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade21 = mapperConfig8.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl9, submitResultRequestToDomainMapper13, resultToDescriptionMapper17, createPostRequestToPostMapper18, postToDtoMapper20);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest22 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest22.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        com.vntu.marenko.ualearning.server.model.Post post25 = new com.vntu.marenko.ualearning.server.model.Post();
+        ma.glasnost.orika.MappingContext mappingContext26 = null;
+        createPostRequestToPostMapper18.mapAtoB(createPostRequest22, post25, mappingContext26);
+        boolean boolean28 = resultDescription0.equals((java.lang.Object) createPostRequestToPostMapper18);
+        com.vntu.marenko.ualearning.server.model.Post post29 = new com.vntu.marenko.ualearning.server.model.Post();
+        post29.setText("");
+        java.lang.String str32 = post29.toString();
+        java.lang.Integer int33 = post29.getId();
+        post29.setText("Answer(id=null, text=null, correct=false)");
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper36 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper37 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType38 = createPostRequestToPostMapper37.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post39 = new com.vntu.marenko.ualearning.server.model.Post();
+        post39.setText("");
+        java.lang.String str42 = post39.toString();
+        post39.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest45 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest45.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        ma.glasnost.orika.MappingContext mappingContext48 = null;
+        createPostRequestToPostMapper37.mapBtoA(post39, createPostRequest45, mappingContext48);
+        com.vntu.marenko.ualearning.server.model.Post post50 = new com.vntu.marenko.ualearning.server.model.Post();
+        post50.setText("");
+        java.lang.String str53 = post50.toString();
+        java.lang.Integer int54 = post50.getId();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest55 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        java.lang.String str56 = createPostRequest55.getUsername();
+        java.lang.String str57 = createPostRequest55.toString();
+        ma.glasnost.orika.MappingContext mappingContext58 = null;
+        createPostRequestToPostMapper37.mapBtoA(post50, createPostRequest55, mappingContext58);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper60 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType61 = createPostRequestToPostMapper60.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post62 = new com.vntu.marenko.ualearning.server.model.Post();
+        post62.setText("");
+        java.lang.String str65 = post62.toString();
+        post62.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest68 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest68.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        ma.glasnost.orika.MappingContext mappingContext71 = null;
+        createPostRequestToPostMapper60.mapBtoA(post62, createPostRequest68, mappingContext71);
+        ma.glasnost.orika.MappingContext mappingContext73 = null;
+        createPostRequestToPostMapper36.mapAtoB(createPostRequest55, post62, mappingContext73);
+        ma.glasnost.orika.MappingContext mappingContext75 = null;
+        createPostRequestToPostMapper18.mapBtoA(post29, createPostRequest55, mappingContext75);
+        java.lang.Boolean boolean77 = createPostRequestToPostMapper18.favorsExtension();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest78 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        java.lang.String str79 = createPostRequest78.getUsername();
+        createPostRequest78.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        java.lang.String str82 = createPostRequest78.toString();
+        java.lang.String str83 = createPostRequest78.getUsername();
+        com.vntu.marenko.ualearning.server.model.Post post84 = new com.vntu.marenko.ualearning.server.model.Post();
+        post84.setText("");
+        java.lang.String str87 = post84.toString();
+        java.lang.Integer int88 = post84.getId();
+        java.util.Date date89 = null;
+        post84.setTimestamp(date89);
+        java.lang.String str91 = post84.getText();
+        java.lang.String str92 = post84.getUser();
+        ma.glasnost.orika.MappingContext mappingContext93 = null;
+        createPostRequestToPostMapper18.mapAtoB(createPostRequest78, post84, mappingContext93);
+        createPostRequest78.setUsername("Post(id=-1, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "hi!" + "'", str5, "hi!");
+        org.junit.Assert.assertNull(int6);
+        org.junit.Assert.assertTrue("'" + long7 + "' != '" + 0L + "'", long7 == 0L);
+        org.junit.Assert.assertNotNull(resultType16);
+        org.junit.Assert.assertEquals("'" + boolean19 + "' != '" + false + "'", boolean19, false);
+        org.junit.Assert.assertNotNull(mapperFacade21);
+        org.junit.Assert.assertTrue("'" + boolean28 + "' != '" + false + "'", boolean28 == false);
+        org.junit.Assert.assertEquals("'" + str32 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str32, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int33);
+        org.junit.Assert.assertNotNull(postType38);
+        org.junit.Assert.assertEquals("'" + str42 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str42, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + str53 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str53, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int54);
+        org.junit.Assert.assertNull(str56);
+        org.junit.Assert.assertEquals("'" + str57 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str57, "CreatePostRequest(text=null, username=null)");
+        org.junit.Assert.assertNotNull(postType61);
+        org.junit.Assert.assertEquals("'" + str65 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str65, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + boolean77 + "' != '" + false + "'", boolean77, false);
+        org.junit.Assert.assertNull(str79);
+        org.junit.Assert.assertEquals("'" + str82 + "' != '" + "CreatePostRequest(text=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0), username=null)" + "'", str82, "CreatePostRequest(text=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0), username=null)");
+        org.junit.Assert.assertNull(str83);
+        org.junit.Assert.assertEquals("'" + str87 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str87, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int88);
+        org.junit.Assert.assertEquals("'" + str91 + "' != '" + "" + "'", str91, "");
+        org.junit.Assert.assertNull(str92);
+    }
+
+    @Test
+    public void test1522() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1522");
+        com.vntu.marenko.ualearning.server.service.UserService userService0 = null;
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper1 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig2 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl3 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository4 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository5 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository6 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper7 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository4, testRepository5, answerRepository6);
+        ma.glasnost.orika.MapperFacade mapperFacade8 = null;
+        submitResultRequestToDomainMapper7.setMapperFacade(mapperFacade8);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType10 = submitResultRequestToDomainMapper7.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper11 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper12 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean13 = createPostRequestToPostMapper12.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper14 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade15 = mapperConfig2.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl3, submitResultRequestToDomainMapper7, resultToDescriptionMapper11, createPostRequestToPostMapper12, postToDtoMapper14);
+        postToDtoMapper1.setMapperFacade(mapperFacade15);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType17 = postToDtoMapper1.getBType();
+        java.lang.Boolean boolean18 = postToDtoMapper1.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper19 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType20 = createPostRequestToPostMapper19.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post21 = new com.vntu.marenko.ualearning.server.model.Post();
+        post21.setText("");
+        java.lang.String str24 = post21.toString();
+        post21.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest27 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest27.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        ma.glasnost.orika.MappingContext mappingContext30 = null;
+        createPostRequestToPostMapper19.mapBtoA(post21, createPostRequest27, mappingContext30);
+        com.vntu.marenko.ualearning.server.model.Post post32 = new com.vntu.marenko.ualearning.server.model.Post();
+        post32.setText("");
+        java.lang.String str35 = post32.toString();
+        java.lang.Integer int36 = post32.getId();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest37 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        java.lang.String str38 = createPostRequest37.getUsername();
+        java.lang.String str39 = createPostRequest37.toString();
+        ma.glasnost.orika.MappingContext mappingContext40 = null;
+        createPostRequestToPostMapper19.mapBtoA(post32, createPostRequest37, mappingContext40);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository42 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository43 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository44 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper45 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository42, testRepository43, answerRepository44);
+        ma.glasnost.orika.MapperFacade mapperFacade46 = null;
+        submitResultRequestToDomainMapper45.setMapperFacade(mapperFacade46);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType48 = submitResultRequestToDomainMapper45.getBType();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper49 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig50 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl51 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository52 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository53 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository54 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper55 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository52, testRepository53, answerRepository54);
+        ma.glasnost.orika.MapperFacade mapperFacade56 = null;
+        submitResultRequestToDomainMapper55.setMapperFacade(mapperFacade56);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType58 = submitResultRequestToDomainMapper55.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper59 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper60 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean61 = createPostRequestToPostMapper60.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper62 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade63 = mapperConfig50.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl51, submitResultRequestToDomainMapper55, resultToDescriptionMapper59, createPostRequestToPostMapper60, postToDtoMapper62);
+        postToDtoMapper49.setMapperFacade(mapperFacade63);
+        submitResultRequestToDomainMapper45.setMapperFacade(mapperFacade63);
+        createPostRequestToPostMapper19.setMapperFacade(mapperFacade63);
+        postToDtoMapper1.setMapperFacade(mapperFacade63);
+        com.vntu.marenko.ualearning.server.controller.UserController userController68 = new com.vntu.marenko.ualearning.server.controller.UserController(userService0, mapperFacade63);
+        // The following exception was thrown during execution in test generation
+        try {
+            com.vntu.marenko.ualearning.server.dto.UserDto userDto70 = userController68.getUser("ResultDto(id=0, user=null, test=null, submitted=false, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null)], mark=0)");
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(resultType10);
+        org.junit.Assert.assertEquals("'" + boolean13 + "' != '" + false + "'", boolean13, false);
+        org.junit.Assert.assertNotNull(mapperFacade15);
+        org.junit.Assert.assertNotNull(postDtoType17);
+        org.junit.Assert.assertEquals("'" + boolean18 + "' != '" + false + "'", boolean18, false);
+        org.junit.Assert.assertNotNull(postType20);
+        org.junit.Assert.assertEquals("'" + str24 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str24, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + str35 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str35, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int36);
+        org.junit.Assert.assertNull(str38);
+        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str39, "CreatePostRequest(text=null, username=null)");
+        org.junit.Assert.assertNotNull(resultType48);
+        org.junit.Assert.assertNotNull(resultType58);
+        org.junit.Assert.assertEquals("'" + boolean61 + "' != '" + false + "'", boolean61, false);
+        org.junit.Assert.assertNotNull(mapperFacade63);
+    }
+
+    @Test
+    public void test1523() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1523");
+        com.vntu.marenko.ualearning.server.component.MarkComputer markComputer0 = null;
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper(markComputer0);
+        ma.glasnost.orika.Mapper[] mapperArray3 = new ma.glasnost.orika.Mapper[0];
+        @SuppressWarnings("unchecked")
+        ma.glasnost.orika.Mapper<java.lang.Object, java.lang.Object>[] objMapperArray4 = (ma.glasnost.orika.Mapper<java.lang.Object, java.lang.Object>[]) mapperArray3;
+        // The following exception was thrown during execution in test generation
+        try {
+            resultToDescriptionMapper1.setUsedMappers(objMapperArray4);
+            org.junit.Assert.fail("Expected exception of type java.lang.IllegalStateException; message: Should not be called for a user custom mapper.");
+        } catch (java.lang.IllegalStateException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(mapperArray3);
+        org.junit.Assert.assertNotNull(objMapperArray4);
+    }
+
+    @Test
+    public void test1524() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1524");
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
+        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
+        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper3 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig4 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl5 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository6 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository7 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository8 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper9 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository6, testRepository7, answerRepository8);
+        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
+        submitResultRequestToDomainMapper9.setMapperFacade(mapperFacade10);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType12 = submitResultRequestToDomainMapper9.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper13 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper14 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean15 = createPostRequestToPostMapper14.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper16 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade17 = mapperConfig4.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl5, submitResultRequestToDomainMapper9, resultToDescriptionMapper13, createPostRequestToPostMapper14, postToDtoMapper16);
+        postToDtoMapper3.setMapperFacade(mapperFacade17);
+        com.vntu.marenko.ualearning.server.controller.TestController testController19 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade17);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository20 = null;
+        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl21 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository20);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper22 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig23 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl24 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository25 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository26 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository27 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper28 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository25, testRepository26, answerRepository27);
+        ma.glasnost.orika.MapperFacade mapperFacade29 = null;
+        submitResultRequestToDomainMapper28.setMapperFacade(mapperFacade29);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType31 = submitResultRequestToDomainMapper28.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper32 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper33 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean34 = createPostRequestToPostMapper33.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper35 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade36 = mapperConfig23.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl24, submitResultRequestToDomainMapper28, resultToDescriptionMapper32, createPostRequestToPostMapper33, postToDtoMapper35);
+        postToDtoMapper22.setMapperFacade(mapperFacade36);
+        com.vntu.marenko.ualearning.server.controller.UserController userController38 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl21, mapperFacade36);
+        com.vntu.marenko.ualearning.server.controller.TestController testController39 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade36);
+        // The following exception was thrown during execution in test generation
+        try {
+            com.vntu.marenko.ualearning.server.model.Test test41 = testServiceImpl2.getTest((int) (byte) 10);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(resultType12);
+        org.junit.Assert.assertEquals("'" + boolean15 + "' != '" + false + "'", boolean15, false);
+        org.junit.Assert.assertNotNull(mapperFacade17);
+        org.junit.Assert.assertNotNull(resultType31);
+        org.junit.Assert.assertEquals("'" + boolean34 + "' != '" + false + "'", boolean34, false);
+        org.junit.Assert.assertNotNull(mapperFacade36);
+    }
+
+    @Test
+    public void test1525() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1525");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
+        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper3 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType4 = resultToDescriptionMapper3.getAType();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType5 = resultToDescriptionMapper3.getAType();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.ResultDescription> resultDescriptionType6 = resultToDescriptionMapper3.getBType();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType7 = resultToDescriptionMapper3.getAType();
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper8 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean9 = createPostRequestToPostMapper8.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig10 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl11 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository12 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository13 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository14 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper15 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository12, testRepository13, answerRepository14);
+        ma.glasnost.orika.MapperFacade mapperFacade16 = null;
+        submitResultRequestToDomainMapper15.setMapperFacade(mapperFacade16);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType18 = submitResultRequestToDomainMapper15.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper19 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper20 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean21 = createPostRequestToPostMapper20.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper22 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade23 = mapperConfig10.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl11, submitResultRequestToDomainMapper15, resultToDescriptionMapper19, createPostRequestToPostMapper20, postToDtoMapper22);
+        createPostRequestToPostMapper8.setMapperFacade(mapperFacade23);
+        resultToDescriptionMapper3.setMapperFacade(mapperFacade23);
+        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController26 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade23);
+        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest27 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
+        java.lang.String str28 = loginRequest27.toString();
+        java.lang.String str29 = loginRequest27.toString();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.String str30 = authorisationController26.login(loginRequest27);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(resultType4);
+        org.junit.Assert.assertNotNull(resultType5);
+        org.junit.Assert.assertNotNull(resultDescriptionType6);
+        org.junit.Assert.assertNotNull(resultType7);
+        org.junit.Assert.assertEquals("'" + boolean9 + "' != '" + false + "'", boolean9, false);
+        org.junit.Assert.assertNotNull(resultType18);
+        org.junit.Assert.assertEquals("'" + boolean21 + "' != '" + false + "'", boolean21, false);
+        org.junit.Assert.assertNotNull(mapperFacade23);
+        org.junit.Assert.assertEquals("'" + str28 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str28, "LoginRequest(login=null, password=null)");
+        org.junit.Assert.assertEquals("'" + str29 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str29, "LoginRequest(login=null, password=null)");
+    }
+
+    @Test
+    public void test1526() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1526");
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto0.setInstitution("");
+        java.lang.String str3 = userDto0.getInstitution();
+        java.lang.String str4 = userDto0.getInstitution();
+        java.lang.String str5 = userDto0.getSurname();
+        userDto0.setSurname("");
+        java.lang.String str8 = userDto0.getName();
+        java.lang.String str9 = userDto0.getInstitution();
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "" + "'", str3, "");
+        org.junit.Assert.assertEquals("'" + str4 + "' != '" + "" + "'", str4, "");
+        org.junit.Assert.assertNull(str5);
+        org.junit.Assert.assertNull(str8);
+        org.junit.Assert.assertEquals("'" + str9 + "' != '" + "" + "'", str9, "");
+    }
+
+    @Test
+    public void test1527() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1527");
+        com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.Integer int1 = question0.getId();
+        java.lang.Integer int2 = question0.getId();
+        com.vntu.marenko.ualearning.server.model.Answer answer3 = new com.vntu.marenko.ualearning.server.model.Answer();
+        com.vntu.marenko.ualearning.server.model.Answer answer4 = new com.vntu.marenko.ualearning.server.model.Answer();
+        answer4.setCorrect(false);
+        com.vntu.marenko.ualearning.server.model.Answer[] answerArray7 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer3, answer4 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList8 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
+        boolean boolean9 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList8, answerArray7);
+        question0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList8);
+        com.vntu.marenko.ualearning.server.model.Result result11 = new com.vntu.marenko.ualearning.server.model.Result();
+        result11.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user14 = new com.vntu.marenko.ualearning.server.model.User();
+        user14.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test17 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean18 = user14.equals((java.lang.Object) test17);
+        user14.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result11.setUser(user14);
+        com.vntu.marenko.ualearning.server.model.Question question22 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.Integer int23 = question22.getId();
+        java.lang.Integer int24 = question22.getId();
+        com.vntu.marenko.ualearning.server.model.Answer answer25 = new com.vntu.marenko.ualearning.server.model.Answer();
+        com.vntu.marenko.ualearning.server.model.Answer answer26 = new com.vntu.marenko.ualearning.server.model.Answer();
+        answer26.setCorrect(false);
+        com.vntu.marenko.ualearning.server.model.Answer[] answerArray29 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer25, answer26 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList30 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
+        boolean boolean31 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList30, answerArray29);
+        question22.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList30);
+        result11.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList30);
+        question0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList30);
+        question0.setText("Question(id=35, text=null, answers=[Answer(id=null, text=null, correct=false)])");
+        org.junit.Assert.assertNull(int1);
+        org.junit.Assert.assertNull(int2);
+        org.junit.Assert.assertNotNull(answerArray7);
+        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + true + "'", boolean9 == true);
+        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + false + "'", boolean18 == false);
+        org.junit.Assert.assertNull(int23);
+        org.junit.Assert.assertNull(int24);
+        org.junit.Assert.assertNotNull(answerArray29);
+        org.junit.Assert.assertTrue("'" + boolean31 + "' != '" + true + "'", boolean31 == true);
+    }
+
+    @Test
+    public void test1528() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1528");
+        com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int1 = test0.getId();
+        java.lang.Integer int2 = test0.getId();
+        test0.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.lang.Integer int5 = test0.getCompletedCounter();
+        java.lang.Integer int6 = test0.getCompletedCounter();
+        java.lang.Integer int7 = test0.getCompletedCounter();
+        java.lang.String str8 = test0.getDescriptionTest();
+        test0.setId((java.lang.Integer) 0);
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList11 = test0.getTags();
+        com.vntu.marenko.ualearning.server.model.Result result12 = new com.vntu.marenko.ualearning.server.model.Result();
+        java.lang.Integer int13 = result12.getId();
+        com.vntu.marenko.ualearning.server.model.Test test14 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int15 = test14.getId();
+        java.lang.Integer int16 = test14.getId();
+        result12.setTest(test14);
+        java.lang.Integer int18 = result12.getId();
+        com.vntu.marenko.ualearning.server.model.Test test19 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int20 = test19.getId();
+        java.lang.Integer int21 = test19.getId();
+        test19.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.lang.Integer int24 = test19.getCompletedCounter();
+        java.lang.Integer int25 = test19.getCompletedCounter();
+        result12.setTest(test19);
+        com.vntu.marenko.ualearning.server.model.Test test27 = new com.vntu.marenko.ualearning.server.model.Test();
+        com.vntu.marenko.ualearning.server.model.Tag[] tagArray28 = new com.vntu.marenko.ualearning.server.model.Tag[] {};
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag> tagList29 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag>();
+        boolean boolean30 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Tag>) tagList29, tagArray28);
+        test27.setTags((java.util.List<com.vntu.marenko.ualearning.server.model.Tag>) tagList29);
+        test19.setTags((java.util.List<com.vntu.marenko.ualearning.server.model.Tag>) tagList29);
+        test0.setTags((java.util.List<com.vntu.marenko.ualearning.server.model.Tag>) tagList29);
+        test0.setCompletedCounter((java.lang.Integer) 1);
+        org.junit.Assert.assertNull(int1);
+        org.junit.Assert.assertNull(int2);
+        org.junit.Assert.assertNull(int5);
+        org.junit.Assert.assertNull(int6);
+        org.junit.Assert.assertNull(int7);
+        org.junit.Assert.assertEquals("'" + str8 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str8, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        org.junit.Assert.assertNull(tagList11);
+        org.junit.Assert.assertNull(int13);
+        org.junit.Assert.assertNull(int15);
+        org.junit.Assert.assertNull(int16);
+        org.junit.Assert.assertNull(int18);
+        org.junit.Assert.assertNull(int20);
+        org.junit.Assert.assertNull(int21);
+        org.junit.Assert.assertNull(int24);
+        org.junit.Assert.assertNull(int25);
+        org.junit.Assert.assertNotNull(tagArray28);
+        org.junit.Assert.assertTrue("'" + boolean30 + "' != '" + false + "'", boolean30 == false);
+    }
+
+    @Test
+    public void test1529() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1529");
+        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
+        tag0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        java.lang.String str3 = tag0.toString();
+        tag0.setId((java.lang.Integer) 35);
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))" + "'", str3, "Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))");
+    }
+
+    @Test
+    public void test1530() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1530");
+        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
+        resultDescription0.setId((java.lang.Integer) 0);
+        java.lang.Integer int3 = resultDescription0.getTestId();
+        java.lang.String str4 = resultDescription0.getTestName();
+        java.lang.String str5 = resultDescription0.toString();
+        org.junit.Assert.assertNull(int3);
+        org.junit.Assert.assertNull(str4);
+        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "ResultDescription(id=0, testId=null, testName=null, mark=0)" + "'", str5, "ResultDescription(id=0, testId=null, testName=null, mark=0)");
+    }
+
+    @Test
+    public void test1531() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1531");
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str1 = userRequest0.getName();
+        java.lang.String str2 = userRequest0.getName();
+        java.lang.String str3 = userRequest0.getPassword();
+        java.lang.String str4 = userRequest0.getEmail();
+        userRequest0.setSurname("UserRequest(login=LoginRequest(login=Tag(id=null, name=null), password=null), password=Question(id=null, text=null, answers=null), name=null, surname=null, age=0, institution=null, email=null)");
+        userRequest0.setAge(100);
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertNull(str2);
+        org.junit.Assert.assertNull(str3);
+        org.junit.Assert.assertNull(str4);
+    }
+
+    @Test
+    public void test1532() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1532");
+        com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
+        answer0.setText("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        boolean boolean3 = answer0.isCorrect();
+        answer0.setText("Answer(id=100, text=null, correct=false)");
+        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + false + "'", boolean3 == false);
+    }
+
+    @Test
+    public void test1533() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1533");
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
+        int int1 = testDto0.getId();
+        int int2 = testDto0.getId();
+        testDto0.setCompletedCounter((java.lang.Integer) 0);
+        java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList5 = testDto0.getTags();
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto6 = new com.vntu.marenko.ualearning.server.dto.TestDto();
+        java.lang.String str7 = testDto6.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto8 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str9 = tagDto8.toString();
+        java.lang.String str10 = tagDto8.getName();
+        com.vntu.marenko.ualearning.server.model.User user11 = new com.vntu.marenko.ualearning.server.model.User();
+        long long12 = user11.getRating();
+        user11.setLogin("hi!");
+        boolean boolean15 = tagDto8.equals((java.lang.Object) user11);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto16 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str17 = tagDto16.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto18 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto18.setId(1);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto21 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str22 = tagDto21.toString();
+        java.lang.String str23 = tagDto21.getName();
+        com.vntu.marenko.ualearning.server.model.Test test24 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int25 = test24.getId();
+        java.lang.Integer int26 = test24.getId();
+        test24.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList29 = test24.getTags();
+        boolean boolean30 = tagDto21.equals((java.lang.Object) tagList29);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto31 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto31.setId(1);
+        boolean boolean35 = tagDto31.equals((java.lang.Object) (-1L));
+        int int36 = tagDto31.getId();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto37 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto37.setId(1);
+        java.lang.String str40 = tagDto37.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto41 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str42 = tagDto41.toString();
+        java.lang.String str43 = tagDto41.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto44 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str45 = tagDto44.toString();
+        java.lang.String str46 = tagDto44.getName();
+        com.vntu.marenko.ualearning.server.model.Test test47 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int48 = test47.getId();
+        java.lang.Integer int49 = test47.getId();
+        test47.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList52 = test47.getTags();
+        boolean boolean53 = tagDto44.equals((java.lang.Object) tagList52);
+        com.vntu.marenko.ualearning.server.dto.TagDto[] tagDtoArray54 = new com.vntu.marenko.ualearning.server.dto.TagDto[] { tagDto8, tagDto16, tagDto18, tagDto21, tagDto31, tagDto37, tagDto41, tagDto44 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList55 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto>();
+        boolean boolean56 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList55, tagDtoArray54);
+        testDto6.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList55);
+        testDto6.setCompletedCounter((java.lang.Integer) 100);
+        java.lang.String str60 = testDto6.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto61 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto61.setId(1);
+        int int64 = tagDto61.getId();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto65 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto65.setId(1);
+        java.lang.String str68 = tagDto65.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto69 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str70 = tagDto69.toString();
+        java.lang.String str71 = tagDto69.getName();
+        com.vntu.marenko.ualearning.server.model.Test test72 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int73 = test72.getId();
+        java.lang.Integer int74 = test72.getId();
+        test72.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList77 = test72.getTags();
+        boolean boolean78 = tagDto69.equals((java.lang.Object) tagList77);
+        tagDto69.setName("User(login=null, password=null, name=null, surname=, age=0, institution=null, email=null, rating=0)");
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto81 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str82 = tagDto81.toString();
+        java.lang.String str83 = tagDto81.getName();
+        java.lang.String str84 = tagDto81.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto85 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str86 = tagDto85.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto[] tagDtoArray87 = new com.vntu.marenko.ualearning.server.dto.TagDto[] { tagDto61, tagDto65, tagDto69, tagDto81, tagDto85 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList88 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto>();
+        boolean boolean89 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList88, tagDtoArray87);
+        testDto6.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList88);
+        testDto0.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList88);
+        testDto0.setNameTest("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.dto.QuestionDto> questionDtoList94 = testDto0.getQuestions();
+        testDto0.setCompletedCounter((java.lang.Integer) 52);
+        testDto0.setId((int) (byte) -1);
+        org.junit.Assert.assertTrue("'" + int1 + "' != '" + 0 + "'", int1 == 0);
+        org.junit.Assert.assertTrue("'" + int2 + "' != '" + 0 + "'", int2 == 0);
+        org.junit.Assert.assertNull(tagDtoList5);
+        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)" + "'", str7, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertEquals("'" + str9 + "' != '" + "TagDto(id=0, name=null)" + "'", str9, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str10);
+        org.junit.Assert.assertTrue("'" + long12 + "' != '" + 0L + "'", long12 == 0L);
+        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
+        org.junit.Assert.assertEquals("'" + str17 + "' != '" + "TagDto(id=0, name=null)" + "'", str17, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertEquals("'" + str22 + "' != '" + "TagDto(id=0, name=null)" + "'", str22, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str23);
+        org.junit.Assert.assertNull(int25);
+        org.junit.Assert.assertNull(int26);
+        org.junit.Assert.assertNull(tagList29);
+        org.junit.Assert.assertTrue("'" + boolean30 + "' != '" + false + "'", boolean30 == false);
+        org.junit.Assert.assertTrue("'" + boolean35 + "' != '" + false + "'", boolean35 == false);
+        org.junit.Assert.assertTrue("'" + int36 + "' != '" + 1 + "'", int36 == 1);
+        org.junit.Assert.assertNull(str40);
+        org.junit.Assert.assertEquals("'" + str42 + "' != '" + "TagDto(id=0, name=null)" + "'", str42, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str43);
+        org.junit.Assert.assertEquals("'" + str45 + "' != '" + "TagDto(id=0, name=null)" + "'", str45, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str46);
+        org.junit.Assert.assertNull(int48);
+        org.junit.Assert.assertNull(int49);
+        org.junit.Assert.assertNull(tagList52);
+        org.junit.Assert.assertTrue("'" + boolean53 + "' != '" + false + "'", boolean53 == false);
+        org.junit.Assert.assertNotNull(tagDtoArray54);
+        org.junit.Assert.assertTrue("'" + boolean56 + "' != '" + true + "'", boolean56 == true);
+        org.junit.Assert.assertEquals("'" + str60 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=100, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)])" + "'", str60, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=100, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)])");
+        org.junit.Assert.assertTrue("'" + int64 + "' != '" + 1 + "'", int64 == 1);
+        org.junit.Assert.assertNull(str68);
+        org.junit.Assert.assertEquals("'" + str70 + "' != '" + "TagDto(id=0, name=null)" + "'", str70, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str71);
+        org.junit.Assert.assertNull(int73);
+        org.junit.Assert.assertNull(int74);
+        org.junit.Assert.assertNull(tagList77);
+        org.junit.Assert.assertTrue("'" + boolean78 + "' != '" + false + "'", boolean78 == false);
+        org.junit.Assert.assertEquals("'" + str82 + "' != '" + "TagDto(id=0, name=null)" + "'", str82, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str83);
+        org.junit.Assert.assertNull(str84);
+        org.junit.Assert.assertEquals("'" + str86 + "' != '" + "TagDto(id=0, name=null)" + "'", str86, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNotNull(tagDtoArray87);
+        org.junit.Assert.assertTrue("'" + boolean89 + "' != '" + true + "'", boolean89 == true);
+        org.junit.Assert.assertNull(questionDtoList94);
+    }
+
+    @Test
+    public void test1534() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1534");
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        java.lang.String str1 = questionDto0.toString();
+        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList2 = questionDto0.getAnswers();
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "QuestionDto(id=0, text=null, answers=null)" + "'", str1, "QuestionDto(id=0, text=null, answers=null)");
+        org.junit.Assert.assertNull(answerDtoList2);
+    }
+
+    @Test
+    public void test1535() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1535");
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest0 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        java.lang.String str1 = createPostRequest0.getUsername();
+        createPostRequest0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        createPostRequest0.setText("CreatePostRequest(text=Post(id=null, text=, timestamp=null, user=null, likes=null), username=null)");
+        com.vntu.marenko.ualearning.server.model.Result result6 = new com.vntu.marenko.ualearning.server.model.Result();
+        com.vntu.marenko.ualearning.server.model.Result result7 = new com.vntu.marenko.ualearning.server.model.Result();
+        com.vntu.marenko.ualearning.server.model.User user8 = new com.vntu.marenko.ualearning.server.model.User();
+        user8.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test11 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean12 = user8.equals((java.lang.Object) test11);
+        result7.setUser(user8);
+        result6.setUser(user8);
+        boolean boolean15 = createPostRequest0.equals((java.lang.Object) result6);
+        com.vntu.marenko.ualearning.server.dto.PostDto postDto16 = new com.vntu.marenko.ualearning.server.dto.PostDto();
+        java.lang.String str17 = postDto16.getLogin();
+        java.lang.String[] strArray22 = new java.lang.String[] { "LoginRequest(login=null, password=null)", "CreatePostRequest(text=null, username=null)", "Answer(id=null, text=null, correct=false)", "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" };
+        java.util.ArrayList<java.lang.String> strList23 = new java.util.ArrayList<java.lang.String>();
+        boolean boolean24 = java.util.Collections.addAll((java.util.Collection<java.lang.String>) strList23, strArray22);
+        postDto16.setLikes((java.util.List<java.lang.String>) strList23);
+        java.lang.String str26 = postDto16.getText();
+        boolean boolean27 = result6.equals((java.lang.Object) postDto16);
+        com.vntu.marenko.ualearning.server.model.Test test28 = result6.getTest();
+        com.vntu.marenko.ualearning.server.model.Test test29 = result6.getTest();
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
+        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
+        org.junit.Assert.assertNull(str17);
+        org.junit.Assert.assertNotNull(strArray22);
+        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + true + "'", boolean24 == true);
+        org.junit.Assert.assertNull(str26);
+        org.junit.Assert.assertTrue("'" + boolean27 + "' != '" + false + "'", boolean27 == false);
+        org.junit.Assert.assertNull(test28);
+        org.junit.Assert.assertNull(test29);
+    }
+
+    @Test
+    public void test1536() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1536");
+        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
+        user0.setEmail("hi!");
+        user0.setSurname("hi!");
+        user0.setRating((long) '#');
+        user0.setEmail("UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null)");
+        long long9 = user0.getRating();
+        user0.setRating((long) (short) 100);
+        org.junit.Assert.assertTrue("'" + long9 + "' != '" + 35L + "'", long9 == 35L);
+    }
+
+    @Test
+    public void test1537() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1537");
+        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
+        java.lang.String str1 = loginRequest0.toString();
+        java.lang.String str2 = loginRequest0.toString();
+        java.lang.String str3 = loginRequest0.toString();
+        loginRequest0.setLogin("ResultDescription(id=null, testId=100, testName=null, mark=0)");
+        java.lang.String str6 = loginRequest0.toString();
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str1, "LoginRequest(login=null, password=null)");
+        org.junit.Assert.assertEquals("'" + str2 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str2, "LoginRequest(login=null, password=null)");
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str3, "LoginRequest(login=null, password=null)");
+        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "LoginRequest(login=ResultDescription(id=null, testId=100, testName=null, mark=0), password=null)" + "'", str6, "LoginRequest(login=ResultDescription(id=null, testId=100, testName=null, mark=0), password=null)");
+    }
+
+    @Test
+    public void test1538() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1538");
+        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
+        resultDto0.setTest(testDto1);
+        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList3 = resultDto0.getAnswers();
+        long long4 = resultDto0.getMark();
+        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList5 = resultDto0.getAnswers();
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto6 = resultDto0.getUser();
+        long long7 = resultDto0.getMark();
+        org.junit.Assert.assertNull(answerDtoList3);
+        org.junit.Assert.assertTrue("'" + long4 + "' != '" + 0L + "'", long4 == 0L);
+        org.junit.Assert.assertNull(answerDtoList5);
+        org.junit.Assert.assertNull(userDto6);
+        org.junit.Assert.assertTrue("'" + long7 + "' != '" + 0L + "'", long7 == 0L);
+    }
+
+    @Test
+    public void test1539() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1539");
+        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
+        user0.setEmail("hi!");
+        user0.setSurname("hi!");
+        long long5 = user0.getRating();
+        user0.setInstitution("TagDto(id=1, name=null)");
+        java.lang.String str8 = user0.getLogin();
+        org.junit.Assert.assertTrue("'" + long5 + "' != '" + 0L + "'", long5 == 0L);
+        org.junit.Assert.assertNull(str8);
+    }
+
+    @Test
+    public void test1540() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1540");
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository1 = null;
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper2 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig3 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl4 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository5 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository6 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository7 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper8 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository5, testRepository6, answerRepository7);
+        ma.glasnost.orika.MapperFacade mapperFacade9 = null;
+        submitResultRequestToDomainMapper8.setMapperFacade(mapperFacade9);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType11 = submitResultRequestToDomainMapper8.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper12 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper13 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean14 = createPostRequestToPostMapper13.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper15 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade16 = mapperConfig3.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl4, submitResultRequestToDomainMapper8, resultToDescriptionMapper12, createPostRequestToPostMapper13, postToDtoMapper15);
+        postToDtoMapper2.setMapperFacade(mapperFacade16);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository18 = null;
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository19 = null;
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig20 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl21 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository22 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository23 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository24 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper25 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository22, testRepository23, answerRepository24);
+        ma.glasnost.orika.MapperFacade mapperFacade26 = null;
+        submitResultRequestToDomainMapper25.setMapperFacade(mapperFacade26);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType28 = submitResultRequestToDomainMapper25.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper29 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper30 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean31 = createPostRequestToPostMapper30.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper32 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade33 = mapperConfig20.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl21, submitResultRequestToDomainMapper25, resultToDescriptionMapper29, createPostRequestToPostMapper30, postToDtoMapper32);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository34 = null;
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository35 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade36 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository37 = null;
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto38 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl39 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean40 = answerDto38.equals((java.lang.Object) markComputerImpl39);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl41 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository35, mapperFacade36, userRepository37, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl39);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl42 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository19, mapperFacade33, userRepository34, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl39);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl43 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository1, mapperFacade16, userRepository18, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl39);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository44 = null;
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository45 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository46 = null;
+        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl47 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository46);
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository48 = null;
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig49 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl50 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository51 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository52 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository53 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper54 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository51, testRepository52, answerRepository53);
+        ma.glasnost.orika.MapperFacade mapperFacade55 = null;
+        submitResultRequestToDomainMapper54.setMapperFacade(mapperFacade55);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType57 = submitResultRequestToDomainMapper54.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper58 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper59 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean60 = createPostRequestToPostMapper59.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper61 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade62 = mapperConfig49.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl50, submitResultRequestToDomainMapper54, resultToDescriptionMapper58, createPostRequestToPostMapper59, postToDtoMapper61);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository63 = null;
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository64 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade65 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository66 = null;
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto67 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl68 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean69 = answerDto67.equals((java.lang.Object) markComputerImpl68);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl70 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository64, mapperFacade65, userRepository66, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl68);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl71 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository48, mapperFacade62, userRepository63, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl68);
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository72 = null;
+        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository73 = null;
+        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl74 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository72, tagRepository73);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper75 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig76 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl77 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository78 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository79 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository80 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper81 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository78, testRepository79, answerRepository80);
+        ma.glasnost.orika.MapperFacade mapperFacade82 = null;
+        submitResultRequestToDomainMapper81.setMapperFacade(mapperFacade82);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType84 = submitResultRequestToDomainMapper81.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper85 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper86 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean87 = createPostRequestToPostMapper86.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper88 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade89 = mapperConfig76.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl77, submitResultRequestToDomainMapper81, resultToDescriptionMapper85, createPostRequestToPostMapper86, postToDtoMapper88);
+        postToDtoMapper75.setMapperFacade(mapperFacade89);
+        com.vntu.marenko.ualearning.server.controller.TestController testController91 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl74, mapperFacade89);
+        com.vntu.marenko.ualearning.server.controller.ResultController resultController92 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl71, mapperFacade89);
+        com.vntu.marenko.ualearning.server.controller.UserController userController93 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl47, mapperFacade89);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository94 = null;
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl95 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper96 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl95);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl97 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository45, mapperFacade89, userRepository94, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl95);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl98 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository0, mapperFacade16, userRepository44, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl95);
+        org.junit.Assert.assertNotNull(resultType11);
+        org.junit.Assert.assertEquals("'" + boolean14 + "' != '" + false + "'", boolean14, false);
+        org.junit.Assert.assertNotNull(mapperFacade16);
+        org.junit.Assert.assertNotNull(resultType28);
+        org.junit.Assert.assertEquals("'" + boolean31 + "' != '" + false + "'", boolean31, false);
+        org.junit.Assert.assertNotNull(mapperFacade33);
+        org.junit.Assert.assertTrue("'" + boolean40 + "' != '" + false + "'", boolean40 == false);
+        org.junit.Assert.assertNotNull(resultType57);
+        org.junit.Assert.assertEquals("'" + boolean60 + "' != '" + false + "'", boolean60, false);
+        org.junit.Assert.assertNotNull(mapperFacade62);
+        org.junit.Assert.assertTrue("'" + boolean69 + "' != '" + false + "'", boolean69 == false);
+        org.junit.Assert.assertNotNull(resultType84);
+        org.junit.Assert.assertEquals("'" + boolean87 + "' != '" + false + "'", boolean87, false);
+        org.junit.Assert.assertNotNull(mapperFacade89);
+    }
+
+    @Test
+    public void test1541() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1541");
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
+        java.lang.String str1 = testDto0.toString();
+        int int2 = testDto0.getId();
+        java.lang.String str3 = testDto0.getDescriptionTest();
+        com.vntu.marenko.ualearning.server.model.Test test4 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int5 = test4.getId();
+        java.lang.Integer int6 = test4.getId();
+        test4.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository9 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository11 = null;
+        com.vntu.marenko.ualearning.server.component.MarkComputer markComputer12 = null;
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl13 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository9, mapperFacade10, userRepository11, markComputer12);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper14 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean15 = createPostRequestToPostMapper14.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig16 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl17 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository18 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository19 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository20 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper21 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository18, testRepository19, answerRepository20);
+        ma.glasnost.orika.MapperFacade mapperFacade22 = null;
+        submitResultRequestToDomainMapper21.setMapperFacade(mapperFacade22);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType24 = submitResultRequestToDomainMapper21.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper25 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper26 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean27 = createPostRequestToPostMapper26.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper28 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade29 = mapperConfig16.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl17, submitResultRequestToDomainMapper21, resultToDescriptionMapper25, createPostRequestToPostMapper26, postToDtoMapper28);
+        createPostRequestToPostMapper14.setMapperFacade(mapperFacade29);
+        com.vntu.marenko.ualearning.server.controller.ResultController resultController31 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl13, mapperFacade29);
+        boolean boolean32 = test4.equals((java.lang.Object) resultController31);
+        java.util.List<com.vntu.marenko.ualearning.server.model.Question> questionList33 = test4.getQuestions();
+        boolean boolean34 = testDto0.equals((java.lang.Object) test4);
+        java.lang.String str35 = testDto0.toString();
+        java.lang.Integer int36 = testDto0.getCompletedCounter();
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto37 = new com.vntu.marenko.ualearning.server.dto.TestDto();
+        java.lang.String str38 = testDto37.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto39 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str40 = tagDto39.toString();
+        java.lang.String str41 = tagDto39.getName();
+        com.vntu.marenko.ualearning.server.model.User user42 = new com.vntu.marenko.ualearning.server.model.User();
+        long long43 = user42.getRating();
+        user42.setLogin("hi!");
+        boolean boolean46 = tagDto39.equals((java.lang.Object) user42);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto47 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str48 = tagDto47.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto49 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto49.setId(1);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto52 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str53 = tagDto52.toString();
+        java.lang.String str54 = tagDto52.getName();
+        com.vntu.marenko.ualearning.server.model.Test test55 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int56 = test55.getId();
+        java.lang.Integer int57 = test55.getId();
+        test55.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList60 = test55.getTags();
+        boolean boolean61 = tagDto52.equals((java.lang.Object) tagList60);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto62 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto62.setId(1);
+        boolean boolean66 = tagDto62.equals((java.lang.Object) (-1L));
+        int int67 = tagDto62.getId();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto68 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto68.setId(1);
+        java.lang.String str71 = tagDto68.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto72 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str73 = tagDto72.toString();
+        java.lang.String str74 = tagDto72.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto75 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str76 = tagDto75.toString();
+        java.lang.String str77 = tagDto75.getName();
+        com.vntu.marenko.ualearning.server.model.Test test78 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int79 = test78.getId();
+        java.lang.Integer int80 = test78.getId();
+        test78.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList83 = test78.getTags();
+        boolean boolean84 = tagDto75.equals((java.lang.Object) tagList83);
+        com.vntu.marenko.ualearning.server.dto.TagDto[] tagDtoArray85 = new com.vntu.marenko.ualearning.server.dto.TagDto[] { tagDto39, tagDto47, tagDto49, tagDto52, tagDto62, tagDto68, tagDto72, tagDto75 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList86 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto>();
+        boolean boolean87 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList86, tagDtoArray85);
+        testDto37.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList86);
+        testDto0.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList86);
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)" + "'", str1, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertTrue("'" + int2 + "' != '" + 0 + "'", int2 == 0);
+        org.junit.Assert.assertNull(str3);
+        org.junit.Assert.assertNull(int5);
+        org.junit.Assert.assertNull(int6);
+        org.junit.Assert.assertEquals("'" + boolean15 + "' != '" + false + "'", boolean15, false);
+        org.junit.Assert.assertNotNull(resultType24);
+        org.junit.Assert.assertEquals("'" + boolean27 + "' != '" + false + "'", boolean27, false);
+        org.junit.Assert.assertNotNull(mapperFacade29);
+        org.junit.Assert.assertTrue("'" + boolean32 + "' != '" + false + "'", boolean32 == false);
+        org.junit.Assert.assertNull(questionList33);
+        org.junit.Assert.assertTrue("'" + boolean34 + "' != '" + false + "'", boolean34 == false);
+        org.junit.Assert.assertEquals("'" + str35 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)" + "'", str35, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertNull(int36);
+        org.junit.Assert.assertEquals("'" + str38 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)" + "'", str38, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertEquals("'" + str40 + "' != '" + "TagDto(id=0, name=null)" + "'", str40, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str41);
+        org.junit.Assert.assertTrue("'" + long43 + "' != '" + 0L + "'", long43 == 0L);
+        org.junit.Assert.assertTrue("'" + boolean46 + "' != '" + false + "'", boolean46 == false);
+        org.junit.Assert.assertEquals("'" + str48 + "' != '" + "TagDto(id=0, name=null)" + "'", str48, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertEquals("'" + str53 + "' != '" + "TagDto(id=0, name=null)" + "'", str53, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str54);
+        org.junit.Assert.assertNull(int56);
+        org.junit.Assert.assertNull(int57);
+        org.junit.Assert.assertNull(tagList60);
+        org.junit.Assert.assertTrue("'" + boolean61 + "' != '" + false + "'", boolean61 == false);
+        org.junit.Assert.assertTrue("'" + boolean66 + "' != '" + false + "'", boolean66 == false);
+        org.junit.Assert.assertTrue("'" + int67 + "' != '" + 1 + "'", int67 == 1);
+        org.junit.Assert.assertNull(str71);
+        org.junit.Assert.assertEquals("'" + str73 + "' != '" + "TagDto(id=0, name=null)" + "'", str73, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str74);
+        org.junit.Assert.assertEquals("'" + str76 + "' != '" + "TagDto(id=0, name=null)" + "'", str76, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str77);
+        org.junit.Assert.assertNull(int79);
+        org.junit.Assert.assertNull(int80);
+        org.junit.Assert.assertNull(tagList83);
+        org.junit.Assert.assertTrue("'" + boolean84 + "' != '" + false + "'", boolean84 == false);
+        org.junit.Assert.assertNotNull(tagDtoArray85);
+        org.junit.Assert.assertTrue("'" + boolean87 + "' != '" + true + "'", boolean87 == true);
+    }
+
+    @Test
+    public void test1542() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1542");
+        com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
+        testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        testDescription0.setId((-1));
+        testDescription0.setNameTest("TagDto(id=0, name=null)");
+        java.lang.String str7 = testDescription0.toString();
+        java.lang.String str8 = testDescription0.getNameTest();
+        testDescription0.setId((int) (byte) 0);
+        java.lang.String str11 = testDescription0.getNameTest();
+        testDescription0.setNameTest("Result(id=null, user=null, test=Test(id=null, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null), submitted=false, answers=null)");
+        java.lang.String str14 = testDescription0.toString();
+        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "TestDescription(id=-1, nameTest=TagDto(id=0, name=null))" + "'", str7, "TestDescription(id=-1, nameTest=TagDto(id=0, name=null))");
+        org.junit.Assert.assertEquals("'" + str8 + "' != '" + "TagDto(id=0, name=null)" + "'", str8, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "TagDto(id=0, name=null)" + "'", str11, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertEquals("'" + str14 + "' != '" + "TestDescription(id=0, nameTest=Result(id=null, user=null, test=Test(id=null, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null), submitted=false, answers=null))" + "'", str14, "TestDescription(id=0, nameTest=Result(id=null, user=null, test=Test(id=null, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null), submitted=false, answers=null))");
+    }
+
+    @Test
+    public void test1543() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1543");
+        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
+        java.lang.String str1 = user0.getEmail();
+        java.lang.String str2 = user0.getSurname();
+        java.lang.String str3 = user0.getInstitution();
+        java.lang.String str4 = user0.getName();
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertNull(str2);
+        org.junit.Assert.assertNull(str3);
+        org.junit.Assert.assertNull(str4);
+    }
+
+    @Test
+    public void test1544() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1544");
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade1 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
+        com.vntu.marenko.ualearning.server.component.MarkComputer markComputer3 = null;
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl4 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository0, mapperFacade1, userRepository2, markComputer3);
+        ma.glasnost.orika.MapperFacade mapperFacade5 = null;
+        com.vntu.marenko.ualearning.server.controller.ResultController resultController6 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl4, mapperFacade5);
+        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
+        com.vntu.marenko.ualearning.server.controller.ResultController resultController8 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl4, mapperFacade7);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper9 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType10 = createPostRequestToPostMapper9.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post11 = new com.vntu.marenko.ualearning.server.model.Post();
+        post11.setText("");
+        java.lang.String str14 = post11.toString();
+        post11.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest17 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest17.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        ma.glasnost.orika.MappingContext mappingContext20 = null;
+        createPostRequestToPostMapper9.mapBtoA(post11, createPostRequest17, mappingContext20);
+        com.vntu.marenko.ualearning.server.model.Post post22 = new com.vntu.marenko.ualearning.server.model.Post();
+        post22.setText("");
+        java.lang.String str25 = post22.toString();
+        java.lang.Integer int26 = post22.getId();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest27 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        java.lang.String str28 = createPostRequest27.getUsername();
+        java.lang.String str29 = createPostRequest27.toString();
+        ma.glasnost.orika.MappingContext mappingContext30 = null;
+        createPostRequestToPostMapper9.mapBtoA(post22, createPostRequest27, mappingContext30);
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository32 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade33 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository34 = null;
+        com.vntu.marenko.ualearning.server.component.MarkComputer markComputer35 = null;
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl36 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository32, mapperFacade33, userRepository34, markComputer35);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper37 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean38 = createPostRequestToPostMapper37.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig39 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl40 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository41 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository42 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository43 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper44 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository41, testRepository42, answerRepository43);
+        ma.glasnost.orika.MapperFacade mapperFacade45 = null;
+        submitResultRequestToDomainMapper44.setMapperFacade(mapperFacade45);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType47 = submitResultRequestToDomainMapper44.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper48 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper49 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean50 = createPostRequestToPostMapper49.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper51 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade52 = mapperConfig39.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl40, submitResultRequestToDomainMapper44, resultToDescriptionMapper48, createPostRequestToPostMapper49, postToDtoMapper51);
+        createPostRequestToPostMapper37.setMapperFacade(mapperFacade52);
+        com.vntu.marenko.ualearning.server.controller.ResultController resultController54 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl36, mapperFacade52);
+        createPostRequestToPostMapper9.setMapperFacade(mapperFacade52);
+        com.vntu.marenko.ualearning.server.controller.ResultController resultController56 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl4, mapperFacade52);
+        // The following exception was thrown during execution in test generation
+        try {
+            com.vntu.marenko.ualearning.server.dto.ResultDto resultDto58 = resultController56.getResult(100);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNotNull(postType10);
+        org.junit.Assert.assertEquals("'" + str14 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str14, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + str25 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str25, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int26);
+        org.junit.Assert.assertNull(str28);
+        org.junit.Assert.assertEquals("'" + str29 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str29, "CreatePostRequest(text=null, username=null)");
+        org.junit.Assert.assertEquals("'" + boolean38 + "' != '" + false + "'", boolean38, false);
+        org.junit.Assert.assertNotNull(resultType47);
+        org.junit.Assert.assertEquals("'" + boolean50 + "' != '" + false + "'", boolean50, false);
+        org.junit.Assert.assertNotNull(mapperFacade52);
+    }
+
+    @Test
+    public void test1545() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1545");
+        com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
+        java.lang.String str1 = postDto0.getLogin();
+        java.lang.String[] strArray6 = new java.lang.String[] { "LoginRequest(login=null, password=null)", "CreatePostRequest(text=null, username=null)", "Answer(id=null, text=null, correct=false)", "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" };
+        java.util.ArrayList<java.lang.String> strList7 = new java.util.ArrayList<java.lang.String>();
+        boolean boolean8 = java.util.Collections.addAll((java.util.Collection<java.lang.String>) strList7, strArray6);
+        postDto0.setLikes((java.util.List<java.lang.String>) strList7);
+        java.lang.String str10 = postDto0.getText();
+        postDto0.setText("hi!");
+        java.lang.String str13 = postDto0.toString();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository14 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository15 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository16 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper17 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository14, testRepository15, answerRepository16);
+        ma.glasnost.orika.MapperFacade mapperFacade18 = null;
+        submitResultRequestToDomainMapper17.setMapperFacade(mapperFacade18);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType20 = submitResultRequestToDomainMapper17.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade21 = null;
+        submitResultRequestToDomainMapper17.setMapperFacade(mapperFacade21);
+        com.vntu.marenko.ualearning.server.model.User user23 = new com.vntu.marenko.ualearning.server.model.User();
+        user23.setSurname("");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository26 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository27 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository28 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper29 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository26, testRepository27, answerRepository28);
+        ma.glasnost.orika.MapperFacade mapperFacade30 = null;
+        submitResultRequestToDomainMapper29.setMapperFacade(mapperFacade30);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType32 = submitResultRequestToDomainMapper29.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade33 = null;
+        submitResultRequestToDomainMapper29.setMapperFacade(mapperFacade33);
+        boolean boolean35 = user23.equals((java.lang.Object) submitResultRequestToDomainMapper29);
+        com.vntu.marenko.ualearning.server.model.Result result36 = new com.vntu.marenko.ualearning.server.model.Result();
+        result36.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user39 = new com.vntu.marenko.ualearning.server.model.User();
+        user39.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test42 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean43 = user39.equals((java.lang.Object) test42);
+        user39.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result36.setUser(user39);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest47 = null;
+        ma.glasnost.orika.MappingContext mappingContext48 = null;
+        submitResultRequestToDomainMapper29.mapBtoA(result36, submitResultRequest47, mappingContext48);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest50 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
+        submitResultRequest50.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
+        int int53 = submitResultRequest50.getTestId();
+        ma.glasnost.orika.MappingContext mappingContext54 = null;
+        submitResultRequestToDomainMapper17.mapBtoA(result36, submitResultRequest50, mappingContext54);
+        com.vntu.marenko.ualearning.server.model.Question question56 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.String str57 = question56.getText();
+        java.lang.Integer int58 = question56.getId();
+        com.vntu.marenko.ualearning.server.service.TestService testService59 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade60 = null;
+        com.vntu.marenko.ualearning.server.controller.TestController testController61 = new com.vntu.marenko.ualearning.server.controller.TestController(testService59, mapperFacade60);
+        boolean boolean62 = question56.equals((java.lang.Object) testController61);
+        com.vntu.marenko.ualearning.server.model.Result result63 = new com.vntu.marenko.ualearning.server.model.Result();
+        java.lang.Integer int64 = result63.getId();
+        com.vntu.marenko.ualearning.server.model.Test test65 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int66 = test65.getId();
+        java.lang.Integer int67 = test65.getId();
+        result63.setTest(test65);
+        java.lang.Integer int69 = result63.getId();
+        com.vntu.marenko.ualearning.server.model.Result result70 = new com.vntu.marenko.ualearning.server.model.Result();
+        result70.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user73 = new com.vntu.marenko.ualearning.server.model.User();
+        user73.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test76 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean77 = user73.equals((java.lang.Object) test76);
+        user73.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result70.setUser(user73);
+        com.vntu.marenko.ualearning.server.model.Question question81 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.Integer int82 = question81.getId();
+        java.lang.Integer int83 = question81.getId();
+        com.vntu.marenko.ualearning.server.model.Answer answer84 = new com.vntu.marenko.ualearning.server.model.Answer();
+        com.vntu.marenko.ualearning.server.model.Answer answer85 = new com.vntu.marenko.ualearning.server.model.Answer();
+        answer85.setCorrect(false);
+        com.vntu.marenko.ualearning.server.model.Answer[] answerArray88 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer84, answer85 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList89 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
+        boolean boolean90 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList89, answerArray88);
+        question81.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList89);
+        result70.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList89);
+        result63.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList89);
+        question56.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList89);
+        result36.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList89);
+        com.vntu.marenko.ualearning.server.model.User user96 = result36.getUser();
+        boolean boolean97 = postDto0.equals((java.lang.Object) result36);
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertNotNull(strArray6);
+        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + true + "'", boolean8 == true);
+        org.junit.Assert.assertNull(str10);
+        org.junit.Assert.assertEquals("'" + str13 + "' != '" + "PostDto(id=0, text=hi!, timestamp=null, login=null, likes=[LoginRequest(login=null, password=null), CreatePostRequest(text=null, username=null), Answer(id=null, text=null, correct=false), User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)])" + "'", str13, "PostDto(id=0, text=hi!, timestamp=null, login=null, likes=[LoginRequest(login=null, password=null), CreatePostRequest(text=null, username=null), Answer(id=null, text=null, correct=false), User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)])");
+        org.junit.Assert.assertNotNull(submitResultRequestType20);
+        org.junit.Assert.assertNotNull(submitResultRequestType32);
+        org.junit.Assert.assertTrue("'" + boolean35 + "' != '" + false + "'", boolean35 == false);
+        org.junit.Assert.assertTrue("'" + boolean43 + "' != '" + false + "'", boolean43 == false);
+        org.junit.Assert.assertTrue("'" + int53 + "' != '" + 0 + "'", int53 == 0);
+        org.junit.Assert.assertNull(str57);
+        org.junit.Assert.assertNull(int58);
+        org.junit.Assert.assertTrue("'" + boolean62 + "' != '" + false + "'", boolean62 == false);
+        org.junit.Assert.assertNull(int64);
+        org.junit.Assert.assertNull(int66);
+        org.junit.Assert.assertNull(int67);
+        org.junit.Assert.assertNull(int69);
+        org.junit.Assert.assertTrue("'" + boolean77 + "' != '" + false + "'", boolean77 == false);
+        org.junit.Assert.assertNull(int82);
+        org.junit.Assert.assertNull(int83);
+        org.junit.Assert.assertNotNull(answerArray88);
+        org.junit.Assert.assertTrue("'" + boolean90 + "' != '" + true + "'", boolean90 == true);
+        org.junit.Assert.assertNotNull(user96);
+        org.junit.Assert.assertTrue("'" + boolean97 + "' != '" + false + "'", boolean97 == false);
+    }
+
+    @Test
+    public void test1546() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1546");
+        com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
+        testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        testDescription0.setId((-1));
+        testDescription0.setNameTest("TagDto(id=0, name=null)");
+        java.lang.String str7 = testDescription0.toString();
+        java.lang.String str8 = testDescription0.getNameTest();
+        testDescription0.setId((int) (byte) 0);
+        java.lang.String str11 = testDescription0.getNameTest();
+        testDescription0.setNameTest("Result(id=null, user=null, test=Test(id=null, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null), submitted=false, answers=null)");
+        int int14 = testDescription0.getId();
+        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "TestDescription(id=-1, nameTest=TagDto(id=0, name=null))" + "'", str7, "TestDescription(id=-1, nameTest=TagDto(id=0, name=null))");
+        org.junit.Assert.assertEquals("'" + str8 + "' != '" + "TagDto(id=0, name=null)" + "'", str8, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "TagDto(id=0, name=null)" + "'", str11, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertTrue("'" + int14 + "' != '" + 0 + "'", int14 == 0);
+    }
+
+    @Test
+    public void test1547() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1547");
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto0.setInstitution("");
+        java.lang.String str3 = userDto0.getInstitution();
+        userDto0.setName("hi!");
+        userDto0.setAge((int) (short) 10);
+        java.lang.String str8 = userDto0.getName();
+        userDto0.setInstitution("CreatePostRequest(text=null, username=null)");
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "" + "'", str3, "");
+        org.junit.Assert.assertEquals("'" + str8 + "' != '" + "hi!" + "'", str8, "hi!");
+    }
+
+    @Test
+    public void test1548() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1548");
+        com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int1 = test0.getId();
+        java.lang.Integer int2 = test0.getId();
+        test0.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.lang.Integer int5 = test0.getCompletedCounter();
+        java.lang.Integer int6 = test0.getCompletedCounter();
+        java.lang.Integer int7 = test0.getCompletedCounter();
+        com.vntu.marenko.ualearning.server.model.Question question8 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.String str9 = question8.getText();
+        java.lang.Integer int10 = question8.getId();
+        boolean boolean11 = test0.equals((java.lang.Object) question8);
+        java.lang.String str12 = question8.toString();
+        question8.setText("TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)])");
+        org.junit.Assert.assertNull(int1);
+        org.junit.Assert.assertNull(int2);
+        org.junit.Assert.assertNull(int5);
+        org.junit.Assert.assertNull(int6);
+        org.junit.Assert.assertNull(int7);
+        org.junit.Assert.assertNull(str9);
+        org.junit.Assert.assertNull(int10);
+        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
+        org.junit.Assert.assertEquals("'" + str12 + "' != '" + "Question(id=null, text=null, answers=null)" + "'", str12, "Question(id=null, text=null, answers=null)");
+    }
+
+    @Test
+    public void test1549() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1549");
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository3 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository4 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper5 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository2, testRepository3, answerRepository4);
+        ma.glasnost.orika.MapperFacade mapperFacade6 = null;
+        submitResultRequestToDomainMapper5.setMapperFacade(mapperFacade6);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType8 = submitResultRequestToDomainMapper5.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper9 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper10 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean11 = createPostRequestToPostMapper10.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper12 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade13 = mapperConfig0.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl1, submitResultRequestToDomainMapper5, resultToDescriptionMapper9, createPostRequestToPostMapper10, postToDtoMapper12);
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl14 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository15 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository16 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository17 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper18 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository15, testRepository16, answerRepository17);
+        ma.glasnost.orika.MapperFacade mapperFacade19 = null;
+        submitResultRequestToDomainMapper18.setMapperFacade(mapperFacade19);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType21 = submitResultRequestToDomainMapper18.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper22 = null;
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig23 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl24 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository25 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository26 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository27 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper28 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository25, testRepository26, answerRepository27);
+        ma.glasnost.orika.MapperFacade mapperFacade29 = null;
+        submitResultRequestToDomainMapper28.setMapperFacade(mapperFacade29);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType31 = submitResultRequestToDomainMapper28.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper32 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper33 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean34 = createPostRequestToPostMapper33.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper35 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade36 = mapperConfig23.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl24, submitResultRequestToDomainMapper28, resultToDescriptionMapper32, createPostRequestToPostMapper33, postToDtoMapper35);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper37 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        ma.glasnost.orika.MapperFacade mapperFacade38 = mapperConfig0.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl14, submitResultRequestToDomainMapper18, resultToDescriptionMapper22, createPostRequestToPostMapper33, postToDtoMapper37);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType39 = postToDtoMapper37.getAType();
+        com.vntu.marenko.ualearning.server.dto.PostDto postDto40 = null;
+        com.vntu.marenko.ualearning.server.model.Post post41 = new com.vntu.marenko.ualearning.server.model.Post();
+        post41.setText("");
+        java.lang.String str44 = post41.toString();
+        post41.setUser("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        java.lang.String str47 = post41.getUser();
+        java.lang.Integer int48 = post41.getId();
+        java.util.Date date49 = null;
+        post41.setTimestamp(date49);
+        ma.glasnost.orika.MappingContext mappingContext51 = null;
+        postToDtoMapper37.mapBtoA(postDto40, post41, mappingContext51);
+        java.lang.String str53 = post41.getUser();
+        org.junit.Assert.assertNotNull(resultType8);
+        org.junit.Assert.assertEquals("'" + boolean11 + "' != '" + false + "'", boolean11, false);
+        org.junit.Assert.assertNotNull(mapperFacade13);
+        org.junit.Assert.assertNotNull(resultType21);
+        org.junit.Assert.assertNotNull(resultType31);
+        org.junit.Assert.assertEquals("'" + boolean34 + "' != '" + false + "'", boolean34, false);
+        org.junit.Assert.assertNotNull(mapperFacade36);
+        org.junit.Assert.assertNotNull(mapperFacade38);
+        org.junit.Assert.assertNotNull(postType39);
+        org.junit.Assert.assertEquals("'" + str44 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str44, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + str47 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str47, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int48);
+        org.junit.Assert.assertEquals("'" + str53 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str53, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+    }
+
+    @Test
+    public void test1550() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1550");
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
+        post2.setText("");
+        java.lang.String str5 = post2.toString();
+        java.lang.Integer int6 = post2.getId();
+        java.util.Date date7 = null;
+        post2.setTimestamp(date7);
+        java.lang.Integer int9 = post2.getId();
+        com.vntu.marenko.ualearning.server.model.Tag tag10 = new com.vntu.marenko.ualearning.server.model.Tag();
+        java.lang.String str11 = tag10.toString();
+        java.lang.String str12 = tag10.getName();
+        java.lang.Integer int13 = tag10.getId();
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper14 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper15 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType16 = createPostRequestToPostMapper15.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post17 = new com.vntu.marenko.ualearning.server.model.Post();
+        post17.setText("");
+        java.lang.String str20 = post17.toString();
+        post17.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest23 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest23.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        ma.glasnost.orika.MappingContext mappingContext26 = null;
+        createPostRequestToPostMapper15.mapBtoA(post17, createPostRequest23, mappingContext26);
+        com.vntu.marenko.ualearning.server.model.Post post28 = new com.vntu.marenko.ualearning.server.model.Post();
+        post28.setText("");
+        java.lang.String str31 = post28.toString();
+        java.lang.Integer int32 = post28.getId();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest33 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        java.lang.String str34 = createPostRequest33.getUsername();
+        java.lang.String str35 = createPostRequest33.toString();
+        ma.glasnost.orika.MappingContext mappingContext36 = null;
+        createPostRequestToPostMapper15.mapBtoA(post28, createPostRequest33, mappingContext36);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper38 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType39 = createPostRequestToPostMapper38.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post40 = new com.vntu.marenko.ualearning.server.model.Post();
+        post40.setText("");
+        java.lang.String str43 = post40.toString();
+        post40.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest46 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest46.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        ma.glasnost.orika.MappingContext mappingContext49 = null;
+        createPostRequestToPostMapper38.mapBtoA(post40, createPostRequest46, mappingContext49);
+        ma.glasnost.orika.MappingContext mappingContext51 = null;
+        createPostRequestToPostMapper14.mapAtoB(createPostRequest33, post40, mappingContext51);
+        boolean boolean53 = tag10.equals((java.lang.Object) createPostRequest33);
+        createPostRequest33.setText("ResultDescription(id=0, testId=null, testName=null, mark=1)");
+        createPostRequest33.setUsername("ResultDescription(id=0, testId=null, testName=null, mark=1)");
+        java.lang.String str58 = createPostRequest33.getUsername();
+        createPostRequest33.setText("TagDto(id=0, name=null)");
+        ma.glasnost.orika.MappingContext mappingContext61 = null;
+        createPostRequestToPostMapper0.mapBtoA(post2, createPostRequest33, mappingContext61);
+        java.lang.String str63 = createPostRequest33.getUsername();
+        java.lang.String str64 = createPostRequest33.toString();
+        org.junit.Assert.assertNotNull(postType1);
+        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str5, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int6);
+        org.junit.Assert.assertNull(int9);
+        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "Tag(id=null, name=null)" + "'", str11, "Tag(id=null, name=null)");
+        org.junit.Assert.assertNull(str12);
+        org.junit.Assert.assertNull(int13);
+        org.junit.Assert.assertNotNull(postType16);
+        org.junit.Assert.assertEquals("'" + str20 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str20, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + str31 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str31, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int32);
+        org.junit.Assert.assertNull(str34);
+        org.junit.Assert.assertEquals("'" + str35 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str35, "CreatePostRequest(text=null, username=null)");
+        org.junit.Assert.assertNotNull(postType39);
+        org.junit.Assert.assertEquals("'" + str43 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str43, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertTrue("'" + boolean53 + "' != '" + false + "'", boolean53 == false);
+        org.junit.Assert.assertEquals("'" + str58 + "' != '" + "ResultDescription(id=0, testId=null, testName=null, mark=1)" + "'", str58, "ResultDescription(id=0, testId=null, testName=null, mark=1)");
+        org.junit.Assert.assertEquals("'" + str63 + "' != '" + "ResultDescription(id=0, testId=null, testName=null, mark=1)" + "'", str63, "ResultDescription(id=0, testId=null, testName=null, mark=1)");
+        org.junit.Assert.assertEquals("'" + str64 + "' != '" + "CreatePostRequest(text=TagDto(id=0, name=null), username=ResultDescription(id=0, testId=null, testName=null, mark=1))" + "'", str64, "CreatePostRequest(text=TagDto(id=0, name=null), username=ResultDescription(id=0, testId=null, testName=null, mark=1))");
+    }
+
+    @Test
+    public void test1551() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1551");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper3 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository0, testRepository1, answerRepository2);
+        ma.glasnost.orika.MapperFacade mapperFacade4 = null;
+        submitResultRequestToDomainMapper3.setMapperFacade(mapperFacade4);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType6 = submitResultRequestToDomainMapper3.getBType();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType7 = submitResultRequestToDomainMapper3.getAType();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType8 = submitResultRequestToDomainMapper3.getAType();
+        java.lang.Boolean boolean9 = submitResultRequestToDomainMapper3.favorsExtension();
+        org.junit.Assert.assertNotNull(resultType6);
+        org.junit.Assert.assertNotNull(submitResultRequestType7);
+        org.junit.Assert.assertNotNull(submitResultRequestType8);
+        org.junit.Assert.assertEquals("'" + boolean9 + "' != '" + false + "'", boolean9, false);
+    }
+
+    @Test
+    public void test1552() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1552");
+        com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
+        post0.setText("");
+        java.util.Date date3 = null;
+        post0.setTimestamp(date3);
+        java.lang.String str5 = post0.getText();
+        post0.setText("ResultDescription(id=0, testId=null, testName=null, mark=1)");
+        java.lang.String str8 = post0.toString();
+        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "" + "'", str5, "");
+        org.junit.Assert.assertEquals("'" + str8 + "' != '" + "Post(id=null, text=ResultDescription(id=0, testId=null, testName=null, mark=1), timestamp=null, user=null, likes=null)" + "'", str8, "Post(id=null, text=ResultDescription(id=0, testId=null, testName=null, mark=1), timestamp=null, user=null, likes=null)");
+    }
+
+    @Test
+    public void test1553() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1553");
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest0 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        java.lang.String str1 = createPostRequest0.getUsername();
+        java.lang.String str2 = createPostRequest0.getText();
+        java.lang.String str3 = createPostRequest0.getText();
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertNull(str2);
+        org.junit.Assert.assertNull(str3);
+    }
+
+    @Test
+    public void test1554() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1554");
+        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
+        java.lang.String str1 = loginRequest0.toString();
+        java.lang.String str2 = loginRequest0.getLogin();
+        loginRequest0.setPassword("hi!");
+        loginRequest0.setLogin("UserDto(login=null, name=null, surname=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), age=0, institution=, email=null, rating=0)");
+        loginRequest0.setLogin("LoginRequest(login=ResultDescription(id=null, testId=100, testName=null, mark=0), password=null)");
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str1, "LoginRequest(login=null, password=null)");
+        org.junit.Assert.assertNull(str2);
+    }
+
+    @Test
+    public void test1555() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1555");
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        answerDto0.setText("hi!");
+        com.vntu.marenko.ualearning.server.model.Question question3 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.String str4 = question3.getText();
+        boolean boolean5 = answerDto0.equals((java.lang.Object) str4);
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest6 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str7 = userRequest6.getInstitution();
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto8 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        questionDto8.setId((int) '#');
+        boolean boolean11 = userRequest6.equals((java.lang.Object) '#');
+        userRequest6.setEmail("UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
+        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository14 = null;
+        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl15 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository14);
+        boolean boolean16 = userRequest6.equals((java.lang.Object) postServiceImpl15);
+        userRequest6.setAge((int) (byte) 1);
+        boolean boolean19 = answerDto0.equals((java.lang.Object) (byte) 1);
+        answerDto0.setId(1);
+        java.lang.String str22 = answerDto0.getText();
+        org.junit.Assert.assertNull(str4);
+        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
+        org.junit.Assert.assertNull(str7);
+        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
+        org.junit.Assert.assertTrue("'" + boolean16 + "' != '" + false + "'", boolean16 == false);
+        org.junit.Assert.assertTrue("'" + boolean19 + "' != '" + false + "'", boolean19 == false);
+        org.junit.Assert.assertEquals("'" + str22 + "' != '" + "hi!" + "'", str22, "hi!");
+    }
+
+    @Test
+    public void test1556() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1556");
+        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
+        user0.setSurname("");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
+        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
+        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType9 = submitResultRequestToDomainMapper6.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
+        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade10);
+        boolean boolean12 = user0.equals((java.lang.Object) submitResultRequestToDomainMapper6);
+        java.lang.String str13 = user0.getName();
+        user0.setAge(1);
+        org.junit.Assert.assertNotNull(submitResultRequestType9);
+        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
+        org.junit.Assert.assertNull(str13);
+    }
+
+    @Test
+    public void test1557() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1557");
+        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
+        java.lang.String str1 = tag0.toString();
+        java.lang.Integer int2 = tag0.getId();
+        com.vntu.marenko.ualearning.server.model.Answer answer3 = new com.vntu.marenko.ualearning.server.model.Answer();
+        java.lang.String str4 = answer3.getText();
+        answer3.setId((java.lang.Integer) 100);
+        answer3.setCorrect(false);
+        boolean boolean9 = answer3.isCorrect();
+        boolean boolean10 = tag0.equals((java.lang.Object) answer3);
+        tag0.setId((java.lang.Integer) 1);
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "Tag(id=null, name=null)" + "'", str1, "Tag(id=null, name=null)");
+        org.junit.Assert.assertNull(int2);
+        org.junit.Assert.assertNull(str4);
+        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
+        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + false + "'", boolean10 == false);
+    }
+
+    @Test
+    public void test1558() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1558");
+        com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
+        post0.setText("");
+        java.lang.String str3 = post0.toString();
+        post0.setUser("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        java.lang.String str6 = post0.getUser();
+        post0.setText("Question(id=null, text=null, answers=null)");
+        com.vntu.marenko.ualearning.server.model.Post post9 = new com.vntu.marenko.ualearning.server.model.Post();
+        java.lang.String str10 = post9.getUser();
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest11 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str12 = userRequest11.getInstitution();
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto13 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        questionDto13.setId((int) '#');
+        boolean boolean16 = userRequest11.equals((java.lang.Object) '#');
+        userRequest11.setEmail("UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
+        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository19 = null;
+        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl20 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository19);
+        boolean boolean21 = userRequest11.equals((java.lang.Object) postServiceImpl20);
+        userRequest11.setAge((int) (byte) 1);
+        userRequest11.setAge((int) (byte) 100);
+        userRequest11.setLogin("TestDescription(id=-1, nameTest=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null))");
+        boolean boolean28 = post9.equals((java.lang.Object) "TestDescription(id=-1, nameTest=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null))");
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig29 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl30 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository31 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository32 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository33 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper34 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository31, testRepository32, answerRepository33);
+        ma.glasnost.orika.MapperFacade mapperFacade35 = null;
+        submitResultRequestToDomainMapper34.setMapperFacade(mapperFacade35);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType37 = submitResultRequestToDomainMapper34.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper38 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper39 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean40 = createPostRequestToPostMapper39.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper41 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade42 = mapperConfig29.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl30, submitResultRequestToDomainMapper34, resultToDescriptionMapper38, createPostRequestToPostMapper39, postToDtoMapper41);
+        com.vntu.marenko.ualearning.server.model.Post post43 = new com.vntu.marenko.ualearning.server.model.Post();
+        post43.setText("");
+        java.lang.Integer int46 = post43.getId();
+        java.util.Date date47 = post43.getTimestamp();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest48 = null;
+        ma.glasnost.orika.MappingContext mappingContext49 = null;
+        createPostRequestToPostMapper39.mapBtoA(post43, createPostRequest48, mappingContext49);
+        java.lang.String[] strArray63 = new java.lang.String[] { "LoginRequest(login=null, password=null)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "TagDto(id=0, name=null)", "LoginRequest(login=null, password=null)", "Answer(id=null, text=null, correct=false)", "CreatePostRequest(text=null, username=null)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "CreatePostRequest(text=null, username=null)", "ResultDescription(id=0, testId=null, testName=null, mark=1)", "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "Post(id=null, text=, timestamp=null, user=null, likes=null)" };
+        java.util.ArrayList<java.lang.String> strList64 = new java.util.ArrayList<java.lang.String>();
+        boolean boolean65 = java.util.Collections.addAll((java.util.Collection<java.lang.String>) strList64, strArray63);
+        post43.setLikes((java.util.List<java.lang.String>) strList64);
+        post9.setLikes((java.util.List<java.lang.String>) strList64);
+        post0.setLikes((java.util.List<java.lang.String>) strList64);
+        java.util.Date date69 = post0.getTimestamp();
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str3, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str6, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(str10);
+        org.junit.Assert.assertNull(str12);
+        org.junit.Assert.assertTrue("'" + boolean16 + "' != '" + false + "'", boolean16 == false);
+        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + false + "'", boolean21 == false);
+        org.junit.Assert.assertTrue("'" + boolean28 + "' != '" + false + "'", boolean28 == false);
+        org.junit.Assert.assertNotNull(resultType37);
+        org.junit.Assert.assertEquals("'" + boolean40 + "' != '" + false + "'", boolean40, false);
+        org.junit.Assert.assertNotNull(mapperFacade42);
+        org.junit.Assert.assertNull(int46);
+        org.junit.Assert.assertNull(date47);
+        org.junit.Assert.assertNotNull(strArray63);
+        org.junit.Assert.assertTrue("'" + boolean65 + "' != '" + true + "'", boolean65 == true);
+        org.junit.Assert.assertNull(date69);
+    }
+
+    @Test
+    public void test1559() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1559");
+        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
+        java.lang.String str1 = loginRequest0.getPassword();
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade3 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository4 = null;
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto5 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl6 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean7 = answerDto5.equals((java.lang.Object) markComputerImpl6);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl8 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository2, mapperFacade3, userRepository4, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl6);
+        boolean boolean9 = loginRequest0.equals((java.lang.Object) resultServiceImpl8);
+        loginRequest0.setPassword("TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=100, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)])");
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto12 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        questionDto12.setId((int) '#');
+        boolean boolean15 = loginRequest0.equals((java.lang.Object) questionDto12);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository16 = null;
+        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl17 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository16);
+        boolean boolean18 = questionDto12.equals((java.lang.Object) userServiceImpl17);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper19 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean20 = createPostRequestToPostMapper19.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig21 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl22 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository23 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository24 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository25 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper26 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository23, testRepository24, answerRepository25);
+        ma.glasnost.orika.MapperFacade mapperFacade27 = null;
+        submitResultRequestToDomainMapper26.setMapperFacade(mapperFacade27);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType29 = submitResultRequestToDomainMapper26.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper30 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper31 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean32 = createPostRequestToPostMapper31.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper33 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade34 = mapperConfig21.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl22, submitResultRequestToDomainMapper26, resultToDescriptionMapper30, createPostRequestToPostMapper31, postToDtoMapper33);
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl35 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository36 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository37 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository38 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper39 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository36, testRepository37, answerRepository38);
+        ma.glasnost.orika.MapperFacade mapperFacade40 = null;
+        submitResultRequestToDomainMapper39.setMapperFacade(mapperFacade40);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType42 = submitResultRequestToDomainMapper39.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper43 = null;
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig44 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl45 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository46 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository47 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository48 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper49 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository46, testRepository47, answerRepository48);
+        ma.glasnost.orika.MapperFacade mapperFacade50 = null;
+        submitResultRequestToDomainMapper49.setMapperFacade(mapperFacade50);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType52 = submitResultRequestToDomainMapper49.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper53 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper54 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean55 = createPostRequestToPostMapper54.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper56 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade57 = mapperConfig44.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl45, submitResultRequestToDomainMapper49, resultToDescriptionMapper53, createPostRequestToPostMapper54, postToDtoMapper56);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper58 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        ma.glasnost.orika.MapperFacade mapperFacade59 = mapperConfig21.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl35, submitResultRequestToDomainMapper39, resultToDescriptionMapper43, createPostRequestToPostMapper54, postToDtoMapper58);
+        createPostRequestToPostMapper19.setMapperFacade(mapperFacade59);
+        com.vntu.marenko.ualearning.server.controller.UserController userController61 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl17, mapperFacade59);
+        com.vntu.marenko.ualearning.server.model.User user62 = new com.vntu.marenko.ualearning.server.model.User();
+        user62.setSurname("");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository65 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository66 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository67 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper68 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository65, testRepository66, answerRepository67);
+        ma.glasnost.orika.MapperFacade mapperFacade69 = null;
+        submitResultRequestToDomainMapper68.setMapperFacade(mapperFacade69);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType71 = submitResultRequestToDomainMapper68.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade72 = null;
+        submitResultRequestToDomainMapper68.setMapperFacade(mapperFacade72);
+        boolean boolean74 = user62.equals((java.lang.Object) submitResultRequestToDomainMapper68);
+        com.vntu.marenko.ualearning.server.model.Result result75 = new com.vntu.marenko.ualearning.server.model.Result();
+        result75.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user78 = new com.vntu.marenko.ualearning.server.model.User();
+        user78.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test81 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean82 = user78.equals((java.lang.Object) test81);
+        user78.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result75.setUser(user78);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest86 = null;
+        ma.glasnost.orika.MappingContext mappingContext87 = null;
+        submitResultRequestToDomainMapper68.mapBtoA(result75, submitResultRequest86, mappingContext87);
+        com.vntu.marenko.ualearning.server.model.User user89 = result75.getUser();
+        user89.setRating(0L);
+        com.vntu.marenko.ualearning.server.dto.PostDto postDto92 = new com.vntu.marenko.ualearning.server.dto.PostDto();
+        java.lang.String str93 = postDto92.getLogin();
+        java.lang.String str94 = postDto92.getLogin();
+        boolean boolean95 = user89.equals((java.lang.Object) str94);
+        java.lang.String str96 = user89.getLogin();
+        // The following exception was thrown during execution in test generation
+        try {
+            java.lang.String str97 = userServiceImpl17.register(user89);
+            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
+        } catch (java.lang.NullPointerException e) {
+            // Expected exception.
+        }
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + false + "'", boolean7 == false);
+        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
+        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
+        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + false + "'", boolean18 == false);
+        org.junit.Assert.assertEquals("'" + boolean20 + "' != '" + false + "'", boolean20, false);
+        org.junit.Assert.assertNotNull(resultType29);
+        org.junit.Assert.assertEquals("'" + boolean32 + "' != '" + false + "'", boolean32, false);
+        org.junit.Assert.assertNotNull(mapperFacade34);
+        org.junit.Assert.assertNotNull(resultType42);
+        org.junit.Assert.assertNotNull(resultType52);
+        org.junit.Assert.assertEquals("'" + boolean55 + "' != '" + false + "'", boolean55, false);
+        org.junit.Assert.assertNotNull(mapperFacade57);
+        org.junit.Assert.assertNotNull(mapperFacade59);
+        org.junit.Assert.assertNotNull(submitResultRequestType71);
+        org.junit.Assert.assertTrue("'" + boolean74 + "' != '" + false + "'", boolean74 == false);
+        org.junit.Assert.assertTrue("'" + boolean82 + "' != '" + false + "'", boolean82 == false);
+        org.junit.Assert.assertNotNull(user89);
+        org.junit.Assert.assertNull(str93);
+        org.junit.Assert.assertNull(str94);
+        org.junit.Assert.assertTrue("'" + boolean95 + "' != '" + false + "'", boolean95 == false);
+        org.junit.Assert.assertNull(str96);
+    }
+
+    @Test
+    public void test1560() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1560");
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto0.setInstitution("");
+        java.lang.String str3 = userDto0.getInstitution();
+        java.lang.String str4 = userDto0.getInstitution();
+        java.lang.String str5 = userDto0.getSurname();
+        userDto0.setSurname("");
+        java.lang.String str8 = userDto0.getName();
+        userDto0.setRating((-1));
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "" + "'", str3, "");
+        org.junit.Assert.assertEquals("'" + str4 + "' != '" + "" + "'", str4, "");
+        org.junit.Assert.assertNull(str5);
+        org.junit.Assert.assertNull(str8);
+    }
+
+    @Test
+    public void test1561() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1561");
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto0.setRating((int) (byte) -1);
+        java.lang.String str3 = userDto0.getInstitution();
+        userDto0.setName("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=[])");
+        userDto0.setEmail("AnswerDto(id=0, text=null)");
+        userDto0.setSurname("TestDto(id=100, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertNull(str3);
+    }
+
+    @Test
+    public void test1562() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1562");
+        com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
+        postDto0.setId((int) (byte) 100);
+        java.lang.String str3 = postDto0.getText();
+        postDto0.setLogin("ResultDescription(id=null, testId=100, testName=null, mark=0)");
+        java.lang.String str6 = postDto0.getTimestamp();
+        java.lang.String str7 = postDto0.getText();
+        java.lang.String str8 = postDto0.getText();
+        postDto0.setId((int) 'a');
+        postDto0.setLogin("UserDto(login=null, name=AnswerDto(id=-1, text=Tag(id=null, name=null)), surname=null, age=10, institution=, email=null, rating=0)");
+        java.lang.String str13 = postDto0.getText();
+        com.vntu.marenko.ualearning.server.model.Post post14 = new com.vntu.marenko.ualearning.server.model.Post();
+        java.lang.String str15 = post14.getUser();
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest16 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str17 = userRequest16.getInstitution();
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto18 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        questionDto18.setId((int) '#');
+        boolean boolean21 = userRequest16.equals((java.lang.Object) '#');
+        userRequest16.setEmail("UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
+        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository24 = null;
+        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl25 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository24);
+        boolean boolean26 = userRequest16.equals((java.lang.Object) postServiceImpl25);
+        userRequest16.setAge((int) (byte) 1);
+        userRequest16.setAge((int) (byte) 100);
+        userRequest16.setLogin("TestDescription(id=-1, nameTest=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null))");
+        boolean boolean33 = post14.equals((java.lang.Object) "TestDescription(id=-1, nameTest=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null))");
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig34 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl35 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository36 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository37 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository38 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper39 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository36, testRepository37, answerRepository38);
+        ma.glasnost.orika.MapperFacade mapperFacade40 = null;
+        submitResultRequestToDomainMapper39.setMapperFacade(mapperFacade40);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType42 = submitResultRequestToDomainMapper39.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper43 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper44 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean45 = createPostRequestToPostMapper44.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper46 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade47 = mapperConfig34.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl35, submitResultRequestToDomainMapper39, resultToDescriptionMapper43, createPostRequestToPostMapper44, postToDtoMapper46);
+        com.vntu.marenko.ualearning.server.model.Post post48 = new com.vntu.marenko.ualearning.server.model.Post();
+        post48.setText("");
+        java.lang.Integer int51 = post48.getId();
+        java.util.Date date52 = post48.getTimestamp();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest53 = null;
+        ma.glasnost.orika.MappingContext mappingContext54 = null;
+        createPostRequestToPostMapper44.mapBtoA(post48, createPostRequest53, mappingContext54);
+        java.lang.String[] strArray68 = new java.lang.String[] { "LoginRequest(login=null, password=null)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "TagDto(id=0, name=null)", "LoginRequest(login=null, password=null)", "Answer(id=null, text=null, correct=false)", "CreatePostRequest(text=null, username=null)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "CreatePostRequest(text=null, username=null)", "ResultDescription(id=0, testId=null, testName=null, mark=1)", "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)", "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)", "Post(id=null, text=, timestamp=null, user=null, likes=null)" };
+        java.util.ArrayList<java.lang.String> strList69 = new java.util.ArrayList<java.lang.String>();
+        boolean boolean70 = java.util.Collections.addAll((java.util.Collection<java.lang.String>) strList69, strArray68);
+        post48.setLikes((java.util.List<java.lang.String>) strList69);
+        post14.setLikes((java.util.List<java.lang.String>) strList69);
+        postDto0.setLikes((java.util.List<java.lang.String>) strList69);
+        org.junit.Assert.assertNull(str3);
+        org.junit.Assert.assertNull(str6);
+        org.junit.Assert.assertNull(str7);
+        org.junit.Assert.assertNull(str8);
+        org.junit.Assert.assertNull(str13);
+        org.junit.Assert.assertNull(str15);
+        org.junit.Assert.assertNull(str17);
+        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + false + "'", boolean21 == false);
+        org.junit.Assert.assertTrue("'" + boolean26 + "' != '" + false + "'", boolean26 == false);
+        org.junit.Assert.assertTrue("'" + boolean33 + "' != '" + false + "'", boolean33 == false);
+        org.junit.Assert.assertNotNull(resultType42);
+        org.junit.Assert.assertEquals("'" + boolean45 + "' != '" + false + "'", boolean45, false);
+        org.junit.Assert.assertNotNull(mapperFacade47);
+        org.junit.Assert.assertNull(int51);
+        org.junit.Assert.assertNull(date52);
+        org.junit.Assert.assertNotNull(strArray68);
+        org.junit.Assert.assertTrue("'" + boolean70 + "' != '" + true + "'", boolean70 == true);
+    }
+
+    @Test
+    public void test1563() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1563");
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str1 = userRequest0.getInstitution();
+        java.lang.String str2 = userRequest0.getPassword();
+        userRequest0.setEmail("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        java.lang.String str5 = userRequest0.toString();
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertNull(str2);
+        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))" + "'", str5, "UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))");
+    }
+
+    @Test
+    public void test1564() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1564");
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto3 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        answerDto3.setId((int) (byte) -1);
+        boolean boolean6 = answerDto0.equals((java.lang.Object) (byte) -1);
+        java.lang.String str7 = answerDto0.toString();
+        answerDto0.setId((int) (short) 10);
+        answerDto0.setId((int) (byte) 10);
+        com.vntu.marenko.ualearning.server.model.Result result12 = new com.vntu.marenko.ualearning.server.model.Result();
+        result12.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.Test test15 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int16 = test15.getId();
+        java.lang.Integer int17 = test15.getId();
+        test15.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.lang.Integer int20 = test15.getCompletedCounter();
+        result12.setTest(test15);
+        com.vntu.marenko.ualearning.server.model.Test test22 = result12.getTest();
+        java.lang.String str23 = test22.toString();
+        boolean boolean24 = answerDto0.equals((java.lang.Object) str23);
+        boolean boolean26 = answerDto0.equals((java.lang.Object) (byte) 1);
+        java.lang.String str27 = answerDto0.getText();
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + false + "'", boolean6 == false);
+        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "AnswerDto(id=0, text=null)" + "'", str7, "AnswerDto(id=0, text=null)");
+        org.junit.Assert.assertNull(int16);
+        org.junit.Assert.assertNull(int17);
+        org.junit.Assert.assertNull(int20);
+        org.junit.Assert.assertNotNull(test22);
+        org.junit.Assert.assertEquals("'" + str23 + "' != '" + "Test(id=null, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null)" + "'", str23, "Test(id=null, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + false + "'", boolean24 == false);
+        org.junit.Assert.assertTrue("'" + boolean26 + "' != '" + false + "'", boolean26 == false);
+        org.junit.Assert.assertNull(str27);
+    }
+
+    @Test
+    public void test1565() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1565");
+        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
+        resultDto0.setTest(testDto1);
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto3 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl4 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean5 = answerDto3.equals((java.lang.Object) markComputerImpl4);
+        int int6 = answerDto3.getId();
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto7 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        answerDto7.setText("hi!");
+        java.lang.String str10 = answerDto7.getText();
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto11 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl12 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean13 = answerDto11.equals((java.lang.Object) markComputerImpl12);
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto14 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl15 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean16 = answerDto14.equals((java.lang.Object) markComputerImpl15);
+        com.vntu.marenko.ualearning.server.dto.AnswerDto[] answerDtoArray17 = new com.vntu.marenko.ualearning.server.dto.AnswerDto[] { answerDto3, answerDto7, answerDto11, answerDto14 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList18 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto>();
+        boolean boolean19 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList18, answerDtoArray17);
+        resultDto0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList18);
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto21 = resultDto0.getTest();
+        int int22 = resultDto0.getId();
+        resultDto0.setSubmitted(true);
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto25 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto25.setRating((int) (short) 10);
+        java.lang.String str28 = userDto25.toString();
+        resultDto0.setUser(userDto25);
+        long long30 = resultDto0.getMark();
+        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
+        org.junit.Assert.assertTrue("'" + int6 + "' != '" + 0 + "'", int6 == 0);
+        org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
+        org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + false + "'", boolean13 == false);
+        org.junit.Assert.assertTrue("'" + boolean16 + "' != '" + false + "'", boolean16 == false);
+        org.junit.Assert.assertNotNull(answerDtoArray17);
+        org.junit.Assert.assertTrue("'" + boolean19 + "' != '" + true + "'", boolean19 == true);
+        org.junit.Assert.assertNull(testDto21);
+        org.junit.Assert.assertTrue("'" + int22 + "' != '" + 0 + "'", int22 == 0);
+        org.junit.Assert.assertEquals("'" + str28 + "' != '" + "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=10)" + "'", str28, "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=10)");
+        org.junit.Assert.assertTrue("'" + long30 + "' != '" + 0L + "'", long30 == 0L);
+    }
+
+    @Test
+    public void test1566() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1566");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         java.lang.String str2 = userRequest0.getPassword();
@@ -24,9 +2777,24 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1502() throws Throwable {
+    public void test1567() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1502");
+            System.out.format("%n%s%n", "RegressionTest3.test1567");
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str1 = userRequest0.getInstitution();
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        questionDto2.setId((int) '#');
+        boolean boolean5 = userRequest0.equals((java.lang.Object) '#');
+        userRequest0.setInstitution("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        userRequest0.setLogin("Result(id=100, user=null, test=null, submitted=false, answers=null)");
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
+    }
+
+    @Test
+    public void test1568() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1568");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         answer0.setCorrect(false);
         java.lang.Integer int3 = answer0.getId();
@@ -47,9 +2815,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1503() throws Throwable {
+    public void test1569() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1503");
+            System.out.format("%n%s%n", "RegressionTest3.test1569");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         java.lang.String str1 = user0.getEmail();
         java.lang.String str2 = user0.getSurname();
@@ -61,9 +2829,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1504() throws Throwable {
+    public void test1570() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1504");
+            System.out.format("%n%s%n", "RegressionTest3.test1570");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.dto.PostDto postDto1 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         java.lang.String str2 = postDto1.getLogin();
@@ -112,9 +2880,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1505() throws Throwable {
+    public void test1571() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1505");
+            System.out.format("%n%s%n", "RegressionTest3.test1571");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -179,9 +2947,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1506() throws Throwable {
+    public void test1572() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1506");
+            System.out.format("%n%s%n", "RegressionTest3.test1572");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
@@ -200,9 +2968,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1507() throws Throwable {
+    public void test1573() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1507");
+            System.out.format("%n%s%n", "RegressionTest3.test1573");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.util.List<java.lang.String> strList3 = post0.getLikes();
@@ -210,9 +2978,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1508() throws Throwable {
+    public void test1574() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1508");
+            System.out.format("%n%s%n", "RegressionTest3.test1574");
         com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
         java.lang.Integer int1 = resultDescription0.getId();
         java.lang.String str2 = resultDescription0.getTestName();
@@ -270,9 +3038,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1509() throws Throwable {
+    public void test1575() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1509");
+            System.out.format("%n%s%n", "RegressionTest3.test1575");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -342,9 +3110,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1510() throws Throwable {
+    public void test1576() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1510");
+            System.out.format("%n%s%n", "RegressionTest3.test1576");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -358,9 +3126,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1511() throws Throwable {
+    public void test1577() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1511");
+            System.out.format("%n%s%n", "RegressionTest3.test1577");
         com.vntu.marenko.ualearning.server.service.UserService userService0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository2 = null;
@@ -435,9 +3203,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1512() throws Throwable {
+    public void test1578() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1512");
+            System.out.format("%n%s%n", "RegressionTest3.test1578");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -554,9 +3322,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1513() throws Throwable {
+    public void test1579() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1513");
+            System.out.format("%n%s%n", "RegressionTest3.test1579");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -574,9 +3342,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1514() throws Throwable {
+    public void test1580() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1514");
+            System.out.format("%n%s%n", "RegressionTest3.test1580");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
@@ -650,9 +3418,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1515() throws Throwable {
+    public void test1581() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1515");
+            System.out.format("%n%s%n", "RegressionTest3.test1581");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -708,9 +3476,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1516() throws Throwable {
+    public void test1582() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1516");
+            System.out.format("%n%s%n", "RegressionTest3.test1582");
         com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
         submitResultRequest0.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
         submitResultRequest0.setTestId((int) (byte) 100);
@@ -720,9 +3488,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1517() throws Throwable {
+    public void test1583() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1517");
+            System.out.format("%n%s%n", "RegressionTest3.test1583");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.toString();
         java.lang.String str2 = loginRequest0.getLogin();
@@ -817,9 +3585,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1518() throws Throwable {
+    public void test1584() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1518");
+            System.out.format("%n%s%n", "RegressionTest3.test1584");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         user0.setAge((int) '4');
@@ -830,9 +3598,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1519() throws Throwable {
+    public void test1585() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1519");
+            System.out.format("%n%s%n", "RegressionTest3.test1585");
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
@@ -906,9 +3674,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1520() throws Throwable {
+    public void test1586() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1520");
+            System.out.format("%n%s%n", "RegressionTest3.test1586");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -924,9 +3692,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1521() throws Throwable {
+    public void test1587() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1521");
+            System.out.format("%n%s%n", "RegressionTest3.test1587");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         resultDto0.setId(100);
         resultDto0.setId((int) '#');
@@ -1007,9 +3775,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1522() throws Throwable {
+    public void test1588() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1522");
+            System.out.format("%n%s%n", "RegressionTest3.test1588");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.Integer int1 = question0.getId();
         java.util.List<com.vntu.marenko.ualearning.server.model.Answer> answerList2 = null;
@@ -1112,9 +3880,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1523() throws Throwable {
+    public void test1589() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1523");
+            System.out.format("%n%s%n", "RegressionTest3.test1589");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         java.lang.String str2 = tag0.getName();
@@ -1165,9 +3933,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1524() throws Throwable {
+    public void test1590() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1524");
+            System.out.format("%n%s%n", "RegressionTest3.test1590");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -1217,9 +3985,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1525() throws Throwable {
+    public void test1591() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1525");
+            System.out.format("%n%s%n", "RegressionTest3.test1591");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
@@ -1256,9 +4024,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1526() throws Throwable {
+    public void test1592() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1526");
+            System.out.format("%n%s%n", "RegressionTest3.test1592");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -1276,9 +4044,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1527() throws Throwable {
+    public void test1593() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1527");
+            System.out.format("%n%s%n", "RegressionTest3.test1593");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -1313,9 +4081,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1528() throws Throwable {
+    public void test1594() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1528");
+            System.out.format("%n%s%n", "RegressionTest3.test1594");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper2 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
@@ -1378,9 +4146,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1529() throws Throwable {
+    public void test1595() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1529");
+            System.out.format("%n%s%n", "RegressionTest3.test1595");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -1414,9 +4182,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1530() throws Throwable {
+    public void test1596() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1530");
+            System.out.format("%n%s%n", "RegressionTest3.test1596");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         int int1 = postDto0.getId();
         postDto0.setId((int) (byte) -1);
@@ -1430,9 +4198,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1531() throws Throwable {
+    public void test1597() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1531");
+            System.out.format("%n%s%n", "RegressionTest3.test1597");
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -1495,9 +4263,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1532() throws Throwable {
+    public void test1598() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1532");
+            System.out.format("%n%s%n", "RegressionTest3.test1598");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.String str1 = question0.getText();
         java.lang.Integer int2 = question0.getId();
@@ -1513,9 +4281,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1533() throws Throwable {
+    public void test1599() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1533");
+            System.out.format("%n%s%n", "RegressionTest3.test1599");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         java.lang.String str3 = user0.getEmail();
@@ -1566,9 +4334,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1534() throws Throwable {
+    public void test1600() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1534");
+            System.out.format("%n%s%n", "RegressionTest3.test1600");
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
@@ -1686,9 +4454,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1535() throws Throwable {
+    public void test1601() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1535");
+            System.out.format("%n%s%n", "RegressionTest3.test1601");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         java.lang.String str1 = userDto0.getSurname();
         java.lang.String str2 = userDto0.getInstitution();
@@ -1698,9 +4466,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1536() throws Throwable {
+    public void test1602() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1536");
+            System.out.format("%n%s%n", "RegressionTest3.test1602");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -1716,9 +4484,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1537() throws Throwable {
+    public void test1603() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1537");
+            System.out.format("%n%s%n", "RegressionTest3.test1603");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         java.lang.String str3 = user0.getEmail();
@@ -1731,9 +4499,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1538() throws Throwable {
+    public void test1604() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1538");
+            System.out.format("%n%s%n", "RegressionTest3.test1604");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setId((-1));
@@ -1748,9 +4516,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1539() throws Throwable {
+    public void test1605() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1539");
+            System.out.format("%n%s%n", "RegressionTest3.test1605");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -1762,9 +4530,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1540() throws Throwable {
+    public void test1606() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1540");
+            System.out.format("%n%s%n", "RegressionTest3.test1606");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         java.lang.String str1 = user0.getEmail();
         java.lang.String str2 = user0.getSurname();
@@ -1780,9 +4548,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1541() throws Throwable {
+    public void test1607() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1541");
+            System.out.format("%n%s%n", "RegressionTest3.test1607");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         java.lang.String str1 = userDto0.getSurname();
         java.lang.String str2 = userDto0.getInstitution();
@@ -1797,9 +4565,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1542() throws Throwable {
+    public void test1608() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1542");
+            System.out.format("%n%s%n", "RegressionTest3.test1608");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         java.lang.String str2 = tag0.getName();
@@ -1816,9 +4584,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1543() throws Throwable {
+    public void test1609() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1543");
+            System.out.format("%n%s%n", "RegressionTest3.test1609");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -1830,9 +4598,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1544() throws Throwable {
+    public void test1610() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1544");
+            System.out.format("%n%s%n", "RegressionTest3.test1610");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -1849,9 +4617,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1545() throws Throwable {
+    public void test1611() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1545");
+            System.out.format("%n%s%n", "RegressionTest3.test1611");
         com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
         java.lang.Integer int1 = resultDescription0.getId();
         java.lang.String str2 = resultDescription0.getTestName();
@@ -1867,9 +4635,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1546() throws Throwable {
+    public void test1612() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1546");
+            System.out.format("%n%s%n", "RegressionTest3.test1612");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         java.lang.String str1 = tagDto0.toString();
         java.lang.String str2 = tagDto0.getName();
@@ -1927,9 +4695,79 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1547() throws Throwable {
+    public void test1613() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1547");
+            System.out.format("%n%s%n", "RegressionTest3.test1613");
+        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
+        resultDto0.setId(100);
+        resultDto0.setId((int) '#');
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto5 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto5.setRating((int) (byte) -1);
+        userDto5.setLogin("LoginRequest(login=null, password=null)");
+        resultDto0.setUser(userDto5);
+        resultDto0.setId((int) (short) -1);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper13 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig14 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl15 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository16 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository17 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository18 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper19 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository16, testRepository17, answerRepository18);
+        ma.glasnost.orika.MapperFacade mapperFacade20 = null;
+        submitResultRequestToDomainMapper19.setMapperFacade(mapperFacade20);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType22 = submitResultRequestToDomainMapper19.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper23 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper24 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean25 = createPostRequestToPostMapper24.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper26 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade27 = mapperConfig14.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl15, submitResultRequestToDomainMapper19, resultToDescriptionMapper23, createPostRequestToPostMapper24, postToDtoMapper26);
+        postToDtoMapper13.setMapperFacade(mapperFacade27);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType29 = postToDtoMapper13.getAType();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType30 = postToDtoMapper13.getBType();
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository31 = null;
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig32 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl33 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository34 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository35 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository36 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper37 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository34, testRepository35, answerRepository36);
+        ma.glasnost.orika.MapperFacade mapperFacade38 = null;
+        submitResultRequestToDomainMapper37.setMapperFacade(mapperFacade38);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType40 = submitResultRequestToDomainMapper37.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper41 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper42 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean43 = createPostRequestToPostMapper42.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper44 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade45 = mapperConfig32.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl33, submitResultRequestToDomainMapper37, resultToDescriptionMapper41, createPostRequestToPostMapper42, postToDtoMapper44);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository46 = null;
+        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository47 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade48 = null;
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository49 = null;
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto50 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl51 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        boolean boolean52 = answerDto50.equals((java.lang.Object) markComputerImpl51);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl53 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository47, mapperFacade48, userRepository49, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl51);
+        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl54 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository31, mapperFacade45, userRepository46, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl51);
+        postToDtoMapper13.setMapperFacade(mapperFacade45);
+        boolean boolean56 = resultDto0.equals((java.lang.Object) postToDtoMapper13);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType57 = postToDtoMapper13.getAType();
+        org.junit.Assert.assertNotNull(resultType22);
+        org.junit.Assert.assertEquals("'" + boolean25 + "' != '" + false + "'", boolean25, false);
+        org.junit.Assert.assertNotNull(mapperFacade27);
+        org.junit.Assert.assertNotNull(postType29);
+        org.junit.Assert.assertNotNull(postDtoType30);
+        org.junit.Assert.assertNotNull(resultType40);
+        org.junit.Assert.assertEquals("'" + boolean43 + "' != '" + false + "'", boolean43, false);
+        org.junit.Assert.assertNotNull(mapperFacade45);
+        org.junit.Assert.assertTrue("'" + boolean52 + "' != '" + false + "'", boolean52 == false);
+        org.junit.Assert.assertTrue("'" + boolean56 + "' != '" + false + "'", boolean56 == false);
+        org.junit.Assert.assertNotNull(postType57);
+    }
+
+    @Test
+    public void test1614() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1614");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         tag0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
         java.lang.String str3 = tag0.toString();
@@ -1939,9 +4777,25 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1548() throws Throwable {
+    public void test1615() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1548");
+            System.out.format("%n%s%n", "RegressionTest3.test1615");
+        com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
+        post0.setText("");
+        java.lang.String str3 = post0.toString();
+        java.lang.Integer int4 = post0.getId();
+        java.util.List<java.lang.String> strList5 = null;
+        post0.setLikes(strList5);
+        java.lang.String str7 = post0.toString();
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str3, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int4);
+        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str7, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+    }
+
+    @Test
+    public void test1616() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1616");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         tagDto0.setId(1);
         tagDto0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), email=hi!, rating=0)");
@@ -2048,9 +4902,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1549() throws Throwable {
+    public void test1617() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1549");
+            System.out.format("%n%s%n", "RegressionTest3.test1617");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         java.lang.String str2 = tag0.toString();
@@ -2071,9 +4925,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1550() throws Throwable {
+    public void test1618() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1550");
+            System.out.format("%n%s%n", "RegressionTest3.test1618");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setLogin("TagDto(id=0, name=null)");
         java.lang.String str3 = userDto0.getSurname();
@@ -2085,9 +4939,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1551() throws Throwable {
+    public void test1619() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1551");
+            System.out.format("%n%s%n", "RegressionTest3.test1619");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -2102,9 +4956,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1552() throws Throwable {
+    public void test1620() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1552");
+            System.out.format("%n%s%n", "RegressionTest3.test1620");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         resultDto0.setId(100);
         resultDto0.setId((int) '#');
@@ -2116,9 +4970,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1553() throws Throwable {
+    public void test1621() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1553");
+            System.out.format("%n%s%n", "RegressionTest3.test1621");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -2165,9 +5019,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1554() throws Throwable {
+    public void test1622() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1554");
+            System.out.format("%n%s%n", "RegressionTest3.test1622");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -2254,9 +5108,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1555() throws Throwable {
+    public void test1623() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1555");
+            System.out.format("%n%s%n", "RegressionTest3.test1623");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         questionDto0.setText("User(login=null, password=null, name=null, surname=, age=0, institution=null, email=null, rating=0)");
@@ -2265,9 +5119,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1556() throws Throwable {
+    public void test1624() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1556");
+            System.out.format("%n%s%n", "RegressionTest3.test1624");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -2346,9 +5200,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1557() throws Throwable {
+    public void test1625() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1557");
+            System.out.format("%n%s%n", "RegressionTest3.test1625");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         java.lang.Integer int1 = answer0.getId();
         boolean boolean2 = answer0.isCorrect();
@@ -2374,9 +5228,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1558() throws Throwable {
+    public void test1626() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1558");
+            System.out.format("%n%s%n", "RegressionTest3.test1626");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -2415,9 +5269,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1559() throws Throwable {
+    public void test1627() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1559");
+            System.out.format("%n%s%n", "RegressionTest3.test1627");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -2446,9 +5300,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1560() throws Throwable {
+    public void test1628() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1560");
+            System.out.format("%n%s%n", "RegressionTest3.test1628");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -2496,9 +5350,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1561() throws Throwable {
+    public void test1629() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1561");
+            System.out.format("%n%s%n", "RegressionTest3.test1629");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -2574,9 +5428,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1562() throws Throwable {
+    public void test1630() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1562");
+            System.out.format("%n%s%n", "RegressionTest3.test1630");
         com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest0 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
         java.lang.String str1 = createPostRequest0.getUsername();
         java.lang.String str2 = createPostRequest0.toString();
@@ -2589,9 +5443,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1563() throws Throwable {
+    public void test1631() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1563");
+            System.out.format("%n%s%n", "RegressionTest3.test1631");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -2675,9 +5529,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1564() throws Throwable {
+    public void test1632() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1564");
+            System.out.format("%n%s%n", "RegressionTest3.test1632");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -2692,9 +5546,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1565() throws Throwable {
+    public void test1633() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1565");
+            System.out.format("%n%s%n", "RegressionTest3.test1633");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         java.lang.String str1 = questionDto0.getText();
         int int2 = questionDto0.getId();
@@ -2770,9 +5624,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1566() throws Throwable {
+    public void test1634() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1566");
+            System.out.format("%n%s%n", "RegressionTest3.test1634");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -2787,9 +5641,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1567() throws Throwable {
+    public void test1635() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1567");
+            System.out.format("%n%s%n", "RegressionTest3.test1635");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -2803,9 +5657,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1568() throws Throwable {
+    public void test1636() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1568");
+            System.out.format("%n%s%n", "RegressionTest3.test1636");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -2848,9 +5702,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1569() throws Throwable {
+    public void test1637() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1569");
+            System.out.format("%n%s%n", "RegressionTest3.test1637");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         java.lang.Integer int1 = answer0.getId();
         boolean boolean2 = answer0.isCorrect();
@@ -2863,9 +5717,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1570() throws Throwable {
+    public void test1638() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1570");
+            System.out.format("%n%s%n", "RegressionTest3.test1638");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         answer0.setText("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         boolean boolean3 = answer0.isCorrect();
@@ -2874,9 +5728,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1571() throws Throwable {
+    public void test1639() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1571");
+            System.out.format("%n%s%n", "RegressionTest3.test1639");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -2911,9 +5765,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1572() throws Throwable {
+    public void test1640() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1572");
+            System.out.format("%n%s%n", "RegressionTest3.test1640");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -2936,9 +5790,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1573() throws Throwable {
+    public void test1641() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1573");
+            System.out.format("%n%s%n", "RegressionTest3.test1641");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         answer0.setId((java.lang.Integer) 0);
         java.lang.String str3 = answer0.getText();
@@ -2948,9 +5802,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1574() throws Throwable {
+    public void test1642() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1574");
+            System.out.format("%n%s%n", "RegressionTest3.test1642");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getSurname();
@@ -2963,9 +5817,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1575() throws Throwable {
+    public void test1643() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1575");
+            System.out.format("%n%s%n", "RegressionTest3.test1643");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
@@ -2998,9 +5852,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1576() throws Throwable {
+    public void test1644() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1576");
+            System.out.format("%n%s%n", "RegressionTest3.test1644");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         tagDto0.setId(1);
         boolean boolean4 = tagDto0.equals((java.lang.Object) (-1L));
@@ -3021,9 +5875,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1577() throws Throwable {
+    public void test1645() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1577");
+            System.out.format("%n%s%n", "RegressionTest3.test1645");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         resultDto0.setId(100);
         resultDto0.setId((int) (short) 1);
@@ -3032,9 +5886,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1578() throws Throwable {
+    public void test1646() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1578");
+            System.out.format("%n%s%n", "RegressionTest3.test1646");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         userRequest0.setEmail("TagDto(id=1, name=null)");
@@ -3055,9 +5909,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1579() throws Throwable {
+    public void test1647() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1579");
+            System.out.format("%n%s%n", "RegressionTest3.test1647");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -3101,9 +5955,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1580() throws Throwable {
+    public void test1648() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1580");
+            System.out.format("%n%s%n", "RegressionTest3.test1648");
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
         ma.glasnost.orika.MapperFacade mapperFacade1 = null;
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -3204,9 +6058,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1581() throws Throwable {
+    public void test1649() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1581");
+            System.out.format("%n%s%n", "RegressionTest3.test1649");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         java.lang.Boolean boolean1 = createPostRequestToPostMapper0.favorsExtension();
         java.lang.Boolean boolean2 = createPostRequestToPostMapper0.favorsExtension();
@@ -3251,9 +6105,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1582() throws Throwable {
+    public void test1650() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1582");
+            System.out.format("%n%s%n", "RegressionTest3.test1650");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         int int1 = testDto0.getId();
         testDto0.setId((int) (byte) 100);
@@ -3275,9 +6129,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1583() throws Throwable {
+    public void test1651() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1583");
+            System.out.format("%n%s%n", "RegressionTest3.test1651");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -3303,9 +6157,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1584() throws Throwable {
+    public void test1652() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1584");
+            System.out.format("%n%s%n", "RegressionTest3.test1652");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -3372,9 +6226,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1585() throws Throwable {
+    public void test1653() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1585");
+            System.out.format("%n%s%n", "RegressionTest3.test1653");
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
@@ -3410,9 +6264,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1586() throws Throwable {
+    public void test1654() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1586");
+            System.out.format("%n%s%n", "RegressionTest3.test1654");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -3425,9 +6279,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1587() throws Throwable {
+    public void test1655() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1587");
+            System.out.format("%n%s%n", "RegressionTest3.test1655");
         com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
         java.lang.Integer int1 = resultDescription0.getId();
         long long2 = resultDescription0.getMark();
@@ -3454,9 +6308,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1588() throws Throwable {
+    public void test1656() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1588");
+            System.out.format("%n%s%n", "RegressionTest3.test1656");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -3502,9 +6356,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1589() throws Throwable {
+    public void test1657() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1589");
+            System.out.format("%n%s%n", "RegressionTest3.test1657");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -3529,9 +6383,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1590() throws Throwable {
+    public void test1658() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1590");
+            System.out.format("%n%s%n", "RegressionTest3.test1658");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -3656,9 +6510,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1591() throws Throwable {
+    public void test1659() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1591");
+            System.out.format("%n%s%n", "RegressionTest3.test1659");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         userRequest0.setAge((int) ' ');
@@ -3668,9 +6522,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1592() throws Throwable {
+    public void test1660() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1592");
+            System.out.format("%n%s%n", "RegressionTest3.test1660");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         userRequest0.setInstitution("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=[])");
         java.lang.String str3 = userRequest0.getEmail();
@@ -3681,9 +6535,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1593() throws Throwable {
+    public void test1661() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1593");
+            System.out.format("%n%s%n", "RegressionTest3.test1661");
         com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
         java.lang.Integer int1 = resultDescription0.getId();
         java.lang.String str2 = resultDescription0.getTestName();
@@ -3697,9 +6551,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1594() throws Throwable {
+    public void test1662() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1594");
+            System.out.format("%n%s%n", "RegressionTest3.test1662");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         resultDto0.setId(100);
         resultDto0.setSubmitted(false);
@@ -3709,9 +6563,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1595() throws Throwable {
+    public void test1663() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1595");
+            System.out.format("%n%s%n", "RegressionTest3.test1663");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         int int1 = postDto0.getId();
         java.lang.String str2 = postDto0.getTimestamp();
@@ -3722,9 +6576,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1596() throws Throwable {
+    public void test1664() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1596");
+            System.out.format("%n%s%n", "RegressionTest3.test1664");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         java.lang.String str1 = answer0.getText();
         answer0.setId((java.lang.Integer) (-1));
@@ -3774,9 +6628,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1597() throws Throwable {
+    public void test1665() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1597");
+            System.out.format("%n%s%n", "RegressionTest3.test1665");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.getLogin();
         loginRequest0.setLogin("User(login=null, password=null, name=null, surname=hi!, age=0, institution=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), email=hi!, rating=0)");
@@ -3800,9 +6654,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1598() throws Throwable {
+    public void test1666() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1598");
+            System.out.format("%n%s%n", "RegressionTest3.test1666");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         java.lang.String str2 = testDto0.toString();
@@ -3815,9 +6669,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1599() throws Throwable {
+    public void test1667() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1599");
+            System.out.format("%n%s%n", "RegressionTest3.test1667");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -3906,9 +6760,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1600() throws Throwable {
+    public void test1668() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1600");
+            System.out.format("%n%s%n", "RegressionTest3.test1668");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setEmail("hi!");
         long long3 = user0.getRating();
@@ -3928,9 +6782,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1601() throws Throwable {
+    public void test1669() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1601");
+            System.out.format("%n%s%n", "RegressionTest3.test1669");
         com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest0 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
         java.lang.String str1 = createPostRequest0.getUsername();
         createPostRequest0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
@@ -3942,9 +6796,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1602() throws Throwable {
+    public void test1670() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1602");
+            System.out.format("%n%s%n", "RegressionTest3.test1670");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         postDto0.setId((int) (byte) 100);
         java.lang.String str3 = postDto0.getText();
@@ -3980,9 +6834,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1603() throws Throwable {
+    public void test1671() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1603");
+            System.out.format("%n%s%n", "RegressionTest3.test1671");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         java.lang.String str1 = user0.getEmail();
         user0.setPassword("CreatePostRequest(text=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0), username=null)");
@@ -3992,9 +6846,135 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1604() throws Throwable {
+    public void test1672() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1604");
+            System.out.format("%n%s%n", "RegressionTest3.test1672");
+        com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
+        answer0.setText("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto3 = new com.vntu.marenko.ualearning.server.dto.TestDto();
+        java.lang.String str4 = testDto3.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto5 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str6 = tagDto5.toString();
+        java.lang.String str7 = tagDto5.getName();
+        com.vntu.marenko.ualearning.server.model.User user8 = new com.vntu.marenko.ualearning.server.model.User();
+        long long9 = user8.getRating();
+        user8.setLogin("hi!");
+        boolean boolean12 = tagDto5.equals((java.lang.Object) user8);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto13 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str14 = tagDto13.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto15 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto15.setId(1);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto18 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str19 = tagDto18.toString();
+        java.lang.String str20 = tagDto18.getName();
+        com.vntu.marenko.ualearning.server.model.Test test21 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int22 = test21.getId();
+        java.lang.Integer int23 = test21.getId();
+        test21.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList26 = test21.getTags();
+        boolean boolean27 = tagDto18.equals((java.lang.Object) tagList26);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto28 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto28.setId(1);
+        boolean boolean32 = tagDto28.equals((java.lang.Object) (-1L));
+        int int33 = tagDto28.getId();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto34 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto34.setId(1);
+        java.lang.String str37 = tagDto34.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto38 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str39 = tagDto38.toString();
+        java.lang.String str40 = tagDto38.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto41 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str42 = tagDto41.toString();
+        java.lang.String str43 = tagDto41.getName();
+        com.vntu.marenko.ualearning.server.model.Test test44 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int45 = test44.getId();
+        java.lang.Integer int46 = test44.getId();
+        test44.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList49 = test44.getTags();
+        boolean boolean50 = tagDto41.equals((java.lang.Object) tagList49);
+        com.vntu.marenko.ualearning.server.dto.TagDto[] tagDtoArray51 = new com.vntu.marenko.ualearning.server.dto.TagDto[] { tagDto5, tagDto13, tagDto15, tagDto18, tagDto28, tagDto34, tagDto38, tagDto41 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList52 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto>();
+        boolean boolean53 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList52, tagDtoArray51);
+        testDto3.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList52);
+        testDto3.setCompletedCounter((java.lang.Integer) 100);
+        java.lang.String str57 = testDto3.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto58 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto58.setId(1);
+        int int61 = tagDto58.getId();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto62 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto62.setId(1);
+        java.lang.String str65 = tagDto62.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto66 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str67 = tagDto66.toString();
+        java.lang.String str68 = tagDto66.getName();
+        com.vntu.marenko.ualearning.server.model.Test test69 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int70 = test69.getId();
+        java.lang.Integer int71 = test69.getId();
+        test69.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList74 = test69.getTags();
+        boolean boolean75 = tagDto66.equals((java.lang.Object) tagList74);
+        tagDto66.setName("User(login=null, password=null, name=null, surname=, age=0, institution=null, email=null, rating=0)");
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto78 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str79 = tagDto78.toString();
+        java.lang.String str80 = tagDto78.getName();
+        java.lang.String str81 = tagDto78.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto82 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str83 = tagDto82.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto[] tagDtoArray84 = new com.vntu.marenko.ualearning.server.dto.TagDto[] { tagDto58, tagDto62, tagDto66, tagDto78, tagDto82 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList85 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto>();
+        boolean boolean86 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList85, tagDtoArray84);
+        testDto3.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList85);
+        boolean boolean88 = answer0.equals((java.lang.Object) tagDtoList85);
+        answer0.setCorrect(false);
+        boolean boolean91 = answer0.isCorrect();
+        org.junit.Assert.assertEquals("'" + str4 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)" + "'", str4, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "TagDto(id=0, name=null)" + "'", str6, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str7);
+        org.junit.Assert.assertTrue("'" + long9 + "' != '" + 0L + "'", long9 == 0L);
+        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
+        org.junit.Assert.assertEquals("'" + str14 + "' != '" + "TagDto(id=0, name=null)" + "'", str14, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertEquals("'" + str19 + "' != '" + "TagDto(id=0, name=null)" + "'", str19, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str20);
+        org.junit.Assert.assertNull(int22);
+        org.junit.Assert.assertNull(int23);
+        org.junit.Assert.assertNull(tagList26);
+        org.junit.Assert.assertTrue("'" + boolean27 + "' != '" + false + "'", boolean27 == false);
+        org.junit.Assert.assertTrue("'" + boolean32 + "' != '" + false + "'", boolean32 == false);
+        org.junit.Assert.assertTrue("'" + int33 + "' != '" + 1 + "'", int33 == 1);
+        org.junit.Assert.assertNull(str37);
+        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "TagDto(id=0, name=null)" + "'", str39, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str40);
+        org.junit.Assert.assertEquals("'" + str42 + "' != '" + "TagDto(id=0, name=null)" + "'", str42, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str43);
+        org.junit.Assert.assertNull(int45);
+        org.junit.Assert.assertNull(int46);
+        org.junit.Assert.assertNull(tagList49);
+        org.junit.Assert.assertTrue("'" + boolean50 + "' != '" + false + "'", boolean50 == false);
+        org.junit.Assert.assertNotNull(tagDtoArray51);
+        org.junit.Assert.assertTrue("'" + boolean53 + "' != '" + true + "'", boolean53 == true);
+        org.junit.Assert.assertEquals("'" + str57 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=100, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)])" + "'", str57, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=100, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)])");
+        org.junit.Assert.assertTrue("'" + int61 + "' != '" + 1 + "'", int61 == 1);
+        org.junit.Assert.assertNull(str65);
+        org.junit.Assert.assertEquals("'" + str67 + "' != '" + "TagDto(id=0, name=null)" + "'", str67, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str68);
+        org.junit.Assert.assertNull(int70);
+        org.junit.Assert.assertNull(int71);
+        org.junit.Assert.assertNull(tagList74);
+        org.junit.Assert.assertTrue("'" + boolean75 + "' != '" + false + "'", boolean75 == false);
+        org.junit.Assert.assertEquals("'" + str79 + "' != '" + "TagDto(id=0, name=null)" + "'", str79, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str80);
+        org.junit.Assert.assertNull(str81);
+        org.junit.Assert.assertEquals("'" + str83 + "' != '" + "TagDto(id=0, name=null)" + "'", str83, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNotNull(tagDtoArray84);
+        org.junit.Assert.assertTrue("'" + boolean86 + "' != '" + true + "'", boolean86 == true);
+        org.junit.Assert.assertTrue("'" + boolean88 + "' != '" + false + "'", boolean88 == false);
+        org.junit.Assert.assertTrue("'" + boolean91 + "' != '" + false + "'", boolean91 == false);
+    }
+
+    @Test
+    public void test1673() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1673");
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
         ma.glasnost.orika.MapperFacade mapperFacade1 = null;
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -4032,9 +7012,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1605() throws Throwable {
+    public void test1674() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1605");
+            System.out.format("%n%s%n", "RegressionTest3.test1674");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList3 = questionDto0.getAnswers();
@@ -4130,9 +7110,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1606() throws Throwable {
+    public void test1675() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1606");
+            System.out.format("%n%s%n", "RegressionTest3.test1675");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setRating(0);
         java.lang.String str3 = userDto0.getLogin();
@@ -4143,9 +7123,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1607() throws Throwable {
+    public void test1676() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1607");
+            System.out.format("%n%s%n", "RegressionTest3.test1676");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
@@ -4156,9 +7136,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1608() throws Throwable {
+    public void test1677() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1608");
+            System.out.format("%n%s%n", "RegressionTest3.test1677");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
@@ -4181,9 +7161,28 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1609() throws Throwable {
+    public void test1678() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1609");
+            System.out.format("%n%s%n", "RegressionTest3.test1678");
+        com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int1 = test0.getId();
+        java.lang.Integer int2 = test0.getId();
+        test0.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.lang.Integer int5 = test0.getCompletedCounter();
+        java.lang.String str6 = test0.toString();
+        java.lang.String str7 = test0.getDescriptionTest();
+        test0.setId((java.lang.Integer) 35);
+        org.junit.Assert.assertNull(int1);
+        org.junit.Assert.assertNull(int2);
+        org.junit.Assert.assertNull(int5);
+        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "Test(id=null, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null)" + "'", str6, "Test(id=null, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str7, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+    }
+
+    @Test
+    public void test1679() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1679");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -4200,9 +7199,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1610() throws Throwable {
+    public void test1680() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1610");
+            System.out.format("%n%s%n", "RegressionTest3.test1680");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         java.lang.String str2 = tag0.getName();
@@ -4259,9 +7258,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1611() throws Throwable {
+    public void test1681() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1611");
+            System.out.format("%n%s%n", "RegressionTest3.test1681");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -4368,9 +7367,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1612() throws Throwable {
+    public void test1682() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1612");
+            System.out.format("%n%s%n", "RegressionTest3.test1682");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         java.lang.Boolean boolean1 = createPostRequestToPostMapper0.favorsExtension();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig2 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
@@ -4448,9 +7447,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1613() throws Throwable {
+    public void test1683() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1613");
+            System.out.format("%n%s%n", "RegressionTest3.test1683");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -4577,9 +7576,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1614() throws Throwable {
+    public void test1684() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1614");
+            System.out.format("%n%s%n", "RegressionTest3.test1684");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -4624,9 +7623,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1615() throws Throwable {
+    public void test1685() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1615");
+            System.out.format("%n%s%n", "RegressionTest3.test1685");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         postDto0.setId((int) (byte) 100);
         java.lang.String str3 = postDto0.getText();
@@ -4639,9 +7638,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1616() throws Throwable {
+    public void test1686() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1616");
+            System.out.format("%n%s%n", "RegressionTest3.test1686");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         java.lang.String str2 = userRequest0.getPassword();
@@ -4652,9 +7651,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1617() throws Throwable {
+    public void test1687() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1617");
+            System.out.format("%n%s%n", "RegressionTest3.test1687");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository2 = null;
@@ -4778,9 +7777,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1618() throws Throwable {
+    public void test1688() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1618");
+            System.out.format("%n%s%n", "RegressionTest3.test1688");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
@@ -4863,9 +7862,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1619() throws Throwable {
+    public void test1689() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1619");
+            System.out.format("%n%s%n", "RegressionTest3.test1689");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         java.lang.String str1 = questionDto0.getText();
         int int2 = questionDto0.getId();
@@ -4910,9 +7909,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1620() throws Throwable {
+    public void test1690() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1620");
+            System.out.format("%n%s%n", "RegressionTest3.test1690");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -4926,9 +7925,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1621() throws Throwable {
+    public void test1691() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1621");
+            System.out.format("%n%s%n", "RegressionTest3.test1691");
         com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest0 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
         java.lang.String str1 = createPostRequest0.getUsername();
         createPostRequest0.setText("LoginRequest(login=Tag(id=null, name=null), password=null)");
@@ -4938,9 +7937,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1622() throws Throwable {
+    public void test1692() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1622");
+            System.out.format("%n%s%n", "RegressionTest3.test1692");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest3 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
@@ -4975,9 +7974,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1623() throws Throwable {
+    public void test1693() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1623");
+            System.out.format("%n%s%n", "RegressionTest3.test1693");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setEmail("hi!");
         user0.setSurname("hi!");
@@ -4990,9 +7989,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1624() throws Throwable {
+    public void test1694() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1624");
+            System.out.format("%n%s%n", "RegressionTest3.test1694");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -5050,9 +8049,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1625() throws Throwable {
+    public void test1695() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1625");
+            System.out.format("%n%s%n", "RegressionTest3.test1695");
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
@@ -5169,9 +8168,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1626() throws Throwable {
+    public void test1696() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1626");
+            System.out.format("%n%s%n", "RegressionTest3.test1696");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -5249,9 +8248,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1627() throws Throwable {
+    public void test1697() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1627");
+            System.out.format("%n%s%n", "RegressionTest3.test1697");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         answerDto0.setText("hi!");
         com.vntu.marenko.ualearning.server.model.Question question3 = new com.vntu.marenko.ualearning.server.model.Question();
@@ -5278,9 +8277,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1628() throws Throwable {
+    public void test1698() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1628");
+            System.out.format("%n%s%n", "RegressionTest3.test1698");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.String str1 = question0.getText();
         java.lang.Integer int2 = question0.getId();
@@ -5301,9 +8300,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1629() throws Throwable {
+    public void test1699() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1629");
+            System.out.format("%n%s%n", "RegressionTest3.test1699");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -5339,9 +8338,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1630() throws Throwable {
+    public void test1700() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1630");
+            System.out.format("%n%s%n", "RegressionTest3.test1700");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -5398,9 +8397,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1631() throws Throwable {
+    public void test1701() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1631");
+            System.out.format("%n%s%n", "RegressionTest3.test1701");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -5429,9 +8428,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1632() throws Throwable {
+    public void test1702() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1632");
+            System.out.format("%n%s%n", "RegressionTest3.test1702");
         com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
         int int1 = submitResultRequest0.getTestId();
         submitResultRequest0.setTestId((int) (byte) -1);
@@ -5443,9 +8442,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1633() throws Throwable {
+    public void test1703() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1633");
+            System.out.format("%n%s%n", "RegressionTest3.test1703");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -5494,9 +8493,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1634() throws Throwable {
+    public void test1704() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1634");
+            System.out.format("%n%s%n", "RegressionTest3.test1704");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -5587,9 +8586,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1635() throws Throwable {
+    public void test1705() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1635");
+            System.out.format("%n%s%n", "RegressionTest3.test1705");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -5603,9 +8602,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1636() throws Throwable {
+    public void test1706() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1636");
+            System.out.format("%n%s%n", "RegressionTest3.test1706");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -5639,9 +8638,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1637() throws Throwable {
+    public void test1707() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1637");
+            System.out.format("%n%s%n", "RegressionTest3.test1707");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
@@ -5726,9 +8725,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1638() throws Throwable {
+    public void test1708() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1638");
+            System.out.format("%n%s%n", "RegressionTest3.test1708");
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
         ma.glasnost.orika.MapperFacade mapperFacade1 = null;
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -5788,9 +8787,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1639() throws Throwable {
+    public void test1709() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1639");
+            System.out.format("%n%s%n", "RegressionTest3.test1709");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -5810,9 +8809,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1640() throws Throwable {
+    public void test1710() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1640");
+            System.out.format("%n%s%n", "RegressionTest3.test1710");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -5825,9 +8824,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1641() throws Throwable {
+    public void test1711() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1641");
+            System.out.format("%n%s%n", "RegressionTest3.test1711");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getPassword();
@@ -5839,9 +8838,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1642() throws Throwable {
+    public void test1712() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1642");
+            System.out.format("%n%s%n", "RegressionTest3.test1712");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -5882,9 +8881,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1643() throws Throwable {
+    public void test1713() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1643");
+            System.out.format("%n%s%n", "RegressionTest3.test1713");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setRating((int) (byte) -1);
         userDto0.setLogin("LoginRequest(login=null, password=null)");
@@ -5894,9 +8893,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1644() throws Throwable {
+    public void test1714() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1644");
+            System.out.format("%n%s%n", "RegressionTest3.test1714");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         java.lang.Integer int1 = result0.getId();
         com.vntu.marenko.ualearning.server.model.Test test2 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -6008,9 +9007,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1645() throws Throwable {
+    public void test1715() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1645");
+            System.out.format("%n%s%n", "RegressionTest3.test1715");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -6042,9 +9041,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1646() throws Throwable {
+    public void test1716() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1646");
+            System.out.format("%n%s%n", "RegressionTest3.test1716");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
@@ -6166,9 +9165,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1647() throws Throwable {
+    public void test1717() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1647");
+            System.out.format("%n%s%n", "RegressionTest3.test1717");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         tagDto0.setId(1);
         tagDto0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), email=hi!, rating=0)");
@@ -6177,9 +9176,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1648() throws Throwable {
+    public void test1718() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1648");
+            System.out.format("%n%s%n", "RegressionTest3.test1718");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -6278,9 +9277,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1649() throws Throwable {
+    public void test1719() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1649");
+            System.out.format("%n%s%n", "RegressionTest3.test1719");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -6342,9 +9341,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1650() throws Throwable {
+    public void test1720() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1650");
+            System.out.format("%n%s%n", "RegressionTest3.test1720");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -6367,9 +9366,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1651() throws Throwable {
+    public void test1721() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1651");
+            System.out.format("%n%s%n", "RegressionTest3.test1721");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         java.lang.Integer int1 = result0.getId();
         com.vntu.marenko.ualearning.server.model.Test test2 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -6443,9 +9442,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1652() throws Throwable {
+    public void test1722() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1652");
+            System.out.format("%n%s%n", "RegressionTest3.test1722");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setId((-1));
@@ -6463,9 +9462,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1653() throws Throwable {
+    public void test1723() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1653");
+            System.out.format("%n%s%n", "RegressionTest3.test1723");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         answer0.setText("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         answer0.setId((java.lang.Integer) 10);
@@ -6475,9 +9474,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1654() throws Throwable {
+    public void test1724() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1654");
+            System.out.format("%n%s%n", "RegressionTest3.test1724");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -6526,9 +9525,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1655() throws Throwable {
+    public void test1725() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1655");
+            System.out.format("%n%s%n", "RegressionTest3.test1725");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         java.lang.String str1 = postDto0.getLogin();
         java.lang.String[] strArray6 = new java.lang.String[] { "LoginRequest(login=null, password=null)", "CreatePostRequest(text=null, username=null)", "Answer(id=null, text=null, correct=false)", "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" };
@@ -6548,9 +9547,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1656() throws Throwable {
+    public void test1726() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1656");
+            System.out.format("%n%s%n", "RegressionTest3.test1726");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         java.lang.String str1 = questionDto0.getText();
         int int2 = questionDto0.getId();
@@ -6623,9 +9622,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1657() throws Throwable {
+    public void test1727() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1657");
+            System.out.format("%n%s%n", "RegressionTest3.test1727");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setId((-1));
@@ -6649,9 +9648,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1658() throws Throwable {
+    public void test1728() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1658");
+            System.out.format("%n%s%n", "RegressionTest3.test1728");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
@@ -6737,9 +9736,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1659() throws Throwable {
+    public void test1729() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1659");
+            System.out.format("%n%s%n", "RegressionTest3.test1729");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper2 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
@@ -6824,9 +9823,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1660() throws Throwable {
+    public void test1730() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1660");
+            System.out.format("%n%s%n", "RegressionTest3.test1730");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setInstitution("hi!");
         java.lang.String str3 = user0.toString();
@@ -6840,9 +9839,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1661() throws Throwable {
+    public void test1731() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1661");
+            System.out.format("%n%s%n", "RegressionTest3.test1731");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         java.lang.String str2 = userRequest0.getPassword();
@@ -6852,9 +9851,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1662() throws Throwable {
+    public void test1732() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1662");
+            System.out.format("%n%s%n", "RegressionTest3.test1732");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -6883,9 +9882,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1663() throws Throwable {
+    public void test1733() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1663");
+            System.out.format("%n%s%n", "RegressionTest3.test1733");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         java.lang.String str2 = testDto0.toString();
@@ -6899,9 +9898,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1664() throws Throwable {
+    public void test1734() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1664");
+            System.out.format("%n%s%n", "RegressionTest3.test1734");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest3 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
@@ -6932,9 +9931,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1665() throws Throwable {
+    public void test1735() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1665");
+            System.out.format("%n%s%n", "RegressionTest3.test1735");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -6954,9 +9953,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1666() throws Throwable {
+    public void test1736() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1666");
+            System.out.format("%n%s%n", "RegressionTest3.test1736");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         java.lang.String str2 = tag0.toString();
@@ -6976,9 +9975,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1667() throws Throwable {
+    public void test1737() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1667");
+            System.out.format("%n%s%n", "RegressionTest3.test1737");
         com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest0 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
         java.lang.String str1 = createPostRequest0.getUsername();
         createPostRequest0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
@@ -6992,9 +9991,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1668() throws Throwable {
+    public void test1738() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1668");
+            System.out.format("%n%s%n", "RegressionTest3.test1738");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -7039,9 +10038,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1669() throws Throwable {
+    public void test1739() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1669");
+            System.out.format("%n%s%n", "RegressionTest3.test1739");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         java.lang.String str1 = userDto0.toString();
         java.lang.String str2 = userDto0.getLogin();
@@ -7057,9 +10056,91 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1670() throws Throwable {
+    public void test1740() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1670");
+            System.out.format("%n%s%n", "RegressionTest3.test1740");
+        com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
+        java.lang.String str1 = testDto0.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str3 = tagDto2.toString();
+        java.lang.String str4 = tagDto2.getName();
+        com.vntu.marenko.ualearning.server.model.User user5 = new com.vntu.marenko.ualearning.server.model.User();
+        long long6 = user5.getRating();
+        user5.setLogin("hi!");
+        boolean boolean9 = tagDto2.equals((java.lang.Object) user5);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto10 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str11 = tagDto10.toString();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto12 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto12.setId(1);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto15 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str16 = tagDto15.toString();
+        java.lang.String str17 = tagDto15.getName();
+        com.vntu.marenko.ualearning.server.model.Test test18 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int19 = test18.getId();
+        java.lang.Integer int20 = test18.getId();
+        test18.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList23 = test18.getTags();
+        boolean boolean24 = tagDto15.equals((java.lang.Object) tagList23);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto25 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto25.setId(1);
+        boolean boolean29 = tagDto25.equals((java.lang.Object) (-1L));
+        int int30 = tagDto25.getId();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto31 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        tagDto31.setId(1);
+        java.lang.String str34 = tagDto31.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto35 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str36 = tagDto35.toString();
+        java.lang.String str37 = tagDto35.getName();
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto38 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str39 = tagDto38.toString();
+        java.lang.String str40 = tagDto38.getName();
+        com.vntu.marenko.ualearning.server.model.Test test41 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int42 = test41.getId();
+        java.lang.Integer int43 = test41.getId();
+        test41.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList46 = test41.getTags();
+        boolean boolean47 = tagDto38.equals((java.lang.Object) tagList46);
+        com.vntu.marenko.ualearning.server.dto.TagDto[] tagDtoArray48 = new com.vntu.marenko.ualearning.server.dto.TagDto[] { tagDto2, tagDto10, tagDto12, tagDto15, tagDto25, tagDto31, tagDto35, tagDto38 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList49 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto>();
+        boolean boolean50 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList49, tagDtoArray48);
+        testDto0.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList49);
+        int int52 = testDto0.getId();
+        java.lang.String str53 = testDto0.getDescriptionTest();
+        int int54 = testDto0.getId();
+        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)" + "'", str1, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "TagDto(id=0, name=null)" + "'", str3, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str4);
+        org.junit.Assert.assertTrue("'" + long6 + "' != '" + 0L + "'", long6 == 0L);
+        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
+        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "TagDto(id=0, name=null)" + "'", str11, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertEquals("'" + str16 + "' != '" + "TagDto(id=0, name=null)" + "'", str16, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str17);
+        org.junit.Assert.assertNull(int19);
+        org.junit.Assert.assertNull(int20);
+        org.junit.Assert.assertNull(tagList23);
+        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + false + "'", boolean24 == false);
+        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
+        org.junit.Assert.assertTrue("'" + int30 + "' != '" + 1 + "'", int30 == 1);
+        org.junit.Assert.assertNull(str34);
+        org.junit.Assert.assertEquals("'" + str36 + "' != '" + "TagDto(id=0, name=null)" + "'", str36, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str37);
+        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "TagDto(id=0, name=null)" + "'", str39, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str40);
+        org.junit.Assert.assertNull(int42);
+        org.junit.Assert.assertNull(int43);
+        org.junit.Assert.assertNull(tagList46);
+        org.junit.Assert.assertTrue("'" + boolean47 + "' != '" + false + "'", boolean47 == false);
+        org.junit.Assert.assertNotNull(tagDtoArray48);
+        org.junit.Assert.assertTrue("'" + boolean50 + "' != '" + true + "'", boolean50 == true);
+        org.junit.Assert.assertTrue("'" + int52 + "' != '" + 0 + "'", int52 == 0);
+        org.junit.Assert.assertNull(str53);
+        org.junit.Assert.assertTrue("'" + int54 + "' != '" + 0 + "'", int54 == 0);
+    }
+
+    @Test
+    public void test1741() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1741");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -7157,9 +10238,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1671() throws Throwable {
+    public void test1742() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1671");
+            System.out.format("%n%s%n", "RegressionTest3.test1742");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -7174,9 +10255,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1672() throws Throwable {
+    public void test1743() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1672");
+            System.out.format("%n%s%n", "RegressionTest3.test1743");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -7219,9 +10300,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1673() throws Throwable {
+    public void test1744() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1673");
+            System.out.format("%n%s%n", "RegressionTest3.test1744");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
@@ -7301,9 +10382,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1674() throws Throwable {
+    public void test1745() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1674");
+            System.out.format("%n%s%n", "RegressionTest3.test1745");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setRating((int) (byte) -1);
         userDto0.setLogin("LoginRequest(login=null, password=null)");
@@ -7315,9 +10396,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1675() throws Throwable {
+    public void test1746() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1675");
+            System.out.format("%n%s%n", "RegressionTest3.test1746");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
@@ -7329,9 +10410,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1676() throws Throwable {
+    public void test1747() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1676");
+            System.out.format("%n%s%n", "RegressionTest3.test1747");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
@@ -7415,9 +10496,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1677() throws Throwable {
+    public void test1748() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1677");
+            System.out.format("%n%s%n", "RegressionTest3.test1748");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
@@ -7433,9 +10514,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1678() throws Throwable {
+    public void test1749() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1678");
+            System.out.format("%n%s%n", "RegressionTest3.test1749");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -7515,9 +10596,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1679() throws Throwable {
+    public void test1750() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1679");
+            System.out.format("%n%s%n", "RegressionTest3.test1750");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.Integer int1 = question0.getId();
         java.lang.Integer int2 = question0.getId();
@@ -7540,9 +10621,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1680() throws Throwable {
+    public void test1751() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1680");
+            System.out.format("%n%s%n", "RegressionTest3.test1751");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto3 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
@@ -7578,9 +10659,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1681() throws Throwable {
+    public void test1752() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1681");
+            System.out.format("%n%s%n", "RegressionTest3.test1752");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         user0.setRating((long) (short) -1);
@@ -7591,9 +10672,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1682() throws Throwable {
+    public void test1753() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1682");
+            System.out.format("%n%s%n", "RegressionTest3.test1753");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -7647,9 +10728,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1683() throws Throwable {
+    public void test1754() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1683");
+            System.out.format("%n%s%n", "RegressionTest3.test1754");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.Integer int1 = question0.getId();
         java.lang.Integer int2 = question0.getId();
@@ -7674,9 +10755,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1684() throws Throwable {
+    public void test1755() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1684");
+            System.out.format("%n%s%n", "RegressionTest3.test1755");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -7769,9 +10850,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1685() throws Throwable {
+    public void test1756() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1685");
+            System.out.format("%n%s%n", "RegressionTest3.test1756");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         java.lang.String str3 = user0.getEmail();
@@ -7787,9 +10868,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1686() throws Throwable {
+    public void test1757() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1686");
+            System.out.format("%n%s%n", "RegressionTest3.test1757");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         java.lang.Integer int1 = result0.getId();
         result0.setSubmitted(false);
@@ -7810,9 +10891,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1687() throws Throwable {
+    public void test1758() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1687");
+            System.out.format("%n%s%n", "RegressionTest3.test1758");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
@@ -7894,9 +10975,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1688() throws Throwable {
+    public void test1759() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1688");
+            System.out.format("%n%s%n", "RegressionTest3.test1759");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper2 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
@@ -8002,9 +11083,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1689() throws Throwable {
+    public void test1760() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1689");
+            System.out.format("%n%s%n", "RegressionTest3.test1760");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -8054,9 +11135,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1690() throws Throwable {
+    public void test1761() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1690");
+            System.out.format("%n%s%n", "RegressionTest3.test1761");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -8091,9 +11172,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1691() throws Throwable {
+    public void test1762() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1691");
+            System.out.format("%n%s%n", "RegressionTest3.test1762");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         long long1 = user0.getRating();
         java.lang.String str2 = user0.getLogin();
@@ -8102,9 +11183,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1692() throws Throwable {
+    public void test1763() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1692");
+            System.out.format("%n%s%n", "RegressionTest3.test1763");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
@@ -8118,9 +11199,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1693() throws Throwable {
+    public void test1764() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1693");
+            System.out.format("%n%s%n", "RegressionTest3.test1764");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         java.lang.String str1 = answer0.getText();
         java.lang.String str2 = answer0.getText();
@@ -8150,9 +11231,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1694() throws Throwable {
+    public void test1765() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1694");
+            System.out.format("%n%s%n", "RegressionTest3.test1765");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         com.vntu.marenko.ualearning.server.model.User user1 = new com.vntu.marenko.ualearning.server.model.User();
         user1.setSurname("");
@@ -8169,9 +11250,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1695() throws Throwable {
+    public void test1766() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1695");
+            System.out.format("%n%s%n", "RegressionTest3.test1766");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.getPassword();
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
@@ -8191,9 +11272,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1696() throws Throwable {
+    public void test1767() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1696");
+            System.out.format("%n%s%n", "RegressionTest3.test1767");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         tag0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
         java.lang.Integer int3 = tag0.getId();
@@ -8231,9 +11312,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1697() throws Throwable {
+    public void test1768() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1697");
+            System.out.format("%n%s%n", "RegressionTest3.test1768");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -8270,9 +11351,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1698() throws Throwable {
+    public void test1769() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1698");
+            System.out.format("%n%s%n", "RegressionTest3.test1769");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.getLogin();
         loginRequest0.setLogin("User(login=null, password=null, name=null, surname=hi!, age=0, institution=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), email=hi!, rating=0)");
@@ -8295,9 +11376,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1699() throws Throwable {
+    public void test1770() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1699");
+            System.out.format("%n%s%n", "RegressionTest3.test1770");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         int int1 = answerDto0.getId();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto2 = new com.vntu.marenko.ualearning.server.dto.TestDto();
@@ -8421,9 +11502,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1700() throws Throwable {
+    public void test1771() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1700");
+            System.out.format("%n%s%n", "RegressionTest3.test1771");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -8514,9 +11595,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1701() throws Throwable {
+    public void test1772() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1701");
+            System.out.format("%n%s%n", "RegressionTest3.test1772");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -8532,9 +11613,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1702() throws Throwable {
+    public void test1773() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1702");
+            System.out.format("%n%s%n", "RegressionTest3.test1773");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         java.lang.Integer int1 = result0.getId();
         com.vntu.marenko.ualearning.server.model.Test test2 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -8602,9 +11683,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1703() throws Throwable {
+    public void test1774() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1703");
+            System.out.format("%n%s%n", "RegressionTest3.test1774");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         java.lang.String str1 = answer0.getText();
         answer0.setId((java.lang.Integer) 100);
@@ -8615,9 +11696,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1704() throws Throwable {
+    public void test1775() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1704");
+            System.out.format("%n%s%n", "RegressionTest3.test1775");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -8704,9 +11785,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1705() throws Throwable {
+    public void test1776() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1705");
+            System.out.format("%n%s%n", "RegressionTest3.test1776");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
@@ -8719,9 +11800,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1706() throws Throwable {
+    public void test1777() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1706");
+            System.out.format("%n%s%n", "RegressionTest3.test1777");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
@@ -8823,9 +11904,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1707() throws Throwable {
+    public void test1778() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1707");
+            System.out.format("%n%s%n", "RegressionTest3.test1778");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -8867,9 +11948,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1708() throws Throwable {
+    public void test1779() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1708");
+            System.out.format("%n%s%n", "RegressionTest3.test1779");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -8899,9 +11980,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1709() throws Throwable {
+    public void test1780() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1709");
+            System.out.format("%n%s%n", "RegressionTest3.test1780");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         java.lang.String str2 = testDto0.toString();
@@ -8916,9 +11997,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1710() throws Throwable {
+    public void test1781() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1710");
+            System.out.format("%n%s%n", "RegressionTest3.test1781");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         answer0.setCorrect(false);
         java.lang.Integer int3 = answer0.getId();
@@ -8931,9 +12012,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1711() throws Throwable {
+    public void test1782() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1711");
+            System.out.format("%n%s%n", "RegressionTest3.test1782");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         com.vntu.marenko.ualearning.server.model.User user1 = new com.vntu.marenko.ualearning.server.model.User();
         user1.setSurname("");
@@ -8953,9 +12034,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1712() throws Throwable {
+    public void test1783() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1712");
+            System.out.format("%n%s%n", "RegressionTest3.test1783");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         int int1 = testDto0.getId();
         int int2 = testDto0.getId();
@@ -8997,9 +12078,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1713() throws Throwable {
+    public void test1784() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1713");
+            System.out.format("%n%s%n", "RegressionTest3.test1784");
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository2 = null;
@@ -9067,9 +12148,20 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1714() throws Throwable {
+    public void test1785() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1714");
+            System.out.format("%n%s%n", "RegressionTest3.test1785");
+        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
+        resultDescription0.setId((java.lang.Integer) 10);
+        long long3 = resultDescription0.getMark();
+        resultDescription0.setTestName("hi!");
+        org.junit.Assert.assertTrue("'" + long3 + "' != '" + 0L + "'", long3 == 0L);
+    }
+
+    @Test
+    public void test1786() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1786");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.getPassword();
         com.vntu.marenko.ualearning.server.dto.UserShortDto userShortDto2 = new com.vntu.marenko.ualearning.server.dto.UserShortDto();
@@ -9093,9 +12185,35 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1715() throws Throwable {
+    public void test1787() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1715");
+            System.out.format("%n%s%n", "RegressionTest3.test1787");
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
+        submitResultRequest0.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
+        int int3 = submitResultRequest0.getTestId();
+        int int4 = submitResultRequest0.getTestId();
+        int int5 = submitResultRequest0.getTestId();
+        com.vntu.marenko.ualearning.server.model.Post post6 = new com.vntu.marenko.ualearning.server.model.Post();
+        post6.setText("");
+        java.lang.String str9 = post6.toString();
+        java.lang.Integer int10 = post6.getId();
+        java.util.Date date11 = null;
+        post6.setTimestamp(date11);
+        java.lang.Integer int13 = post6.getId();
+        boolean boolean14 = submitResultRequest0.equals((java.lang.Object) post6);
+        org.junit.Assert.assertTrue("'" + int3 + "' != '" + 0 + "'", int3 == 0);
+        org.junit.Assert.assertTrue("'" + int4 + "' != '" + 0 + "'", int4 == 0);
+        org.junit.Assert.assertTrue("'" + int5 + "' != '" + 0 + "'", int5 == 0);
+        org.junit.Assert.assertEquals("'" + str9 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str9, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int10);
+        org.junit.Assert.assertNull(int13);
+        org.junit.Assert.assertTrue("'" + boolean14 + "' != '" + false + "'", boolean14 == false);
+    }
+
+    @Test
+    public void test1788() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1788");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -9109,9 +12227,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1716() throws Throwable {
+    public void test1789() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1716");
+            System.out.format("%n%s%n", "RegressionTest3.test1789");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         answerDto0.setText("hi!");
         com.vntu.marenko.ualearning.server.model.Question question3 = new com.vntu.marenko.ualearning.server.model.Question();
@@ -9124,9 +12242,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1717() throws Throwable {
+    public void test1790() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1717");
+            System.out.format("%n%s%n", "RegressionTest3.test1790");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -9214,9 +12332,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1718() throws Throwable {
+    public void test1791() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1718");
+            System.out.format("%n%s%n", "RegressionTest3.test1791");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -9229,9 +12347,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1719() throws Throwable {
+    public void test1792() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1719");
+            System.out.format("%n%s%n", "RegressionTest3.test1792");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -9243,9 +12361,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1720() throws Throwable {
+    public void test1793() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1720");
+            System.out.format("%n%s%n", "RegressionTest3.test1793");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         question0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
         java.lang.String str3 = question0.getText();
@@ -9294,9 +12412,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1721() throws Throwable {
+    public void test1794() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1721");
+            System.out.format("%n%s%n", "RegressionTest3.test1794");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -9353,9 +12471,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1722() throws Throwable {
+    public void test1795() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1722");
+            System.out.format("%n%s%n", "RegressionTest3.test1795");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
@@ -9393,9 +12511,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1723() throws Throwable {
+    public void test1796() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1723");
+            System.out.format("%n%s%n", "RegressionTest3.test1796");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -9524,9 +12642,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1724() throws Throwable {
+    public void test1797() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1724");
+            System.out.format("%n%s%n", "RegressionTest3.test1797");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -9576,9 +12694,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1725() throws Throwable {
+    public void test1798() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1725");
+            System.out.format("%n%s%n", "RegressionTest3.test1798");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setNameTest("PostDto(id=0, text=UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null), timestamp=null, login=null, likes=null)");
@@ -9586,9 +12704,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1726() throws Throwable {
+    public void test1799() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1726");
+            System.out.format("%n%s%n", "RegressionTest3.test1799");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -9599,9 +12717,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1727() throws Throwable {
+    public void test1800() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1727");
+            System.out.format("%n%s%n", "RegressionTest3.test1800");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -9660,9 +12778,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1728() throws Throwable {
+    public void test1801() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1728");
+            System.out.format("%n%s%n", "RegressionTest3.test1801");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -9674,9 +12792,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1729() throws Throwable {
+    public void test1802() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1729");
+            System.out.format("%n%s%n", "RegressionTest3.test1802");
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
@@ -9706,9 +12824,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1730() throws Throwable {
+    public void test1803() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1730");
+            System.out.format("%n%s%n", "RegressionTest3.test1803");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         java.lang.String str1 = userDto0.toString();
         userDto0.setName("hi!");
@@ -9718,9 +12836,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1731() throws Throwable {
+    public void test1804() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1731");
+            System.out.format("%n%s%n", "RegressionTest3.test1804");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -9773,9 +12891,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1732() throws Throwable {
+    public void test1805() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1732");
+            System.out.format("%n%s%n", "RegressionTest3.test1805");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
@@ -9789,9 +12907,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1733() throws Throwable {
+    public void test1806() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1733");
+            System.out.format("%n%s%n", "RegressionTest3.test1806");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setRating((int) (byte) -1);
         java.lang.String str3 = userDto0.getInstitution();
@@ -9805,9 +12923,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1734() throws Throwable {
+    public void test1807() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1734");
+            System.out.format("%n%s%n", "RegressionTest3.test1807");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -9892,9 +13010,102 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1735() throws Throwable {
+    public void test1808() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1735");
+            System.out.format("%n%s%n", "RegressionTest3.test1808");
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.ResultDescription> resultDescriptionType2 = resultToDescriptionMapper1.getBType();
+        java.lang.Boolean boolean3 = resultToDescriptionMapper1.favorsExtension();
+        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription4 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
+        resultDescription4.setId((java.lang.Integer) 0);
+        resultDescription4.setTestName("hi!");
+        com.vntu.marenko.ualearning.server.model.Result result9 = new com.vntu.marenko.ualearning.server.model.Result();
+        java.lang.Integer int10 = result9.getId();
+        com.vntu.marenko.ualearning.server.model.Test test11 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int12 = test11.getId();
+        java.lang.Integer int13 = test11.getId();
+        result9.setTest(test11);
+        java.lang.Integer int15 = result9.getId();
+        com.vntu.marenko.ualearning.server.model.Test test16 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int17 = test16.getId();
+        java.lang.Integer int18 = test16.getId();
+        test16.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.lang.Integer int21 = test16.getCompletedCounter();
+        java.lang.Integer int22 = test16.getCompletedCounter();
+        result9.setTest(test16);
+        com.vntu.marenko.ualearning.server.model.User user24 = result9.getUser();
+        com.vntu.marenko.ualearning.server.model.Test test25 = result9.getTest();
+        boolean boolean26 = result9.isSubmitted();
+        com.vntu.marenko.ualearning.server.model.Question question27 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.String str28 = question27.getText();
+        java.lang.Integer int29 = question27.getId();
+        com.vntu.marenko.ualearning.server.service.TestService testService30 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade31 = null;
+        com.vntu.marenko.ualearning.server.controller.TestController testController32 = new com.vntu.marenko.ualearning.server.controller.TestController(testService30, mapperFacade31);
+        boolean boolean33 = question27.equals((java.lang.Object) testController32);
+        com.vntu.marenko.ualearning.server.model.Result result34 = new com.vntu.marenko.ualearning.server.model.Result();
+        java.lang.Integer int35 = result34.getId();
+        com.vntu.marenko.ualearning.server.model.Test test36 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int37 = test36.getId();
+        java.lang.Integer int38 = test36.getId();
+        result34.setTest(test36);
+        java.lang.Integer int40 = result34.getId();
+        com.vntu.marenko.ualearning.server.model.Result result41 = new com.vntu.marenko.ualearning.server.model.Result();
+        result41.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user44 = new com.vntu.marenko.ualearning.server.model.User();
+        user44.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test47 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean48 = user44.equals((java.lang.Object) test47);
+        user44.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result41.setUser(user44);
+        com.vntu.marenko.ualearning.server.model.Question question52 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.Integer int53 = question52.getId();
+        java.lang.Integer int54 = question52.getId();
+        com.vntu.marenko.ualearning.server.model.Answer answer55 = new com.vntu.marenko.ualearning.server.model.Answer();
+        com.vntu.marenko.ualearning.server.model.Answer answer56 = new com.vntu.marenko.ualearning.server.model.Answer();
+        answer56.setCorrect(false);
+        com.vntu.marenko.ualearning.server.model.Answer[] answerArray59 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer55, answer56 };
+        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList60 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
+        boolean boolean61 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList60, answerArray59);
+        question52.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList60);
+        result41.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList60);
+        result34.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList60);
+        question27.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList60);
+        result9.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList60);
+        ma.glasnost.orika.MappingContext mappingContext67 = null;
+        resultToDescriptionMapper1.mapBtoA(resultDescription4, result9, mappingContext67);
+        org.junit.Assert.assertNotNull(resultDescriptionType2);
+        org.junit.Assert.assertEquals("'" + boolean3 + "' != '" + false + "'", boolean3, false);
+        org.junit.Assert.assertNull(int10);
+        org.junit.Assert.assertNull(int12);
+        org.junit.Assert.assertNull(int13);
+        org.junit.Assert.assertNull(int15);
+        org.junit.Assert.assertNull(int17);
+        org.junit.Assert.assertNull(int18);
+        org.junit.Assert.assertNull(int21);
+        org.junit.Assert.assertNull(int22);
+        org.junit.Assert.assertNull(user24);
+        org.junit.Assert.assertNotNull(test25);
+        org.junit.Assert.assertTrue("'" + boolean26 + "' != '" + false + "'", boolean26 == false);
+        org.junit.Assert.assertNull(str28);
+        org.junit.Assert.assertNull(int29);
+        org.junit.Assert.assertTrue("'" + boolean33 + "' != '" + false + "'", boolean33 == false);
+        org.junit.Assert.assertNull(int35);
+        org.junit.Assert.assertNull(int37);
+        org.junit.Assert.assertNull(int38);
+        org.junit.Assert.assertNull(int40);
+        org.junit.Assert.assertTrue("'" + boolean48 + "' != '" + false + "'", boolean48 == false);
+        org.junit.Assert.assertNull(int53);
+        org.junit.Assert.assertNull(int54);
+        org.junit.Assert.assertNotNull(answerArray59);
+        org.junit.Assert.assertTrue("'" + boolean61 + "' != '" + true + "'", boolean61 == true);
+    }
+
+    @Test
+    public void test1809() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1809");
         com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
         int int1 = submitResultRequest0.getTestId();
         submitResultRequest0.setTestId((int) (byte) -1);
@@ -9951,9 +13162,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1736() throws Throwable {
+    public void test1810() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1736");
+            System.out.format("%n%s%n", "RegressionTest3.test1810");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -10014,9 +13225,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1737() throws Throwable {
+    public void test1811() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1737");
+            System.out.format("%n%s%n", "RegressionTest3.test1811");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         postDto0.setId((int) (byte) 100);
         java.lang.String str3 = postDto0.getTimestamp();
@@ -10026,9 +13237,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1738() throws Throwable {
+    public void test1812() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1738");
+            System.out.format("%n%s%n", "RegressionTest3.test1812");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -10050,9 +13261,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1739() throws Throwable {
+    public void test1813() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1739");
+            System.out.format("%n%s%n", "RegressionTest3.test1813");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         answerDto0.setText("hi!");
         com.vntu.marenko.ualearning.server.model.Question question3 = new com.vntu.marenko.ualearning.server.model.Question();
@@ -10064,9 +13275,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1740() throws Throwable {
+    public void test1814() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1740");
+            System.out.format("%n%s%n", "RegressionTest3.test1814");
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
@@ -10171,9 +13382,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1741() throws Throwable {
+    public void test1815() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1741");
+            System.out.format("%n%s%n", "RegressionTest3.test1815");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
@@ -10226,9 +13437,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1742() throws Throwable {
+    public void test1816() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1742");
+            System.out.format("%n%s%n", "RegressionTest3.test1816");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest3 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
@@ -10346,9 +13557,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1743() throws Throwable {
+    public void test1817() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1743");
+            System.out.format("%n%s%n", "RegressionTest3.test1817");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setId((-1));
@@ -10387,9 +13598,107 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1744() throws Throwable {
+    public void test1818() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1744");
+            System.out.format("%n%s%n", "RegressionTest3.test1818");
+        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
+        tag0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
+        user3.setSurname("");
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository6 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository7 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository8 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper9 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository6, testRepository7, answerRepository8);
+        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
+        submitResultRequestToDomainMapper9.setMapperFacade(mapperFacade10);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType12 = submitResultRequestToDomainMapper9.getAType();
+        ma.glasnost.orika.MapperFacade mapperFacade13 = null;
+        submitResultRequestToDomainMapper9.setMapperFacade(mapperFacade13);
+        boolean boolean15 = user3.equals((java.lang.Object) submitResultRequestToDomainMapper9);
+        com.vntu.marenko.ualearning.server.model.Result result16 = new com.vntu.marenko.ualearning.server.model.Result();
+        result16.setId((java.lang.Integer) 100);
+        com.vntu.marenko.ualearning.server.model.User user19 = new com.vntu.marenko.ualearning.server.model.User();
+        user19.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test22 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean23 = user19.equals((java.lang.Object) test22);
+        user19.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        result16.setUser(user19);
+        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest27 = null;
+        ma.glasnost.orika.MappingContext mappingContext28 = null;
+        submitResultRequestToDomainMapper9.mapBtoA(result16, submitResultRequest27, mappingContext28);
+        com.vntu.marenko.ualearning.server.model.User user30 = result16.getUser();
+        com.vntu.marenko.ualearning.server.model.User user31 = result16.getUser();
+        boolean boolean32 = tag0.equals((java.lang.Object) result16);
+        java.lang.Integer int33 = tag0.getId();
+        java.lang.String str34 = tag0.getName();
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper35 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper36 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType37 = createPostRequestToPostMapper36.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post38 = new com.vntu.marenko.ualearning.server.model.Post();
+        post38.setText("");
+        java.lang.String str41 = post38.toString();
+        post38.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest44 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest44.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        ma.glasnost.orika.MappingContext mappingContext47 = null;
+        createPostRequestToPostMapper36.mapBtoA(post38, createPostRequest44, mappingContext47);
+        com.vntu.marenko.ualearning.server.model.Post post49 = new com.vntu.marenko.ualearning.server.model.Post();
+        post49.setText("");
+        java.lang.String str52 = post49.toString();
+        java.lang.Integer int53 = post49.getId();
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest54 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        java.lang.String str55 = createPostRequest54.getUsername();
+        java.lang.String str56 = createPostRequest54.toString();
+        ma.glasnost.orika.MappingContext mappingContext57 = null;
+        createPostRequestToPostMapper36.mapBtoA(post49, createPostRequest54, mappingContext57);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper59 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType60 = createPostRequestToPostMapper59.getBType();
+        com.vntu.marenko.ualearning.server.model.Post post61 = new com.vntu.marenko.ualearning.server.model.Post();
+        post61.setText("");
+        java.lang.String str64 = post61.toString();
+        post61.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest67 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
+        createPostRequest67.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        ma.glasnost.orika.MappingContext mappingContext70 = null;
+        createPostRequestToPostMapper59.mapBtoA(post61, createPostRequest67, mappingContext70);
+        ma.glasnost.orika.MappingContext mappingContext72 = null;
+        createPostRequestToPostMapper35.mapAtoB(createPostRequest54, post61, mappingContext72);
+        com.vntu.marenko.ualearning.server.model.User user74 = new com.vntu.marenko.ualearning.server.model.User();
+        java.lang.String str75 = user74.getEmail();
+        java.lang.String str76 = user74.getSurname();
+        user74.setEmail("Answer(id=null, text=null, correct=false)");
+        boolean boolean80 = user74.equals((java.lang.Object) (byte) -1);
+        boolean boolean81 = createPostRequest54.equals((java.lang.Object) user74);
+        boolean boolean82 = tag0.equals((java.lang.Object) user74);
+        java.lang.String str83 = tag0.toString();
+        org.junit.Assert.assertNotNull(submitResultRequestType12);
+        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
+        org.junit.Assert.assertTrue("'" + boolean23 + "' != '" + false + "'", boolean23 == false);
+        org.junit.Assert.assertNotNull(user30);
+        org.junit.Assert.assertNotNull(user31);
+        org.junit.Assert.assertTrue("'" + boolean32 + "' != '" + false + "'", boolean32 == false);
+        org.junit.Assert.assertNull(int33);
+        org.junit.Assert.assertEquals("'" + str34 + "' != '" + "User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)" + "'", str34, "User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        org.junit.Assert.assertNotNull(postType37);
+        org.junit.Assert.assertEquals("'" + str41 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str41, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertEquals("'" + str52 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str52, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(int53);
+        org.junit.Assert.assertNull(str55);
+        org.junit.Assert.assertEquals("'" + str56 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str56, "CreatePostRequest(text=null, username=null)");
+        org.junit.Assert.assertNotNull(postType60);
+        org.junit.Assert.assertEquals("'" + str64 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str64, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
+        org.junit.Assert.assertNull(str75);
+        org.junit.Assert.assertNull(str76);
+        org.junit.Assert.assertTrue("'" + boolean80 + "' != '" + false + "'", boolean80 == false);
+        org.junit.Assert.assertTrue("'" + boolean81 + "' != '" + false + "'", boolean81 == false);
+        org.junit.Assert.assertTrue("'" + boolean82 + "' != '" + false + "'", boolean82 == false);
+        org.junit.Assert.assertEquals("'" + str83 + "' != '" + "Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))" + "'", str83, "Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))");
+    }
+
+    @Test
+    public void test1819() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1819");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         java.lang.Integer int1 = answer0.getId();
         boolean boolean2 = answer0.isCorrect();
@@ -10415,9 +13724,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1745() throws Throwable {
+    public void test1820() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1745");
+            System.out.format("%n%s%n", "RegressionTest3.test1820");
         com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
         resultDescription0.setId((java.lang.Integer) 0);
         resultDescription0.setTestName("hi!");
@@ -10532,9 +13841,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1746() throws Throwable {
+    public void test1821() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1746");
+            System.out.format("%n%s%n", "RegressionTest3.test1821");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -10553,9 +13862,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1747() throws Throwable {
+    public void test1822() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1747");
+            System.out.format("%n%s%n", "RegressionTest3.test1822");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setEmail("hi!");
         user0.setSurname("hi!");
@@ -10570,9 +13879,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1748() throws Throwable {
+    public void test1823() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1748");
+            System.out.format("%n%s%n", "RegressionTest3.test1823");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
@@ -10594,9 +13903,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1749() throws Throwable {
+    public void test1824() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1749");
+            System.out.format("%n%s%n", "RegressionTest3.test1824");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         userRequest0.setEmail("TagDto(id=1, name=null)");
@@ -10608,9 +13917,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1750() throws Throwable {
+    public void test1825() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1750");
+            System.out.format("%n%s%n", "RegressionTest3.test1825");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -10628,9 +13937,100 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1751() throws Throwable {
+    public void test1826() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1751");
+            System.out.format("%n%s%n", "RegressionTest3.test1826");
+        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
+        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository2 = null;
+        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl3 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository1, tagRepository2);
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper4 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig5 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl6 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository7 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository8 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository9 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper10 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository7, testRepository8, answerRepository9);
+        ma.glasnost.orika.MapperFacade mapperFacade11 = null;
+        submitResultRequestToDomainMapper10.setMapperFacade(mapperFacade11);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType13 = submitResultRequestToDomainMapper10.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper14 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper15 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean16 = createPostRequestToPostMapper15.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper17 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade18 = mapperConfig5.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl6, submitResultRequestToDomainMapper10, resultToDescriptionMapper14, createPostRequestToPostMapper15, postToDtoMapper17);
+        postToDtoMapper4.setMapperFacade(mapperFacade18);
+        com.vntu.marenko.ualearning.server.controller.TestController testController20 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl3, mapperFacade18);
+        ma.glasnost.orika.MapperFacade mapperFacade21 = null;
+        com.vntu.marenko.ualearning.server.controller.TestController testController22 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl3, mapperFacade21);
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper23 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean24 = createPostRequestToPostMapper23.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig25 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl26 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository27 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository28 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository29 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper30 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository27, testRepository28, answerRepository29);
+        ma.glasnost.orika.MapperFacade mapperFacade31 = null;
+        submitResultRequestToDomainMapper30.setMapperFacade(mapperFacade31);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType33 = submitResultRequestToDomainMapper30.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper34 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper35 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean36 = createPostRequestToPostMapper35.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper37 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade38 = mapperConfig25.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl26, submitResultRequestToDomainMapper30, resultToDescriptionMapper34, createPostRequestToPostMapper35, postToDtoMapper37);
+        createPostRequestToPostMapper23.setMapperFacade(mapperFacade38);
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository40 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository41 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository42 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper43 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository40, testRepository41, answerRepository42);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType44 = submitResultRequestToDomainMapper43.getBType();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper45 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
+        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig46 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
+        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl47 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
+        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository48 = null;
+        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository49 = null;
+        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository50 = null;
+        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper51 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository48, testRepository49, answerRepository50);
+        ma.glasnost.orika.MapperFacade mapperFacade52 = null;
+        submitResultRequestToDomainMapper51.setMapperFacade(mapperFacade52);
+        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType54 = submitResultRequestToDomainMapper51.getBType();
+        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper55 = null;
+        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper56 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
+        java.lang.Boolean boolean57 = createPostRequestToPostMapper56.favorsExtension();
+        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper58 = null;
+        ma.glasnost.orika.MapperFacade mapperFacade59 = mapperConfig46.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl47, submitResultRequestToDomainMapper51, resultToDescriptionMapper55, createPostRequestToPostMapper56, postToDtoMapper58);
+        postToDtoMapper45.setMapperFacade(mapperFacade59);
+        submitResultRequestToDomainMapper43.setMapperFacade(mapperFacade59);
+        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository62 = null;
+        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl63 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository62);
+        com.vntu.marenko.ualearning.server.controller.PostController postController64 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade59, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl63);
+        com.vntu.marenko.ualearning.server.controller.PostController postController65 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade38, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl63);
+        com.vntu.marenko.ualearning.server.controller.TestController testController66 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl3, mapperFacade38);
+        boolean boolean67 = answerDto0.equals((java.lang.Object) testServiceImpl3);
+        int int68 = answerDto0.getId();
+        java.lang.String str69 = answerDto0.getText();
+        answerDto0.setText("Test(id=0, nameTest=null, descriptionTest=, completedCounter=1, questions=null, tags=null)");
+        org.junit.Assert.assertNotNull(resultType13);
+        org.junit.Assert.assertEquals("'" + boolean16 + "' != '" + false + "'", boolean16, false);
+        org.junit.Assert.assertNotNull(mapperFacade18);
+        org.junit.Assert.assertEquals("'" + boolean24 + "' != '" + false + "'", boolean24, false);
+        org.junit.Assert.assertNotNull(resultType33);
+        org.junit.Assert.assertEquals("'" + boolean36 + "' != '" + false + "'", boolean36, false);
+        org.junit.Assert.assertNotNull(mapperFacade38);
+        org.junit.Assert.assertNotNull(resultType44);
+        org.junit.Assert.assertNotNull(resultType54);
+        org.junit.Assert.assertEquals("'" + boolean57 + "' != '" + false + "'", boolean57, false);
+        org.junit.Assert.assertNotNull(mapperFacade59);
+        org.junit.Assert.assertTrue("'" + boolean67 + "' != '" + false + "'", boolean67 == false);
+        org.junit.Assert.assertTrue("'" + int68 + "' != '" + 0 + "'", int68 == 0);
+        org.junit.Assert.assertNull(str69);
+    }
+
+    @Test
+    public void test1827() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1827");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.toString();
         java.lang.String str2 = loginRequest0.getLogin();
@@ -10720,9 +14120,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1752() throws Throwable {
+    public void test1828() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1752");
+            System.out.format("%n%s%n", "RegressionTest3.test1828");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         postDto0.setId((int) (byte) 100);
         java.lang.String str3 = postDto0.getTimestamp();
@@ -10732,18 +14132,18 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1753() throws Throwable {
+    public void test1829() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1753");
+            System.out.format("%n%s%n", "RegressionTest3.test1829");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         answer0.setId((java.lang.Integer) 0);
         answer0.setId((java.lang.Integer) 32);
     }
 
     @Test
-    public void test1754() throws Throwable {
+    public void test1830() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1754");
+            System.out.format("%n%s%n", "RegressionTest3.test1830");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         int int1 = testDto0.getId();
         int int2 = testDto0.getId();
@@ -10871,9 +14271,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1755() throws Throwable {
+    public void test1831() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1755");
+            System.out.format("%n%s%n", "RegressionTest3.test1831");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.Integer int1 = question0.getId();
         java.lang.Integer int2 = question0.getId();
@@ -10901,20 +14301,20 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1756() throws Throwable {
+    public void test1832() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1756");
+            System.out.format("%n%s%n", "RegressionTest3.test1832");
         com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
         submitResultRequest0.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
         java.util.List<java.lang.Integer> intList3 = submitResultRequest0.getAnswers();
-        submitResultRequest0.setUserLogin("Post(id=null, text=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0), timestamp=Sat Jun 18 18:21:18 EEST 2022, user=null, likes=null)");
+        submitResultRequest0.setUserLogin("Post(id=null, text=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0), timestamp=Sat Jun 18 18:27:26 EEST 2022, user=null, likes=null)");
         org.junit.Assert.assertNull(intList3);
     }
 
     @Test
-    public void test1757() throws Throwable {
+    public void test1833() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1757");
+            System.out.format("%n%s%n", "RegressionTest3.test1833");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.toString();
         java.lang.String str2 = loginRequest0.getLogin();
@@ -10928,9 +14328,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1758() throws Throwable {
+    public void test1834() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1758");
+            System.out.format("%n%s%n", "RegressionTest3.test1834");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         int int1 = testDto0.getId();
         testDto0.setDescriptionTest("ResultDescription(id=null, testId=100, testName=null, mark=0)");
@@ -10942,9 +14342,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1759() throws Throwable {
+    public void test1835() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1759");
+            System.out.format("%n%s%n", "RegressionTest3.test1835");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.Integer int1 = question0.getId();
         java.util.List<com.vntu.marenko.ualearning.server.model.Answer> answerList2 = null;
@@ -11048,9 +14448,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1760() throws Throwable {
+    public void test1836() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1760");
+            System.out.format("%n%s%n", "RegressionTest3.test1836");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         answer0.setCorrect(false);
         answer0.setCorrect(true);
@@ -11058,9 +14458,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1761() throws Throwable {
+    public void test1837() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1761");
+            System.out.format("%n%s%n", "RegressionTest3.test1837");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -11186,9 +14586,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1762() throws Throwable {
+    public void test1838() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1762");
+            System.out.format("%n%s%n", "RegressionTest3.test1838");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest3 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
@@ -11223,9 +14623,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1763() throws Throwable {
+    public void test1839() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1763");
+            System.out.format("%n%s%n", "RegressionTest3.test1839");
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
@@ -11280,9 +14680,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1764() throws Throwable {
+    public void test1840() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1764");
+            System.out.format("%n%s%n", "RegressionTest3.test1840");
         com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
         resultDescription0.setId((java.lang.Integer) 0);
         resultDescription0.setTestName("hi!");
@@ -11321,9 +14721,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1765() throws Throwable {
+    public void test1841() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1765");
+            System.out.format("%n%s%n", "RegressionTest3.test1841");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -11340,9 +14740,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1766() throws Throwable {
+    public void test1842() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1766");
+            System.out.format("%n%s%n", "RegressionTest3.test1842");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -11378,9 +14778,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1767() throws Throwable {
+    public void test1843() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1767");
+            System.out.format("%n%s%n", "RegressionTest3.test1843");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -11448,9 +14848,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1768() throws Throwable {
+    public void test1844() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1768");
+            System.out.format("%n%s%n", "RegressionTest3.test1844");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         java.lang.String str1 = userDto0.toString();
         userDto0.setName("hi!");
@@ -11461,9 +14861,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1769() throws Throwable {
+    public void test1845() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1769");
+            System.out.format("%n%s%n", "RegressionTest3.test1845");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         tagDto0.setId(1);
         java.lang.String str3 = tagDto0.getName();
@@ -11477,9 +14877,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1770() throws Throwable {
+    public void test1846() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1770");
+            System.out.format("%n%s%n", "RegressionTest3.test1846");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         java.lang.String str1 = result0.toString();
         com.vntu.marenko.ualearning.server.model.User user2 = new com.vntu.marenko.ualearning.server.model.User();
@@ -11563,9 +14963,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1771() throws Throwable {
+    public void test1847() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1771");
+            System.out.format("%n%s%n", "RegressionTest3.test1847");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -11630,9 +15030,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1772() throws Throwable {
+    public void test1848() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1772");
+            System.out.format("%n%s%n", "RegressionTest3.test1848");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -11648,9 +15048,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1773() throws Throwable {
+    public void test1849() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1773");
+            System.out.format("%n%s%n", "RegressionTest3.test1849");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -11749,9 +15149,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1774() throws Throwable {
+    public void test1850() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1774");
+            System.out.format("%n%s%n", "RegressionTest3.test1850");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
@@ -11817,9 +15217,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1775() throws Throwable {
+    public void test1851() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1775");
+            System.out.format("%n%s%n", "RegressionTest3.test1851");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -11833,9 +15233,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1776() throws Throwable {
+    public void test1852() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1776");
+            System.out.format("%n%s%n", "RegressionTest3.test1852");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         java.lang.String str1 = result0.toString();
         boolean boolean2 = result0.isSubmitted();
@@ -11847,9 +15247,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1777() throws Throwable {
+    public void test1853() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1777");
+            System.out.format("%n%s%n", "RegressionTest3.test1853");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         com.vntu.marenko.ualearning.server.model.Test test1 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int2 = test1.getId();
@@ -11888,9 +15288,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1778() throws Throwable {
+    public void test1854() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1778");
+            System.out.format("%n%s%n", "RegressionTest3.test1854");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setEmail("hi!");
         user0.setInstitution("Result(id=null, user=null, test=null, submitted=false, answers=null)");
@@ -11899,9 +15299,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1779() throws Throwable {
+    public void test1855() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1779");
+            System.out.format("%n%s%n", "RegressionTest3.test1855");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -11915,9 +15315,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1780() throws Throwable {
+    public void test1856() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1780");
+            System.out.format("%n%s%n", "RegressionTest3.test1856");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository1 = null;
         ma.glasnost.orika.MapperFacade mapperFacade2 = null;
@@ -11994,9 +15394,19 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1781() throws Throwable {
+    public void test1857() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1781");
+            System.out.format("%n%s%n", "RegressionTest3.test1857");
+        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
+        user0.setSurname("");
+        user0.setName("TestDescription(id=-1, nameTest=TagDto(id=0, name=null))");
+        user0.setAge(0);
+    }
+
+    @Test
+    public void test1858() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1858");
         com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
         resultDescription0.setId((java.lang.Integer) 0);
         java.lang.Integer int3 = resultDescription0.getTestId();
@@ -12005,9 +15415,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1782() throws Throwable {
+    public void test1859() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1782");
+            System.out.format("%n%s%n", "RegressionTest3.test1859");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         java.lang.String str1 = testDto0.toString();
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
@@ -12090,9 +15500,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1783() throws Throwable {
+    public void test1860() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1783");
+            System.out.format("%n%s%n", "RegressionTest3.test1860");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
@@ -12203,9 +15613,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1784() throws Throwable {
+    public void test1861() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1784");
+            System.out.format("%n%s%n", "RegressionTest3.test1861");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.String str1 = question0.getText();
         java.lang.Integer int2 = question0.getId();
@@ -12225,9 +15635,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1785() throws Throwable {
+    public void test1862() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1785");
+            System.out.format("%n%s%n", "RegressionTest3.test1862");
         com.vntu.marenko.ualearning.server.service.UserService userService0 = null;
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository1 = null;
         ma.glasnost.orika.MapperFacade mapperFacade2 = null;
@@ -12265,9 +15675,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1786() throws Throwable {
+    public void test1863() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1786");
+            System.out.format("%n%s%n", "RegressionTest3.test1863");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         java.lang.String str2 = tag0.getName();
@@ -12331,9 +15741,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1787() throws Throwable {
+    public void test1864() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1787");
+            System.out.format("%n%s%n", "RegressionTest3.test1864");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -12350,9 +15760,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1788() throws Throwable {
+    public void test1865() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1788");
+            System.out.format("%n%s%n", "RegressionTest3.test1865");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -12407,9 +15817,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1789() throws Throwable {
+    public void test1866() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1789");
+            System.out.format("%n%s%n", "RegressionTest3.test1866");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         java.lang.String str1 = userDto0.getSurname();
         userDto0.setRating((int) '4');
@@ -12417,9 +15827,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1790() throws Throwable {
+    public void test1867() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1790");
+            System.out.format("%n%s%n", "RegressionTest3.test1867");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -12478,9 +15888,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1791() throws Throwable {
+    public void test1868() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1791");
+            System.out.format("%n%s%n", "RegressionTest3.test1868");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -12495,9 +15905,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1792() throws Throwable {
+    public void test1869() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1792");
+            System.out.format("%n%s%n", "RegressionTest3.test1869");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -12524,9 +15934,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1793() throws Throwable {
+    public void test1870() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1793");
+            System.out.format("%n%s%n", "RegressionTest3.test1870");
         com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest0 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
         java.lang.String str1 = createPostRequest0.getUsername();
         createPostRequest0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
@@ -12554,9 +15964,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1794() throws Throwable {
+    public void test1871() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1794");
+            System.out.format("%n%s%n", "RegressionTest3.test1871");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper1 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper2 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
@@ -12659,9 +16069,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1795() throws Throwable {
+    public void test1872() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1795");
+            System.out.format("%n%s%n", "RegressionTest3.test1872");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         com.vntu.marenko.ualearning.server.model.User user1 = new com.vntu.marenko.ualearning.server.model.User();
         user1.setSurname("");
@@ -12679,9 +16089,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1796() throws Throwable {
+    public void test1873() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1796");
+            System.out.format("%n%s%n", "RegressionTest3.test1873");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setRating((int) (byte) -1);
         java.lang.String str3 = userDto0.getInstitution();
@@ -12693,9 +16103,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1797() throws Throwable {
+    public void test1874() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1797");
+            System.out.format("%n%s%n", "RegressionTest3.test1874");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.String str1 = question0.getText();
         java.lang.Integer int2 = question0.getId();
@@ -12722,9 +16132,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1798() throws Throwable {
+    public void test1875() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1798");
+            System.out.format("%n%s%n", "RegressionTest3.test1875");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         user0.setAge((int) '4');
@@ -12734,9 +16144,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1799() throws Throwable {
+    public void test1876() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1799");
+            System.out.format("%n%s%n", "RegressionTest3.test1876");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
@@ -12815,9 +16225,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1800() throws Throwable {
+    public void test1877() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1800");
+            System.out.format("%n%s%n", "RegressionTest3.test1877");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         java.lang.String str2 = tag0.getName();
@@ -12829,9 +16239,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1801() throws Throwable {
+    public void test1878() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1801");
+            System.out.format("%n%s%n", "RegressionTest3.test1878");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -12865,9 +16275,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1802() throws Throwable {
+    public void test1879() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1802");
+            System.out.format("%n%s%n", "RegressionTest3.test1879");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
@@ -12975,9 +16385,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1803() throws Throwable {
+    public void test1880() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1803");
+            System.out.format("%n%s%n", "RegressionTest3.test1880");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
@@ -12995,9 +16405,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1804() throws Throwable {
+    public void test1881() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1804");
+            System.out.format("%n%s%n", "RegressionTest3.test1881");
         com.vntu.marenko.ualearning.server.repository.PostRepository postRepository0 = null;
         com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository0);
         // The following exception was thrown during execution in test generation
@@ -13010,9 +16420,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1805() throws Throwable {
+    public void test1882() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1805");
+            System.out.format("%n%s%n", "RegressionTest3.test1882");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -13123,9 +16533,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1806() throws Throwable {
+    public void test1883() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1806");
+            System.out.format("%n%s%n", "RegressionTest3.test1883");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -13139,9 +16549,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1807() throws Throwable {
+    public void test1884() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1807");
+            System.out.format("%n%s%n", "RegressionTest3.test1884");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -13211,18 +16621,18 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1808() throws Throwable {
+    public void test1885() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1808");
+            System.out.format("%n%s%n", "RegressionTest3.test1885");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         question0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
         question0.setId((java.lang.Integer) 97);
     }
 
     @Test
-    public void test1809() throws Throwable {
+    public void test1886() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1809");
+            System.out.format("%n%s%n", "RegressionTest3.test1886");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -13280,9 +16690,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1810() throws Throwable {
+    public void test1887() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1810");
+            System.out.format("%n%s%n", "RegressionTest3.test1887");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         java.lang.String str1 = postDto0.getLogin();
         postDto0.setTimestamp("");
@@ -13293,9 +16703,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1811() throws Throwable {
+    public void test1888() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1811");
+            System.out.format("%n%s%n", "RegressionTest3.test1888");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -13365,9 +16775,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1812() throws Throwable {
+    public void test1889() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1812");
+            System.out.format("%n%s%n", "RegressionTest3.test1889");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -13412,9 +16822,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1813() throws Throwable {
+    public void test1890() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1813");
+            System.out.format("%n%s%n", "RegressionTest3.test1890");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         question0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
         java.lang.String str3 = question0.getText();
@@ -13424,9 +16834,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1814() throws Throwable {
+    public void test1891() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1814");
+            System.out.format("%n%s%n", "RegressionTest3.test1891");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         int int1 = testDto0.getId();
         testDto0.setId((int) (byte) 100);
@@ -13438,9 +16848,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1815() throws Throwable {
+    public void test1892() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1815");
+            System.out.format("%n%s%n", "RegressionTest3.test1892");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -13559,9 +16969,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1816() throws Throwable {
+    public void test1893() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1816");
+            System.out.format("%n%s%n", "RegressionTest3.test1893");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         java.lang.String str3 = user0.getEmail();
@@ -13576,9 +16986,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1817() throws Throwable {
+    public void test1894() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1817");
+            System.out.format("%n%s%n", "RegressionTest3.test1894");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         tagDto0.setId(35);
         int int3 = tagDto0.getId();
@@ -13586,9 +16996,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1818() throws Throwable {
+    public void test1895() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1818");
+            System.out.format("%n%s%n", "RegressionTest3.test1895");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.getPassword();
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
@@ -13673,9 +17083,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1819() throws Throwable {
+    public void test1896() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1819");
+            System.out.format("%n%s%n", "RegressionTest3.test1896");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         java.lang.String str1 = postDto0.getLogin();
         postDto0.setTimestamp("");
@@ -13688,9 +17098,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1820() throws Throwable {
+    public void test1897() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1820");
+            System.out.format("%n%s%n", "RegressionTest3.test1897");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -13702,9 +17112,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1821() throws Throwable {
+    public void test1898() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1821");
+            System.out.format("%n%s%n", "RegressionTest3.test1898");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -13794,9 +17204,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1822() throws Throwable {
+    public void test1899() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1822");
+            System.out.format("%n%s%n", "RegressionTest3.test1899");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto3 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
@@ -13831,9 +17241,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1823() throws Throwable {
+    public void test1900() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1823");
+            System.out.format("%n%s%n", "RegressionTest3.test1900");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
@@ -13871,9 +17281,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1824() throws Throwable {
+    public void test1901() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1824");
+            System.out.format("%n%s%n", "RegressionTest3.test1901");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -13886,9 +17296,24 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1825() throws Throwable {
+    public void test1902() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1825");
+            System.out.format("%n%s%n", "RegressionTest3.test1902");
+        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
+        java.lang.String str1 = questionDto0.getText();
+        int int2 = questionDto0.getId();
+        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList3 = questionDto0.getAnswers();
+        java.lang.String str4 = questionDto0.toString();
+        org.junit.Assert.assertNull(str1);
+        org.junit.Assert.assertTrue("'" + int2 + "' != '" + 0 + "'", int2 == 0);
+        org.junit.Assert.assertNull(answerDtoList3);
+        org.junit.Assert.assertEquals("'" + str4 + "' != '" + "QuestionDto(id=0, text=null, answers=null)" + "'", str4, "QuestionDto(id=0, text=null, answers=null)");
+    }
+
+    @Test
+    public void test1903() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1903");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.getPassword();
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
@@ -13921,9 +17346,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1826() throws Throwable {
+    public void test1904() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1826");
+            System.out.format("%n%s%n", "RegressionTest3.test1904");
         com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
         int int1 = submitResultRequest0.getTestId();
         submitResultRequest0.setTestId((int) (byte) -1);
@@ -13946,9 +17371,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1827() throws Throwable {
+    public void test1905() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1827");
+            System.out.format("%n%s%n", "RegressionTest3.test1905");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -14010,9 +17435,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1828() throws Throwable {
+    public void test1906() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1828");
+            System.out.format("%n%s%n", "RegressionTest3.test1906");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         java.lang.String str3 = user0.getEmail();
@@ -14026,9 +17451,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1829() throws Throwable {
+    public void test1907() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1829");
+            System.out.format("%n%s%n", "RegressionTest3.test1907");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -14111,9 +17536,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1830() throws Throwable {
+    public void test1908() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1830");
+            System.out.format("%n%s%n", "RegressionTest3.test1908");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         tagDto0.setId(1);
         boolean boolean4 = tagDto0.equals((java.lang.Object) (-1L));
@@ -14139,9 +17564,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1831() throws Throwable {
+    public void test1909() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1831");
+            System.out.format("%n%s%n", "RegressionTest3.test1909");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.toString();
         loginRequest0.setLogin("Result(id=100, user=null, test=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), submitted=false, answers=null)");
@@ -14149,9 +17574,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1832() throws Throwable {
+    public void test1910() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1832");
+            System.out.format("%n%s%n", "RegressionTest3.test1910");
         com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
         java.lang.String str1 = tagDto0.toString();
         java.lang.String str2 = tagDto0.getName();
@@ -14172,9 +17597,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1833() throws Throwable {
+    public void test1911() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1833");
+            System.out.format("%n%s%n", "RegressionTest3.test1911");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setId((-1));
@@ -14186,9 +17611,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1834() throws Throwable {
+    public void test1912() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1834");
+            System.out.format("%n%s%n", "RegressionTest3.test1912");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         java.lang.Boolean boolean1 = createPostRequestToPostMapper0.favorsExtension();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig2 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
@@ -14249,9 +17674,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1835() throws Throwable {
+    public void test1913() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1835");
+            System.out.format("%n%s%n", "RegressionTest3.test1913");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -14356,9 +17781,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1836() throws Throwable {
+    public void test1914() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1836");
+            System.out.format("%n%s%n", "RegressionTest3.test1914");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         tag0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
         com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
@@ -14409,9 +17834,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1837() throws Throwable {
+    public void test1915() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1837");
+            System.out.format("%n%s%n", "RegressionTest3.test1915");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         java.lang.String str2 = userRequest0.getPassword();
@@ -14426,9 +17851,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1838() throws Throwable {
+    public void test1916() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1838");
+            System.out.format("%n%s%n", "RegressionTest3.test1916");
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
         ma.glasnost.orika.MapperFacade mapperFacade1 = null;
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -14471,9 +17896,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1839() throws Throwable {
+    public void test1917() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1839");
+            System.out.format("%n%s%n", "RegressionTest3.test1917");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -14560,9 +17985,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1840() throws Throwable {
+    public void test1918() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1840");
+            System.out.format("%n%s%n", "RegressionTest3.test1918");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository2 = null;
@@ -14686,9 +18111,26 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1841() throws Throwable {
+    public void test1919() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1841");
+            System.out.format("%n%s%n", "RegressionTest3.test1919");
+        com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
+        com.vntu.marenko.ualearning.server.model.User user1 = new com.vntu.marenko.ualearning.server.model.User();
+        user1.setSurname("");
+        com.vntu.marenko.ualearning.server.model.Test test4 = new com.vntu.marenko.ualearning.server.model.Test();
+        boolean boolean5 = user1.equals((java.lang.Object) test4);
+        result0.setUser(user1);
+        java.lang.String str7 = user1.getLogin();
+        java.lang.String str8 = user1.getSurname();
+        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
+        org.junit.Assert.assertNull(str7);
+        org.junit.Assert.assertEquals("'" + str8 + "' != '" + "" + "'", str8, "");
+    }
+
+    @Test
+    public void test1920() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1920");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -14703,9 +18145,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1842() throws Throwable {
+    public void test1921() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1842");
+            System.out.format("%n%s%n", "RegressionTest3.test1921");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         resultDto0.setId(100);
         resultDto0.setId((int) '#');
@@ -14718,9 +18160,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1843() throws Throwable {
+    public void test1922() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1843");
+            System.out.format("%n%s%n", "RegressionTest3.test1922");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -14736,9 +18178,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1844() throws Throwable {
+    public void test1923() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1844");
+            System.out.format("%n%s%n", "RegressionTest3.test1923");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setEmail("hi!");
         user0.setSurname("hi!");
@@ -14753,9 +18195,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1845() throws Throwable {
+    public void test1924() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1845");
+            System.out.format("%n%s%n", "RegressionTest3.test1924");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         java.lang.String str1 = questionDto0.getText();
         int int2 = questionDto0.getId();
@@ -14772,9 +18214,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1846() throws Throwable {
+    public void test1925() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1846");
+            System.out.format("%n%s%n", "RegressionTest3.test1925");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -14871,9 +18313,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1847() throws Throwable {
+    public void test1926() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1847");
+            System.out.format("%n%s%n", "RegressionTest3.test1926");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -14921,9 +18363,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1848() throws Throwable {
+    public void test1927() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1848");
+            System.out.format("%n%s%n", "RegressionTest3.test1927");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         java.lang.String str3 = questionDto0.getText();
@@ -14935,9 +18377,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1849() throws Throwable {
+    public void test1928() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1849");
+            System.out.format("%n%s%n", "RegressionTest3.test1928");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         java.lang.String str1 = postDto0.getLogin();
         java.lang.String[] strArray6 = new java.lang.String[] { "LoginRequest(login=null, password=null)", "CreatePostRequest(text=null, username=null)", "Answer(id=null, text=null, correct=false)", "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" };
@@ -15017,9 +18459,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1850() throws Throwable {
+    public void test1929() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1850");
+            System.out.format("%n%s%n", "RegressionTest3.test1929");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setId((-1));
@@ -15036,9 +18478,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1851() throws Throwable {
+    public void test1930() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1851");
+            System.out.format("%n%s%n", "RegressionTest3.test1930");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -15095,9 +18537,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1852() throws Throwable {
+    public void test1931() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1852");
+            System.out.format("%n%s%n", "RegressionTest3.test1931");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository2 = null;
@@ -15184,9 +18626,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1853() throws Throwable {
+    public void test1932() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1853");
+            System.out.format("%n%s%n", "RegressionTest3.test1932");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         com.vntu.marenko.ualearning.server.dto.PostDto postDto2 = new com.vntu.marenko.ualearning.server.dto.PostDto();
@@ -15209,9 +18651,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1854() throws Throwable {
+    public void test1933() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1854");
+            System.out.format("%n%s%n", "RegressionTest3.test1933");
         com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest0 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
         java.lang.String str1 = createPostRequest0.getUsername();
         createPostRequest0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
@@ -15223,9 +18665,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1855() throws Throwable {
+    public void test1934() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1855");
+            System.out.format("%n%s%n", "RegressionTest3.test1934");
         com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
         submitResultRequest0.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
         int int3 = submitResultRequest0.getTestId();
@@ -15256,9 +18698,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1856() throws Throwable {
+    public void test1935() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1856");
+            System.out.format("%n%s%n", "RegressionTest3.test1935");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         question0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
         java.lang.Integer int3 = question0.getId();
@@ -15274,9 +18716,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1857() throws Throwable {
+    public void test1936() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1857");
+            System.out.format("%n%s%n", "RegressionTest3.test1936");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setEmail("hi!");
         user0.setSurname("hi!");
@@ -15297,9 +18739,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1858() throws Throwable {
+    public void test1937() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1858");
+            System.out.format("%n%s%n", "RegressionTest3.test1937");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -15402,9 +18844,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1859() throws Throwable {
+    public void test1938() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1859");
+            System.out.format("%n%s%n", "RegressionTest3.test1938");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.toString();
         java.lang.String str2 = loginRequest0.getLogin();
@@ -15419,9 +18861,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1860() throws Throwable {
+    public void test1939() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1860");
+            System.out.format("%n%s%n", "RegressionTest3.test1939");
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
@@ -15488,9 +18930,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1861() throws Throwable {
+    public void test1940() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1861");
+            System.out.format("%n%s%n", "RegressionTest3.test1940");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         com.vntu.marenko.ualearning.server.dto.PostDto postDto2 = new com.vntu.marenko.ualearning.server.dto.PostDto();
@@ -15513,9 +18955,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1862() throws Throwable {
+    public void test1941() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1862");
+            System.out.format("%n%s%n", "RegressionTest3.test1941");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.Integer int3 = post0.getId();
@@ -15526,9 +18968,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1863() throws Throwable {
+    public void test1942() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1863");
+            System.out.format("%n%s%n", "RegressionTest3.test1942");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getInstitution();
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
@@ -15555,9 +18997,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1864() throws Throwable {
+    public void test1943() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1864");
+            System.out.format("%n%s%n", "RegressionTest3.test1943");
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
         com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
@@ -15616,9 +19058,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1865() throws Throwable {
+    public void test1944() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1865");
+            System.out.format("%n%s%n", "RegressionTest3.test1944");
         com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
         java.lang.String str1 = tag0.toString();
         com.vntu.marenko.ualearning.server.dto.PostDto postDto2 = new com.vntu.marenko.ualearning.server.dto.PostDto();
@@ -15655,9 +19097,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1866() throws Throwable {
+    public void test1945() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1866");
+            System.out.format("%n%s%n", "RegressionTest3.test1945");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         result0.setId((java.lang.Integer) 100);
         com.vntu.marenko.ualearning.server.model.Test test3 = result0.getTest();
@@ -15777,9 +19219,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1867() throws Throwable {
+    public void test1946() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1867");
+            System.out.format("%n%s%n", "RegressionTest3.test1946");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -15799,9 +19241,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1868() throws Throwable {
+    public void test1947() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1868");
+            System.out.format("%n%s%n", "RegressionTest3.test1947");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -15838,9 +19280,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1869() throws Throwable {
+    public void test1948() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1869");
+            System.out.format("%n%s%n", "RegressionTest3.test1948");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -15855,9 +19297,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1870() throws Throwable {
+    public void test1949() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1870");
+            System.out.format("%n%s%n", "RegressionTest3.test1949");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         java.lang.String str1 = userDto0.toString();
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto2 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -15877,9 +19319,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1871() throws Throwable {
+    public void test1950() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1871");
+            System.out.format("%n%s%n", "RegressionTest3.test1950");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
@@ -15891,9 +19333,26 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1872() throws Throwable {
+    public void test1951() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1872");
+            System.out.format("%n%s%n", "RegressionTest3.test1951");
+        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
+        userDto0.setRating((int) (short) 10);
+        java.lang.String str3 = userDto0.toString();
+        userDto0.setEmail("TestDescription(id=-1, nameTest=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null))");
+        java.lang.String str6 = userDto0.getEmail();
+        java.lang.String str7 = userDto0.getInstitution();
+        java.lang.String str8 = userDto0.getLogin();
+        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=10)" + "'", str3, "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=10)");
+        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "TestDescription(id=-1, nameTest=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null))" + "'", str6, "TestDescription(id=-1, nameTest=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null))");
+        org.junit.Assert.assertNull(str7);
+        org.junit.Assert.assertNull(str8);
+    }
+
+    @Test
+    public void test1952() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1952");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         java.lang.String str1 = questionDto0.toString();
         questionDto0.setText("ResultDto(id=0, user=null, test=null, submitted=false, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null)], mark=0)");
@@ -15912,9 +19371,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1873() throws Throwable {
+    public void test1953() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1873");
+            System.out.format("%n%s%n", "RegressionTest3.test1953");
         com.vntu.marenko.ualearning.server.service.UserService userService0 = null;
         ma.glasnost.orika.MapperFacade mapperFacade1 = null;
         com.vntu.marenko.ualearning.server.controller.UserController userController2 = new com.vntu.marenko.ualearning.server.controller.UserController(userService0, mapperFacade1);
@@ -15928,9 +19387,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1874() throws Throwable {
+    public void test1954() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1874");
+            System.out.format("%n%s%n", "RegressionTest3.test1954");
         com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
         java.lang.String str1 = userRequest0.getName();
         java.lang.String str2 = userRequest0.getName();
@@ -15942,9 +19401,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1875() throws Throwable {
+    public void test1955() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1875");
+            System.out.format("%n%s%n", "RegressionTest3.test1955");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         java.lang.Integer int1 = result0.getId();
         com.vntu.marenko.ualearning.server.model.Test test2 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -16026,9 +19485,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1876() throws Throwable {
+    public void test1956() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1876");
+            System.out.format("%n%s%n", "RegressionTest3.test1956");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper1 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType2 = createPostRequestToPostMapper1.getBType();
@@ -16085,9 +19544,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1877() throws Throwable {
+    public void test1957() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1877");
+            System.out.format("%n%s%n", "RegressionTest3.test1957");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -16130,9 +19589,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1878() throws Throwable {
+    public void test1958() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1878");
+            System.out.format("%n%s%n", "RegressionTest3.test1958");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         java.lang.String str1 = questionDto0.getText();
         int int2 = questionDto0.getId();
@@ -16154,9 +19613,50 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1879() throws Throwable {
+    public void test1959() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1879");
+            System.out.format("%n%s%n", "RegressionTest3.test1959");
+        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
+        tag0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
+        java.lang.Integer int3 = tag0.getId();
+        tag0.setId((java.lang.Integer) 10);
+        com.vntu.marenko.ualearning.server.dto.TagDto tagDto6 = new com.vntu.marenko.ualearning.server.dto.TagDto();
+        java.lang.String str7 = tagDto6.toString();
+        java.lang.String str8 = tagDto6.getName();
+        com.vntu.marenko.ualearning.server.model.Test test9 = new com.vntu.marenko.ualearning.server.model.Test();
+        java.lang.Integer int10 = test9.getId();
+        java.lang.Integer int11 = test9.getId();
+        test9.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList14 = test9.getTags();
+        boolean boolean15 = tagDto6.equals((java.lang.Object) tagList14);
+        tagDto6.setName("");
+        tagDto6.setName("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        boolean boolean20 = tag0.equals((java.lang.Object) "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
+        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest21 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
+        java.lang.String str22 = userRequest21.getName();
+        java.lang.String str23 = userRequest21.getName();
+        java.lang.String str24 = userRequest21.toString();
+        userRequest21.setLogin("Result(id=null, user=null, test=null, submitted=false, answers=null)");
+        userRequest21.setName("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
+        boolean boolean29 = tag0.equals((java.lang.Object) userRequest21);
+        org.junit.Assert.assertNull(int3);
+        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "TagDto(id=0, name=null)" + "'", str7, "TagDto(id=0, name=null)");
+        org.junit.Assert.assertNull(str8);
+        org.junit.Assert.assertNull(int10);
+        org.junit.Assert.assertNull(int11);
+        org.junit.Assert.assertNull(tagList14);
+        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
+        org.junit.Assert.assertTrue("'" + boolean20 + "' != '" + false + "'", boolean20 == false);
+        org.junit.Assert.assertNull(str22);
+        org.junit.Assert.assertNull(str23);
+        org.junit.Assert.assertEquals("'" + str24 + "' != '" + "UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null)" + "'", str24, "UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null)");
+        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
+    }
+
+    @Test
+    public void test1960() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1960");
         com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
         resultDescription0.setId((java.lang.Integer) 0);
         java.lang.String str3 = resultDescription0.getTestName();
@@ -16166,9 +19666,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1880() throws Throwable {
+    public void test1961() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1880");
+            System.out.format("%n%s%n", "RegressionTest3.test1961");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         resultDto0.setId(100);
         resultDto0.setId((int) '#');
@@ -16247,9 +19747,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1881() throws Throwable {
+    public void test1962() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1881");
+            System.out.format("%n%s%n", "RegressionTest3.test1962");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         int int1 = testDto0.getId();
         int int2 = testDto0.getId();
@@ -16263,9 +19763,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1882() throws Throwable {
+    public void test1963() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1882");
+            System.out.format("%n%s%n", "RegressionTest3.test1963");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -16284,9 +19784,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1883() throws Throwable {
+    public void test1964() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1883");
+            System.out.format("%n%s%n", "RegressionTest3.test1964");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -16312,9 +19812,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1884() throws Throwable {
+    public void test1965() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1884");
+            System.out.format("%n%s%n", "RegressionTest3.test1965");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         questionDto0.setId((int) '#');
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto3 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
@@ -16387,9 +19887,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1885() throws Throwable {
+    public void test1966() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1885");
+            System.out.format("%n%s%n", "RegressionTest3.test1966");
         com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
@@ -16429,9 +19929,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1886() throws Throwable {
+    public void test1967() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1886");
+            System.out.format("%n%s%n", "RegressionTest3.test1967");
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl0 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper1 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl0);
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType2 = resultToDescriptionMapper1.getAType();
@@ -16486,9 +19986,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1887() throws Throwable {
+    public void test1968() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1887");
+            System.out.format("%n%s%n", "RegressionTest3.test1968");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         java.lang.String str3 = user0.getEmail();
@@ -16502,9 +20002,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1888() throws Throwable {
+    public void test1969() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1888");
+            System.out.format("%n%s%n", "RegressionTest3.test1969");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setId((-1));
@@ -16522,9 +20022,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1889() throws Throwable {
+    public void test1970() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1889");
+            System.out.format("%n%s%n", "RegressionTest3.test1970");
         com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
         submitResultRequest0.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
         int int3 = submitResultRequest0.getTestId();
@@ -16622,9 +20122,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1890() throws Throwable {
+    public void test1971() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1890");
+            System.out.format("%n%s%n", "RegressionTest3.test1971");
         com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
         postDto0.setId((int) (byte) 100);
         java.lang.String str3 = postDto0.getText();
@@ -16643,9 +20143,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1891() throws Throwable {
+    public void test1972() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1891");
+            System.out.format("%n%s%n", "RegressionTest3.test1972");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         java.lang.String str3 = userDto0.getInstitution();
@@ -16657,9 +20157,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1892() throws Throwable {
+    public void test1973() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1892");
+            System.out.format("%n%s%n", "RegressionTest3.test1973");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         java.lang.String str1 = loginRequest0.getLogin();
         loginRequest0.setLogin("User(login=null, password=null, name=null, surname=hi!, age=0, institution=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), email=hi!, rating=0)");
@@ -16684,9 +20184,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1893() throws Throwable {
+    public void test1974() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1893");
+            System.out.format("%n%s%n", "RegressionTest3.test1974");
         com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
         java.lang.String str1 = questionDto0.getText();
         int int2 = questionDto0.getId();
@@ -16762,9 +20262,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1894() throws Throwable {
+    public void test1975() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1894");
+            System.out.format("%n%s%n", "RegressionTest3.test1975");
         com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest0 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
         submitResultRequest0.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
         java.util.List<java.lang.Integer> intList3 = submitResultRequest0.getAnswers();
@@ -16780,9 +20280,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1895() throws Throwable {
+    public void test1976() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1895");
+            System.out.format("%n%s%n", "RegressionTest3.test1976");
         com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
         testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
         testDescription0.setNameTest("hi!");
@@ -16893,9 +20393,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1896() throws Throwable {
+    public void test1977() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1896");
+            System.out.format("%n%s%n", "RegressionTest3.test1977");
         com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
         int int1 = testDto0.getId();
         int int2 = testDto0.getId();
@@ -16908,26 +20408,39 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1897() throws Throwable {
+    public void test1978() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1897");
+            System.out.format("%n%s%n", "RegressionTest3.test1978");
+        com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
+        java.lang.Integer int1 = question0.getId();
+        java.lang.Integer int2 = question0.getId();
+        java.lang.String str3 = question0.getText();
+        org.junit.Assert.assertNull(int1);
+        org.junit.Assert.assertNull(int2);
+        org.junit.Assert.assertNull(str3);
+    }
+
+    @Test
+    public void test1979() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest3.test1979");
         com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
         loginRequest0.setLogin("ResultDescription(id=null, testId=100, testName=null, mark=0)");
     }
 
     @Test
-    public void test1898() throws Throwable {
+    public void test1980() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1898");
+            System.out.format("%n%s%n", "RegressionTest3.test1980");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         answerDto0.setText("hi!");
         answerDto0.setId((int) ' ');
     }
 
     @Test
-    public void test1899() throws Throwable {
+    public void test1981() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1899");
+            System.out.format("%n%s%n", "RegressionTest3.test1981");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         java.lang.String str1 = answer0.toString();
         answer0.setId((java.lang.Integer) 1);
@@ -16936,9 +20449,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1900() throws Throwable {
+    public void test1982() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1900");
+            System.out.format("%n%s%n", "RegressionTest3.test1982");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.String str3 = post0.toString();
@@ -17016,9 +20529,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1901() throws Throwable {
+    public void test1983() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1901");
+            System.out.format("%n%s%n", "RegressionTest3.test1983");
         com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -17073,9 +20586,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1902() throws Throwable {
+    public void test1984() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1902");
+            System.out.format("%n%s%n", "RegressionTest3.test1984");
         com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
         com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
@@ -17106,9 +20619,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1903() throws Throwable {
+    public void test1985() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1903");
+            System.out.format("%n%s%n", "RegressionTest3.test1985");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
         resultDto0.setTest(testDto1);
@@ -17201,9 +20714,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1904() throws Throwable {
+    public void test1986() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1904");
+            System.out.format("%n%s%n", "RegressionTest3.test1986");
         com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
         ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
         com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
@@ -17300,9 +20813,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1905() throws Throwable {
+    public void test1987() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1905");
+            System.out.format("%n%s%n", "RegressionTest3.test1987");
         com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
         com.vntu.marenko.ualearning.server.model.User user1 = new com.vntu.marenko.ualearning.server.model.User();
         user1.setSurname("");
@@ -17323,9 +20836,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1906() throws Throwable {
+    public void test1988() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1906");
+            System.out.format("%n%s%n", "RegressionTest3.test1988");
         com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
         java.lang.String str1 = question0.getText();
         question0.setText("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=[])");
@@ -17334,9 +20847,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1907() throws Throwable {
+    public void test1989() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1907");
+            System.out.format("%n%s%n", "RegressionTest3.test1989");
         com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
         post0.setText("");
         java.lang.Integer int3 = post0.getId();
@@ -17356,9 +20869,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1908() throws Throwable {
+    public void test1990() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1908");
+            System.out.format("%n%s%n", "RegressionTest3.test1990");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         resultDto0.setId(100);
         boolean boolean3 = resultDto0.isSubmitted();
@@ -17366,9 +20879,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1909() throws Throwable {
+    public void test1991() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1909");
+            System.out.format("%n%s%n", "RegressionTest3.test1991");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
@@ -17382,9 +20895,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1910() throws Throwable {
+    public void test1992() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1910");
+            System.out.format("%n%s%n", "RegressionTest3.test1992");
         com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
         answer0.setId((java.lang.Integer) 0);
         boolean boolean3 = answer0.isCorrect();
@@ -17393,9 +20906,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1911() throws Throwable {
+    public void test1993() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1911");
+            System.out.format("%n%s%n", "RegressionTest3.test1993");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -17421,9 +20934,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1912() throws Throwable {
+    public void test1994() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1912");
+            System.out.format("%n%s%n", "RegressionTest3.test1994");
         com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
         com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
         boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
@@ -17440,9 +20953,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1913() throws Throwable {
+    public void test1995() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1913");
+            System.out.format("%n%s%n", "RegressionTest3.test1995");
         com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
         java.lang.Integer int1 = test0.getId();
         java.lang.Integer int2 = test0.getId();
@@ -17460,9 +20973,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1914() throws Throwable {
+    public void test1996() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1914");
+            System.out.format("%n%s%n", "RegressionTest3.test1996");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -17512,9 +21025,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1915() throws Throwable {
+    public void test1997() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1915");
+            System.out.format("%n%s%n", "RegressionTest3.test1997");
         com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
         resultDto0.setId(100);
         resultDto0.setId((int) (byte) 10);
@@ -17523,9 +21036,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1916() throws Throwable {
+    public void test1998() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1916");
+            System.out.format("%n%s%n", "RegressionTest3.test1998");
         com.vntu.marenko.ualearning.server.service.UserService userService0 = null;
         com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
         com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository2 = null;
@@ -17611,9 +21124,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1917() throws Throwable {
+    public void test1999() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1917");
+            System.out.format("%n%s%n", "RegressionTest3.test1999");
         com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
         user0.setSurname("");
         com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
@@ -17631,9 +21144,9 @@ public class RegressionTest3 {
     }
 
     @Test
-    public void test1918() throws Throwable {
+    public void test2000() throws Throwable {
         if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1918");
+            System.out.format("%n%s%n", "RegressionTest3.test2000");
         com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
         userDto0.setInstitution("");
         userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
@@ -17643,4104 +21156,6 @@ public class RegressionTest3 {
         java.lang.String str10 = userDto0.getInstitution();
         org.junit.Assert.assertEquals("'" + str7 + "' != '" + "Tag(id=null, name=null)" + "'", str7, "Tag(id=null, name=null)");
         org.junit.Assert.assertEquals("'" + str10 + "' != '" + "" + "'", str10, "");
-    }
-
-    @Test
-    public void test1919() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1919");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getInstitution();
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        questionDto2.setId((int) '#');
-        boolean boolean5 = userRequest0.equals((java.lang.Object) '#');
-        userRequest0.setEmail("UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
-        int int8 = userRequest0.getAge();
-        userRequest0.setSurname("Tag(id=10, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))");
-        userRequest0.setEmail("Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))");
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
-        org.junit.Assert.assertTrue("'" + int8 + "' != '" + 0 + "'", int8 == 0);
-    }
-
-    @Test
-    public void test1920() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1920");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper3 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository0, testRepository1, answerRepository2);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType4 = submitResultRequestToDomainMapper3.getBType();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper5 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig6 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl7 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository8 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository9 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository10 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper11 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository8, testRepository9, answerRepository10);
-        ma.glasnost.orika.MapperFacade mapperFacade12 = null;
-        submitResultRequestToDomainMapper11.setMapperFacade(mapperFacade12);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType14 = submitResultRequestToDomainMapper11.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper15 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper16 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean17 = createPostRequestToPostMapper16.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper18 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade19 = mapperConfig6.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl7, submitResultRequestToDomainMapper11, resultToDescriptionMapper15, createPostRequestToPostMapper16, postToDtoMapper18);
-        postToDtoMapper5.setMapperFacade(mapperFacade19);
-        submitResultRequestToDomainMapper3.setMapperFacade(mapperFacade19);
-        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository22 = null;
-        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl23 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository22);
-        com.vntu.marenko.ualearning.server.controller.PostController postController24 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade19, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl23);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest25 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str26 = createPostRequest25.getUsername();
-        createPostRequest25.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
-        java.lang.String str29 = createPostRequest25.getText();
-        createPostRequest25.setUsername("User(login=null, password=TagDto(id=1, name=null), name=null, surname=null, age=0, institution=null, email=null, rating=100)");
-        // The following exception was thrown during execution in test generation
-        try {
-            com.vntu.marenko.ualearning.server.dto.PostDto postDto32 = postController24.createPost(createPostRequest25);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType4);
-        org.junit.Assert.assertNotNull(resultType14);
-        org.junit.Assert.assertEquals("'" + boolean17 + "' != '" + false + "'", boolean17, false);
-        org.junit.Assert.assertNotNull(mapperFacade19);
-        org.junit.Assert.assertNull(str26);
-        org.junit.Assert.assertEquals("'" + str29 + "' != '" + "User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)" + "'", str29, "User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
-    }
-
-    @Test
-    public void test1921() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1921");
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        userDto0.setRating((int) (byte) -1);
-        java.lang.String str3 = userDto0.getInstitution();
-        userDto0.setName("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=[])");
-        userDto0.setAge((int) (short) 0);
-        java.lang.String str8 = userDto0.getEmail();
-        userDto0.setRating((int) (short) 0);
-        org.junit.Assert.assertNull(str3);
-        org.junit.Assert.assertNull(str8);
-    }
-
-    @Test
-    public void test1922() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1922");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getName();
-        java.lang.String str2 = userRequest0.getName();
-        java.lang.String str3 = userRequest0.getPassword();
-        java.lang.String str4 = userRequest0.getEmail();
-        userRequest0.setSurname("UserRequest(login=LoginRequest(login=Tag(id=null, name=null), password=null), password=Question(id=null, text=null, answers=null), name=null, surname=null, age=0, institution=null, email=null)");
-        java.lang.String str7 = userRequest0.getEmail();
-        java.lang.String str8 = userRequest0.getInstitution();
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertNull(str2);
-        org.junit.Assert.assertNull(str3);
-        org.junit.Assert.assertNull(str4);
-        org.junit.Assert.assertNull(str7);
-        org.junit.Assert.assertNull(str8);
-    }
-
-    @Test
-    public void test1923() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1923");
-        com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
-        int int1 = postDto0.getId();
-        postDto0.setId((int) (byte) -1);
-        java.lang.String str4 = postDto0.getLogin();
-        postDto0.setTimestamp("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        java.util.List<java.lang.String> strList7 = postDto0.getLikes();
-        int int8 = postDto0.getId();
-        org.junit.Assert.assertTrue("'" + int1 + "' != '" + 0 + "'", int1 == 0);
-        org.junit.Assert.assertNull(str4);
-        org.junit.Assert.assertNull(strList7);
-        org.junit.Assert.assertTrue("'" + int8 + "' != '" + (-1) + "'", int8 == (-1));
-    }
-
-    @Test
-    public void test1924() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1924");
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
-        resultDto0.setTest(testDto1);
-        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList3 = resultDto0.getAnswers();
-        long long4 = resultDto0.getMark();
-        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList5 = resultDto0.getAnswers();
-        long long6 = resultDto0.getMark();
-        resultDto0.setMark((long) (short) 100);
-        int int9 = resultDto0.getId();
-        org.junit.Assert.assertNull(answerDtoList3);
-        org.junit.Assert.assertTrue("'" + long4 + "' != '" + 0L + "'", long4 == 0L);
-        org.junit.Assert.assertNull(answerDtoList5);
-        org.junit.Assert.assertTrue("'" + long6 + "' != '" + 0L + "'", long6 == 0L);
-        org.junit.Assert.assertTrue("'" + int9 + "' != '" + 0 + "'", int9 == 0);
-    }
-
-    @Test
-    public void test1925() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1925");
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade1 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
-        com.vntu.marenko.ualearning.server.component.MarkComputer markComputer3 = null;
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl4 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository0, mapperFacade1, userRepository2, markComputer3);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper5 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean6 = createPostRequestToPostMapper5.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig7 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl8 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository9 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository10 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository11 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper12 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository9, testRepository10, answerRepository11);
-        ma.glasnost.orika.MapperFacade mapperFacade13 = null;
-        submitResultRequestToDomainMapper12.setMapperFacade(mapperFacade13);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType15 = submitResultRequestToDomainMapper12.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper16 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper17 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean18 = createPostRequestToPostMapper17.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper19 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade20 = mapperConfig7.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl8, submitResultRequestToDomainMapper12, resultToDescriptionMapper16, createPostRequestToPostMapper17, postToDtoMapper19);
-        createPostRequestToPostMapper5.setMapperFacade(mapperFacade20);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController22 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl4, mapperFacade20);
-        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository23 = null;
-        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl24 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository23);
-        com.vntu.marenko.ualearning.server.controller.PostController postController25 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade20, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl24);
-        com.vntu.marenko.ualearning.server.model.Tag tag26 = new com.vntu.marenko.ualearning.server.model.Tag();
-        java.lang.String str27 = tag26.toString();
-        java.lang.String str28 = tag26.getName();
-        java.lang.Integer int29 = tag26.getId();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper30 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper31 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType32 = createPostRequestToPostMapper31.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post33 = new com.vntu.marenko.ualearning.server.model.Post();
-        post33.setText("");
-        java.lang.String str36 = post33.toString();
-        post33.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest39 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest39.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext42 = null;
-        createPostRequestToPostMapper31.mapBtoA(post33, createPostRequest39, mappingContext42);
-        com.vntu.marenko.ualearning.server.model.Post post44 = new com.vntu.marenko.ualearning.server.model.Post();
-        post44.setText("");
-        java.lang.String str47 = post44.toString();
-        java.lang.Integer int48 = post44.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest49 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str50 = createPostRequest49.getUsername();
-        java.lang.String str51 = createPostRequest49.toString();
-        ma.glasnost.orika.MappingContext mappingContext52 = null;
-        createPostRequestToPostMapper31.mapBtoA(post44, createPostRequest49, mappingContext52);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper54 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType55 = createPostRequestToPostMapper54.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post56 = new com.vntu.marenko.ualearning.server.model.Post();
-        post56.setText("");
-        java.lang.String str59 = post56.toString();
-        post56.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest62 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest62.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext65 = null;
-        createPostRequestToPostMapper54.mapBtoA(post56, createPostRequest62, mappingContext65);
-        ma.glasnost.orika.MappingContext mappingContext67 = null;
-        createPostRequestToPostMapper30.mapAtoB(createPostRequest49, post56, mappingContext67);
-        boolean boolean69 = tag26.equals((java.lang.Object) createPostRequest49);
-        // The following exception was thrown during execution in test generation
-        try {
-            com.vntu.marenko.ualearning.server.dto.PostDto postDto70 = postController25.createPost(createPostRequest49);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertEquals("'" + boolean6 + "' != '" + false + "'", boolean6, false);
-        org.junit.Assert.assertNotNull(resultType15);
-        org.junit.Assert.assertEquals("'" + boolean18 + "' != '" + false + "'", boolean18, false);
-        org.junit.Assert.assertNotNull(mapperFacade20);
-        org.junit.Assert.assertEquals("'" + str27 + "' != '" + "Tag(id=null, name=null)" + "'", str27, "Tag(id=null, name=null)");
-        org.junit.Assert.assertNull(str28);
-        org.junit.Assert.assertNull(int29);
-        org.junit.Assert.assertNotNull(postType32);
-        org.junit.Assert.assertEquals("'" + str36 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str36, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str47 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str47, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int48);
-        org.junit.Assert.assertNull(str50);
-        org.junit.Assert.assertEquals("'" + str51 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str51, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertNotNull(postType55);
-        org.junit.Assert.assertEquals("'" + str59 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str59, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertTrue("'" + boolean69 + "' != '" + false + "'", boolean69 == false);
-    }
-
-    @Test
-    public void test1926() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1926");
-        com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
-        java.lang.Integer int1 = question0.getId();
-        java.util.List<com.vntu.marenko.ualearning.server.model.Answer> answerList2 = null;
-        question0.setAnswers(answerList2);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository4 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository5 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository6 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper7 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository4, testRepository5, answerRepository6);
-        ma.glasnost.orika.MapperFacade mapperFacade8 = null;
-        submitResultRequestToDomainMapper7.setMapperFacade(mapperFacade8);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType10 = submitResultRequestToDomainMapper7.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade11 = null;
-        submitResultRequestToDomainMapper7.setMapperFacade(mapperFacade11);
-        com.vntu.marenko.ualearning.server.model.User user13 = new com.vntu.marenko.ualearning.server.model.User();
-        user13.setSurname("");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository16 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository17 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository18 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper19 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository16, testRepository17, answerRepository18);
-        ma.glasnost.orika.MapperFacade mapperFacade20 = null;
-        submitResultRequestToDomainMapper19.setMapperFacade(mapperFacade20);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType22 = submitResultRequestToDomainMapper19.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade23 = null;
-        submitResultRequestToDomainMapper19.setMapperFacade(mapperFacade23);
-        boolean boolean25 = user13.equals((java.lang.Object) submitResultRequestToDomainMapper19);
-        com.vntu.marenko.ualearning.server.model.Result result26 = new com.vntu.marenko.ualearning.server.model.Result();
-        result26.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user29 = new com.vntu.marenko.ualearning.server.model.User();
-        user29.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test32 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean33 = user29.equals((java.lang.Object) test32);
-        user29.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result26.setUser(user29);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest37 = null;
-        ma.glasnost.orika.MappingContext mappingContext38 = null;
-        submitResultRequestToDomainMapper19.mapBtoA(result26, submitResultRequest37, mappingContext38);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest40 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
-        submitResultRequest40.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
-        int int43 = submitResultRequest40.getTestId();
-        ma.glasnost.orika.MappingContext mappingContext44 = null;
-        submitResultRequestToDomainMapper7.mapBtoA(result26, submitResultRequest40, mappingContext44);
-        com.vntu.marenko.ualearning.server.model.Question question46 = new com.vntu.marenko.ualearning.server.model.Question();
-        java.lang.String str47 = question46.getText();
-        java.lang.Integer int48 = question46.getId();
-        com.vntu.marenko.ualearning.server.service.TestService testService49 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade50 = null;
-        com.vntu.marenko.ualearning.server.controller.TestController testController51 = new com.vntu.marenko.ualearning.server.controller.TestController(testService49, mapperFacade50);
-        boolean boolean52 = question46.equals((java.lang.Object) testController51);
-        com.vntu.marenko.ualearning.server.model.Result result53 = new com.vntu.marenko.ualearning.server.model.Result();
-        java.lang.Integer int54 = result53.getId();
-        com.vntu.marenko.ualearning.server.model.Test test55 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int56 = test55.getId();
-        java.lang.Integer int57 = test55.getId();
-        result53.setTest(test55);
-        java.lang.Integer int59 = result53.getId();
-        com.vntu.marenko.ualearning.server.model.Result result60 = new com.vntu.marenko.ualearning.server.model.Result();
-        result60.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user63 = new com.vntu.marenko.ualearning.server.model.User();
-        user63.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test66 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean67 = user63.equals((java.lang.Object) test66);
-        user63.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result60.setUser(user63);
-        com.vntu.marenko.ualearning.server.model.Question question71 = new com.vntu.marenko.ualearning.server.model.Question();
-        java.lang.Integer int72 = question71.getId();
-        java.lang.Integer int73 = question71.getId();
-        com.vntu.marenko.ualearning.server.model.Answer answer74 = new com.vntu.marenko.ualearning.server.model.Answer();
-        com.vntu.marenko.ualearning.server.model.Answer answer75 = new com.vntu.marenko.ualearning.server.model.Answer();
-        answer75.setCorrect(false);
-        com.vntu.marenko.ualearning.server.model.Answer[] answerArray78 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer74, answer75 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList79 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
-        boolean boolean80 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList79, answerArray78);
-        question71.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList79);
-        result60.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList79);
-        result53.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList79);
-        question46.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList79);
-        result26.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList79);
-        question0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList79);
-        java.lang.String str87 = question0.toString();
-        java.lang.Integer int88 = question0.getId();
-        org.junit.Assert.assertNull(int1);
-        org.junit.Assert.assertNotNull(submitResultRequestType10);
-        org.junit.Assert.assertNotNull(submitResultRequestType22);
-        org.junit.Assert.assertTrue("'" + boolean25 + "' != '" + false + "'", boolean25 == false);
-        org.junit.Assert.assertTrue("'" + boolean33 + "' != '" + false + "'", boolean33 == false);
-        org.junit.Assert.assertTrue("'" + int43 + "' != '" + 0 + "'", int43 == 0);
-        org.junit.Assert.assertNull(str47);
-        org.junit.Assert.assertNull(int48);
-        org.junit.Assert.assertTrue("'" + boolean52 + "' != '" + false + "'", boolean52 == false);
-        org.junit.Assert.assertNull(int54);
-        org.junit.Assert.assertNull(int56);
-        org.junit.Assert.assertNull(int57);
-        org.junit.Assert.assertNull(int59);
-        org.junit.Assert.assertTrue("'" + boolean67 + "' != '" + false + "'", boolean67 == false);
-        org.junit.Assert.assertNull(int72);
-        org.junit.Assert.assertNull(int73);
-        org.junit.Assert.assertNotNull(answerArray78);
-        org.junit.Assert.assertTrue("'" + boolean80 + "' != '" + true + "'", boolean80 == true);
-        org.junit.Assert.assertEquals("'" + str87 + "' != '" + "Question(id=null, text=null, answers=[Answer(id=null, text=null, correct=false), Answer(id=null, text=null, correct=false)])" + "'", str87, "Question(id=null, text=null, answers=[Answer(id=null, text=null, correct=false), Answer(id=null, text=null, correct=false)])");
-        org.junit.Assert.assertNull(int88);
-    }
-
-    @Test
-    public void test1927() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1927");
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        java.lang.String str1 = questionDto0.getText();
-        int int2 = questionDto0.getId();
-        com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
-        user3.setInstitution("hi!");
-        java.lang.String str6 = user3.toString();
-        java.lang.String str7 = user3.getEmail();
-        java.lang.String str8 = user3.getEmail();
-        boolean boolean9 = questionDto0.equals((java.lang.Object) str8);
-        com.vntu.marenko.ualearning.server.model.Tag tag10 = new com.vntu.marenko.ualearning.server.model.Tag();
-        java.lang.String str11 = tag10.toString();
-        java.lang.String str12 = tag10.getName();
-        java.lang.Integer int13 = tag10.getId();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper14 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper15 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType16 = createPostRequestToPostMapper15.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post17 = new com.vntu.marenko.ualearning.server.model.Post();
-        post17.setText("");
-        java.lang.String str20 = post17.toString();
-        post17.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest23 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest23.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext26 = null;
-        createPostRequestToPostMapper15.mapBtoA(post17, createPostRequest23, mappingContext26);
-        com.vntu.marenko.ualearning.server.model.Post post28 = new com.vntu.marenko.ualearning.server.model.Post();
-        post28.setText("");
-        java.lang.String str31 = post28.toString();
-        java.lang.Integer int32 = post28.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest33 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str34 = createPostRequest33.getUsername();
-        java.lang.String str35 = createPostRequest33.toString();
-        ma.glasnost.orika.MappingContext mappingContext36 = null;
-        createPostRequestToPostMapper15.mapBtoA(post28, createPostRequest33, mappingContext36);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper38 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType39 = createPostRequestToPostMapper38.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post40 = new com.vntu.marenko.ualearning.server.model.Post();
-        post40.setText("");
-        java.lang.String str43 = post40.toString();
-        post40.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest46 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest46.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext49 = null;
-        createPostRequestToPostMapper38.mapBtoA(post40, createPostRequest46, mappingContext49);
-        ma.glasnost.orika.MappingContext mappingContext51 = null;
-        createPostRequestToPostMapper14.mapAtoB(createPostRequest33, post40, mappingContext51);
-        boolean boolean53 = tag10.equals((java.lang.Object) createPostRequest33);
-        boolean boolean54 = questionDto0.equals((java.lang.Object) tag10);
-        java.lang.Integer int55 = tag10.getId();
-        java.lang.String str56 = tag10.getName();
-        tag10.setId((java.lang.Integer) 52);
-        tag10.setId((java.lang.Integer) 10);
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertTrue("'" + int2 + "' != '" + 0 + "'", int2 == 0);
-        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str6, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        org.junit.Assert.assertNull(str7);
-        org.junit.Assert.assertNull(str8);
-        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
-        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "Tag(id=null, name=null)" + "'", str11, "Tag(id=null, name=null)");
-        org.junit.Assert.assertNull(str12);
-        org.junit.Assert.assertNull(int13);
-        org.junit.Assert.assertNotNull(postType16);
-        org.junit.Assert.assertEquals("'" + str20 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str20, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str31 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str31, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int32);
-        org.junit.Assert.assertNull(str34);
-        org.junit.Assert.assertEquals("'" + str35 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str35, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertNotNull(postType39);
-        org.junit.Assert.assertEquals("'" + str43 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str43, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertTrue("'" + boolean53 + "' != '" + false + "'", boolean53 == false);
-        org.junit.Assert.assertTrue("'" + boolean54 + "' != '" + false + "'", boolean54 == false);
-        org.junit.Assert.assertNull(int55);
-        org.junit.Assert.assertNull(str56);
-    }
-
-    @Test
-    public void test1928() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1928");
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
-        java.lang.String str1 = testDto0.toString();
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto2 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        java.lang.String str3 = tagDto2.toString();
-        java.lang.String str4 = tagDto2.getName();
-        com.vntu.marenko.ualearning.server.model.User user5 = new com.vntu.marenko.ualearning.server.model.User();
-        long long6 = user5.getRating();
-        user5.setLogin("hi!");
-        boolean boolean9 = tagDto2.equals((java.lang.Object) user5);
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto10 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        java.lang.String str11 = tagDto10.toString();
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto12 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        tagDto12.setId(1);
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto15 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        java.lang.String str16 = tagDto15.toString();
-        java.lang.String str17 = tagDto15.getName();
-        com.vntu.marenko.ualearning.server.model.Test test18 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int19 = test18.getId();
-        java.lang.Integer int20 = test18.getId();
-        test18.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList23 = test18.getTags();
-        boolean boolean24 = tagDto15.equals((java.lang.Object) tagList23);
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto25 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        tagDto25.setId(1);
-        boolean boolean29 = tagDto25.equals((java.lang.Object) (-1L));
-        int int30 = tagDto25.getId();
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto31 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        tagDto31.setId(1);
-        java.lang.String str34 = tagDto31.getName();
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto35 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        java.lang.String str36 = tagDto35.toString();
-        java.lang.String str37 = tagDto35.getName();
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto38 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        java.lang.String str39 = tagDto38.toString();
-        java.lang.String str40 = tagDto38.getName();
-        com.vntu.marenko.ualearning.server.model.Test test41 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int42 = test41.getId();
-        java.lang.Integer int43 = test41.getId();
-        test41.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList46 = test41.getTags();
-        boolean boolean47 = tagDto38.equals((java.lang.Object) tagList46);
-        com.vntu.marenko.ualearning.server.dto.TagDto[] tagDtoArray48 = new com.vntu.marenko.ualearning.server.dto.TagDto[] { tagDto2, tagDto10, tagDto12, tagDto15, tagDto25, tagDto31, tagDto35, tagDto38 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList49 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.TagDto>();
-        boolean boolean50 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList49, tagDtoArray48);
-        testDto0.setTags((java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto>) tagDtoList49);
-        testDto0.setCompletedCounter((java.lang.Integer) 100);
-        java.lang.String str54 = testDto0.getDescriptionTest();
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto55 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        java.lang.String str56 = questionDto55.getText();
-        int int57 = questionDto55.getId();
-        questionDto55.setId(10);
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto60 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        questionDto60.setId((int) '#');
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto63 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl64 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean65 = answerDto63.equals((java.lang.Object) markComputerImpl64);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto66 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto67 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl68 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean69 = answerDto67.equals((java.lang.Object) markComputerImpl68);
-        int int70 = answerDto67.getId();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto71 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl72 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean73 = answerDto71.equals((java.lang.Object) markComputerImpl72);
-        int int74 = answerDto71.getId();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto75 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto75.setText("hi!");
-        java.lang.String str78 = answerDto75.getText();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto[] answerDtoArray79 = new com.vntu.marenko.ualearning.server.dto.AnswerDto[] { answerDto63, answerDto66, answerDto67, answerDto71, answerDto75 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList80 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto>();
-        boolean boolean81 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList80, answerDtoArray79);
-        questionDto60.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList80);
-        questionDto60.setId((int) (short) -1);
-        int int85 = questionDto60.getId();
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto86 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        java.lang.String str87 = questionDto86.getText();
-        int int88 = questionDto86.getId();
-        questionDto86.setId(10);
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto91 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        java.lang.String str92 = questionDto91.getText();
-        com.vntu.marenko.ualearning.server.dto.QuestionDto[] questionDtoArray93 = new com.vntu.marenko.ualearning.server.dto.QuestionDto[] { questionDto55, questionDto60, questionDto86, questionDto91 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.QuestionDto> questionDtoList94 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.QuestionDto>();
-        boolean boolean95 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.QuestionDto>) questionDtoList94, questionDtoArray93);
-        testDto0.setQuestions((java.util.List<com.vntu.marenko.ualearning.server.dto.QuestionDto>) questionDtoList94);
-        java.lang.String str97 = testDto0.getDescriptionTest();
-        int int98 = testDto0.getId();
-        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)" + "'", str1, "TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
-        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "TagDto(id=0, name=null)" + "'", str3, "TagDto(id=0, name=null)");
-        org.junit.Assert.assertNull(str4);
-        org.junit.Assert.assertTrue("'" + long6 + "' != '" + 0L + "'", long6 == 0L);
-        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
-        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "TagDto(id=0, name=null)" + "'", str11, "TagDto(id=0, name=null)");
-        org.junit.Assert.assertEquals("'" + str16 + "' != '" + "TagDto(id=0, name=null)" + "'", str16, "TagDto(id=0, name=null)");
-        org.junit.Assert.assertNull(str17);
-        org.junit.Assert.assertNull(int19);
-        org.junit.Assert.assertNull(int20);
-        org.junit.Assert.assertNull(tagList23);
-        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + false + "'", boolean24 == false);
-        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
-        org.junit.Assert.assertTrue("'" + int30 + "' != '" + 1 + "'", int30 == 1);
-        org.junit.Assert.assertNull(str34);
-        org.junit.Assert.assertEquals("'" + str36 + "' != '" + "TagDto(id=0, name=null)" + "'", str36, "TagDto(id=0, name=null)");
-        org.junit.Assert.assertNull(str37);
-        org.junit.Assert.assertEquals("'" + str39 + "' != '" + "TagDto(id=0, name=null)" + "'", str39, "TagDto(id=0, name=null)");
-        org.junit.Assert.assertNull(str40);
-        org.junit.Assert.assertNull(int42);
-        org.junit.Assert.assertNull(int43);
-        org.junit.Assert.assertNull(tagList46);
-        org.junit.Assert.assertTrue("'" + boolean47 + "' != '" + false + "'", boolean47 == false);
-        org.junit.Assert.assertNotNull(tagDtoArray48);
-        org.junit.Assert.assertTrue("'" + boolean50 + "' != '" + true + "'", boolean50 == true);
-        org.junit.Assert.assertNull(str54);
-        org.junit.Assert.assertNull(str56);
-        org.junit.Assert.assertTrue("'" + int57 + "' != '" + 0 + "'", int57 == 0);
-        org.junit.Assert.assertTrue("'" + boolean65 + "' != '" + false + "'", boolean65 == false);
-        org.junit.Assert.assertTrue("'" + boolean69 + "' != '" + false + "'", boolean69 == false);
-        org.junit.Assert.assertTrue("'" + int70 + "' != '" + 0 + "'", int70 == 0);
-        org.junit.Assert.assertTrue("'" + boolean73 + "' != '" + false + "'", boolean73 == false);
-        org.junit.Assert.assertTrue("'" + int74 + "' != '" + 0 + "'", int74 == 0);
-        org.junit.Assert.assertEquals("'" + str78 + "' != '" + "hi!" + "'", str78, "hi!");
-        org.junit.Assert.assertNotNull(answerDtoArray79);
-        org.junit.Assert.assertTrue("'" + boolean81 + "' != '" + true + "'", boolean81 == true);
-        org.junit.Assert.assertTrue("'" + int85 + "' != '" + (-1) + "'", int85 == (-1));
-        org.junit.Assert.assertNull(str87);
-        org.junit.Assert.assertTrue("'" + int88 + "' != '" + 0 + "'", int88 == 0);
-        org.junit.Assert.assertNull(str92);
-        org.junit.Assert.assertNotNull(questionDtoArray93);
-        org.junit.Assert.assertTrue("'" + boolean95 + "' != '" + true + "'", boolean95 == true);
-        org.junit.Assert.assertNull(str97);
-        org.junit.Assert.assertTrue("'" + int98 + "' != '" + 0 + "'", int98 == 0);
-    }
-
-    @Test
-    public void test1929() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1929");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getName();
-        java.lang.String str2 = userRequest0.getName();
-        java.lang.String str3 = userRequest0.getEmail();
-        com.vntu.marenko.ualearning.server.model.Result result4 = new com.vntu.marenko.ualearning.server.model.Result();
-        result4.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user7 = new com.vntu.marenko.ualearning.server.model.User();
-        user7.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test10 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean11 = user7.equals((java.lang.Object) test10);
-        user7.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result4.setUser(user7);
-        com.vntu.marenko.ualearning.server.model.Question question15 = new com.vntu.marenko.ualearning.server.model.Question();
-        java.lang.Integer int16 = question15.getId();
-        java.lang.Integer int17 = question15.getId();
-        com.vntu.marenko.ualearning.server.model.Answer answer18 = new com.vntu.marenko.ualearning.server.model.Answer();
-        com.vntu.marenko.ualearning.server.model.Answer answer19 = new com.vntu.marenko.ualearning.server.model.Answer();
-        answer19.setCorrect(false);
-        com.vntu.marenko.ualearning.server.model.Answer[] answerArray22 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer18, answer19 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList23 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
-        boolean boolean24 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList23, answerArray22);
-        question15.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList23);
-        result4.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList23);
-        boolean boolean27 = userRequest0.equals((java.lang.Object) answerList23);
-        userRequest0.setSurname("");
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest30 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
-        submitResultRequest30.setUserLogin("ResultDescription(id=null, testId=100, testName=null, mark=0)");
-        boolean boolean33 = userRequest0.equals((java.lang.Object) submitResultRequest30);
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertNull(str2);
-        org.junit.Assert.assertNull(str3);
-        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
-        org.junit.Assert.assertNull(int16);
-        org.junit.Assert.assertNull(int17);
-        org.junit.Assert.assertNotNull(answerArray22);
-        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + true + "'", boolean24 == true);
-        org.junit.Assert.assertTrue("'" + boolean27 + "' != '" + false + "'", boolean27 == false);
-        org.junit.Assert.assertTrue("'" + boolean33 + "' != '" + false + "'", boolean33 == false);
-    }
-
-    @Test
-    public void test1930() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1930");
-        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
-        user0.setInstitution("hi!");
-        java.lang.String str3 = user0.toString();
-        java.lang.String str4 = user0.getEmail();
-        user0.setPassword("User(login=null, password=null, name=null, surname=, age=0, institution=null, email=null, rating=0)");
-        user0.setRating(1L);
-        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str3, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        org.junit.Assert.assertNull(str4);
-    }
-
-    @Test
-    public void test1931() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1931");
-        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
-        tag0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
-        com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
-        user3.setSurname("");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository6 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository7 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository8 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper9 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository6, testRepository7, answerRepository8);
-        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
-        submitResultRequestToDomainMapper9.setMapperFacade(mapperFacade10);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType12 = submitResultRequestToDomainMapper9.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade13 = null;
-        submitResultRequestToDomainMapper9.setMapperFacade(mapperFacade13);
-        boolean boolean15 = user3.equals((java.lang.Object) submitResultRequestToDomainMapper9);
-        com.vntu.marenko.ualearning.server.model.Result result16 = new com.vntu.marenko.ualearning.server.model.Result();
-        result16.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user19 = new com.vntu.marenko.ualearning.server.model.User();
-        user19.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test22 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean23 = user19.equals((java.lang.Object) test22);
-        user19.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result16.setUser(user19);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest27 = null;
-        ma.glasnost.orika.MappingContext mappingContext28 = null;
-        submitResultRequestToDomainMapper9.mapBtoA(result16, submitResultRequest27, mappingContext28);
-        com.vntu.marenko.ualearning.server.model.User user30 = result16.getUser();
-        com.vntu.marenko.ualearning.server.model.User user31 = result16.getUser();
-        boolean boolean32 = tag0.equals((java.lang.Object) result16);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto33 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl34 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean35 = answerDto33.equals((java.lang.Object) markComputerImpl34);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto36 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto36.setId((int) (byte) -1);
-        boolean boolean39 = answerDto33.equals((java.lang.Object) (byte) -1);
-        int int40 = answerDto33.getId();
-        boolean boolean41 = result16.equals((java.lang.Object) answerDto33);
-        com.vntu.marenko.ualearning.server.model.Result result42 = new com.vntu.marenko.ualearning.server.model.Result();
-        java.lang.Integer int43 = result42.getId();
-        com.vntu.marenko.ualearning.server.model.Test test44 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int45 = test44.getId();
-        java.lang.Integer int46 = test44.getId();
-        result42.setTest(test44);
-        java.lang.Integer int48 = result42.getId();
-        com.vntu.marenko.ualearning.server.model.Test test49 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int50 = test49.getId();
-        java.lang.Integer int51 = test49.getId();
-        test49.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        java.lang.Integer int54 = test49.getCompletedCounter();
-        java.lang.Integer int55 = test49.getCompletedCounter();
-        result42.setTest(test49);
-        com.vntu.marenko.ualearning.server.model.User user57 = result42.getUser();
-        com.vntu.marenko.ualearning.server.model.Test test58 = result42.getTest();
-        com.vntu.marenko.ualearning.server.model.Test test59 = result42.getTest();
-        java.lang.Integer int60 = result42.getId();
-        boolean boolean61 = answerDto33.equals((java.lang.Object) result42);
-        boolean boolean63 = answerDto33.equals((java.lang.Object) "SubmitResultRequest(userLogin=null, testId=0, answers=[1, 10, -1])");
-        org.junit.Assert.assertNotNull(submitResultRequestType12);
-        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
-        org.junit.Assert.assertTrue("'" + boolean23 + "' != '" + false + "'", boolean23 == false);
-        org.junit.Assert.assertNotNull(user30);
-        org.junit.Assert.assertNotNull(user31);
-        org.junit.Assert.assertTrue("'" + boolean32 + "' != '" + false + "'", boolean32 == false);
-        org.junit.Assert.assertTrue("'" + boolean35 + "' != '" + false + "'", boolean35 == false);
-        org.junit.Assert.assertTrue("'" + boolean39 + "' != '" + false + "'", boolean39 == false);
-        org.junit.Assert.assertTrue("'" + int40 + "' != '" + 0 + "'", int40 == 0);
-        org.junit.Assert.assertTrue("'" + boolean41 + "' != '" + false + "'", boolean41 == false);
-        org.junit.Assert.assertNull(int43);
-        org.junit.Assert.assertNull(int45);
-        org.junit.Assert.assertNull(int46);
-        org.junit.Assert.assertNull(int48);
-        org.junit.Assert.assertNull(int50);
-        org.junit.Assert.assertNull(int51);
-        org.junit.Assert.assertNull(int54);
-        org.junit.Assert.assertNull(int55);
-        org.junit.Assert.assertNull(user57);
-        org.junit.Assert.assertNotNull(test58);
-        org.junit.Assert.assertNotNull(test59);
-        org.junit.Assert.assertNull(int60);
-        org.junit.Assert.assertTrue("'" + boolean61 + "' != '" + false + "'", boolean61 == false);
-        org.junit.Assert.assertTrue("'" + boolean63 + "' != '" + false + "'", boolean63 == false);
-    }
-
-    @Test
-    public void test1932() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1932");
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
-        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
-        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType9 = submitResultRequestToDomainMapper6.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper10 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper11 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean12 = createPostRequestToPostMapper11.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper13 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade14 = mapperConfig1.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2, submitResultRequestToDomainMapper6, resultToDescriptionMapper10, createPostRequestToPostMapper11, postToDtoMapper13);
-        postToDtoMapper0.setMapperFacade(mapperFacade14);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType16 = postToDtoMapper0.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade17 = null;
-        postToDtoMapper0.setMapperFacade(mapperFacade17);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository19 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl20 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository19);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository21 = null;
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper22 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig23 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl24 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository25 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository26 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository27 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper28 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository25, testRepository26, answerRepository27);
-        ma.glasnost.orika.MapperFacade mapperFacade29 = null;
-        submitResultRequestToDomainMapper28.setMapperFacade(mapperFacade29);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType31 = submitResultRequestToDomainMapper28.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper32 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper33 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean34 = createPostRequestToPostMapper33.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper35 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade36 = mapperConfig23.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl24, submitResultRequestToDomainMapper28, resultToDescriptionMapper32, createPostRequestToPostMapper33, postToDtoMapper35);
-        postToDtoMapper22.setMapperFacade(mapperFacade36);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository38 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig39 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl40 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository41 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository42 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository43 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper44 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository41, testRepository42, answerRepository43);
-        ma.glasnost.orika.MapperFacade mapperFacade45 = null;
-        submitResultRequestToDomainMapper44.setMapperFacade(mapperFacade45);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType47 = submitResultRequestToDomainMapper44.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper48 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper49 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean50 = createPostRequestToPostMapper49.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper51 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade52 = mapperConfig39.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl40, submitResultRequestToDomainMapper44, resultToDescriptionMapper48, createPostRequestToPostMapper49, postToDtoMapper51);
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl53 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository54 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository55 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository56 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper57 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository54, testRepository55, answerRepository56);
-        ma.glasnost.orika.MapperFacade mapperFacade58 = null;
-        submitResultRequestToDomainMapper57.setMapperFacade(mapperFacade58);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType60 = submitResultRequestToDomainMapper57.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper61 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig62 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl63 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository64 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository65 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository66 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper67 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository64, testRepository65, answerRepository66);
-        ma.glasnost.orika.MapperFacade mapperFacade68 = null;
-        submitResultRequestToDomainMapper67.setMapperFacade(mapperFacade68);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType70 = submitResultRequestToDomainMapper67.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper71 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper72 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean73 = createPostRequestToPostMapper72.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper74 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade75 = mapperConfig62.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl63, submitResultRequestToDomainMapper67, resultToDescriptionMapper71, createPostRequestToPostMapper72, postToDtoMapper74);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper76 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        ma.glasnost.orika.MapperFacade mapperFacade77 = mapperConfig39.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl53, submitResultRequestToDomainMapper57, resultToDescriptionMapper61, createPostRequestToPostMapper72, postToDtoMapper76);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl78 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository21, mapperFacade36, userRepository38, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl53);
-        com.vntu.marenko.ualearning.server.controller.UserController userController79 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl20, mapperFacade36);
-        postToDtoMapper0.setMapperFacade(mapperFacade36);
-        org.junit.Assert.assertNotNull(resultType9);
-        org.junit.Assert.assertEquals("'" + boolean12 + "' != '" + false + "'", boolean12, false);
-        org.junit.Assert.assertNotNull(mapperFacade14);
-        org.junit.Assert.assertNotNull(postType16);
-        org.junit.Assert.assertNotNull(resultType31);
-        org.junit.Assert.assertEquals("'" + boolean34 + "' != '" + false + "'", boolean34, false);
-        org.junit.Assert.assertNotNull(mapperFacade36);
-        org.junit.Assert.assertNotNull(resultType47);
-        org.junit.Assert.assertEquals("'" + boolean50 + "' != '" + false + "'", boolean50, false);
-        org.junit.Assert.assertNotNull(mapperFacade52);
-        org.junit.Assert.assertNotNull(resultType60);
-        org.junit.Assert.assertNotNull(resultType70);
-        org.junit.Assert.assertEquals("'" + boolean73 + "' != '" + false + "'", boolean73, false);
-        org.junit.Assert.assertNotNull(mapperFacade75);
-        org.junit.Assert.assertNotNull(mapperFacade77);
-    }
-
-    @Test
-    public void test1933() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1933");
-        com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
-        post0.setText("");
-        java.lang.Integer int3 = post0.getId();
-        java.util.Date date4 = post0.getTimestamp();
-        java.lang.Integer int5 = post0.getId();
-        post0.setText("Result(id=null, user=null, test=null, submitted=false, answers=null)");
-        java.lang.Integer int8 = post0.getId();
-        java.lang.String str9 = post0.getText();
-        org.junit.Assert.assertNull(int3);
-        org.junit.Assert.assertNull(date4);
-        org.junit.Assert.assertNull(int5);
-        org.junit.Assert.assertNull(int8);
-        org.junit.Assert.assertEquals("'" + str9 + "' != '" + "Result(id=null, user=null, test=null, submitted=false, answers=null)" + "'", str9, "Result(id=null, user=null, test=null, submitted=false, answers=null)");
-    }
-
-    @Test
-    public void test1934() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1934");
-        com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
-        postDto0.setId(0);
-        postDto0.setText("Tag(id=-1, name=null)");
-    }
-
-    @Test
-    public void test1935() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1935");
-        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
-        user0.setSurname("");
-        user0.setAge((int) '4');
-        user0.setEmail("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        java.lang.String str7 = user0.getSurname();
-        user0.setEmail("LoginRequest(login=null, password=null)");
-        java.lang.String str10 = user0.getSurname();
-        user0.setAge((int) '4');
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "" + "'", str7, "");
-        org.junit.Assert.assertEquals("'" + str10 + "' != '" + "" + "'", str10, "");
-    }
-
-    @Test
-    public void test1936() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1936");
-        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
-        user0.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean4 = user0.equals((java.lang.Object) test3);
-        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList5 = test3.getTags();
-        com.vntu.marenko.ualearning.server.model.Test test6 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int7 = test6.getId();
-        java.lang.Integer int8 = test6.getId();
-        test6.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository11 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade12 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository13 = null;
-        com.vntu.marenko.ualearning.server.component.MarkComputer markComputer14 = null;
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl15 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository11, mapperFacade12, userRepository13, markComputer14);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper16 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean17 = createPostRequestToPostMapper16.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig18 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl19 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository20 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository21 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository22 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper23 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository20, testRepository21, answerRepository22);
-        ma.glasnost.orika.MapperFacade mapperFacade24 = null;
-        submitResultRequestToDomainMapper23.setMapperFacade(mapperFacade24);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType26 = submitResultRequestToDomainMapper23.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper27 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper28 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean29 = createPostRequestToPostMapper28.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper30 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade31 = mapperConfig18.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl19, submitResultRequestToDomainMapper23, resultToDescriptionMapper27, createPostRequestToPostMapper28, postToDtoMapper30);
-        createPostRequestToPostMapper16.setMapperFacade(mapperFacade31);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController33 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl15, mapperFacade31);
-        boolean boolean34 = test6.equals((java.lang.Object) resultController33);
-        boolean boolean35 = test3.equals((java.lang.Object) test6);
-        java.lang.String str36 = test6.getDescriptionTest();
-        com.vntu.marenko.ualearning.server.model.User user37 = new com.vntu.marenko.ualearning.server.model.User();
-        user37.setEmail("hi!");
-        long long40 = user37.getRating();
-        com.vntu.marenko.ualearning.server.dto.TestDescription testDescription41 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
-        testDescription41.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        testDescription41.setId((-1));
-        boolean boolean46 = user37.equals((java.lang.Object) (-1));
-        java.lang.String str47 = user37.getPassword();
-        user37.setPassword("UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null)");
-        boolean boolean50 = test6.equals((java.lang.Object) user37);
-        user37.setPassword("Result(id=-1, user=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null), rating=35), test=Test(id=0, nameTest=null, descriptionTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0), completedCounter=null, questions=null, tags=null), submitted=false, answers=[Answer(id=null, text=null, correct=false), Answer(id=null, text=null, correct=false)])");
-        org.junit.Assert.assertTrue("'" + boolean4 + "' != '" + false + "'", boolean4 == false);
-        org.junit.Assert.assertNull(tagList5);
-        org.junit.Assert.assertNull(int7);
-        org.junit.Assert.assertNull(int8);
-        org.junit.Assert.assertEquals("'" + boolean17 + "' != '" + false + "'", boolean17, false);
-        org.junit.Assert.assertNotNull(resultType26);
-        org.junit.Assert.assertEquals("'" + boolean29 + "' != '" + false + "'", boolean29, false);
-        org.junit.Assert.assertNotNull(mapperFacade31);
-        org.junit.Assert.assertTrue("'" + boolean34 + "' != '" + false + "'", boolean34 == false);
-        org.junit.Assert.assertTrue("'" + boolean35 + "' != '" + false + "'", boolean35 == false);
-        org.junit.Assert.assertEquals("'" + str36 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str36, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        org.junit.Assert.assertTrue("'" + long40 + "' != '" + 0L + "'", long40 == 0L);
-        org.junit.Assert.assertTrue("'" + boolean46 + "' != '" + false + "'", boolean46 == false);
-        org.junit.Assert.assertNull(str47);
-        org.junit.Assert.assertTrue("'" + boolean50 + "' != '" + false + "'", boolean50 == false);
-    }
-
-    @Test
-    public void test1937() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1937");
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
-        resultDto0.setTest(testDto1);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto3 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl4 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean5 = answerDto3.equals((java.lang.Object) markComputerImpl4);
-        int int6 = answerDto3.getId();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto7 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto7.setText("hi!");
-        java.lang.String str10 = answerDto7.getText();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto11 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl12 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean13 = answerDto11.equals((java.lang.Object) markComputerImpl12);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto14 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl15 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean16 = answerDto14.equals((java.lang.Object) markComputerImpl15);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto[] answerDtoArray17 = new com.vntu.marenko.ualearning.server.dto.AnswerDto[] { answerDto3, answerDto7, answerDto11, answerDto14 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList18 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto>();
-        boolean boolean19 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList18, answerDtoArray17);
-        resultDto0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList18);
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto21 = resultDto0.getTest();
-        int int22 = resultDto0.getId();
-        resultDto0.setSubmitted(true);
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto25 = new com.vntu.marenko.ualearning.server.dto.TestDto();
-        int int26 = testDto25.getId();
-        testDto25.setDescriptionTest("ResultDescription(id=null, testId=100, testName=null, mark=0)");
-        resultDto0.setTest(testDto25);
-        com.vntu.marenko.ualearning.server.model.Result result30 = new com.vntu.marenko.ualearning.server.model.Result();
-        result30.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user33 = new com.vntu.marenko.ualearning.server.model.User();
-        user33.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test36 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean37 = user33.equals((java.lang.Object) test36);
-        user33.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result30.setUser(user33);
-        int int41 = user33.getAge();
-        user33.setLogin("");
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto44 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto45 = null;
-        resultDto44.setTest(testDto45);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto47 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl48 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean49 = answerDto47.equals((java.lang.Object) markComputerImpl48);
-        int int50 = answerDto47.getId();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto51 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto51.setText("hi!");
-        java.lang.String str54 = answerDto51.getText();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto55 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl56 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean57 = answerDto55.equals((java.lang.Object) markComputerImpl56);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto58 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl59 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean60 = answerDto58.equals((java.lang.Object) markComputerImpl59);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto[] answerDtoArray61 = new com.vntu.marenko.ualearning.server.dto.AnswerDto[] { answerDto47, answerDto51, answerDto55, answerDto58 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList62 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto>();
-        boolean boolean63 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList62, answerDtoArray61);
-        resultDto44.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList62);
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto65 = resultDto44.getTest();
-        long long66 = resultDto44.getMark();
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto67 = resultDto44.getTest();
-        boolean boolean68 = user33.equals((java.lang.Object) resultDto44);
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto69 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        resultDto69.setId(100);
-        resultDto69.setId((int) '#');
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto74 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        questionDto74.setId((int) '#');
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto77 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl78 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean79 = answerDto77.equals((java.lang.Object) markComputerImpl78);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto80 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto81 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl82 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean83 = answerDto81.equals((java.lang.Object) markComputerImpl82);
-        int int84 = answerDto81.getId();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto85 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl86 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean87 = answerDto85.equals((java.lang.Object) markComputerImpl86);
-        int int88 = answerDto85.getId();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto89 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto89.setText("hi!");
-        java.lang.String str92 = answerDto89.getText();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto[] answerDtoArray93 = new com.vntu.marenko.ualearning.server.dto.AnswerDto[] { answerDto77, answerDto80, answerDto81, answerDto85, answerDto89 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList94 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto>();
-        boolean boolean95 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList94, answerDtoArray93);
-        questionDto74.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList94);
-        resultDto69.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList94);
-        resultDto44.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList94);
-        resultDto0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList94);
-        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
-        org.junit.Assert.assertTrue("'" + int6 + "' != '" + 0 + "'", int6 == 0);
-        org.junit.Assert.assertEquals("'" + str10 + "' != '" + "hi!" + "'", str10, "hi!");
-        org.junit.Assert.assertTrue("'" + boolean13 + "' != '" + false + "'", boolean13 == false);
-        org.junit.Assert.assertTrue("'" + boolean16 + "' != '" + false + "'", boolean16 == false);
-        org.junit.Assert.assertNotNull(answerDtoArray17);
-        org.junit.Assert.assertTrue("'" + boolean19 + "' != '" + true + "'", boolean19 == true);
-        org.junit.Assert.assertNull(testDto21);
-        org.junit.Assert.assertTrue("'" + int22 + "' != '" + 0 + "'", int22 == 0);
-        org.junit.Assert.assertTrue("'" + int26 + "' != '" + 0 + "'", int26 == 0);
-        org.junit.Assert.assertTrue("'" + boolean37 + "' != '" + false + "'", boolean37 == false);
-        org.junit.Assert.assertTrue("'" + int41 + "' != '" + 0 + "'", int41 == 0);
-        org.junit.Assert.assertTrue("'" + boolean49 + "' != '" + false + "'", boolean49 == false);
-        org.junit.Assert.assertTrue("'" + int50 + "' != '" + 0 + "'", int50 == 0);
-        org.junit.Assert.assertEquals("'" + str54 + "' != '" + "hi!" + "'", str54, "hi!");
-        org.junit.Assert.assertTrue("'" + boolean57 + "' != '" + false + "'", boolean57 == false);
-        org.junit.Assert.assertTrue("'" + boolean60 + "' != '" + false + "'", boolean60 == false);
-        org.junit.Assert.assertNotNull(answerDtoArray61);
-        org.junit.Assert.assertTrue("'" + boolean63 + "' != '" + true + "'", boolean63 == true);
-        org.junit.Assert.assertNull(testDto65);
-        org.junit.Assert.assertTrue("'" + long66 + "' != '" + 0L + "'", long66 == 0L);
-        org.junit.Assert.assertNull(testDto67);
-        org.junit.Assert.assertTrue("'" + boolean68 + "' != '" + false + "'", boolean68 == false);
-        org.junit.Assert.assertTrue("'" + boolean79 + "' != '" + false + "'", boolean79 == false);
-        org.junit.Assert.assertTrue("'" + boolean83 + "' != '" + false + "'", boolean83 == false);
-        org.junit.Assert.assertTrue("'" + int84 + "' != '" + 0 + "'", int84 == 0);
-        org.junit.Assert.assertTrue("'" + boolean87 + "' != '" + false + "'", boolean87 == false);
-        org.junit.Assert.assertTrue("'" + int88 + "' != '" + 0 + "'", int88 == 0);
-        org.junit.Assert.assertEquals("'" + str92 + "' != '" + "hi!" + "'", str92, "hi!");
-        org.junit.Assert.assertNotNull(answerDtoArray93);
-        org.junit.Assert.assertTrue("'" + boolean95 + "' != '" + true + "'", boolean95 == true);
-    }
-
-    @Test
-    public void test1938() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1938");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper3 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig4 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl5 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository6 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository7 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository8 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper9 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository6, testRepository7, answerRepository8);
-        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
-        submitResultRequestToDomainMapper9.setMapperFacade(mapperFacade10);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType12 = submitResultRequestToDomainMapper9.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper13 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper14 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean15 = createPostRequestToPostMapper14.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper16 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade17 = mapperConfig4.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl5, submitResultRequestToDomainMapper9, resultToDescriptionMapper13, createPostRequestToPostMapper14, postToDtoMapper16);
-        postToDtoMapper3.setMapperFacade(mapperFacade17);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository19 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig20 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl21 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository22 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository23 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository24 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper25 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository22, testRepository23, answerRepository24);
-        ma.glasnost.orika.MapperFacade mapperFacade26 = null;
-        submitResultRequestToDomainMapper25.setMapperFacade(mapperFacade26);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType28 = submitResultRequestToDomainMapper25.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper29 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper30 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean31 = createPostRequestToPostMapper30.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper32 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade33 = mapperConfig20.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl21, submitResultRequestToDomainMapper25, resultToDescriptionMapper29, createPostRequestToPostMapper30, postToDtoMapper32);
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl34 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository35 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository36 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository37 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper38 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository35, testRepository36, answerRepository37);
-        ma.glasnost.orika.MapperFacade mapperFacade39 = null;
-        submitResultRequestToDomainMapper38.setMapperFacade(mapperFacade39);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType41 = submitResultRequestToDomainMapper38.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper42 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig43 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl44 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository45 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository46 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository47 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper48 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository45, testRepository46, answerRepository47);
-        ma.glasnost.orika.MapperFacade mapperFacade49 = null;
-        submitResultRequestToDomainMapper48.setMapperFacade(mapperFacade49);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType51 = submitResultRequestToDomainMapper48.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper52 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper53 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean54 = createPostRequestToPostMapper53.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper55 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade56 = mapperConfig43.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl44, submitResultRequestToDomainMapper48, resultToDescriptionMapper52, createPostRequestToPostMapper53, postToDtoMapper55);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper57 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        ma.glasnost.orika.MapperFacade mapperFacade58 = mapperConfig20.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl34, submitResultRequestToDomainMapper38, resultToDescriptionMapper42, createPostRequestToPostMapper53, postToDtoMapper57);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl59 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository2, mapperFacade17, userRepository19, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl34);
-        com.vntu.marenko.ualearning.server.controller.UserController userController60 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade17);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper61 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig62 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl63 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository64 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository65 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository66 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper67 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository64, testRepository65, answerRepository66);
-        ma.glasnost.orika.MapperFacade mapperFacade68 = null;
-        submitResultRequestToDomainMapper67.setMapperFacade(mapperFacade68);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType70 = submitResultRequestToDomainMapper67.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper71 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper72 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean73 = createPostRequestToPostMapper72.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper74 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade75 = mapperConfig62.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl63, submitResultRequestToDomainMapper67, resultToDescriptionMapper71, createPostRequestToPostMapper72, postToDtoMapper74);
-        postToDtoMapper61.setMapperFacade(mapperFacade75);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController77 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade75);
-        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository78 = null;
-        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl79 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository78);
-        com.vntu.marenko.ualearning.server.controller.PostController postController80 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade75, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl79);
-        // The following exception was thrown during execution in test generation
-        try {
-            com.vntu.marenko.ualearning.server.dto.PostDto postDto82 = postController80.getPost((int) (byte) -1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType12);
-        org.junit.Assert.assertEquals("'" + boolean15 + "' != '" + false + "'", boolean15, false);
-        org.junit.Assert.assertNotNull(mapperFacade17);
-        org.junit.Assert.assertNotNull(resultType28);
-        org.junit.Assert.assertEquals("'" + boolean31 + "' != '" + false + "'", boolean31, false);
-        org.junit.Assert.assertNotNull(mapperFacade33);
-        org.junit.Assert.assertNotNull(resultType41);
-        org.junit.Assert.assertNotNull(resultType51);
-        org.junit.Assert.assertEquals("'" + boolean54 + "' != '" + false + "'", boolean54, false);
-        org.junit.Assert.assertNotNull(mapperFacade56);
-        org.junit.Assert.assertNotNull(mapperFacade58);
-        org.junit.Assert.assertNotNull(resultType70);
-        org.junit.Assert.assertEquals("'" + boolean73 + "' != '" + false + "'", boolean73, false);
-        org.junit.Assert.assertNotNull(mapperFacade75);
-    }
-
-    @Test
-    public void test1939() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1939");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getInstitution();
-        com.vntu.marenko.ualearning.server.dto.PostDto postDto2 = new com.vntu.marenko.ualearning.server.dto.PostDto();
-        int int3 = postDto2.getId();
-        java.lang.String str4 = postDto2.getTimestamp();
-        java.lang.String str5 = postDto2.getTimestamp();
-        postDto2.setId((int) ' ');
-        boolean boolean8 = userRequest0.equals((java.lang.Object) postDto2);
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertTrue("'" + int3 + "' != '" + 0 + "'", int3 == 0);
-        org.junit.Assert.assertNull(str4);
-        org.junit.Assert.assertNull(str5);
-        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + false + "'", boolean8 == false);
-    }
-
-    @Test
-    public void test1940() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1940");
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository0 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
-        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
-        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType9 = submitResultRequestToDomainMapper6.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper10 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper11 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean12 = createPostRequestToPostMapper11.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper13 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade14 = mapperConfig1.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2, submitResultRequestToDomainMapper6, resultToDescriptionMapper10, createPostRequestToPostMapper11, postToDtoMapper13);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository15 = null;
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository16 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade17 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository18 = null;
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto19 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl20 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean21 = answerDto19.equals((java.lang.Object) markComputerImpl20);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl22 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository16, mapperFacade17, userRepository18, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl20);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl23 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository0, mapperFacade14, userRepository15, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl20);
-        ma.glasnost.orika.MapperFacade mapperFacade24 = null;
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController25 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl23, mapperFacade24);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository26 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository27 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl28 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository27);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository29 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig30 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl31 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository32 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository33 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository34 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper35 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository32, testRepository33, answerRepository34);
-        ma.glasnost.orika.MapperFacade mapperFacade36 = null;
-        submitResultRequestToDomainMapper35.setMapperFacade(mapperFacade36);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType38 = submitResultRequestToDomainMapper35.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper39 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper40 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean41 = createPostRequestToPostMapper40.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper42 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade43 = mapperConfig30.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl31, submitResultRequestToDomainMapper35, resultToDescriptionMapper39, createPostRequestToPostMapper40, postToDtoMapper42);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository44 = null;
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository45 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade46 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository47 = null;
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto48 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl49 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean50 = answerDto48.equals((java.lang.Object) markComputerImpl49);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl51 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository45, mapperFacade46, userRepository47, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl49);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl52 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository29, mapperFacade43, userRepository44, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl49);
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository53 = null;
-        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository54 = null;
-        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl55 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository53, tagRepository54);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper56 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig57 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl58 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository59 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository60 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository61 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper62 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository59, testRepository60, answerRepository61);
-        ma.glasnost.orika.MapperFacade mapperFacade63 = null;
-        submitResultRequestToDomainMapper62.setMapperFacade(mapperFacade63);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType65 = submitResultRequestToDomainMapper62.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper66 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper67 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean68 = createPostRequestToPostMapper67.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper69 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade70 = mapperConfig57.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl58, submitResultRequestToDomainMapper62, resultToDescriptionMapper66, createPostRequestToPostMapper67, postToDtoMapper69);
-        postToDtoMapper56.setMapperFacade(mapperFacade70);
-        com.vntu.marenko.ualearning.server.controller.TestController testController72 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl55, mapperFacade70);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController73 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl52, mapperFacade70);
-        com.vntu.marenko.ualearning.server.controller.UserController userController74 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl28, mapperFacade70);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository75 = null;
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl76 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper77 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl76);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl78 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository26, mapperFacade70, userRepository75, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl76);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController79 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl23, mapperFacade70);
-        org.junit.Assert.assertNotNull(resultType9);
-        org.junit.Assert.assertEquals("'" + boolean12 + "' != '" + false + "'", boolean12, false);
-        org.junit.Assert.assertNotNull(mapperFacade14);
-        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + false + "'", boolean21 == false);
-        org.junit.Assert.assertNotNull(resultType38);
-        org.junit.Assert.assertEquals("'" + boolean41 + "' != '" + false + "'", boolean41, false);
-        org.junit.Assert.assertNotNull(mapperFacade43);
-        org.junit.Assert.assertTrue("'" + boolean50 + "' != '" + false + "'", boolean50 == false);
-        org.junit.Assert.assertNotNull(resultType65);
-        org.junit.Assert.assertEquals("'" + boolean68 + "' != '" + false + "'", boolean68, false);
-        org.junit.Assert.assertNotNull(mapperFacade70);
-    }
-
-    @Test
-    public void test1941() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1941");
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        userDto0.setRating(0);
-        java.lang.String str3 = userDto0.getLogin();
-        userDto0.setInstitution("LoginRequest(login=null, password=TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=100, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)]))");
-        userDto0.setEmail("ResultDto(id=100, user=UserDto(login=LoginRequest(login=null, password=null), name=null, surname=null, age=0, institution=null, email=null, rating=-1), test=null, submitted=false, answers=null, mark=0)");
-        org.junit.Assert.assertNull(str3);
-    }
-
-    @Test
-    public void test1942() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1942");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getName();
-        java.lang.String str2 = userRequest0.getName();
-        java.lang.String str3 = userRequest0.getEmail();
-        userRequest0.setLogin("CreatePostRequest(text=ResultDescription(id=0, testId=null, testName=null, mark=1), username=null)");
-        java.lang.String str6 = userRequest0.getEmail();
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto7 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        questionDto7.setId((int) '#');
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto10 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto11 = null;
-        resultDto10.setTest(testDto11);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto13 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl14 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean15 = answerDto13.equals((java.lang.Object) markComputerImpl14);
-        int int16 = answerDto13.getId();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto17 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto17.setText("hi!");
-        java.lang.String str20 = answerDto17.getText();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto21 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl22 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean23 = answerDto21.equals((java.lang.Object) markComputerImpl22);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto24 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl25 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean26 = answerDto24.equals((java.lang.Object) markComputerImpl25);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto[] answerDtoArray27 = new com.vntu.marenko.ualearning.server.dto.AnswerDto[] { answerDto13, answerDto17, answerDto21, answerDto24 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList28 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto>();
-        boolean boolean29 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList28, answerDtoArray27);
-        resultDto10.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList28);
-        questionDto7.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList28);
-        com.vntu.marenko.ualearning.server.model.User user32 = new com.vntu.marenko.ualearning.server.model.User();
-        user32.setEmail("hi!");
-        user32.setSurname("hi!");
-        user32.setInstitution("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
-        boolean boolean39 = questionDto7.equals((java.lang.Object) user32);
-        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList40 = questionDto7.getAnswers();
-        boolean boolean41 = userRequest0.equals((java.lang.Object) answerDtoList40);
-        userRequest0.setAge(35);
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertNull(str2);
-        org.junit.Assert.assertNull(str3);
-        org.junit.Assert.assertNull(str6);
-        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
-        org.junit.Assert.assertTrue("'" + int16 + "' != '" + 0 + "'", int16 == 0);
-        org.junit.Assert.assertEquals("'" + str20 + "' != '" + "hi!" + "'", str20, "hi!");
-        org.junit.Assert.assertTrue("'" + boolean23 + "' != '" + false + "'", boolean23 == false);
-        org.junit.Assert.assertTrue("'" + boolean26 + "' != '" + false + "'", boolean26 == false);
-        org.junit.Assert.assertNotNull(answerDtoArray27);
-        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + true + "'", boolean29 == true);
-        org.junit.Assert.assertTrue("'" + boolean39 + "' != '" + false + "'", boolean39 == false);
-        org.junit.Assert.assertNotNull(answerDtoList40);
-        org.junit.Assert.assertTrue("'" + boolean41 + "' != '" + false + "'", boolean41 == false);
-    }
-
-    @Test
-    public void test1943() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1943");
-        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
-        tag0.setName("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
-        java.lang.Integer int3 = tag0.getId();
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest4 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str5 = userRequest4.getName();
-        java.lang.String str6 = userRequest4.getName();
-        java.lang.String str7 = userRequest4.getPassword();
-        userRequest4.setLogin("TestDescription(id=-1, nameTest=TagDto(id=0, name=null))");
-        userRequest4.setPassword("QuestionDto(id=10, text=ResultDto(id=0, user=null, test=null, submitted=false, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null)], mark=0), answers=null)");
-        userRequest4.setLogin("CreatePostRequest(text=null, username=null)");
-        boolean boolean14 = tag0.equals((java.lang.Object) "CreatePostRequest(text=null, username=null)");
-        java.lang.String str15 = tag0.toString();
-        org.junit.Assert.assertNull(int3);
-        org.junit.Assert.assertNull(str5);
-        org.junit.Assert.assertNull(str6);
-        org.junit.Assert.assertNull(str7);
-        org.junit.Assert.assertTrue("'" + boolean14 + "' != '" + false + "'", boolean14 == false);
-        org.junit.Assert.assertEquals("'" + str15 + "' != '" + "Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))" + "'", str15, "Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))");
-    }
-
-    @Test
-    public void test1944() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1944");
-        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
-        user0.setEmail("hi!");
-        user0.setSurname("hi!");
-        long long5 = user0.getRating();
-        java.lang.String str6 = user0.getLogin();
-        java.lang.String str7 = user0.getEmail();
-        java.lang.String str8 = user0.getInstitution();
-        org.junit.Assert.assertTrue("'" + long5 + "' != '" + 0L + "'", long5 == 0L);
-        org.junit.Assert.assertNull(str6);
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "hi!" + "'", str7, "hi!");
-        org.junit.Assert.assertNull(str8);
-    }
-
-    @Test
-    public void test1945() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1945");
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
-        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
-        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper3 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig4 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl5 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository6 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository7 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository8 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper9 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository6, testRepository7, answerRepository8);
-        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
-        submitResultRequestToDomainMapper9.setMapperFacade(mapperFacade10);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType12 = submitResultRequestToDomainMapper9.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper13 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper14 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean15 = createPostRequestToPostMapper14.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper16 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade17 = mapperConfig4.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl5, submitResultRequestToDomainMapper9, resultToDescriptionMapper13, createPostRequestToPostMapper14, postToDtoMapper16);
-        postToDtoMapper3.setMapperFacade(mapperFacade17);
-        com.vntu.marenko.ualearning.server.controller.TestController testController19 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade17);
-        ma.glasnost.orika.MapperFacade mapperFacade20 = null;
-        com.vntu.marenko.ualearning.server.controller.TestController testController21 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade20);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper22 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean23 = createPostRequestToPostMapper22.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig24 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl25 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository26 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository27 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository28 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper29 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository26, testRepository27, answerRepository28);
-        ma.glasnost.orika.MapperFacade mapperFacade30 = null;
-        submitResultRequestToDomainMapper29.setMapperFacade(mapperFacade30);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType32 = submitResultRequestToDomainMapper29.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper33 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper34 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean35 = createPostRequestToPostMapper34.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper36 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade37 = mapperConfig24.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl25, submitResultRequestToDomainMapper29, resultToDescriptionMapper33, createPostRequestToPostMapper34, postToDtoMapper36);
-        createPostRequestToPostMapper22.setMapperFacade(mapperFacade37);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository39 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository40 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository41 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper42 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository39, testRepository40, answerRepository41);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType43 = submitResultRequestToDomainMapper42.getBType();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper44 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig45 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl46 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository47 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository48 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository49 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper50 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository47, testRepository48, answerRepository49);
-        ma.glasnost.orika.MapperFacade mapperFacade51 = null;
-        submitResultRequestToDomainMapper50.setMapperFacade(mapperFacade51);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType53 = submitResultRequestToDomainMapper50.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper54 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper55 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean56 = createPostRequestToPostMapper55.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper57 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade58 = mapperConfig45.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl46, submitResultRequestToDomainMapper50, resultToDescriptionMapper54, createPostRequestToPostMapper55, postToDtoMapper57);
-        postToDtoMapper44.setMapperFacade(mapperFacade58);
-        submitResultRequestToDomainMapper42.setMapperFacade(mapperFacade58);
-        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository61 = null;
-        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl62 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository61);
-        com.vntu.marenko.ualearning.server.controller.PostController postController63 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade58, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl62);
-        com.vntu.marenko.ualearning.server.controller.PostController postController64 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade37, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl62);
-        com.vntu.marenko.ualearning.server.controller.TestController testController65 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade37);
-        // The following exception was thrown during execution in test generation
-        try {
-            java.util.List<com.vntu.marenko.ualearning.server.dto.TestDescription> testDescriptionList67 = testController65.getTestDescriptionsForTag((int) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType12);
-        org.junit.Assert.assertEquals("'" + boolean15 + "' != '" + false + "'", boolean15, false);
-        org.junit.Assert.assertNotNull(mapperFacade17);
-        org.junit.Assert.assertEquals("'" + boolean23 + "' != '" + false + "'", boolean23, false);
-        org.junit.Assert.assertNotNull(resultType32);
-        org.junit.Assert.assertEquals("'" + boolean35 + "' != '" + false + "'", boolean35, false);
-        org.junit.Assert.assertNotNull(mapperFacade37);
-        org.junit.Assert.assertNotNull(resultType43);
-        org.junit.Assert.assertNotNull(resultType53);
-        org.junit.Assert.assertEquals("'" + boolean56 + "' != '" + false + "'", boolean56, false);
-        org.junit.Assert.assertNotNull(mapperFacade58);
-    }
-
-    @Test
-    public void test1946() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1946");
-        com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
-        result0.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int4 = test3.getId();
-        java.lang.Integer int5 = test3.getId();
-        test3.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        java.lang.Integer int8 = test3.getCompletedCounter();
-        result0.setTest(test3);
-        com.vntu.marenko.ualearning.server.model.Test test10 = result0.getTest();
-        com.vntu.marenko.ualearning.server.model.User user11 = result0.getUser();
-        com.vntu.marenko.ualearning.server.dto.PostDto postDto12 = new com.vntu.marenko.ualearning.server.dto.PostDto();
-        postDto12.setId((int) (byte) 100);
-        java.lang.String str15 = postDto12.getTimestamp();
-        boolean boolean16 = result0.equals((java.lang.Object) postDto12);
-        org.junit.Assert.assertNull(int4);
-        org.junit.Assert.assertNull(int5);
-        org.junit.Assert.assertNull(int8);
-        org.junit.Assert.assertNotNull(test10);
-        org.junit.Assert.assertNull(user11);
-        org.junit.Assert.assertNull(str15);
-        org.junit.Assert.assertTrue("'" + boolean16 + "' != '" + false + "'", boolean16 == false);
-    }
-
-    @Test
-    public void test1947() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1947");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper3 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType4 = resultToDescriptionMapper3.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType5 = resultToDescriptionMapper3.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.ResultDescription> resultDescriptionType6 = resultToDescriptionMapper3.getBType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType7 = resultToDescriptionMapper3.getAType();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper8 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean9 = createPostRequestToPostMapper8.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig10 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl11 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository12 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository13 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository14 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper15 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository12, testRepository13, answerRepository14);
-        ma.glasnost.orika.MapperFacade mapperFacade16 = null;
-        submitResultRequestToDomainMapper15.setMapperFacade(mapperFacade16);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType18 = submitResultRequestToDomainMapper15.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper19 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper20 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean21 = createPostRequestToPostMapper20.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper22 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade23 = mapperConfig10.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl11, submitResultRequestToDomainMapper15, resultToDescriptionMapper19, createPostRequestToPostMapper20, postToDtoMapper22);
-        createPostRequestToPostMapper8.setMapperFacade(mapperFacade23);
-        resultToDescriptionMapper3.setMapperFacade(mapperFacade23);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController26 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade23);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository27 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository28 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository29 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper30 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository27, testRepository28, answerRepository29);
-        ma.glasnost.orika.MapperFacade mapperFacade31 = null;
-        submitResultRequestToDomainMapper30.setMapperFacade(mapperFacade31);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType33 = submitResultRequestToDomainMapper30.getBType();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper34 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig35 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl36 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository37 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository38 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository39 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper40 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository37, testRepository38, answerRepository39);
-        ma.glasnost.orika.MapperFacade mapperFacade41 = null;
-        submitResultRequestToDomainMapper40.setMapperFacade(mapperFacade41);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType43 = submitResultRequestToDomainMapper40.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper44 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper45 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean46 = createPostRequestToPostMapper45.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper47 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade48 = mapperConfig35.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl36, submitResultRequestToDomainMapper40, resultToDescriptionMapper44, createPostRequestToPostMapper45, postToDtoMapper47);
-        postToDtoMapper34.setMapperFacade(mapperFacade48);
-        submitResultRequestToDomainMapper30.setMapperFacade(mapperFacade48);
-        com.vntu.marenko.ualearning.server.service.UserService userService51 = null;
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper52 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig53 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl54 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository55 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository56 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository57 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper58 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository55, testRepository56, answerRepository57);
-        ma.glasnost.orika.MapperFacade mapperFacade59 = null;
-        submitResultRequestToDomainMapper58.setMapperFacade(mapperFacade59);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType61 = submitResultRequestToDomainMapper58.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper62 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper63 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean64 = createPostRequestToPostMapper63.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper65 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade66 = mapperConfig53.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl54, submitResultRequestToDomainMapper58, resultToDescriptionMapper62, createPostRequestToPostMapper63, postToDtoMapper65);
-        postToDtoMapper52.setMapperFacade(mapperFacade66);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController68 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController(userService51, mapperFacade66);
-        submitResultRequestToDomainMapper30.setMapperFacade(mapperFacade66);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController70 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade66);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository71 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig72 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl73 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository74 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository75 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository76 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper77 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository74, testRepository75, answerRepository76);
-        ma.glasnost.orika.MapperFacade mapperFacade78 = null;
-        submitResultRequestToDomainMapper77.setMapperFacade(mapperFacade78);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType80 = submitResultRequestToDomainMapper77.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper81 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper82 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean83 = createPostRequestToPostMapper82.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper84 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade85 = mapperConfig72.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl73, submitResultRequestToDomainMapper77, resultToDescriptionMapper81, createPostRequestToPostMapper82, postToDtoMapper84);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository86 = null;
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository87 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade88 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository89 = null;
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto90 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl91 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean92 = answerDto90.equals((java.lang.Object) markComputerImpl91);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl93 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository87, mapperFacade88, userRepository89, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl91);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl94 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository71, mapperFacade85, userRepository86, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl91);
-        com.vntu.marenko.ualearning.server.controller.UserController userController95 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade85);
-        org.junit.Assert.assertNotNull(resultType4);
-        org.junit.Assert.assertNotNull(resultType5);
-        org.junit.Assert.assertNotNull(resultDescriptionType6);
-        org.junit.Assert.assertNotNull(resultType7);
-        org.junit.Assert.assertEquals("'" + boolean9 + "' != '" + false + "'", boolean9, false);
-        org.junit.Assert.assertNotNull(resultType18);
-        org.junit.Assert.assertEquals("'" + boolean21 + "' != '" + false + "'", boolean21, false);
-        org.junit.Assert.assertNotNull(mapperFacade23);
-        org.junit.Assert.assertNotNull(resultType33);
-        org.junit.Assert.assertNotNull(resultType43);
-        org.junit.Assert.assertEquals("'" + boolean46 + "' != '" + false + "'", boolean46, false);
-        org.junit.Assert.assertNotNull(mapperFacade48);
-        org.junit.Assert.assertNotNull(resultType61);
-        org.junit.Assert.assertEquals("'" + boolean64 + "' != '" + false + "'", boolean64, false);
-        org.junit.Assert.assertNotNull(mapperFacade66);
-        org.junit.Assert.assertNotNull(resultType80);
-        org.junit.Assert.assertEquals("'" + boolean83 + "' != '" + false + "'", boolean83, false);
-        org.junit.Assert.assertNotNull(mapperFacade85);
-        org.junit.Assert.assertTrue("'" + boolean92 + "' != '" + false + "'", boolean92 == false);
-    }
-
-    @Test
-    public void test1948() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1948");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper2 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType3 = createPostRequestToPostMapper2.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post4 = new com.vntu.marenko.ualearning.server.model.Post();
-        post4.setText("");
-        java.lang.String str7 = post4.toString();
-        post4.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest10 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest10.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext13 = null;
-        createPostRequestToPostMapper2.mapBtoA(post4, createPostRequest10, mappingContext13);
-        java.lang.Boolean boolean15 = createPostRequestToPostMapper2.favorsExtension();
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository16 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig17 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl18 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository19 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository20 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository21 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper22 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository19, testRepository20, answerRepository21);
-        ma.glasnost.orika.MapperFacade mapperFacade23 = null;
-        submitResultRequestToDomainMapper22.setMapperFacade(mapperFacade23);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType25 = submitResultRequestToDomainMapper22.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper26 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper27 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean28 = createPostRequestToPostMapper27.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper29 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade30 = mapperConfig17.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl18, submitResultRequestToDomainMapper22, resultToDescriptionMapper26, createPostRequestToPostMapper27, postToDtoMapper29);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository31 = null;
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository32 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade33 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository34 = null;
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto35 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl36 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean37 = answerDto35.equals((java.lang.Object) markComputerImpl36);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl38 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository32, mapperFacade33, userRepository34, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl36);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl39 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository16, mapperFacade30, userRepository31, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl36);
-        createPostRequestToPostMapper2.setMapperFacade(mapperFacade30);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController41 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade30);
-        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest42 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
-        java.lang.String str43 = loginRequest42.toString();
-        java.lang.String str44 = loginRequest42.getLogin();
-        // The following exception was thrown during execution in test generation
-        try {
-            java.lang.String str45 = authorisationController41.login(loginRequest42);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(postType3);
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str7, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + boolean15 + "' != '" + false + "'", boolean15, false);
-        org.junit.Assert.assertNotNull(resultType25);
-        org.junit.Assert.assertEquals("'" + boolean28 + "' != '" + false + "'", boolean28, false);
-        org.junit.Assert.assertNotNull(mapperFacade30);
-        org.junit.Assert.assertTrue("'" + boolean37 + "' != '" + false + "'", boolean37 == false);
-        org.junit.Assert.assertEquals("'" + str43 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str43, "LoginRequest(login=null, password=null)");
-        org.junit.Assert.assertNull(str44);
-    }
-
-    @Test
-    public void test1949() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1949");
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        userDto0.setInstitution("");
-        java.lang.String str3 = userDto0.getInstitution();
-        java.lang.String str4 = userDto0.getInstitution();
-        userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=TestDescription(id=-1, nameTest=TagDto(id=0, name=null)), completedCounter=null, questions=null, tags=[])");
-        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "" + "'", str3, "");
-        org.junit.Assert.assertEquals("'" + str4 + "' != '" + "" + "'", str4, "");
-    }
-
-    @Test
-    public void test1950() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1950");
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto0.setText("hi!");
-        int int3 = answerDto0.getId();
-        answerDto0.setText("Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))");
-        org.junit.Assert.assertTrue("'" + int3 + "' != '" + 0 + "'", int3 == 0);
-    }
-
-    @Test
-    public void test1951() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1951");
-        com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int1 = test0.getId();
-        java.lang.Integer int2 = test0.getId();
-        test0.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository5 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade6 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository7 = null;
-        com.vntu.marenko.ualearning.server.component.MarkComputer markComputer8 = null;
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl9 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository5, mapperFacade6, userRepository7, markComputer8);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper10 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean11 = createPostRequestToPostMapper10.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig12 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl13 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository14 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository15 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository16 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper17 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository14, testRepository15, answerRepository16);
-        ma.glasnost.orika.MapperFacade mapperFacade18 = null;
-        submitResultRequestToDomainMapper17.setMapperFacade(mapperFacade18);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType20 = submitResultRequestToDomainMapper17.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper21 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper22 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean23 = createPostRequestToPostMapper22.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper24 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade25 = mapperConfig12.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl13, submitResultRequestToDomainMapper17, resultToDescriptionMapper21, createPostRequestToPostMapper22, postToDtoMapper24);
-        createPostRequestToPostMapper10.setMapperFacade(mapperFacade25);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController27 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl9, mapperFacade25);
-        boolean boolean28 = test0.equals((java.lang.Object) resultController27);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest29 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
-        submitResultRequest29.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
-        submitResultRequest29.setTestId((int) (byte) 100);
-        submitResultRequest29.setUserLogin("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
-        int int36 = submitResultRequest29.getTestId();
-        // The following exception was thrown during execution in test generation
-        try {
-            com.vntu.marenko.ualearning.server.dto.ResultDto resultDto37 = resultController27.submitTest(submitResultRequest29);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNull(int1);
-        org.junit.Assert.assertNull(int2);
-        org.junit.Assert.assertEquals("'" + boolean11 + "' != '" + false + "'", boolean11, false);
-        org.junit.Assert.assertNotNull(resultType20);
-        org.junit.Assert.assertEquals("'" + boolean23 + "' != '" + false + "'", boolean23, false);
-        org.junit.Assert.assertNotNull(mapperFacade25);
-        org.junit.Assert.assertTrue("'" + boolean28 + "' != '" + false + "'", boolean28 == false);
-        org.junit.Assert.assertTrue("'" + int36 + "' != '" + 100 + "'", int36 == 100);
-    }
-
-    @Test
-    public void test1952() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1952");
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig0 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository2 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository3 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository4 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper5 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository2, testRepository3, answerRepository4);
-        ma.glasnost.orika.MapperFacade mapperFacade6 = null;
-        submitResultRequestToDomainMapper5.setMapperFacade(mapperFacade6);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType8 = submitResultRequestToDomainMapper5.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper9 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper10 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean11 = createPostRequestToPostMapper10.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper12 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade13 = mapperConfig0.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl1, submitResultRequestToDomainMapper5, resultToDescriptionMapper9, createPostRequestToPostMapper10, postToDtoMapper12);
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl14 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository15 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository16 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository17 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper18 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository15, testRepository16, answerRepository17);
-        ma.glasnost.orika.MapperFacade mapperFacade19 = null;
-        submitResultRequestToDomainMapper18.setMapperFacade(mapperFacade19);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType21 = submitResultRequestToDomainMapper18.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper22 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig23 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl24 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository25 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository26 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository27 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper28 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository25, testRepository26, answerRepository27);
-        ma.glasnost.orika.MapperFacade mapperFacade29 = null;
-        submitResultRequestToDomainMapper28.setMapperFacade(mapperFacade29);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType31 = submitResultRequestToDomainMapper28.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper32 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper33 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean34 = createPostRequestToPostMapper33.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper35 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade36 = mapperConfig23.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl24, submitResultRequestToDomainMapper28, resultToDescriptionMapper32, createPostRequestToPostMapper33, postToDtoMapper35);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper37 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        ma.glasnost.orika.MapperFacade mapperFacade38 = mapperConfig0.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl14, submitResultRequestToDomainMapper18, resultToDescriptionMapper22, createPostRequestToPostMapper33, postToDtoMapper37);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper39 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType40 = createPostRequestToPostMapper39.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post41 = new com.vntu.marenko.ualearning.server.model.Post();
-        post41.setText("");
-        java.lang.String str44 = post41.toString();
-        post41.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest47 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest47.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext50 = null;
-        createPostRequestToPostMapper39.mapBtoA(post41, createPostRequest47, mappingContext50);
-        com.vntu.marenko.ualearning.server.model.Post post52 = new com.vntu.marenko.ualearning.server.model.Post();
-        post52.setText("");
-        java.lang.String str55 = post52.toString();
-        java.lang.Integer int56 = post52.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest57 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str58 = createPostRequest57.getUsername();
-        java.lang.String str59 = createPostRequest57.toString();
-        ma.glasnost.orika.MappingContext mappingContext60 = null;
-        createPostRequestToPostMapper39.mapBtoA(post52, createPostRequest57, mappingContext60);
-        java.lang.String str62 = createPostRequest57.toString();
-        com.vntu.marenko.ualearning.server.model.Post post63 = new com.vntu.marenko.ualearning.server.model.Post();
-        post63.setText("");
-        java.lang.String str66 = post63.toString();
-        post63.setUser("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext69 = null;
-        createPostRequestToPostMapper33.mapAtoB(createPostRequest57, post63, mappingContext69);
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository71 = null;
-        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository72 = null;
-        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl73 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository71, tagRepository72);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper74 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig75 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl76 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository77 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository78 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository79 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper80 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository77, testRepository78, answerRepository79);
-        ma.glasnost.orika.MapperFacade mapperFacade81 = null;
-        submitResultRequestToDomainMapper80.setMapperFacade(mapperFacade81);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType83 = submitResultRequestToDomainMapper80.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper84 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper85 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean86 = createPostRequestToPostMapper85.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper87 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade88 = mapperConfig75.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl76, submitResultRequestToDomainMapper80, resultToDescriptionMapper84, createPostRequestToPostMapper85, postToDtoMapper87);
-        postToDtoMapper74.setMapperFacade(mapperFacade88);
-        com.vntu.marenko.ualearning.server.controller.TestController testController90 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl73, mapperFacade88);
-        createPostRequestToPostMapper33.setMapperFacade(mapperFacade88);
-        org.junit.Assert.assertNotNull(resultType8);
-        org.junit.Assert.assertEquals("'" + boolean11 + "' != '" + false + "'", boolean11, false);
-        org.junit.Assert.assertNotNull(mapperFacade13);
-        org.junit.Assert.assertNotNull(resultType21);
-        org.junit.Assert.assertNotNull(resultType31);
-        org.junit.Assert.assertEquals("'" + boolean34 + "' != '" + false + "'", boolean34, false);
-        org.junit.Assert.assertNotNull(mapperFacade36);
-        org.junit.Assert.assertNotNull(mapperFacade38);
-        org.junit.Assert.assertNotNull(postType40);
-        org.junit.Assert.assertEquals("'" + str44 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str44, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str55 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str55, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int56);
-        org.junit.Assert.assertNull(str58);
-        org.junit.Assert.assertEquals("'" + str59 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str59, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertEquals("'" + str62 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str62, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertEquals("'" + str66 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str66, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNotNull(resultType83);
-        org.junit.Assert.assertEquals("'" + boolean86 + "' != '" + false + "'", boolean86, false);
-        org.junit.Assert.assertNotNull(mapperFacade88);
-    }
-
-    @Test
-    public void test1953() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1953");
-        com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
-        java.lang.String str1 = question0.getText();
-        java.lang.Integer int2 = question0.getId();
-        com.vntu.marenko.ualearning.server.service.TestService testService3 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade4 = null;
-        com.vntu.marenko.ualearning.server.controller.TestController testController5 = new com.vntu.marenko.ualearning.server.controller.TestController(testService3, mapperFacade4);
-        boolean boolean6 = question0.equals((java.lang.Object) testController5);
-        question0.setText("Result(id=null, user=User(login=null, password=null, name=null, surname=, age=0, institution=null, email=Post(id=null, text=, timestamp=null, user=null, likes=null), rating=0), test=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null), submitted=false, answers=null)");
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertNull(int2);
-        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + false + "'", boolean6 == false);
-    }
-
-    @Test
-    public void test1954() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1954");
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
-        post2.setText("");
-        java.lang.String str5 = post2.toString();
-        post2.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest8 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest8.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext11 = null;
-        createPostRequestToPostMapper0.mapBtoA(post2, createPostRequest8, mappingContext11);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType13 = createPostRequestToPostMapper0.getBType();
-        com.vntu.marenko.ualearning.server.service.UserService userService14 = null;
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper15 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig16 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl17 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository18 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository19 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository20 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper21 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository18, testRepository19, answerRepository20);
-        ma.glasnost.orika.MapperFacade mapperFacade22 = null;
-        submitResultRequestToDomainMapper21.setMapperFacade(mapperFacade22);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType24 = submitResultRequestToDomainMapper21.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper25 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper26 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean27 = createPostRequestToPostMapper26.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper28 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade29 = mapperConfig16.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl17, submitResultRequestToDomainMapper21, resultToDescriptionMapper25, createPostRequestToPostMapper26, postToDtoMapper28);
-        postToDtoMapper15.setMapperFacade(mapperFacade29);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType31 = postToDtoMapper15.getBType();
-        java.lang.Boolean boolean32 = postToDtoMapper15.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper33 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType34 = createPostRequestToPostMapper33.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post35 = new com.vntu.marenko.ualearning.server.model.Post();
-        post35.setText("");
-        java.lang.String str38 = post35.toString();
-        post35.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest41 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest41.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext44 = null;
-        createPostRequestToPostMapper33.mapBtoA(post35, createPostRequest41, mappingContext44);
-        com.vntu.marenko.ualearning.server.model.Post post46 = new com.vntu.marenko.ualearning.server.model.Post();
-        post46.setText("");
-        java.lang.String str49 = post46.toString();
-        java.lang.Integer int50 = post46.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest51 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str52 = createPostRequest51.getUsername();
-        java.lang.String str53 = createPostRequest51.toString();
-        ma.glasnost.orika.MappingContext mappingContext54 = null;
-        createPostRequestToPostMapper33.mapBtoA(post46, createPostRequest51, mappingContext54);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository56 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository57 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository58 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper59 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository56, testRepository57, answerRepository58);
-        ma.glasnost.orika.MapperFacade mapperFacade60 = null;
-        submitResultRequestToDomainMapper59.setMapperFacade(mapperFacade60);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType62 = submitResultRequestToDomainMapper59.getBType();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper63 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig64 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl65 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository66 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository67 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository68 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper69 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository66, testRepository67, answerRepository68);
-        ma.glasnost.orika.MapperFacade mapperFacade70 = null;
-        submitResultRequestToDomainMapper69.setMapperFacade(mapperFacade70);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType72 = submitResultRequestToDomainMapper69.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper73 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper74 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean75 = createPostRequestToPostMapper74.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper76 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade77 = mapperConfig64.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl65, submitResultRequestToDomainMapper69, resultToDescriptionMapper73, createPostRequestToPostMapper74, postToDtoMapper76);
-        postToDtoMapper63.setMapperFacade(mapperFacade77);
-        submitResultRequestToDomainMapper59.setMapperFacade(mapperFacade77);
-        createPostRequestToPostMapper33.setMapperFacade(mapperFacade77);
-        postToDtoMapper15.setMapperFacade(mapperFacade77);
-        com.vntu.marenko.ualearning.server.controller.UserController userController82 = new com.vntu.marenko.ualearning.server.controller.UserController(userService14, mapperFacade77);
-        createPostRequestToPostMapper0.setMapperFacade(mapperFacade77);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType84 = createPostRequestToPostMapper0.getBType();
-        org.junit.Assert.assertNotNull(postType1);
-        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str5, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNotNull(postType13);
-        org.junit.Assert.assertNotNull(resultType24);
-        org.junit.Assert.assertEquals("'" + boolean27 + "' != '" + false + "'", boolean27, false);
-        org.junit.Assert.assertNotNull(mapperFacade29);
-        org.junit.Assert.assertNotNull(postDtoType31);
-        org.junit.Assert.assertEquals("'" + boolean32 + "' != '" + false + "'", boolean32, false);
-        org.junit.Assert.assertNotNull(postType34);
-        org.junit.Assert.assertEquals("'" + str38 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str38, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str49 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str49, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int50);
-        org.junit.Assert.assertNull(str52);
-        org.junit.Assert.assertEquals("'" + str53 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str53, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertNotNull(resultType62);
-        org.junit.Assert.assertNotNull(resultType72);
-        org.junit.Assert.assertEquals("'" + boolean75 + "' != '" + false + "'", boolean75, false);
-        org.junit.Assert.assertNotNull(mapperFacade77);
-        org.junit.Assert.assertNotNull(postType84);
-    }
-
-    @Test
-    public void test1955() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1955");
-        com.vntu.marenko.ualearning.server.dto.TestDescription testDescription0 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
-        testDescription0.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        testDescription0.setNameTest("hi!");
-        int int5 = testDescription0.getId();
-        testDescription0.setId((int) (byte) 1);
-        int int8 = testDescription0.getId();
-        org.junit.Assert.assertTrue("'" + int5 + "' != '" + 0 + "'", int5 == 0);
-        org.junit.Assert.assertTrue("'" + int8 + "' != '" + 1 + "'", int8 == 1);
-    }
-
-    @Test
-    public void test1956() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1956");
-        com.vntu.marenko.ualearning.server.model.Question question0 = new com.vntu.marenko.ualearning.server.model.Question();
-        question0.setText("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
-        java.lang.String str3 = question0.getText();
-        com.vntu.marenko.ualearning.server.model.Result result4 = new com.vntu.marenko.ualearning.server.model.Result();
-        java.lang.Integer int5 = result4.getId();
-        com.vntu.marenko.ualearning.server.model.Test test6 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int7 = test6.getId();
-        java.lang.Integer int8 = test6.getId();
-        result4.setTest(test6);
-        java.lang.Integer int10 = result4.getId();
-        com.vntu.marenko.ualearning.server.model.Test test11 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int12 = test11.getId();
-        java.lang.Integer int13 = test11.getId();
-        test11.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        java.lang.Integer int16 = test11.getCompletedCounter();
-        java.lang.Integer int17 = test11.getCompletedCounter();
-        result4.setTest(test11);
-        com.vntu.marenko.ualearning.server.model.User user19 = result4.getUser();
-        com.vntu.marenko.ualearning.server.model.Test test20 = result4.getTest();
-        com.vntu.marenko.ualearning.server.model.Test test21 = result4.getTest();
-        java.lang.Integer int22 = result4.getId();
-        com.vntu.marenko.ualearning.server.model.Result result23 = new com.vntu.marenko.ualearning.server.model.Result();
-        result23.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user26 = new com.vntu.marenko.ualearning.server.model.User();
-        user26.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test29 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean30 = user26.equals((java.lang.Object) test29);
-        user26.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result23.setUser(user26);
-        com.vntu.marenko.ualearning.server.model.Question question34 = new com.vntu.marenko.ualearning.server.model.Question();
-        java.lang.Integer int35 = question34.getId();
-        java.lang.Integer int36 = question34.getId();
-        com.vntu.marenko.ualearning.server.model.Answer answer37 = new com.vntu.marenko.ualearning.server.model.Answer();
-        com.vntu.marenko.ualearning.server.model.Answer answer38 = new com.vntu.marenko.ualearning.server.model.Answer();
-        answer38.setCorrect(false);
-        com.vntu.marenko.ualearning.server.model.Answer[] answerArray41 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer37, answer38 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList42 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
-        boolean boolean43 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList42, answerArray41);
-        question34.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList42);
-        result23.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList42);
-        result4.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList42);
-        question0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList42);
-        question0.setId((java.lang.Integer) 10);
-        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)" + "'", str3, "User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
-        org.junit.Assert.assertNull(int5);
-        org.junit.Assert.assertNull(int7);
-        org.junit.Assert.assertNull(int8);
-        org.junit.Assert.assertNull(int10);
-        org.junit.Assert.assertNull(int12);
-        org.junit.Assert.assertNull(int13);
-        org.junit.Assert.assertNull(int16);
-        org.junit.Assert.assertNull(int17);
-        org.junit.Assert.assertNull(user19);
-        org.junit.Assert.assertNotNull(test20);
-        org.junit.Assert.assertNotNull(test21);
-        org.junit.Assert.assertNull(int22);
-        org.junit.Assert.assertTrue("'" + boolean30 + "' != '" + false + "'", boolean30 == false);
-        org.junit.Assert.assertNull(int35);
-        org.junit.Assert.assertNull(int36);
-        org.junit.Assert.assertNotNull(answerArray41);
-        org.junit.Assert.assertTrue("'" + boolean43 + "' != '" + true + "'", boolean43 == true);
-    }
-
-    @Test
-    public void test1957() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1957");
-        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
-        user0.setSurname("");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
-        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
-        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType9 = submitResultRequestToDomainMapper6.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
-        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade10);
-        boolean boolean12 = user0.equals((java.lang.Object) submitResultRequestToDomainMapper6);
-        com.vntu.marenko.ualearning.server.model.Result result13 = new com.vntu.marenko.ualearning.server.model.Result();
-        result13.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user16 = new com.vntu.marenko.ualearning.server.model.User();
-        user16.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test19 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean20 = user16.equals((java.lang.Object) test19);
-        user16.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result13.setUser(user16);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest24 = null;
-        ma.glasnost.orika.MappingContext mappingContext25 = null;
-        submitResultRequestToDomainMapper6.mapBtoA(result13, submitResultRequest24, mappingContext25);
-        com.vntu.marenko.ualearning.server.model.User user27 = result13.getUser();
-        com.vntu.marenko.ualearning.server.model.User user28 = result13.getUser();
-        long long29 = user28.getRating();
-        org.junit.Assert.assertNotNull(submitResultRequestType9);
-        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
-        org.junit.Assert.assertTrue("'" + boolean20 + "' != '" + false + "'", boolean20 == false);
-        org.junit.Assert.assertNotNull(user27);
-        org.junit.Assert.assertNotNull(user28);
-        org.junit.Assert.assertTrue("'" + long29 + "' != '" + 0L + "'", long29 == 0L);
-    }
-
-    @Test
-    public void test1958() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1958");
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository0 = null;
-        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository1 = null;
-        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl2 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository0, tagRepository1);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper3 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig4 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl5 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository6 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository7 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository8 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper9 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository6, testRepository7, answerRepository8);
-        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
-        submitResultRequestToDomainMapper9.setMapperFacade(mapperFacade10);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType12 = submitResultRequestToDomainMapper9.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper13 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper14 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean15 = createPostRequestToPostMapper14.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper16 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade17 = mapperConfig4.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl5, submitResultRequestToDomainMapper9, resultToDescriptionMapper13, createPostRequestToPostMapper14, postToDtoMapper16);
-        postToDtoMapper3.setMapperFacade(mapperFacade17);
-        com.vntu.marenko.ualearning.server.controller.TestController testController19 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade17);
-        ma.glasnost.orika.MapperFacade mapperFacade20 = null;
-        com.vntu.marenko.ualearning.server.controller.TestController testController21 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade20);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper22 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean23 = createPostRequestToPostMapper22.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig24 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl25 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository26 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository27 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository28 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper29 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository26, testRepository27, answerRepository28);
-        ma.glasnost.orika.MapperFacade mapperFacade30 = null;
-        submitResultRequestToDomainMapper29.setMapperFacade(mapperFacade30);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType32 = submitResultRequestToDomainMapper29.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper33 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper34 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean35 = createPostRequestToPostMapper34.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper36 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade37 = mapperConfig24.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl25, submitResultRequestToDomainMapper29, resultToDescriptionMapper33, createPostRequestToPostMapper34, postToDtoMapper36);
-        createPostRequestToPostMapper22.setMapperFacade(mapperFacade37);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository39 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository40 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository41 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper42 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository39, testRepository40, answerRepository41);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType43 = submitResultRequestToDomainMapper42.getBType();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper44 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig45 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl46 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository47 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository48 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository49 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper50 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository47, testRepository48, answerRepository49);
-        ma.glasnost.orika.MapperFacade mapperFacade51 = null;
-        submitResultRequestToDomainMapper50.setMapperFacade(mapperFacade51);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType53 = submitResultRequestToDomainMapper50.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper54 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper55 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean56 = createPostRequestToPostMapper55.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper57 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade58 = mapperConfig45.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl46, submitResultRequestToDomainMapper50, resultToDescriptionMapper54, createPostRequestToPostMapper55, postToDtoMapper57);
-        postToDtoMapper44.setMapperFacade(mapperFacade58);
-        submitResultRequestToDomainMapper42.setMapperFacade(mapperFacade58);
-        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository61 = null;
-        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl62 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository61);
-        com.vntu.marenko.ualearning.server.controller.PostController postController63 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade58, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl62);
-        com.vntu.marenko.ualearning.server.controller.PostController postController64 = new com.vntu.marenko.ualearning.server.controller.PostController(mapperFacade37, (com.vntu.marenko.ualearning.server.service.PostService) postServiceImpl62);
-        com.vntu.marenko.ualearning.server.controller.TestController testController65 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl2, mapperFacade37);
-        // The following exception was thrown during execution in test generation
-        try {
-            java.util.List<com.vntu.marenko.ualearning.server.model.Test> testList67 = testServiceImpl2.getTestsWithTag((int) (byte) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType12);
-        org.junit.Assert.assertEquals("'" + boolean15 + "' != '" + false + "'", boolean15, false);
-        org.junit.Assert.assertNotNull(mapperFacade17);
-        org.junit.Assert.assertEquals("'" + boolean23 + "' != '" + false + "'", boolean23, false);
-        org.junit.Assert.assertNotNull(resultType32);
-        org.junit.Assert.assertEquals("'" + boolean35 + "' != '" + false + "'", boolean35, false);
-        org.junit.Assert.assertNotNull(mapperFacade37);
-        org.junit.Assert.assertNotNull(resultType43);
-        org.junit.Assert.assertNotNull(resultType53);
-        org.junit.Assert.assertEquals("'" + boolean56 + "' != '" + false + "'", boolean56, false);
-        org.junit.Assert.assertNotNull(mapperFacade58);
-    }
-
-    @Test
-    public void test1959() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1959");
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
-        post2.setText("");
-        java.lang.String str5 = post2.toString();
-        post2.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest8 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest8.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext11 = null;
-        createPostRequestToPostMapper0.mapBtoA(post2, createPostRequest8, mappingContext11);
-        java.lang.Boolean boolean13 = createPostRequestToPostMapper0.favorsExtension();
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository14 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository15 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl16 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository15);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository17 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig18 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl19 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository20 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository21 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository22 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper23 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository20, testRepository21, answerRepository22);
-        ma.glasnost.orika.MapperFacade mapperFacade24 = null;
-        submitResultRequestToDomainMapper23.setMapperFacade(mapperFacade24);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType26 = submitResultRequestToDomainMapper23.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper27 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper28 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean29 = createPostRequestToPostMapper28.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper30 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade31 = mapperConfig18.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl19, submitResultRequestToDomainMapper23, resultToDescriptionMapper27, createPostRequestToPostMapper28, postToDtoMapper30);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository32 = null;
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository33 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade34 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository35 = null;
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto36 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl37 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean38 = answerDto36.equals((java.lang.Object) markComputerImpl37);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl39 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository33, mapperFacade34, userRepository35, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl37);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl40 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository17, mapperFacade31, userRepository32, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl37);
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository41 = null;
-        com.vntu.marenko.ualearning.server.repository.TagRepository tagRepository42 = null;
-        com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl testServiceImpl43 = new com.vntu.marenko.ualearning.server.service.impl.TestServiceImpl(testRepository41, tagRepository42);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper44 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig45 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl46 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository47 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository48 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository49 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper50 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository47, testRepository48, answerRepository49);
-        ma.glasnost.orika.MapperFacade mapperFacade51 = null;
-        submitResultRequestToDomainMapper50.setMapperFacade(mapperFacade51);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType53 = submitResultRequestToDomainMapper50.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper54 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper55 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean56 = createPostRequestToPostMapper55.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper57 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade58 = mapperConfig45.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl46, submitResultRequestToDomainMapper50, resultToDescriptionMapper54, createPostRequestToPostMapper55, postToDtoMapper57);
-        postToDtoMapper44.setMapperFacade(mapperFacade58);
-        com.vntu.marenko.ualearning.server.controller.TestController testController60 = new com.vntu.marenko.ualearning.server.controller.TestController((com.vntu.marenko.ualearning.server.service.TestService) testServiceImpl43, mapperFacade58);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController61 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl40, mapperFacade58);
-        com.vntu.marenko.ualearning.server.controller.UserController userController62 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl16, mapperFacade58);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository63 = null;
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl64 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper65 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl64);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl66 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository14, mapperFacade58, userRepository63, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl64);
-        createPostRequestToPostMapper0.setMapperFacade(mapperFacade58);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.CreatePostRequest> createPostRequestType68 = createPostRequestToPostMapper0.getAType();
-        org.junit.Assert.assertNotNull(postType1);
-        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str5, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + boolean13 + "' != '" + false + "'", boolean13, false);
-        org.junit.Assert.assertNotNull(resultType26);
-        org.junit.Assert.assertEquals("'" + boolean29 + "' != '" + false + "'", boolean29, false);
-        org.junit.Assert.assertNotNull(mapperFacade31);
-        org.junit.Assert.assertTrue("'" + boolean38 + "' != '" + false + "'", boolean38 == false);
-        org.junit.Assert.assertNotNull(resultType53);
-        org.junit.Assert.assertEquals("'" + boolean56 + "' != '" + false + "'", boolean56, false);
-        org.junit.Assert.assertNotNull(mapperFacade58);
-        org.junit.Assert.assertNotNull(createPostRequestType68);
-    }
-
-    @Test
-    public void test1960() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1960");
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        userDto0.setInstitution("");
-        java.lang.String str3 = userDto0.getInstitution();
-        userDto0.setLogin("User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0)");
-        java.lang.String str6 = userDto0.getEmail();
-        userDto0.setEmail("AnswerDto(id=0, text=Tag(id=null, name=null))");
-        java.lang.String str9 = userDto0.getEmail();
-        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "" + "'", str3, "");
-        org.junit.Assert.assertNull(str6);
-        org.junit.Assert.assertEquals("'" + str9 + "' != '" + "AnswerDto(id=0, text=Tag(id=null, name=null))" + "'", str9, "AnswerDto(id=0, text=Tag(id=null, name=null))");
-    }
-
-    @Test
-    public void test1961() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1961");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getName();
-        java.lang.String str2 = userRequest0.getName();
-        java.lang.String str3 = userRequest0.toString();
-        userRequest0.setLogin("Result(id=null, user=null, test=null, submitted=false, answers=null)");
-        userRequest0.setLogin("Post(id=null, text=ResultDescription(id=0, testId=null, testName=null, mark=1), timestamp=null, user=null, likes=null)");
-        userRequest0.setPassword("Question(id=35, text=null, answers=null)");
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertNull(str2);
-        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null)" + "'", str3, "UserRequest(login=null, password=null, name=null, surname=null, age=0, institution=null, email=null)");
-    }
-
-    @Test
-    public void test1962() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1962");
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto0 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        tagDto0.setId(1);
-        int int3 = tagDto0.getId();
-        tagDto0.setId((int) (short) -1);
-        com.vntu.marenko.ualearning.server.dto.TagDto tagDto6 = new com.vntu.marenko.ualearning.server.dto.TagDto();
-        java.lang.String str7 = tagDto6.toString();
-        java.lang.String str8 = tagDto6.getName();
-        java.lang.String str9 = tagDto6.getName();
-        boolean boolean10 = tagDto0.equals((java.lang.Object) tagDto6);
-        org.junit.Assert.assertTrue("'" + int3 + "' != '" + 1 + "'", int3 == 1);
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "TagDto(id=0, name=null)" + "'", str7, "TagDto(id=0, name=null)");
-        org.junit.Assert.assertNull(str8);
-        org.junit.Assert.assertNull(str9);
-        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + false + "'", boolean10 == false);
-    }
-
-    @Test
-    public void test1963() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1963");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper3 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType4 = resultToDescriptionMapper3.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType5 = resultToDescriptionMapper3.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.ResultDescription> resultDescriptionType6 = resultToDescriptionMapper3.getBType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType7 = resultToDescriptionMapper3.getAType();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper8 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean9 = createPostRequestToPostMapper8.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig10 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl11 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository12 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository13 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository14 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper15 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository12, testRepository13, answerRepository14);
-        ma.glasnost.orika.MapperFacade mapperFacade16 = null;
-        submitResultRequestToDomainMapper15.setMapperFacade(mapperFacade16);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType18 = submitResultRequestToDomainMapper15.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper19 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper20 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean21 = createPostRequestToPostMapper20.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper22 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade23 = mapperConfig10.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl11, submitResultRequestToDomainMapper15, resultToDescriptionMapper19, createPostRequestToPostMapper20, postToDtoMapper22);
-        createPostRequestToPostMapper8.setMapperFacade(mapperFacade23);
-        resultToDescriptionMapper3.setMapperFacade(mapperFacade23);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController26 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade23);
-        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest27 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
-        java.lang.String str28 = loginRequest27.getPassword();
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository29 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade30 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository31 = null;
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto32 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl33 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean34 = answerDto32.equals((java.lang.Object) markComputerImpl33);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl35 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository29, mapperFacade30, userRepository31, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl33);
-        boolean boolean36 = loginRequest27.equals((java.lang.Object) resultServiceImpl35);
-        loginRequest27.setPassword("TestDto(id=0, nameTest=null, descriptionTest=null, completedCounter=100, questions=null, tags=[TagDto(id=0, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=1, name=null), TagDto(id=1, name=null), TagDto(id=0, name=null), TagDto(id=0, name=null)])");
-        loginRequest27.setLogin("ResultDto(id=0, user=null, test=null, submitted=true, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null)], mark=0)");
-        // The following exception was thrown during execution in test generation
-        try {
-            java.lang.String str41 = authorisationController26.login(loginRequest27);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType4);
-        org.junit.Assert.assertNotNull(resultType5);
-        org.junit.Assert.assertNotNull(resultDescriptionType6);
-        org.junit.Assert.assertNotNull(resultType7);
-        org.junit.Assert.assertEquals("'" + boolean9 + "' != '" + false + "'", boolean9, false);
-        org.junit.Assert.assertNotNull(resultType18);
-        org.junit.Assert.assertEquals("'" + boolean21 + "' != '" + false + "'", boolean21, false);
-        org.junit.Assert.assertNotNull(mapperFacade23);
-        org.junit.Assert.assertNull(str28);
-        org.junit.Assert.assertTrue("'" + boolean34 + "' != '" + false + "'", boolean34 == false);
-        org.junit.Assert.assertTrue("'" + boolean36 + "' != '" + false + "'", boolean36 == false);
-    }
-
-    @Test
-    public void test1964() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1964");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getName();
-        java.lang.String str2 = userRequest0.getName();
-        java.lang.String str3 = userRequest0.getEmail();
-        userRequest0.setLogin("CreatePostRequest(text=ResultDescription(id=0, testId=null, testName=null, mark=1), username=null)");
-        java.lang.String str6 = userRequest0.getEmail();
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto7 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        questionDto7.setId((int) '#');
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto10 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto11 = null;
-        resultDto10.setTest(testDto11);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto13 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl14 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean15 = answerDto13.equals((java.lang.Object) markComputerImpl14);
-        int int16 = answerDto13.getId();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto17 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto17.setText("hi!");
-        java.lang.String str20 = answerDto17.getText();
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto21 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl22 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean23 = answerDto21.equals((java.lang.Object) markComputerImpl22);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto24 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl25 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean26 = answerDto24.equals((java.lang.Object) markComputerImpl25);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto[] answerDtoArray27 = new com.vntu.marenko.ualearning.server.dto.AnswerDto[] { answerDto13, answerDto17, answerDto21, answerDto24 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList28 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.dto.AnswerDto>();
-        boolean boolean29 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList28, answerDtoArray27);
-        resultDto10.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList28);
-        questionDto7.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto>) answerDtoList28);
-        com.vntu.marenko.ualearning.server.model.User user32 = new com.vntu.marenko.ualearning.server.model.User();
-        user32.setEmail("hi!");
-        user32.setSurname("hi!");
-        user32.setInstitution("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
-        boolean boolean39 = questionDto7.equals((java.lang.Object) user32);
-        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList40 = questionDto7.getAnswers();
-        boolean boolean41 = userRequest0.equals((java.lang.Object) answerDtoList40);
-        userRequest0.setInstitution("SubmitResultRequest(userLogin=null, testId=0, answers=[1, 10, -1])");
-        userRequest0.setAge((-1));
-        java.lang.String str46 = userRequest0.getName();
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertNull(str2);
-        org.junit.Assert.assertNull(str3);
-        org.junit.Assert.assertNull(str6);
-        org.junit.Assert.assertTrue("'" + boolean15 + "' != '" + false + "'", boolean15 == false);
-        org.junit.Assert.assertTrue("'" + int16 + "' != '" + 0 + "'", int16 == 0);
-        org.junit.Assert.assertEquals("'" + str20 + "' != '" + "hi!" + "'", str20, "hi!");
-        org.junit.Assert.assertTrue("'" + boolean23 + "' != '" + false + "'", boolean23 == false);
-        org.junit.Assert.assertTrue("'" + boolean26 + "' != '" + false + "'", boolean26 == false);
-        org.junit.Assert.assertNotNull(answerDtoArray27);
-        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + true + "'", boolean29 == true);
-        org.junit.Assert.assertTrue("'" + boolean39 + "' != '" + false + "'", boolean39 == false);
-        org.junit.Assert.assertNotNull(answerDtoList40);
-        org.junit.Assert.assertTrue("'" + boolean41 + "' != '" + false + "'", boolean41 == false);
-        org.junit.Assert.assertNull(str46);
-    }
-
-    @Test
-    public void test1965() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1965");
-        com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
-        result0.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.Test test3 = result0.getTest();
-        java.util.List<com.vntu.marenko.ualearning.server.model.Answer> answerList4 = result0.getAnswers();
-        com.vntu.marenko.ualearning.server.model.Question question5 = new com.vntu.marenko.ualearning.server.model.Question();
-        java.lang.String str6 = question5.getText();
-        java.lang.Integer int7 = question5.getId();
-        com.vntu.marenko.ualearning.server.service.TestService testService8 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade9 = null;
-        com.vntu.marenko.ualearning.server.controller.TestController testController10 = new com.vntu.marenko.ualearning.server.controller.TestController(testService8, mapperFacade9);
-        boolean boolean11 = question5.equals((java.lang.Object) testController10);
-        com.vntu.marenko.ualearning.server.model.Result result12 = new com.vntu.marenko.ualearning.server.model.Result();
-        java.lang.Integer int13 = result12.getId();
-        com.vntu.marenko.ualearning.server.model.Test test14 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int15 = test14.getId();
-        java.lang.Integer int16 = test14.getId();
-        result12.setTest(test14);
-        java.lang.Integer int18 = result12.getId();
-        com.vntu.marenko.ualearning.server.model.Result result19 = new com.vntu.marenko.ualearning.server.model.Result();
-        result19.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user22 = new com.vntu.marenko.ualearning.server.model.User();
-        user22.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test25 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean26 = user22.equals((java.lang.Object) test25);
-        user22.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result19.setUser(user22);
-        com.vntu.marenko.ualearning.server.model.Question question30 = new com.vntu.marenko.ualearning.server.model.Question();
-        java.lang.Integer int31 = question30.getId();
-        java.lang.Integer int32 = question30.getId();
-        com.vntu.marenko.ualearning.server.model.Answer answer33 = new com.vntu.marenko.ualearning.server.model.Answer();
-        com.vntu.marenko.ualearning.server.model.Answer answer34 = new com.vntu.marenko.ualearning.server.model.Answer();
-        answer34.setCorrect(false);
-        com.vntu.marenko.ualearning.server.model.Answer[] answerArray37 = new com.vntu.marenko.ualearning.server.model.Answer[] { answer33, answer34 };
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer> answerList38 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Answer>();
-        boolean boolean39 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Answer>) answerList38, answerArray37);
-        question30.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList38);
-        result19.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList38);
-        result12.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList38);
-        question5.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList38);
-        result0.setAnswers((java.util.List<com.vntu.marenko.ualearning.server.model.Answer>) answerList38);
-        com.vntu.marenko.ualearning.server.model.Test test45 = result0.getTest();
-        org.junit.Assert.assertNull(test3);
-        org.junit.Assert.assertNull(answerList4);
-        org.junit.Assert.assertNull(str6);
-        org.junit.Assert.assertNull(int7);
-        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
-        org.junit.Assert.assertNull(int13);
-        org.junit.Assert.assertNull(int15);
-        org.junit.Assert.assertNull(int16);
-        org.junit.Assert.assertNull(int18);
-        org.junit.Assert.assertTrue("'" + boolean26 + "' != '" + false + "'", boolean26 == false);
-        org.junit.Assert.assertNull(int31);
-        org.junit.Assert.assertNull(int32);
-        org.junit.Assert.assertNotNull(answerArray37);
-        org.junit.Assert.assertTrue("'" + boolean39 + "' != '" + true + "'", boolean39 == true);
-        org.junit.Assert.assertNull(test45);
-    }
-
-    @Test
-    public void test1966() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1966");
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
-        int int3 = answerDto0.getId();
-        java.lang.String str4 = answerDto0.toString();
-        java.lang.String str5 = answerDto0.getText();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper6 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig7 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl8 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository9 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository10 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository11 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper12 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository9, testRepository10, answerRepository11);
-        ma.glasnost.orika.MapperFacade mapperFacade13 = null;
-        submitResultRequestToDomainMapper12.setMapperFacade(mapperFacade13);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType15 = submitResultRequestToDomainMapper12.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper16 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper17 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean18 = createPostRequestToPostMapper17.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper19 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade20 = mapperConfig7.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl8, submitResultRequestToDomainMapper12, resultToDescriptionMapper16, createPostRequestToPostMapper17, postToDtoMapper19);
-        postToDtoMapper6.setMapperFacade(mapperFacade20);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType22 = postToDtoMapper6.getBType();
-        java.lang.Boolean boolean23 = postToDtoMapper6.favorsExtension();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository24 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository25 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository26 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper27 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository24, testRepository25, answerRepository26);
-        ma.glasnost.orika.MapperFacade mapperFacade28 = null;
-        submitResultRequestToDomainMapper27.setMapperFacade(mapperFacade28);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType30 = submitResultRequestToDomainMapper27.getBType();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper31 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig32 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl33 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository34 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository35 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository36 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper37 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository34, testRepository35, answerRepository36);
-        ma.glasnost.orika.MapperFacade mapperFacade38 = null;
-        submitResultRequestToDomainMapper37.setMapperFacade(mapperFacade38);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType40 = submitResultRequestToDomainMapper37.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper41 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper42 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean43 = createPostRequestToPostMapper42.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper44 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade45 = mapperConfig32.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl33, submitResultRequestToDomainMapper37, resultToDescriptionMapper41, createPostRequestToPostMapper42, postToDtoMapper44);
-        postToDtoMapper31.setMapperFacade(mapperFacade45);
-        submitResultRequestToDomainMapper27.setMapperFacade(mapperFacade45);
-        postToDtoMapper6.setMapperFacade(mapperFacade45);
-        boolean boolean49 = answerDto0.equals((java.lang.Object) mapperFacade45);
-        java.lang.String str50 = answerDto0.getText();
-        java.lang.String str51 = answerDto0.toString();
-        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
-        org.junit.Assert.assertTrue("'" + int3 + "' != '" + 0 + "'", int3 == 0);
-        org.junit.Assert.assertEquals("'" + str4 + "' != '" + "AnswerDto(id=0, text=null)" + "'", str4, "AnswerDto(id=0, text=null)");
-        org.junit.Assert.assertNull(str5);
-        org.junit.Assert.assertNotNull(resultType15);
-        org.junit.Assert.assertEquals("'" + boolean18 + "' != '" + false + "'", boolean18, false);
-        org.junit.Assert.assertNotNull(mapperFacade20);
-        org.junit.Assert.assertNotNull(postDtoType22);
-        org.junit.Assert.assertEquals("'" + boolean23 + "' != '" + false + "'", boolean23, false);
-        org.junit.Assert.assertNotNull(resultType30);
-        org.junit.Assert.assertNotNull(resultType40);
-        org.junit.Assert.assertEquals("'" + boolean43 + "' != '" + false + "'", boolean43, false);
-        org.junit.Assert.assertNotNull(mapperFacade45);
-        org.junit.Assert.assertTrue("'" + boolean49 + "' != '" + false + "'", boolean49 == false);
-        org.junit.Assert.assertNull(str50);
-        org.junit.Assert.assertEquals("'" + str51 + "' != '" + "AnswerDto(id=0, text=null)" + "'", str51, "AnswerDto(id=0, text=null)");
-    }
-
-    @Test
-    public void test1967() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1967");
-        com.vntu.marenko.ualearning.server.model.Test test0 = new com.vntu.marenko.ualearning.server.model.Test();
-        com.vntu.marenko.ualearning.server.model.Tag[] tagArray1 = new com.vntu.marenko.ualearning.server.model.Tag[] {};
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag> tagList2 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag>();
-        boolean boolean3 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Tag>) tagList2, tagArray1);
-        test0.setTags((java.util.List<com.vntu.marenko.ualearning.server.model.Tag>) tagList2);
-        com.vntu.marenko.ualearning.server.model.Tag[] tagArray5 = new com.vntu.marenko.ualearning.server.model.Tag[] {};
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag> tagList6 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag>();
-        boolean boolean7 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Tag>) tagList6, tagArray5);
-        test0.setTags((java.util.List<com.vntu.marenko.ualearning.server.model.Tag>) tagList6);
-        java.lang.String str9 = test0.toString();
-        java.lang.String str10 = test0.getNameTest();
-        org.junit.Assert.assertNotNull(tagArray1);
-        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + false + "'", boolean3 == false);
-        org.junit.Assert.assertNotNull(tagArray5);
-        org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + false + "'", boolean7 == false);
-        org.junit.Assert.assertEquals("'" + str9 + "' != '" + "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=[])" + "'", str9, "Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=[])");
-        org.junit.Assert.assertNull(str10);
-    }
-
-    @Test
-    public void test1968() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1968");
-        com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
-        java.lang.Integer int1 = result0.getId();
-        com.vntu.marenko.ualearning.server.model.Test test2 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int3 = test2.getId();
-        java.lang.Integer int4 = test2.getId();
-        result0.setTest(test2);
-        java.lang.String str6 = test2.getDescriptionTest();
-        java.util.List<com.vntu.marenko.ualearning.server.model.Question> questionList7 = test2.getQuestions();
-        test2.setNameTest("Post(id=10, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int1);
-        org.junit.Assert.assertNull(int3);
-        org.junit.Assert.assertNull(int4);
-        org.junit.Assert.assertNull(str6);
-        org.junit.Assert.assertNull(questionList7);
-    }
-
-    @Test
-    public void test1969() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1969");
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        java.lang.String str1 = questionDto0.getText();
-        int int2 = questionDto0.getId();
-        com.vntu.marenko.ualearning.server.model.User user3 = new com.vntu.marenko.ualearning.server.model.User();
-        user3.setInstitution("hi!");
-        java.lang.String str6 = user3.toString();
-        java.lang.String str7 = user3.getEmail();
-        java.lang.String str8 = user3.getEmail();
-        boolean boolean9 = questionDto0.equals((java.lang.Object) str8);
-        com.vntu.marenko.ualearning.server.model.Tag tag10 = new com.vntu.marenko.ualearning.server.model.Tag();
-        java.lang.String str11 = tag10.toString();
-        java.lang.String str12 = tag10.getName();
-        java.lang.Integer int13 = tag10.getId();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper14 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper15 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType16 = createPostRequestToPostMapper15.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post17 = new com.vntu.marenko.ualearning.server.model.Post();
-        post17.setText("");
-        java.lang.String str20 = post17.toString();
-        post17.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest23 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest23.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext26 = null;
-        createPostRequestToPostMapper15.mapBtoA(post17, createPostRequest23, mappingContext26);
-        com.vntu.marenko.ualearning.server.model.Post post28 = new com.vntu.marenko.ualearning.server.model.Post();
-        post28.setText("");
-        java.lang.String str31 = post28.toString();
-        java.lang.Integer int32 = post28.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest33 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str34 = createPostRequest33.getUsername();
-        java.lang.String str35 = createPostRequest33.toString();
-        ma.glasnost.orika.MappingContext mappingContext36 = null;
-        createPostRequestToPostMapper15.mapBtoA(post28, createPostRequest33, mappingContext36);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper38 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType39 = createPostRequestToPostMapper38.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post40 = new com.vntu.marenko.ualearning.server.model.Post();
-        post40.setText("");
-        java.lang.String str43 = post40.toString();
-        post40.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest46 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest46.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext49 = null;
-        createPostRequestToPostMapper38.mapBtoA(post40, createPostRequest46, mappingContext49);
-        ma.glasnost.orika.MappingContext mappingContext51 = null;
-        createPostRequestToPostMapper14.mapAtoB(createPostRequest33, post40, mappingContext51);
-        boolean boolean53 = tag10.equals((java.lang.Object) createPostRequest33);
-        boolean boolean54 = questionDto0.equals((java.lang.Object) tag10);
-        tag10.setId((java.lang.Integer) (-1));
-        java.lang.String str57 = tag10.getName();
-        tag10.setName("AnswerDto(id=0, text=Tag(id=null, name=null))");
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertTrue("'" + int2 + "' != '" + 0 + "'", int2 == 0);
-        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str6, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        org.junit.Assert.assertNull(str7);
-        org.junit.Assert.assertNull(str8);
-        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
-        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "Tag(id=null, name=null)" + "'", str11, "Tag(id=null, name=null)");
-        org.junit.Assert.assertNull(str12);
-        org.junit.Assert.assertNull(int13);
-        org.junit.Assert.assertNotNull(postType16);
-        org.junit.Assert.assertEquals("'" + str20 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str20, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str31 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str31, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int32);
-        org.junit.Assert.assertNull(str34);
-        org.junit.Assert.assertEquals("'" + str35 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str35, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertNotNull(postType39);
-        org.junit.Assert.assertEquals("'" + str43 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str43, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertTrue("'" + boolean53 + "' != '" + false + "'", boolean53 == false);
-        org.junit.Assert.assertTrue("'" + boolean54 + "' != '" + false + "'", boolean54 == false);
-        org.junit.Assert.assertNull(str57);
-    }
-
-    @Test
-    public void test1970() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1970");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getInstitution();
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto2 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        questionDto2.setId((int) '#');
-        boolean boolean5 = userRequest0.equals((java.lang.Object) '#');
-        userRequest0.setEmail("UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
-        com.vntu.marenko.ualearning.server.repository.PostRepository postRepository8 = null;
-        com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl postServiceImpl9 = new com.vntu.marenko.ualearning.server.service.impl.PostServiceImpl(postRepository8);
-        boolean boolean10 = userRequest0.equals((java.lang.Object) postServiceImpl9);
-        userRequest0.setAge((int) (byte) 1);
-        userRequest0.setAge((int) (byte) 100);
-        userRequest0.setLogin("TestDescription(id=-1, nameTest=Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null))");
-        userRequest0.setAge((int) (short) -1);
-        java.lang.String str19 = userRequest0.getName();
-        userRequest0.setName("UserRequest(login=null, password=null, name=null, surname=null, age=100, institution=null, email=UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0))");
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
-        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + false + "'", boolean10 == false);
-        org.junit.Assert.assertNull(str19);
-    }
-
-    @Test
-    public void test1971() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1971");
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto1 = null;
-        resultDto0.setTest(testDto1);
-        int int3 = resultDto0.getId();
-        long long4 = resultDto0.getMark();
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto5 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        java.lang.String str6 = userDto5.toString();
-        java.lang.String str7 = userDto5.getLogin();
-        userDto5.setLogin("hi!");
-        resultDto0.setUser(userDto5);
-        java.lang.String str11 = userDto5.getLogin();
-        java.lang.String str12 = userDto5.toString();
-        userDto5.setEmail("AnswerDto(id=0, text=null)");
-        org.junit.Assert.assertTrue("'" + int3 + "' != '" + 0 + "'", int3 == 0);
-        org.junit.Assert.assertTrue("'" + long4 + "' != '" + 0L + "'", long4 == 0L);
-        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)" + "'", str6, "UserDto(login=null, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
-        org.junit.Assert.assertNull(str7);
-        org.junit.Assert.assertEquals("'" + str11 + "' != '" + "hi!" + "'", str11, "hi!");
-        org.junit.Assert.assertEquals("'" + str12 + "' != '" + "UserDto(login=hi!, name=null, surname=null, age=0, institution=null, email=null, rating=0)" + "'", str12, "UserDto(login=hi!, name=null, surname=null, age=0, institution=null, email=null, rating=0)");
-    }
-
-    @Test
-    public void test1972() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1972");
-        com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
-        java.lang.String str1 = answer0.getText();
-        java.lang.String str2 = answer0.getText();
-        java.lang.String str3 = answer0.toString();
-        java.lang.Object obj4 = null;
-        boolean boolean5 = answer0.equals(obj4);
-        answer0.setCorrect(false);
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertNull(str2);
-        org.junit.Assert.assertEquals("'" + str3 + "' != '" + "Answer(id=null, text=null, correct=false)" + "'", str3, "Answer(id=null, text=null, correct=false)");
-        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
-    }
-
-    @Test
-    public void test1973() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1973");
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto0 = new com.vntu.marenko.ualearning.server.dto.TestDto();
-        int int1 = testDto0.getId();
-        testDto0.setDescriptionTest("ResultDescription(id=null, testId=100, testName=null, mark=0)");
-        java.util.List<com.vntu.marenko.ualearning.server.dto.TagDto> tagDtoList4 = testDto0.getTags();
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto5 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        com.vntu.marenko.ualearning.server.dto.TestDto testDto6 = null;
-        resultDto5.setTest(testDto6);
-        int int8 = resultDto5.getId();
-        long long9 = resultDto5.getMark();
-        boolean boolean10 = testDto0.equals((java.lang.Object) resultDto5);
-        com.vntu.marenko.ualearning.server.model.Result result11 = new com.vntu.marenko.ualearning.server.model.Result();
-        result11.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.Test test14 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int15 = test14.getId();
-        java.lang.Integer int16 = test14.getId();
-        test14.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        java.lang.Integer int19 = test14.getCompletedCounter();
-        result11.setTest(test14);
-        com.vntu.marenko.ualearning.server.model.Test test21 = result11.getTest();
-        com.vntu.marenko.ualearning.server.model.Test test22 = new com.vntu.marenko.ualearning.server.model.Test();
-        com.vntu.marenko.ualearning.server.model.Tag[] tagArray23 = new com.vntu.marenko.ualearning.server.model.Tag[] {};
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag> tagList24 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag>();
-        boolean boolean25 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Tag>) tagList24, tagArray23);
-        test22.setTags((java.util.List<com.vntu.marenko.ualearning.server.model.Tag>) tagList24);
-        com.vntu.marenko.ualearning.server.model.Tag[] tagArray27 = new com.vntu.marenko.ualearning.server.model.Tag[] {};
-        java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag> tagList28 = new java.util.ArrayList<com.vntu.marenko.ualearning.server.model.Tag>();
-        boolean boolean29 = java.util.Collections.addAll((java.util.Collection<com.vntu.marenko.ualearning.server.model.Tag>) tagList28, tagArray27);
-        test22.setTags((java.util.List<com.vntu.marenko.ualearning.server.model.Tag>) tagList28);
-        java.util.List<com.vntu.marenko.ualearning.server.model.Tag> tagList31 = test22.getTags();
-        test21.setTags(tagList31);
-        boolean boolean33 = testDto0.equals((java.lang.Object) test21);
-        java.lang.String str34 = testDto0.getNameTest();
-        org.junit.Assert.assertTrue("'" + int1 + "' != '" + 0 + "'", int1 == 0);
-        org.junit.Assert.assertNull(tagDtoList4);
-        org.junit.Assert.assertTrue("'" + int8 + "' != '" + 0 + "'", int8 == 0);
-        org.junit.Assert.assertTrue("'" + long9 + "' != '" + 0L + "'", long9 == 0L);
-        org.junit.Assert.assertTrue("'" + boolean10 + "' != '" + false + "'", boolean10 == false);
-        org.junit.Assert.assertNull(int15);
-        org.junit.Assert.assertNull(int16);
-        org.junit.Assert.assertNull(int19);
-        org.junit.Assert.assertNotNull(test21);
-        org.junit.Assert.assertNotNull(tagArray23);
-        org.junit.Assert.assertTrue("'" + boolean25 + "' != '" + false + "'", boolean25 == false);
-        org.junit.Assert.assertNotNull(tagArray27);
-        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
-        org.junit.Assert.assertNotNull(tagList31);
-        org.junit.Assert.assertTrue("'" + boolean33 + "' != '" + false + "'", boolean33 == false);
-        org.junit.Assert.assertNull(str34);
-    }
-
-    @Test
-    public void test1974() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1974");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper3 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType4 = resultToDescriptionMapper3.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType5 = resultToDescriptionMapper3.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.ResultDescription> resultDescriptionType6 = resultToDescriptionMapper3.getBType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType7 = resultToDescriptionMapper3.getAType();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper8 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean9 = createPostRequestToPostMapper8.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig10 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl11 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository12 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository13 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository14 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper15 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository12, testRepository13, answerRepository14);
-        ma.glasnost.orika.MapperFacade mapperFacade16 = null;
-        submitResultRequestToDomainMapper15.setMapperFacade(mapperFacade16);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType18 = submitResultRequestToDomainMapper15.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper19 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper20 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean21 = createPostRequestToPostMapper20.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper22 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade23 = mapperConfig10.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl11, submitResultRequestToDomainMapper15, resultToDescriptionMapper19, createPostRequestToPostMapper20, postToDtoMapper22);
-        createPostRequestToPostMapper8.setMapperFacade(mapperFacade23);
-        resultToDescriptionMapper3.setMapperFacade(mapperFacade23);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController26 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade23);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository27 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository28 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository29 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper30 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository27, testRepository28, answerRepository29);
-        ma.glasnost.orika.MapperFacade mapperFacade31 = null;
-        submitResultRequestToDomainMapper30.setMapperFacade(mapperFacade31);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType33 = submitResultRequestToDomainMapper30.getBType();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper34 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig35 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl36 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository37 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository38 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository39 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper40 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository37, testRepository38, answerRepository39);
-        ma.glasnost.orika.MapperFacade mapperFacade41 = null;
-        submitResultRequestToDomainMapper40.setMapperFacade(mapperFacade41);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType43 = submitResultRequestToDomainMapper40.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper44 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper45 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean46 = createPostRequestToPostMapper45.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper47 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade48 = mapperConfig35.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl36, submitResultRequestToDomainMapper40, resultToDescriptionMapper44, createPostRequestToPostMapper45, postToDtoMapper47);
-        postToDtoMapper34.setMapperFacade(mapperFacade48);
-        submitResultRequestToDomainMapper30.setMapperFacade(mapperFacade48);
-        com.vntu.marenko.ualearning.server.service.UserService userService51 = null;
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper52 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig53 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl54 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository55 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository56 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository57 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper58 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository55, testRepository56, answerRepository57);
-        ma.glasnost.orika.MapperFacade mapperFacade59 = null;
-        submitResultRequestToDomainMapper58.setMapperFacade(mapperFacade59);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType61 = submitResultRequestToDomainMapper58.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper62 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper63 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean64 = createPostRequestToPostMapper63.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper65 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade66 = mapperConfig53.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl54, submitResultRequestToDomainMapper58, resultToDescriptionMapper62, createPostRequestToPostMapper63, postToDtoMapper65);
-        postToDtoMapper52.setMapperFacade(mapperFacade66);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController68 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController(userService51, mapperFacade66);
-        submitResultRequestToDomainMapper30.setMapperFacade(mapperFacade66);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController70 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade66);
-        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest71 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
-        java.lang.String str72 = loginRequest71.toString();
-        java.lang.String str73 = loginRequest71.toString();
-        java.lang.String str74 = loginRequest71.getLogin();
-        // The following exception was thrown during execution in test generation
-        try {
-            java.lang.String str75 = authorisationController70.login(loginRequest71);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType4);
-        org.junit.Assert.assertNotNull(resultType5);
-        org.junit.Assert.assertNotNull(resultDescriptionType6);
-        org.junit.Assert.assertNotNull(resultType7);
-        org.junit.Assert.assertEquals("'" + boolean9 + "' != '" + false + "'", boolean9, false);
-        org.junit.Assert.assertNotNull(resultType18);
-        org.junit.Assert.assertEquals("'" + boolean21 + "' != '" + false + "'", boolean21, false);
-        org.junit.Assert.assertNotNull(mapperFacade23);
-        org.junit.Assert.assertNotNull(resultType33);
-        org.junit.Assert.assertNotNull(resultType43);
-        org.junit.Assert.assertEquals("'" + boolean46 + "' != '" + false + "'", boolean46, false);
-        org.junit.Assert.assertNotNull(mapperFacade48);
-        org.junit.Assert.assertNotNull(resultType61);
-        org.junit.Assert.assertEquals("'" + boolean64 + "' != '" + false + "'", boolean64, false);
-        org.junit.Assert.assertNotNull(mapperFacade66);
-        org.junit.Assert.assertEquals("'" + str72 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str72, "LoginRequest(login=null, password=null)");
-        org.junit.Assert.assertEquals("'" + str73 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str73, "LoginRequest(login=null, password=null)");
-        org.junit.Assert.assertNull(str74);
-    }
-
-    @Test
-    public void test1975() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1975");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl1 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository0);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper2 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig3 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl4 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository5 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository6 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository7 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper8 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository5, testRepository6, answerRepository7);
-        ma.glasnost.orika.MapperFacade mapperFacade9 = null;
-        submitResultRequestToDomainMapper8.setMapperFacade(mapperFacade9);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType11 = submitResultRequestToDomainMapper8.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper12 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper13 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean14 = createPostRequestToPostMapper13.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper15 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade16 = mapperConfig3.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl4, submitResultRequestToDomainMapper8, resultToDescriptionMapper12, createPostRequestToPostMapper13, postToDtoMapper15);
-        postToDtoMapper2.setMapperFacade(mapperFacade16);
-        com.vntu.marenko.ualearning.server.controller.UserController userController18 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade16);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository19 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl20 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository19);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository21 = null;
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper22 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig23 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl24 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository25 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository26 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository27 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper28 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository25, testRepository26, answerRepository27);
-        ma.glasnost.orika.MapperFacade mapperFacade29 = null;
-        submitResultRequestToDomainMapper28.setMapperFacade(mapperFacade29);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType31 = submitResultRequestToDomainMapper28.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper32 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper33 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean34 = createPostRequestToPostMapper33.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper35 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade36 = mapperConfig23.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl24, submitResultRequestToDomainMapper28, resultToDescriptionMapper32, createPostRequestToPostMapper33, postToDtoMapper35);
-        postToDtoMapper22.setMapperFacade(mapperFacade36);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository38 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig39 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl40 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository41 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository42 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository43 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper44 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository41, testRepository42, answerRepository43);
-        ma.glasnost.orika.MapperFacade mapperFacade45 = null;
-        submitResultRequestToDomainMapper44.setMapperFacade(mapperFacade45);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType47 = submitResultRequestToDomainMapper44.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper48 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper49 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean50 = createPostRequestToPostMapper49.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper51 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade52 = mapperConfig39.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl40, submitResultRequestToDomainMapper44, resultToDescriptionMapper48, createPostRequestToPostMapper49, postToDtoMapper51);
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl53 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository54 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository55 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository56 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper57 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository54, testRepository55, answerRepository56);
-        ma.glasnost.orika.MapperFacade mapperFacade58 = null;
-        submitResultRequestToDomainMapper57.setMapperFacade(mapperFacade58);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType60 = submitResultRequestToDomainMapper57.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper61 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig62 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl63 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository64 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository65 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository66 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper67 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository64, testRepository65, answerRepository66);
-        ma.glasnost.orika.MapperFacade mapperFacade68 = null;
-        submitResultRequestToDomainMapper67.setMapperFacade(mapperFacade68);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType70 = submitResultRequestToDomainMapper67.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper71 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper72 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean73 = createPostRequestToPostMapper72.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper74 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade75 = mapperConfig62.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl63, submitResultRequestToDomainMapper67, resultToDescriptionMapper71, createPostRequestToPostMapper72, postToDtoMapper74);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper76 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        ma.glasnost.orika.MapperFacade mapperFacade77 = mapperConfig39.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl53, submitResultRequestToDomainMapper57, resultToDescriptionMapper61, createPostRequestToPostMapper72, postToDtoMapper76);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl78 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository21, mapperFacade36, userRepository38, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl53);
-        com.vntu.marenko.ualearning.server.controller.UserController userController79 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl20, mapperFacade36);
-        com.vntu.marenko.ualearning.server.controller.UserController userController80 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl1, mapperFacade36);
-        // The following exception was thrown during execution in test generation
-        try {
-            com.vntu.marenko.ualearning.server.dto.UserDto userDto82 = userController80.getUser("CreatePostRequest(text=Post(id=null, text=, timestamp=null, user=null, likes=null), username=null)");
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType11);
-        org.junit.Assert.assertEquals("'" + boolean14 + "' != '" + false + "'", boolean14, false);
-        org.junit.Assert.assertNotNull(mapperFacade16);
-        org.junit.Assert.assertNotNull(resultType31);
-        org.junit.Assert.assertEquals("'" + boolean34 + "' != '" + false + "'", boolean34, false);
-        org.junit.Assert.assertNotNull(mapperFacade36);
-        org.junit.Assert.assertNotNull(resultType47);
-        org.junit.Assert.assertEquals("'" + boolean50 + "' != '" + false + "'", boolean50, false);
-        org.junit.Assert.assertNotNull(mapperFacade52);
-        org.junit.Assert.assertNotNull(resultType60);
-        org.junit.Assert.assertNotNull(resultType70);
-        org.junit.Assert.assertEquals("'" + boolean73 + "' != '" + false + "'", boolean73, false);
-        org.junit.Assert.assertNotNull(mapperFacade75);
-        org.junit.Assert.assertNotNull(mapperFacade77);
-    }
-
-    @Test
-    public void test1976() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1976");
-        com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
-        answer0.setText("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        boolean boolean3 = answer0.isCorrect();
-        java.lang.String str4 = answer0.getText();
-        org.junit.Assert.assertTrue("'" + boolean3 + "' != '" + false + "'", boolean3 == false);
-        org.junit.Assert.assertEquals("'" + str4 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str4, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-    }
-
-    @Test
-    public void test1977() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1977");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper3 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository0, testRepository1, answerRepository2);
-        ma.glasnost.orika.MapperFacade mapperFacade4 = null;
-        submitResultRequestToDomainMapper3.setMapperFacade(mapperFacade4);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType6 = submitResultRequestToDomainMapper3.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
-        submitResultRequestToDomainMapper3.setMapperFacade(mapperFacade7);
-        com.vntu.marenko.ualearning.server.model.User user9 = new com.vntu.marenko.ualearning.server.model.User();
-        user9.setSurname("");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository12 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository13 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository14 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper15 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository12, testRepository13, answerRepository14);
-        ma.glasnost.orika.MapperFacade mapperFacade16 = null;
-        submitResultRequestToDomainMapper15.setMapperFacade(mapperFacade16);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType18 = submitResultRequestToDomainMapper15.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade19 = null;
-        submitResultRequestToDomainMapper15.setMapperFacade(mapperFacade19);
-        boolean boolean21 = user9.equals((java.lang.Object) submitResultRequestToDomainMapper15);
-        com.vntu.marenko.ualearning.server.model.Result result22 = new com.vntu.marenko.ualearning.server.model.Result();
-        result22.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user25 = new com.vntu.marenko.ualearning.server.model.User();
-        user25.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test28 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean29 = user25.equals((java.lang.Object) test28);
-        user25.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result22.setUser(user25);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest33 = null;
-        ma.glasnost.orika.MappingContext mappingContext34 = null;
-        submitResultRequestToDomainMapper15.mapBtoA(result22, submitResultRequest33, mappingContext34);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest36 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
-        submitResultRequest36.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
-        int int39 = submitResultRequest36.getTestId();
-        ma.glasnost.orika.MappingContext mappingContext40 = null;
-        submitResultRequestToDomainMapper3.mapBtoA(result22, submitResultRequest36, mappingContext40);
-        submitResultRequest36.setTestId((-1));
-        java.lang.String str44 = submitResultRequest36.toString();
-        org.junit.Assert.assertNotNull(submitResultRequestType6);
-        org.junit.Assert.assertNotNull(submitResultRequestType18);
-        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + false + "'", boolean21 == false);
-        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
-        org.junit.Assert.assertTrue("'" + int39 + "' != '" + 0 + "'", int39 == 0);
-        org.junit.Assert.assertEquals("'" + str44 + "' != '" + "SubmitResultRequest(userLogin=QuestionDto(id=10, text=null, answers=null), testId=-1, answers=null)" + "'", str44, "SubmitResultRequest(userLogin=QuestionDto(id=10, text=null, answers=null), testId=-1, answers=null)");
-    }
-
-    @Test
-    public void test1978() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1978");
-        com.vntu.marenko.ualearning.server.model.Answer answer0 = new com.vntu.marenko.ualearning.server.model.Answer();
-        java.lang.String str1 = answer0.toString();
-        answer0.setText("LoginRequest(login=null, password=null)");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest4 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str5 = userRequest4.getInstitution();
-        java.lang.String str6 = userRequest4.getPassword();
-        boolean boolean7 = answer0.equals((java.lang.Object) userRequest4);
-        answer0.setCorrect(true);
-        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "Answer(id=null, text=null, correct=false)" + "'", str1, "Answer(id=null, text=null, correct=false)");
-        org.junit.Assert.assertNull(str5);
-        org.junit.Assert.assertNull(str6);
-        org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + false + "'", boolean7 == false);
-    }
-
-    @Test
-    public void test1979() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1979");
-        com.vntu.marenko.ualearning.server.model.Post post0 = new com.vntu.marenko.ualearning.server.model.Post();
-        post0.setText("");
-        java.lang.Integer int3 = post0.getId();
-        java.util.Date date4 = post0.getTimestamp();
-        post0.setId((java.lang.Integer) (-1));
-        post0.setUser("LoginRequest(login=null, password=null)");
-        java.lang.String str9 = post0.getUser();
-        post0.setText("TestDto(id=100, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
-        org.junit.Assert.assertNull(int3);
-        org.junit.Assert.assertNull(date4);
-        org.junit.Assert.assertEquals("'" + str9 + "' != '" + "LoginRequest(login=null, password=null)" + "'", str9, "LoginRequest(login=null, password=null)");
-    }
-
-    @Test
-    public void test1980() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1980");
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType1 = createPostRequestToPostMapper0.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post2 = new com.vntu.marenko.ualearning.server.model.Post();
-        post2.setText("");
-        java.lang.String str5 = post2.toString();
-        post2.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest8 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest8.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext11 = null;
-        createPostRequestToPostMapper0.mapBtoA(post2, createPostRequest8, mappingContext11);
-        com.vntu.marenko.ualearning.server.model.Post post13 = new com.vntu.marenko.ualearning.server.model.Post();
-        post13.setText("");
-        java.lang.String str16 = post13.toString();
-        java.lang.Integer int17 = post13.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest18 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str19 = createPostRequest18.getUsername();
-        java.lang.String str20 = createPostRequest18.toString();
-        ma.glasnost.orika.MappingContext mappingContext21 = null;
-        createPostRequestToPostMapper0.mapBtoA(post13, createPostRequest18, mappingContext21);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository23 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade24 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository25 = null;
-        com.vntu.marenko.ualearning.server.component.MarkComputer markComputer26 = null;
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl27 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository23, mapperFacade24, userRepository25, markComputer26);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper28 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean29 = createPostRequestToPostMapper28.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig30 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl31 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository32 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository33 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository34 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper35 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository32, testRepository33, answerRepository34);
-        ma.glasnost.orika.MapperFacade mapperFacade36 = null;
-        submitResultRequestToDomainMapper35.setMapperFacade(mapperFacade36);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType38 = submitResultRequestToDomainMapper35.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper39 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper40 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean41 = createPostRequestToPostMapper40.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper42 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade43 = mapperConfig30.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl31, submitResultRequestToDomainMapper35, resultToDescriptionMapper39, createPostRequestToPostMapper40, postToDtoMapper42);
-        createPostRequestToPostMapper28.setMapperFacade(mapperFacade43);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController45 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl27, mapperFacade43);
-        com.vntu.marenko.ualearning.server.service.UserService userService46 = null;
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper47 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig48 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl49 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository50 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository51 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository52 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper53 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository50, testRepository51, answerRepository52);
-        ma.glasnost.orika.MapperFacade mapperFacade54 = null;
-        submitResultRequestToDomainMapper53.setMapperFacade(mapperFacade54);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType56 = submitResultRequestToDomainMapper53.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper57 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper58 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean59 = createPostRequestToPostMapper58.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper60 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade61 = mapperConfig48.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl49, submitResultRequestToDomainMapper53, resultToDescriptionMapper57, createPostRequestToPostMapper58, postToDtoMapper60);
-        postToDtoMapper47.setMapperFacade(mapperFacade61);
-        com.vntu.marenko.ualearning.server.controller.AuthorisationController authorisationController63 = new com.vntu.marenko.ualearning.server.controller.AuthorisationController(userService46, mapperFacade61);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController64 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl27, mapperFacade61);
-        createPostRequestToPostMapper0.setMapperFacade(mapperFacade61);
-        java.lang.Boolean boolean66 = createPostRequestToPostMapper0.favorsExtension();
-        java.lang.Boolean boolean67 = createPostRequestToPostMapper0.favorsExtension();
-        ma.glasnost.orika.Mapper<java.lang.Object, java.lang.Object> objMapper68 = null;
-        ma.glasnost.orika.Mapper[] mapperArray70 = new ma.glasnost.orika.Mapper[1];
-        @SuppressWarnings("unchecked")
-        ma.glasnost.orika.Mapper<java.lang.Object, java.lang.Object>[] objMapperArray71 = (ma.glasnost.orika.Mapper<java.lang.Object, java.lang.Object>[]) mapperArray70;
-        objMapperArray71[0] = objMapper68;
-        // The following exception was thrown during execution in test generation
-        try {
-            createPostRequestToPostMapper0.setUsedMappers(objMapperArray71);
-            org.junit.Assert.fail("Expected exception of type java.lang.IllegalStateException; message: Should not be called for a user custom mapper.");
-        } catch (java.lang.IllegalStateException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(postType1);
-        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str5, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str16 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str16, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int17);
-        org.junit.Assert.assertNull(str19);
-        org.junit.Assert.assertEquals("'" + str20 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str20, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertEquals("'" + boolean29 + "' != '" + false + "'", boolean29, false);
-        org.junit.Assert.assertNotNull(resultType38);
-        org.junit.Assert.assertEquals("'" + boolean41 + "' != '" + false + "'", boolean41, false);
-        org.junit.Assert.assertNotNull(mapperFacade43);
-        org.junit.Assert.assertNotNull(resultType56);
-        org.junit.Assert.assertEquals("'" + boolean59 + "' != '" + false + "'", boolean59, false);
-        org.junit.Assert.assertNotNull(mapperFacade61);
-        org.junit.Assert.assertEquals("'" + boolean66 + "' != '" + false + "'", boolean66, false);
-        org.junit.Assert.assertEquals("'" + boolean67 + "' != '" + false + "'", boolean67, false);
-        org.junit.Assert.assertNotNull(mapperArray70);
-        org.junit.Assert.assertNotNull(objMapperArray71);
-    }
-
-    @Test
-    public void test1981() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1981");
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper1 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper2 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType3 = createPostRequestToPostMapper2.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post4 = new com.vntu.marenko.ualearning.server.model.Post();
-        post4.setText("");
-        java.lang.String str7 = post4.toString();
-        post4.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest10 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest10.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext13 = null;
-        createPostRequestToPostMapper2.mapBtoA(post4, createPostRequest10, mappingContext13);
-        com.vntu.marenko.ualearning.server.model.Post post15 = new com.vntu.marenko.ualearning.server.model.Post();
-        post15.setText("");
-        java.lang.String str18 = post15.toString();
-        java.lang.Integer int19 = post15.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest20 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str21 = createPostRequest20.getUsername();
-        java.lang.String str22 = createPostRequest20.toString();
-        ma.glasnost.orika.MappingContext mappingContext23 = null;
-        createPostRequestToPostMapper2.mapBtoA(post15, createPostRequest20, mappingContext23);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper25 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType26 = createPostRequestToPostMapper25.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post27 = new com.vntu.marenko.ualearning.server.model.Post();
-        post27.setText("");
-        java.lang.String str30 = post27.toString();
-        post27.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest33 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest33.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext36 = null;
-        createPostRequestToPostMapper25.mapBtoA(post27, createPostRequest33, mappingContext36);
-        ma.glasnost.orika.MappingContext mappingContext38 = null;
-        createPostRequestToPostMapper1.mapAtoB(createPostRequest20, post27, mappingContext38);
-        boolean boolean40 = answerDto0.equals((java.lang.Object) mappingContext38);
-        answerDto0.setId((int) (short) 10);
-        org.junit.Assert.assertNotNull(postType3);
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str7, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str18 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str18, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int19);
-        org.junit.Assert.assertNull(str21);
-        org.junit.Assert.assertEquals("'" + str22 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str22, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertNotNull(postType26);
-        org.junit.Assert.assertEquals("'" + str30 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str30, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertTrue("'" + boolean40 + "' != '" + false + "'", boolean40 == false);
-    }
-
-    @Test
-    public void test1982() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1982");
-        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
-        resultDescription0.setId((java.lang.Integer) 0);
-        resultDescription0.setMark(1L);
-        java.lang.Integer int5 = resultDescription0.getTestId();
-        long long6 = resultDescription0.getMark();
-        resultDescription0.setTestName("ResultDto(id=0, user=null, test=null, submitted=false, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null)], mark=0)");
-        resultDescription0.setId((java.lang.Integer) 52);
-        org.junit.Assert.assertNull(int5);
-        org.junit.Assert.assertTrue("'" + long6 + "' != '" + 1L + "'", long6 == 1L);
-    }
-
-    @Test
-    public void test1983() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1983");
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper0 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper1 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType2 = createPostRequestToPostMapper1.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post3 = new com.vntu.marenko.ualearning.server.model.Post();
-        post3.setText("");
-        java.lang.String str6 = post3.toString();
-        post3.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest9 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest9.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext12 = null;
-        createPostRequestToPostMapper1.mapBtoA(post3, createPostRequest9, mappingContext12);
-        com.vntu.marenko.ualearning.server.model.Post post14 = new com.vntu.marenko.ualearning.server.model.Post();
-        post14.setText("");
-        java.lang.String str17 = post14.toString();
-        java.lang.Integer int18 = post14.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest19 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str20 = createPostRequest19.getUsername();
-        java.lang.String str21 = createPostRequest19.toString();
-        ma.glasnost.orika.MappingContext mappingContext22 = null;
-        createPostRequestToPostMapper1.mapBtoA(post14, createPostRequest19, mappingContext22);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper24 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType25 = createPostRequestToPostMapper24.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post26 = new com.vntu.marenko.ualearning.server.model.Post();
-        post26.setText("");
-        java.lang.String str29 = post26.toString();
-        post26.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest32 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest32.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext35 = null;
-        createPostRequestToPostMapper24.mapBtoA(post26, createPostRequest32, mappingContext35);
-        ma.glasnost.orika.MappingContext mappingContext37 = null;
-        createPostRequestToPostMapper0.mapAtoB(createPostRequest19, post26, mappingContext37);
-        com.vntu.marenko.ualearning.server.model.User user39 = new com.vntu.marenko.ualearning.server.model.User();
-        java.lang.String str40 = user39.getEmail();
-        java.lang.String str41 = user39.getSurname();
-        user39.setEmail("Answer(id=null, text=null, correct=false)");
-        boolean boolean45 = user39.equals((java.lang.Object) (byte) -1);
-        boolean boolean46 = createPostRequest19.equals((java.lang.Object) user39);
-        int int47 = user39.getAge();
-        org.junit.Assert.assertNotNull(postType2);
-        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str6, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str17 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str17, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int18);
-        org.junit.Assert.assertNull(str20);
-        org.junit.Assert.assertEquals("'" + str21 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str21, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertNotNull(postType25);
-        org.junit.Assert.assertEquals("'" + str29 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str29, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(str40);
-        org.junit.Assert.assertNull(str41);
-        org.junit.Assert.assertTrue("'" + boolean45 + "' != '" + false + "'", boolean45 == false);
-        org.junit.Assert.assertTrue("'" + boolean46 + "' != '" + false + "'", boolean46 == false);
-        org.junit.Assert.assertTrue("'" + int47 + "' != '" + 0 + "'", int47 == 0);
-    }
-
-    @Test
-    public void test1984() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1984");
-        com.vntu.marenko.ualearning.server.model.User user0 = new com.vntu.marenko.ualearning.server.model.User();
-        long long1 = user0.getRating();
-        user0.setLogin("hi!");
-        java.lang.Object obj4 = null;
-        boolean boolean5 = user0.equals(obj4);
-        java.lang.String str6 = user0.getPassword();
-        org.junit.Assert.assertTrue("'" + long1 + "' != '" + 0L + "'", long1 == 0L);
-        org.junit.Assert.assertTrue("'" + boolean5 + "' != '" + false + "'", boolean5 == false);
-        org.junit.Assert.assertNull(str6);
-    }
-
-    @Test
-    public void test1985() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1985");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getInstitution();
-        userRequest0.setEmail("AnswerDto(id=0, text=null)");
-        userRequest0.setInstitution("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        userRequest0.setPassword("Tag(id=null, name=User(login=null, password=null, name=null, surname=hi!, age=0, institution=null, email=hi!, rating=0))");
-        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription8 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
-        java.lang.Integer int9 = resultDescription8.getId();
-        java.lang.Integer int10 = resultDescription8.getId();
-        boolean boolean11 = userRequest0.equals((java.lang.Object) resultDescription8);
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto12 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        userDto12.setInstitution("");
-        userDto12.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
-        java.lang.String str17 = userDto12.getName();
-        boolean boolean18 = resultDescription8.equals((java.lang.Object) userDto12);
-        resultDescription8.setTestName("QuestionDto(id=35, text=null, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!)])");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository21 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository22 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository23 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper24 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository21, testRepository22, answerRepository23);
-        ma.glasnost.orika.MapperFacade mapperFacade25 = null;
-        submitResultRequestToDomainMapper24.setMapperFacade(mapperFacade25);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType27 = submitResultRequestToDomainMapper24.getBType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType28 = submitResultRequestToDomainMapper24.getBType();
-        boolean boolean29 = resultDescription8.equals((java.lang.Object) submitResultRequestToDomainMapper24);
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertNull(int9);
-        org.junit.Assert.assertNull(int10);
-        org.junit.Assert.assertTrue("'" + boolean11 + "' != '" + false + "'", boolean11 == false);
-        org.junit.Assert.assertNull(str17);
-        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + false + "'", boolean18 == false);
-        org.junit.Assert.assertNotNull(resultType27);
-        org.junit.Assert.assertNotNull(resultType28);
-        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
-    }
-
-    @Test
-    public void test1986() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1986");
-        com.vntu.marenko.ualearning.server.model.Result result0 = new com.vntu.marenko.ualearning.server.model.Result();
-        result0.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.Test test3 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int4 = test3.getId();
-        java.lang.Integer int5 = test3.getId();
-        test3.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        java.lang.Integer int8 = test3.getCompletedCounter();
-        result0.setTest(test3);
-        com.vntu.marenko.ualearning.server.model.User user10 = result0.getUser();
-        result0.setId((java.lang.Integer) 35);
-        org.junit.Assert.assertNull(int4);
-        org.junit.Assert.assertNull(int5);
-        org.junit.Assert.assertNull(int8);
-        org.junit.Assert.assertNull(user10);
-    }
-
-    @Test
-    public void test1987() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1987");
-        com.vntu.marenko.ualearning.server.dto.PostDto postDto0 = new com.vntu.marenko.ualearning.server.dto.PostDto();
-        postDto0.setId((int) (byte) 100);
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto3 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        userDto3.setInstitution("");
-        java.lang.String str6 = userDto3.getInstitution();
-        userDto3.setAge((int) (byte) 10);
-        boolean boolean9 = postDto0.equals((java.lang.Object) (byte) 10);
-        postDto0.setText("SubmitResultRequest(userLogin=QuestionDto(id=10, text=null, answers=null), testId=0, answers=null)");
-        java.lang.String str12 = postDto0.getText();
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest13 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str14 = userRequest13.getName();
-        userRequest13.setEmail("TagDto(id=1, name=null)");
-        com.vntu.marenko.ualearning.server.model.Post post17 = new com.vntu.marenko.ualearning.server.model.Post();
-        post17.setText("");
-        java.lang.String str20 = post17.toString();
-        java.util.Date date21 = null;
-        post17.setTimestamp(date21);
-        post17.setText("CreatePostRequest(text=null, username=null)");
-        boolean boolean25 = userRequest13.equals((java.lang.Object) post17);
-        boolean boolean26 = postDto0.equals((java.lang.Object) post17);
-        java.lang.String str27 = post17.getUser();
-        org.junit.Assert.assertEquals("'" + str6 + "' != '" + "" + "'", str6, "");
-        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
-        org.junit.Assert.assertEquals("'" + str12 + "' != '" + "SubmitResultRequest(userLogin=QuestionDto(id=10, text=null, answers=null), testId=0, answers=null)" + "'", str12, "SubmitResultRequest(userLogin=QuestionDto(id=10, text=null, answers=null), testId=0, answers=null)");
-        org.junit.Assert.assertNull(str14);
-        org.junit.Assert.assertEquals("'" + str20 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str20, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertTrue("'" + boolean25 + "' != '" + false + "'", boolean25 == false);
-        org.junit.Assert.assertTrue("'" + boolean26 + "' != '" + false + "'", boolean26 == false);
-        org.junit.Assert.assertNull(str27);
-    }
-
-    @Test
-    public void test1988() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1988");
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest0 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str1 = userRequest0.getName();
-        userRequest0.setEmail("TagDto(id=1, name=null)");
-        com.vntu.marenko.ualearning.server.model.Post post4 = new com.vntu.marenko.ualearning.server.model.Post();
-        post4.setText("");
-        java.lang.String str7 = post4.toString();
-        java.util.Date date8 = null;
-        post4.setTimestamp(date8);
-        post4.setText("CreatePostRequest(text=null, username=null)");
-        boolean boolean12 = userRequest0.equals((java.lang.Object) post4);
-        userRequest0.setName("SubmitResultRequest(userLogin=QuestionDto(id=10, text=null, answers=null), testId=0, answers=null)");
-        userRequest0.setInstitution("CreatePostRequest(text=Post(id=null, text=, timestamp=null, user=null, likes=null), username=null)");
-        userRequest0.setInstitution("TestDto(id=0, nameTest=null, descriptionTest=ResultDto(id=0, user=null, test=null, submitted=false, answers=null, mark=0), completedCounter=null, questions=null, tags=null)");
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str7, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
-    }
-
-    @Test
-    public void test1989() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1989");
-        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
-        java.lang.String str1 = tag0.toString();
-        java.lang.String str2 = tag0.getName();
-        java.lang.Integer int3 = tag0.getId();
-        java.lang.String str4 = tag0.toString();
-        java.lang.String str5 = tag0.toString();
-        java.lang.String str6 = tag0.getName();
-        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "Tag(id=null, name=null)" + "'", str1, "Tag(id=null, name=null)");
-        org.junit.Assert.assertNull(str2);
-        org.junit.Assert.assertNull(int3);
-        org.junit.Assert.assertEquals("'" + str4 + "' != '" + "Tag(id=null, name=null)" + "'", str4, "Tag(id=null, name=null)");
-        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "Tag(id=null, name=null)" + "'", str5, "Tag(id=null, name=null)");
-        org.junit.Assert.assertNull(str6);
-    }
-
-    @Test
-    public void test1990() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1990");
-        com.vntu.marenko.ualearning.server.dto.ResultDto resultDto0 = new com.vntu.marenko.ualearning.server.dto.ResultDto();
-        resultDto0.setId(100);
-        resultDto0.setId((int) '#');
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto5 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        userDto5.setRating((int) (byte) -1);
-        userDto5.setLogin("LoginRequest(login=null, password=null)");
-        resultDto0.setUser(userDto5);
-        resultDto0.setId((int) (short) -1);
-        resultDto0.setId((int) (byte) 10);
-        int int15 = resultDto0.getId();
-        org.junit.Assert.assertTrue("'" + int15 + "' != '" + 10 + "'", int15 == 10);
-    }
-
-    @Test
-    public void test1991() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1991");
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        questionDto0.setText("");
-    }
-
-    @Test
-    public void test1992() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1992");
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto0 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        int int1 = questionDto0.getId();
-        java.util.List<com.vntu.marenko.ualearning.server.dto.AnswerDto> answerDtoList2 = questionDto0.getAnswers();
-        org.junit.Assert.assertTrue("'" + int1 + "' != '" + 0 + "'", int1 == 0);
-        org.junit.Assert.assertNull(answerDtoList2);
-    }
-
-    @Test
-    public void test1993() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1993");
-        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription0 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
-        resultDescription0.setId((java.lang.Integer) 0);
-        resultDescription0.setTestName("hi!");
-        java.lang.String str5 = resultDescription0.getTestName();
-        java.lang.Integer int6 = resultDescription0.getTestId();
-        long long7 = resultDescription0.getMark();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig8 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl9 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository10 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository11 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository12 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper13 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository10, testRepository11, answerRepository12);
-        ma.glasnost.orika.MapperFacade mapperFacade14 = null;
-        submitResultRequestToDomainMapper13.setMapperFacade(mapperFacade14);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType16 = submitResultRequestToDomainMapper13.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper17 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper18 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean19 = createPostRequestToPostMapper18.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper20 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade21 = mapperConfig8.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl9, submitResultRequestToDomainMapper13, resultToDescriptionMapper17, createPostRequestToPostMapper18, postToDtoMapper20);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest22 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest22.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        com.vntu.marenko.ualearning.server.model.Post post25 = new com.vntu.marenko.ualearning.server.model.Post();
-        ma.glasnost.orika.MappingContext mappingContext26 = null;
-        createPostRequestToPostMapper18.mapAtoB(createPostRequest22, post25, mappingContext26);
-        boolean boolean28 = resultDescription0.equals((java.lang.Object) createPostRequestToPostMapper18);
-        com.vntu.marenko.ualearning.server.model.Post post29 = new com.vntu.marenko.ualearning.server.model.Post();
-        post29.setText("");
-        java.lang.String str32 = post29.toString();
-        java.lang.Integer int33 = post29.getId();
-        post29.setText("Answer(id=null, text=null, correct=false)");
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper36 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper37 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType38 = createPostRequestToPostMapper37.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post39 = new com.vntu.marenko.ualearning.server.model.Post();
-        post39.setText("");
-        java.lang.String str42 = post39.toString();
-        post39.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest45 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest45.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext48 = null;
-        createPostRequestToPostMapper37.mapBtoA(post39, createPostRequest45, mappingContext48);
-        com.vntu.marenko.ualearning.server.model.Post post50 = new com.vntu.marenko.ualearning.server.model.Post();
-        post50.setText("");
-        java.lang.String str53 = post50.toString();
-        java.lang.Integer int54 = post50.getId();
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest55 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        java.lang.String str56 = createPostRequest55.getUsername();
-        java.lang.String str57 = createPostRequest55.toString();
-        ma.glasnost.orika.MappingContext mappingContext58 = null;
-        createPostRequestToPostMapper37.mapBtoA(post50, createPostRequest55, mappingContext58);
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper60 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType61 = createPostRequestToPostMapper60.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post62 = new com.vntu.marenko.ualearning.server.model.Post();
-        post62.setText("");
-        java.lang.String str65 = post62.toString();
-        post62.setId((java.lang.Integer) 10);
-        com.vntu.marenko.ualearning.server.dto.CreatePostRequest createPostRequest68 = new com.vntu.marenko.ualearning.server.dto.CreatePostRequest();
-        createPostRequest68.setText("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        ma.glasnost.orika.MappingContext mappingContext71 = null;
-        createPostRequestToPostMapper60.mapBtoA(post62, createPostRequest68, mappingContext71);
-        ma.glasnost.orika.MappingContext mappingContext73 = null;
-        createPostRequestToPostMapper36.mapAtoB(createPostRequest55, post62, mappingContext73);
-        ma.glasnost.orika.MappingContext mappingContext75 = null;
-        createPostRequestToPostMapper18.mapBtoA(post29, createPostRequest55, mappingContext75);
-        java.lang.String str77 = createPostRequest55.getUsername();
-        org.junit.Assert.assertEquals("'" + str5 + "' != '" + "hi!" + "'", str5, "hi!");
-        org.junit.Assert.assertNull(int6);
-        org.junit.Assert.assertTrue("'" + long7 + "' != '" + 0L + "'", long7 == 0L);
-        org.junit.Assert.assertNotNull(resultType16);
-        org.junit.Assert.assertEquals("'" + boolean19 + "' != '" + false + "'", boolean19, false);
-        org.junit.Assert.assertNotNull(mapperFacade21);
-        org.junit.Assert.assertTrue("'" + boolean28 + "' != '" + false + "'", boolean28 == false);
-        org.junit.Assert.assertEquals("'" + str32 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str32, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int33);
-        org.junit.Assert.assertNotNull(postType38);
-        org.junit.Assert.assertEquals("'" + str42 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str42, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertEquals("'" + str53 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str53, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int54);
-        org.junit.Assert.assertNull(str56);
-        org.junit.Assert.assertEquals("'" + str57 + "' != '" + "CreatePostRequest(text=null, username=null)" + "'", str57, "CreatePostRequest(text=null, username=null)");
-        org.junit.Assert.assertNotNull(postType61);
-        org.junit.Assert.assertEquals("'" + str65 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str65, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(str77);
-    }
-
-    @Test
-    public void test1994() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1994");
-        com.vntu.marenko.ualearning.server.dto.UserDto userDto0 = new com.vntu.marenko.ualearning.server.dto.UserDto();
-        userDto0.setInstitution("");
-        userDto0.setSurname("Test(id=null, nameTest=null, descriptionTest=null, completedCounter=null, questions=null, tags=null)");
-        userDto0.setLogin("Tag(id=null, name=null)");
-        java.lang.String str7 = userDto0.getLogin();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl8 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper9 = new com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl8);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType10 = resultToDescriptionMapper9.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType11 = resultToDescriptionMapper9.getAType();
-        com.vntu.marenko.ualearning.server.dto.ResultDescription resultDescription12 = new com.vntu.marenko.ualearning.server.dto.ResultDescription();
-        resultDescription12.setId((java.lang.Integer) 0);
-        resultDescription12.setMark(1L);
-        java.lang.Integer int17 = resultDescription12.getTestId();
-        long long18 = resultDescription12.getMark();
-        com.vntu.marenko.ualearning.server.model.Result result19 = new com.vntu.marenko.ualearning.server.model.Result();
-        java.lang.Integer int20 = result19.getId();
-        com.vntu.marenko.ualearning.server.model.Test test21 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int22 = test21.getId();
-        java.lang.Integer int23 = test21.getId();
-        result19.setTest(test21);
-        boolean boolean25 = result19.isSubmitted();
-        ma.glasnost.orika.MappingContext mappingContext26 = null;
-        resultToDescriptionMapper9.mapBtoA(resultDescription12, result19, mappingContext26);
-        com.vntu.marenko.ualearning.server.dto.TestDescription testDescription28 = new com.vntu.marenko.ualearning.server.dto.TestDescription();
-        testDescription28.setNameTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        testDescription28.setId((-1));
-        testDescription28.setNameTest("TagDto(id=0, name=null)");
-        java.lang.String str35 = testDescription28.toString();
-        com.vntu.marenko.ualearning.server.model.Result result36 = new com.vntu.marenko.ualearning.server.model.Result();
-        result36.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user39 = new com.vntu.marenko.ualearning.server.model.User();
-        user39.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test42 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean43 = user39.equals((java.lang.Object) test42);
-        user39.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result36.setUser(user39);
-        boolean boolean47 = testDescription28.equals((java.lang.Object) user39);
-        result19.setUser(user39);
-        boolean boolean49 = userDto0.equals((java.lang.Object) user39);
-        int int50 = userDto0.getRating();
-        userDto0.setAge(52);
-        org.junit.Assert.assertEquals("'" + str7 + "' != '" + "Tag(id=null, name=null)" + "'", str7, "Tag(id=null, name=null)");
-        org.junit.Assert.assertNotNull(resultType10);
-        org.junit.Assert.assertNotNull(resultType11);
-        org.junit.Assert.assertNull(int17);
-        org.junit.Assert.assertTrue("'" + long18 + "' != '" + 1L + "'", long18 == 1L);
-        org.junit.Assert.assertNull(int20);
-        org.junit.Assert.assertNull(int22);
-        org.junit.Assert.assertNull(int23);
-        org.junit.Assert.assertTrue("'" + boolean25 + "' != '" + false + "'", boolean25 == false);
-        org.junit.Assert.assertEquals("'" + str35 + "' != '" + "TestDescription(id=-1, nameTest=TagDto(id=0, name=null))" + "'", str35, "TestDescription(id=-1, nameTest=TagDto(id=0, name=null))");
-        org.junit.Assert.assertTrue("'" + boolean43 + "' != '" + false + "'", boolean43 == false);
-        org.junit.Assert.assertTrue("'" + boolean47 + "' != '" + false + "'", boolean47 == false);
-        org.junit.Assert.assertTrue("'" + boolean49 + "' != '" + false + "'", boolean49 == false);
-        org.junit.Assert.assertTrue("'" + int50 + "' != '" + 0 + "'", int50 == 0);
-    }
-
-    @Test
-    public void test1995() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1995");
-        com.vntu.marenko.ualearning.server.model.Tag tag0 = new com.vntu.marenko.ualearning.server.model.Tag();
-        java.lang.String str1 = tag0.toString();
-        java.lang.String str2 = tag0.toString();
-        com.vntu.marenko.ualearning.server.dto.UserRequest userRequest3 = new com.vntu.marenko.ualearning.server.dto.UserRequest();
-        java.lang.String str4 = userRequest3.getInstitution();
-        com.vntu.marenko.ualearning.server.dto.QuestionDto questionDto5 = new com.vntu.marenko.ualearning.server.dto.QuestionDto();
-        questionDto5.setId((int) '#');
-        boolean boolean8 = userRequest3.equals((java.lang.Object) '#');
-        boolean boolean9 = tag0.equals((java.lang.Object) boolean8);
-        tag0.setName("ResultDescription(id=null, testId=100, testName=null, mark=0)");
-        tag0.setName("ResultDto(id=0, user=null, test=null, submitted=false, answers=[AnswerDto(id=0, text=null), AnswerDto(id=0, text=hi!), AnswerDto(id=0, text=null), AnswerDto(id=0, text=null)], mark=0)");
-        com.vntu.marenko.ualearning.server.model.User user14 = new com.vntu.marenko.ualearning.server.model.User();
-        user14.setInstitution("hi!");
-        java.lang.String str17 = user14.toString();
-        java.lang.String str18 = user14.getEmail();
-        java.lang.String str19 = user14.getEmail();
-        java.lang.String str20 = user14.getInstitution();
-        boolean boolean21 = tag0.equals((java.lang.Object) str20);
-        tag0.setName("TestDescription(id=-1, nameTest=User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0))");
-        org.junit.Assert.assertEquals("'" + str1 + "' != '" + "Tag(id=null, name=null)" + "'", str1, "Tag(id=null, name=null)");
-        org.junit.Assert.assertEquals("'" + str2 + "' != '" + "Tag(id=null, name=null)" + "'", str2, "Tag(id=null, name=null)");
-        org.junit.Assert.assertNull(str4);
-        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + false + "'", boolean8 == false);
-        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
-        org.junit.Assert.assertEquals("'" + str17 + "' != '" + "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)" + "'", str17, "User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        org.junit.Assert.assertNull(str18);
-        org.junit.Assert.assertNull(str19);
-        org.junit.Assert.assertEquals("'" + str20 + "' != '" + "hi!" + "'", str20, "hi!");
-        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + false + "'", boolean21 == false);
-    }
-
-    @Test
-    public void test1996() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1996");
-        com.vntu.marenko.ualearning.server.dto.LoginRequest loginRequest0 = new com.vntu.marenko.ualearning.server.dto.LoginRequest();
-        java.lang.String str1 = loginRequest0.getPassword();
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository2 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade3 = null;
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository4 = null;
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto5 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl6 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean7 = answerDto5.equals((java.lang.Object) markComputerImpl6);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl8 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository2, mapperFacade3, userRepository4, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl6);
-        boolean boolean9 = loginRequest0.equals((java.lang.Object) resultServiceImpl8);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository10 = null;
-        com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl userServiceImpl11 = new com.vntu.marenko.ualearning.server.service.impl.UserServiceImpl(userRepository10);
-        com.vntu.marenko.ualearning.server.repository.ResultRepository resultRepository12 = null;
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper13 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig14 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl15 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository16 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository17 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository18 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper19 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository16, testRepository17, answerRepository18);
-        ma.glasnost.orika.MapperFacade mapperFacade20 = null;
-        submitResultRequestToDomainMapper19.setMapperFacade(mapperFacade20);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType22 = submitResultRequestToDomainMapper19.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper23 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper24 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean25 = createPostRequestToPostMapper24.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper26 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade27 = mapperConfig14.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl15, submitResultRequestToDomainMapper19, resultToDescriptionMapper23, createPostRequestToPostMapper24, postToDtoMapper26);
-        postToDtoMapper13.setMapperFacade(mapperFacade27);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository29 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig30 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl31 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository32 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository33 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository34 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper35 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository32, testRepository33, answerRepository34);
-        ma.glasnost.orika.MapperFacade mapperFacade36 = null;
-        submitResultRequestToDomainMapper35.setMapperFacade(mapperFacade36);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType38 = submitResultRequestToDomainMapper35.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper39 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper40 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean41 = createPostRequestToPostMapper40.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper42 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade43 = mapperConfig30.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl31, submitResultRequestToDomainMapper35, resultToDescriptionMapper39, createPostRequestToPostMapper40, postToDtoMapper42);
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl44 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository45 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository46 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository47 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper48 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository45, testRepository46, answerRepository47);
-        ma.glasnost.orika.MapperFacade mapperFacade49 = null;
-        submitResultRequestToDomainMapper48.setMapperFacade(mapperFacade49);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType51 = submitResultRequestToDomainMapper48.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper52 = null;
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig53 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl54 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository55 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository56 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository57 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper58 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository55, testRepository56, answerRepository57);
-        ma.glasnost.orika.MapperFacade mapperFacade59 = null;
-        submitResultRequestToDomainMapper58.setMapperFacade(mapperFacade59);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType61 = submitResultRequestToDomainMapper58.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper62 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper63 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean64 = createPostRequestToPostMapper63.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper65 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade66 = mapperConfig53.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl54, submitResultRequestToDomainMapper58, resultToDescriptionMapper62, createPostRequestToPostMapper63, postToDtoMapper65);
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper67 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        ma.glasnost.orika.MapperFacade mapperFacade68 = mapperConfig30.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl44, submitResultRequestToDomainMapper48, resultToDescriptionMapper52, createPostRequestToPostMapper63, postToDtoMapper67);
-        com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl resultServiceImpl69 = new com.vntu.marenko.ualearning.server.service.impl.ResultServiceImpl(resultRepository12, mapperFacade27, userRepository29, (com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl44);
-        com.vntu.marenko.ualearning.server.controller.UserController userController70 = new com.vntu.marenko.ualearning.server.controller.UserController((com.vntu.marenko.ualearning.server.service.UserService) userServiceImpl11, mapperFacade27);
-        com.vntu.marenko.ualearning.server.controller.ResultController resultController71 = new com.vntu.marenko.ualearning.server.controller.ResultController((com.vntu.marenko.ualearning.server.service.ResultService) resultServiceImpl8, mapperFacade27);
-        // The following exception was thrown during execution in test generation
-        try {
-            com.vntu.marenko.ualearning.server.dto.ResultDto resultDto73 = resultServiceImpl8.getResult((int) (short) 1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNull(str1);
-        org.junit.Assert.assertTrue("'" + boolean7 + "' != '" + false + "'", boolean7 == false);
-        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
-        org.junit.Assert.assertNotNull(resultType22);
-        org.junit.Assert.assertEquals("'" + boolean25 + "' != '" + false + "'", boolean25, false);
-        org.junit.Assert.assertNotNull(mapperFacade27);
-        org.junit.Assert.assertNotNull(resultType38);
-        org.junit.Assert.assertEquals("'" + boolean41 + "' != '" + false + "'", boolean41, false);
-        org.junit.Assert.assertNotNull(mapperFacade43);
-        org.junit.Assert.assertNotNull(resultType51);
-        org.junit.Assert.assertNotNull(resultType61);
-        org.junit.Assert.assertEquals("'" + boolean64 + "' != '" + false + "'", boolean64, false);
-        org.junit.Assert.assertNotNull(mapperFacade66);
-        org.junit.Assert.assertNotNull(mapperFacade68);
-    }
-
-    @Test
-    public void test1997() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1997");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository0 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository1 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository2 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper3 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository0, testRepository1, answerRepository2);
-        ma.glasnost.orika.MapperFacade mapperFacade4 = null;
-        submitResultRequestToDomainMapper3.setMapperFacade(mapperFacade4);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType6 = submitResultRequestToDomainMapper3.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
-        submitResultRequestToDomainMapper3.setMapperFacade(mapperFacade7);
-        com.vntu.marenko.ualearning.server.model.User user9 = new com.vntu.marenko.ualearning.server.model.User();
-        user9.setSurname("");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository12 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository13 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository14 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper15 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository12, testRepository13, answerRepository14);
-        ma.glasnost.orika.MapperFacade mapperFacade16 = null;
-        submitResultRequestToDomainMapper15.setMapperFacade(mapperFacade16);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType18 = submitResultRequestToDomainMapper15.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade19 = null;
-        submitResultRequestToDomainMapper15.setMapperFacade(mapperFacade19);
-        boolean boolean21 = user9.equals((java.lang.Object) submitResultRequestToDomainMapper15);
-        com.vntu.marenko.ualearning.server.model.Result result22 = new com.vntu.marenko.ualearning.server.model.Result();
-        result22.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user25 = new com.vntu.marenko.ualearning.server.model.User();
-        user25.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test28 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean29 = user25.equals((java.lang.Object) test28);
-        user25.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result22.setUser(user25);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest33 = null;
-        ma.glasnost.orika.MappingContext mappingContext34 = null;
-        submitResultRequestToDomainMapper15.mapBtoA(result22, submitResultRequest33, mappingContext34);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest36 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
-        submitResultRequest36.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
-        int int39 = submitResultRequest36.getTestId();
-        ma.glasnost.orika.MappingContext mappingContext40 = null;
-        submitResultRequestToDomainMapper3.mapBtoA(result22, submitResultRequest36, mappingContext40);
-        ma.glasnost.orika.MapperFacade mapperFacade42 = null;
-        submitResultRequestToDomainMapper3.setMapperFacade(mapperFacade42);
-        org.junit.Assert.assertNotNull(submitResultRequestType6);
-        org.junit.Assert.assertNotNull(submitResultRequestType18);
-        org.junit.Assert.assertTrue("'" + boolean21 + "' != '" + false + "'", boolean21 == false);
-        org.junit.Assert.assertTrue("'" + boolean29 + "' != '" + false + "'", boolean29 == false);
-        org.junit.Assert.assertTrue("'" + int39 + "' != '" + 0 + "'", int39 == 0);
-    }
-
-    @Test
-    public void test1998() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1998");
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
-        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
-        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType9 = submitResultRequestToDomainMapper6.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper10 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper11 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean12 = createPostRequestToPostMapper11.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper13 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade14 = mapperConfig1.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2, submitResultRequestToDomainMapper6, resultToDescriptionMapper10, createPostRequestToPostMapper11, postToDtoMapper13);
-        postToDtoMapper0.setMapperFacade(mapperFacade14);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType16 = postToDtoMapper0.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType17 = postToDtoMapper0.getBType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType18 = postToDtoMapper0.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType19 = postToDtoMapper0.getBType();
-        java.lang.Boolean boolean20 = postToDtoMapper0.favorsExtension();
-        com.vntu.marenko.ualearning.server.dto.PostDto postDto21 = new com.vntu.marenko.ualearning.server.dto.PostDto();
-        java.lang.String str22 = postDto21.getLogin();
-        postDto21.setTimestamp("ResultDescription(id=0, testId=null, testName=null, mark=1)");
-        com.vntu.marenko.ualearning.server.model.Post post25 = new com.vntu.marenko.ualearning.server.model.Post();
-        post25.setText("");
-        java.lang.String str28 = post25.toString();
-        java.lang.Integer int29 = post25.getId();
-        ma.glasnost.orika.MappingContext mappingContext30 = null;
-        postToDtoMapper0.mapBtoA(postDto21, post25, mappingContext30);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType32 = postToDtoMapper0.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType33 = postToDtoMapper0.getBType();
-        ma.glasnost.orika.Mapper<java.lang.Object, java.lang.Object> objMapper34 = null;
-        ma.glasnost.orika.Mapper[] mapperArray36 = new ma.glasnost.orika.Mapper[1];
-        @SuppressWarnings("unchecked")
-        ma.glasnost.orika.Mapper<java.lang.Object, java.lang.Object>[] objMapperArray37 = (ma.glasnost.orika.Mapper<java.lang.Object, java.lang.Object>[]) mapperArray36;
-        objMapperArray37[0] = objMapper34;
-        // The following exception was thrown during execution in test generation
-        try {
-            postToDtoMapper0.setUsedMappers(objMapperArray37);
-            org.junit.Assert.fail("Expected exception of type java.lang.IllegalStateException; message: Should not be called for a user custom mapper.");
-        } catch (java.lang.IllegalStateException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType9);
-        org.junit.Assert.assertEquals("'" + boolean12 + "' != '" + false + "'", boolean12, false);
-        org.junit.Assert.assertNotNull(mapperFacade14);
-        org.junit.Assert.assertNotNull(postType16);
-        org.junit.Assert.assertNotNull(postDtoType17);
-        org.junit.Assert.assertNotNull(postType18);
-        org.junit.Assert.assertNotNull(postDtoType19);
-        org.junit.Assert.assertEquals("'" + boolean20 + "' != '" + false + "'", boolean20, false);
-        org.junit.Assert.assertNull(str22);
-        org.junit.Assert.assertEquals("'" + str28 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str28, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int29);
-        org.junit.Assert.assertNotNull(postType32);
-        org.junit.Assert.assertNotNull(postDtoType33);
-        org.junit.Assert.assertNotNull(mapperArray36);
-        org.junit.Assert.assertNotNull(objMapperArray37);
-    }
-
-    @Test
-    public void test1999() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test1999");
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto0 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl1 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        boolean boolean2 = answerDto0.equals((java.lang.Object) markComputerImpl1);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
-        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
-        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType9 = submitResultRequestToDomainMapper6.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade10 = null;
-        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade10);
-        boolean boolean12 = answerDto0.equals((java.lang.Object) submitResultRequestToDomainMapper6);
-        com.vntu.marenko.ualearning.server.model.Result result13 = new com.vntu.marenko.ualearning.server.model.Result();
-        com.vntu.marenko.ualearning.server.model.User user14 = new com.vntu.marenko.ualearning.server.model.User();
-        user14.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test17 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean18 = user14.equals((java.lang.Object) test17);
-        result13.setUser(user14);
-        com.vntu.marenko.ualearning.server.model.Test test20 = new com.vntu.marenko.ualearning.server.model.Test();
-        java.lang.Integer int21 = test20.getId();
-        java.lang.Integer int22 = test20.getId();
-        test20.setDescriptionTest("User(login=null, password=null, name=null, surname=null, age=0, institution=hi!, email=null, rating=0)");
-        result13.setTest(test20);
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository26 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository27 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository28 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper29 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository26, testRepository27, answerRepository28);
-        ma.glasnost.orika.MapperFacade mapperFacade30 = null;
-        submitResultRequestToDomainMapper29.setMapperFacade(mapperFacade30);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType32 = submitResultRequestToDomainMapper29.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade33 = null;
-        submitResultRequestToDomainMapper29.setMapperFacade(mapperFacade33);
-        com.vntu.marenko.ualearning.server.model.User user35 = new com.vntu.marenko.ualearning.server.model.User();
-        user35.setSurname("");
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository38 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository39 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository40 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper41 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository38, testRepository39, answerRepository40);
-        ma.glasnost.orika.MapperFacade mapperFacade42 = null;
-        submitResultRequestToDomainMapper41.setMapperFacade(mapperFacade42);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.SubmitResultRequest> submitResultRequestType44 = submitResultRequestToDomainMapper41.getAType();
-        ma.glasnost.orika.MapperFacade mapperFacade45 = null;
-        submitResultRequestToDomainMapper41.setMapperFacade(mapperFacade45);
-        boolean boolean47 = user35.equals((java.lang.Object) submitResultRequestToDomainMapper41);
-        com.vntu.marenko.ualearning.server.model.Result result48 = new com.vntu.marenko.ualearning.server.model.Result();
-        result48.setId((java.lang.Integer) 100);
-        com.vntu.marenko.ualearning.server.model.User user51 = new com.vntu.marenko.ualearning.server.model.User();
-        user51.setSurname("");
-        com.vntu.marenko.ualearning.server.model.Test test54 = new com.vntu.marenko.ualearning.server.model.Test();
-        boolean boolean55 = user51.equals((java.lang.Object) test54);
-        user51.setEmail("Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        result48.setUser(user51);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest59 = null;
-        ma.glasnost.orika.MappingContext mappingContext60 = null;
-        submitResultRequestToDomainMapper41.mapBtoA(result48, submitResultRequest59, mappingContext60);
-        com.vntu.marenko.ualearning.server.dto.SubmitResultRequest submitResultRequest62 = new com.vntu.marenko.ualearning.server.dto.SubmitResultRequest();
-        submitResultRequest62.setUserLogin("QuestionDto(id=10, text=null, answers=null)");
-        int int65 = submitResultRequest62.getTestId();
-        ma.glasnost.orika.MappingContext mappingContext66 = null;
-        submitResultRequestToDomainMapper29.mapBtoA(result48, submitResultRequest62, mappingContext66);
-        com.vntu.marenko.ualearning.server.dto.AnswerDto answerDto68 = new com.vntu.marenko.ualearning.server.dto.AnswerDto();
-        answerDto68.setText("hi!");
-        java.lang.String str71 = answerDto68.getText();
-        boolean boolean72 = submitResultRequest62.equals((java.lang.Object) answerDto68);
-        submitResultRequest62.setUserLogin("hi!");
-        ma.glasnost.orika.MappingContext mappingContext75 = null;
-        submitResultRequestToDomainMapper6.mapBtoA(result13, submitResultRequest62, mappingContext75);
-        submitResultRequest62.setUserLogin("CreatePostRequest(text=CreatePostRequest(text=Post(id=null, text=, timestamp=null, user=null, likes=null), username=null), username=null)");
-        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
-        org.junit.Assert.assertNotNull(submitResultRequestType9);
-        org.junit.Assert.assertTrue("'" + boolean12 + "' != '" + false + "'", boolean12 == false);
-        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + false + "'", boolean18 == false);
-        org.junit.Assert.assertNull(int21);
-        org.junit.Assert.assertNull(int22);
-        org.junit.Assert.assertNotNull(submitResultRequestType32);
-        org.junit.Assert.assertNotNull(submitResultRequestType44);
-        org.junit.Assert.assertTrue("'" + boolean47 + "' != '" + false + "'", boolean47 == false);
-        org.junit.Assert.assertTrue("'" + boolean55 + "' != '" + false + "'", boolean55 == false);
-        org.junit.Assert.assertTrue("'" + int65 + "' != '" + 0 + "'", int65 == 0);
-        org.junit.Assert.assertEquals("'" + str71 + "' != '" + "hi!" + "'", str71, "hi!");
-        org.junit.Assert.assertTrue("'" + boolean72 + "' != '" + false + "'", boolean72 == false);
-    }
-
-    @Test
-    public void test2000() throws Throwable {
-        if (debug)
-            System.out.format("%n%s%n", "RegressionTest3.test2000");
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper0 = new com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper();
-        com.vntu.marenko.ualearning.server.mapper.MapperConfig mapperConfig1 = new com.vntu.marenko.ualearning.server.mapper.MapperConfig();
-        com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl markComputerImpl2 = new com.vntu.marenko.ualearning.server.component.impl.MarkComputerImpl();
-        com.vntu.marenko.ualearning.server.repository.UserRepository userRepository3 = null;
-        com.vntu.marenko.ualearning.server.repository.TestRepository testRepository4 = null;
-        com.vntu.marenko.ualearning.server.repository.AnswerRepository answerRepository5 = null;
-        com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper submitResultRequestToDomainMapper6 = new com.vntu.marenko.ualearning.server.mapper.SubmitResultRequestToDomainMapper(userRepository3, testRepository4, answerRepository5);
-        ma.glasnost.orika.MapperFacade mapperFacade7 = null;
-        submitResultRequestToDomainMapper6.setMapperFacade(mapperFacade7);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Result> resultType9 = submitResultRequestToDomainMapper6.getBType();
-        com.vntu.marenko.ualearning.server.mapper.ResultToDescriptionMapper resultToDescriptionMapper10 = null;
-        com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper createPostRequestToPostMapper11 = new com.vntu.marenko.ualearning.server.mapper.CreatePostRequestToPostMapper();
-        java.lang.Boolean boolean12 = createPostRequestToPostMapper11.favorsExtension();
-        com.vntu.marenko.ualearning.server.mapper.PostToDtoMapper postToDtoMapper13 = null;
-        ma.glasnost.orika.MapperFacade mapperFacade14 = mapperConfig1.createMapper((com.vntu.marenko.ualearning.server.component.MarkComputer) markComputerImpl2, submitResultRequestToDomainMapper6, resultToDescriptionMapper10, createPostRequestToPostMapper11, postToDtoMapper13);
-        postToDtoMapper0.setMapperFacade(mapperFacade14);
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType16 = postToDtoMapper0.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType17 = postToDtoMapper0.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType18 = postToDtoMapper0.getBType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.model.Post> postType19 = postToDtoMapper0.getAType();
-        ma.glasnost.orika.metadata.Type<com.vntu.marenko.ualearning.server.dto.PostDto> postDtoType20 = postToDtoMapper0.getBType();
-        com.vntu.marenko.ualearning.server.model.Post post21 = new com.vntu.marenko.ualearning.server.model.Post();
-        post21.setText("");
-        java.lang.String str24 = post21.toString();
-        java.lang.Integer int25 = post21.getId();
-        java.util.Date date26 = null;
-        post21.setTimestamp(date26);
-        java.lang.Integer int28 = post21.getId();
-        java.lang.Integer int29 = post21.getId();
-        com.vntu.marenko.ualearning.server.dto.PostDto postDto30 = new com.vntu.marenko.ualearning.server.dto.PostDto();
-        postDto30.setId((int) (byte) 100);
-        java.lang.String str33 = postDto30.getText();
-        postDto30.setLogin("ResultDescription(id=null, testId=100, testName=null, mark=0)");
-        java.lang.String str36 = postDto30.getTimestamp();
-        java.lang.String str37 = postDto30.getText();
-        java.lang.String str38 = postDto30.getText();
-        postDto30.setId((int) 'a');
-        int int41 = postDto30.getId();
-        ma.glasnost.orika.MappingContext mappingContext42 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            postToDtoMapper0.mapAtoB(post21, postDto30, mappingContext42);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-            // Expected exception.
-        }
-        org.junit.Assert.assertNotNull(resultType9);
-        org.junit.Assert.assertEquals("'" + boolean12 + "' != '" + false + "'", boolean12, false);
-        org.junit.Assert.assertNotNull(mapperFacade14);
-        org.junit.Assert.assertNotNull(postType16);
-        org.junit.Assert.assertNotNull(postType17);
-        org.junit.Assert.assertNotNull(postDtoType18);
-        org.junit.Assert.assertNotNull(postType19);
-        org.junit.Assert.assertNotNull(postDtoType20);
-        org.junit.Assert.assertEquals("'" + str24 + "' != '" + "Post(id=null, text=, timestamp=null, user=null, likes=null)" + "'", str24, "Post(id=null, text=, timestamp=null, user=null, likes=null)");
-        org.junit.Assert.assertNull(int25);
-        org.junit.Assert.assertNull(int28);
-        org.junit.Assert.assertNull(int29);
-        org.junit.Assert.assertNull(str33);
-        org.junit.Assert.assertNull(str36);
-        org.junit.Assert.assertNull(str37);
-        org.junit.Assert.assertNull(str38);
-        org.junit.Assert.assertTrue("'" + int41 + "' != '" + 97 + "'", int41 == 97);
     }
 }
 
